@@ -88,28 +88,30 @@ export default function Navbar() {
 
             {/* Menu Simple Dropdown */}
             <div
-                className={`fixed bottom-24 left-1/2 transform -translate-x-1/2 z-40 transition-all duration-300 ease-out ${showMenuDropdown
+                className={`fixed bottom-20 left-1/2 transform -translate-x-1/2 z-40 transition-all duration-300 ease-out ${showMenuDropdown
                     ? 'opacity-100 visible translate-y-0'
                     : 'opacity-0 invisible translate-y-4'
                     }`}
                 onMouseEnter={() => setShowMenuDropdown(true)}
                 onMouseLeave={() => setShowMenuDropdown(false)}
             >
-                <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 w-[320px]">
-                    <h3 className="text-2xl font-bold text-secondary mb-8 pb-4 border-b border-gray-200">
+                <div className="bg-white shadow-2xl border border-gray-100 p-8 w-[320px]" style={{
+                    borderRadius: "20px 20px 0 0"
+                }}>
+                    <h3 className="text-2xl font-bold text-secondary mb-4 pb-4 border-b border-black/30">
                         Menu
                     </h3>
-                    <div className="space-y-6">
+                    <div>
                         {menuItems.map((item, index) => (
                             <Link
                                 key={item}
                                 href={`/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                                className="flex items-center justify-between text-secondary transition-all duration-200 group py-2"
+                                className="flex items-center gap-3 text-secondary transition-all duration-200 group py-2"
                                 style={{
                                     animationDelay: `${index * 50}ms`
                                 }}
                             >
-                                <span className="font-semibold text-[16px]">{item}</span>
+                                <span className="font-normal text-[16px]">{item}</span>
                                 <ArrowUpRight className="w-4 h-4 text-green group-hover:opacity-100 transition-all duration-200 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                             </Link>
                         ))}
