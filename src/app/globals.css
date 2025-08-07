@@ -93,3 +93,9 @@ body {
   transition: all;
   animation-duration: 2s;
 }
+
+.arrow-main:hover {
+  .arrow-container {
+    transform: rotate(180deg);
+  }
+}

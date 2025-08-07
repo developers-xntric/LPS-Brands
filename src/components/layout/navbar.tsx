@@ -53,7 +53,7 @@ export default function Navbar() {
                 onMouseEnter={() => setShowServicesDropdown(true)}
                 onMouseLeave={() => setShowServicesDropdown(false)}
             >
-                <div className="bg-white shadow-2xl border border-gray-100 p-8 min-w-[760px]" style={{
+                <div className="bg-white shadow-2xl border border-gray-100 p-8 min-w-[780px]" style={{
                     borderRadius: "20px 20px 0 0"
                 }}>
                     <div className="grid grid-cols-3 gap-12">
@@ -65,7 +65,7 @@ export default function Navbar() {
                                 <h3 className={`text-2xl font-normal text-secondary ${category !== "Communication Campaigns" ? "mb-9 pb-3" : "mb-4 relative bottom-[5px]"}`}>
                                     {category}
                                 </h3>
-                                <div className="space-y-4">
+                                <div className="space-y-3">
                                     {items.map((item, itemIndex) => (
                                         <Link
                                             key={item}
@@ -76,7 +76,7 @@ export default function Navbar() {
                                             }}
                                         >
                                             <span className="font-normal tracking-wide text-[16px]">{item}</span>
-                                            <ArrowUpRight className="w-5 h-5 text-green group-hover:opacity-100 transition-all duration-200 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                                            <ArrowUpRight className="w-4 h-4 text-green group-hover:opacity-100 transition-all duration-200 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                                         </Link>
                                     ))}
                                 </div>
@@ -119,7 +119,7 @@ export default function Navbar() {
 
             {/* Bottom Navigation Bar */}
             <nav className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
-                <div className="bg-white rounded-full shadow-2xl border border-gray-100 w-[760px] ps-4 flex justify-between items-center">
+                <div className="bg-white rounded-full shadow-2xl border border-gray-100 w-[780px] px-4 py-2 flex justify-between items-center">
                     <Link
                         href="/"
                         className="text-secondary hover:text-white hover:bg-black transition-colors duration-200 font-[500] px-4 py-2 text-[18px] rounded-full"
@@ -131,10 +131,10 @@ export default function Navbar() {
                         <button
                             onMouseEnter={() => setShowServicesDropdown(true)}
                             onMouseLeave={() => setShowServicesDropdown(false)}
-                            className="flex items-center space-x-3 text-secondary px-6 py-3 font-[500] transition-all duration-200 text-[18px] hover:text-white hover:bg-black rounded-full"
+                            className="flex items-center space-x-3 text-secondary px-6 py-3 font-[500] transition-all duration-200 text-[18px] hover:text-white hover:bg-black rounded-full arrow-main"
                         >
                             <span>Services</span>
-                            <div className="w-5 h-5 bg-green rounded-full flex items-center justify-center">
+                            <div className="w-5 h-5 bg-green rounded-full flex items-center justify-center arrow-container">
                                 <BottomArrow />
                             </div>
                         </button>
@@ -158,10 +158,10 @@ export default function Navbar() {
                         <button
                             onMouseEnter={() => setShowMenuDropdown(true)}
                             onMouseLeave={() => setShowMenuDropdown(false)}
-                            className="flex hover:text-white hover:bg-black items-center space-x-3 text-secondary px-6 py-3 font-[500] transition-all duration-200 text-[18px] rounded-full"
+                            className="flex hover:text-white hover:bg-black items-center space-x-3 text-secondary px-6 py-3 font-[500] transition-all duration-200 text-[18px] rounded-full arrow-main"
                         >
                             <span>Menu</span>
-                            <div className="w-5 h-5 bg-green rounded-full flex items-center justify-center">
+                            <div className="w-5 h-5 bg-green rounded-full flex items-center justify-center arrow-container">
                                 <BottomArrow />
                             </div>
                         </button>
