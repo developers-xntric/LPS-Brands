@@ -4,7 +4,23 @@
 
 @font-face {
   font-family: "Asgard";
+  src: url("/fonts/asgard/AsgardTrial-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: thin;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Asgard";
   src: url("/fonts/asgard/AsgardTrial-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: light;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Asgard";
+  src: url("/fonts/asgard/AsgardTrial-Medium.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -21,7 +37,7 @@
 @font-face {
   font-family: "Asgard";
   src: url("/fonts/asgard/AsgardTrial-Bold.ttf") format("truetype");
-  font-weight: 600;
+  font-weight: 700;
   font-style: bold;
   font-display: swap;
 }
