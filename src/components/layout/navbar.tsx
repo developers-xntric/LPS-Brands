@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Plus, ArrowUpRight } from 'lucide-react'
+import BottomArrow from "../icons/bottom-arrow"
 
 const servicesData = {
     Identity: [
@@ -45,8 +46,8 @@ export default function Navbar() {
             {/* Services Mega Menu Dropdown */}
             <div
                 className={`fixed bottom-24 left-1/2 transform -translate-x-1/2 z-40 transition-all duration-300 ease-out ${showServicesDropdown
-                        ? 'opacity-100 visible translate-y-0'
-                        : 'opacity-0 invisible translate-y-4'
+                    ? 'opacity-100 visible translate-y-0'
+                    : 'opacity-0 invisible translate-y-4'
                     }`}
                 onMouseEnter={() => setShowServicesDropdown(true)}
                 onMouseLeave={() => setShowServicesDropdown(false)}
@@ -63,7 +64,7 @@ export default function Navbar() {
                                         <Link
                                             key={item}
                                             href={`/services/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                                            className="flex items-center justify-between text-gray-700 hover:text-gray-900 transition-all duration-200 group py-1"
+                                            className="flex items-center justify-between text-secondary hover:text-gray-900 transition-all duration-200 group py-1"
                                             style={{
                                                 animationDelay: `${(categoryIndex * items.length + itemIndex) * 50}ms`
                                             }}
@@ -86,8 +87,8 @@ export default function Navbar() {
             {/* Menu Simple Dropdown */}
             <div
                 className={`fixed bottom-24 left-1/2 transform -translate-x-1/2 z-40 transition-all duration-300 ease-out ${showMenuDropdown
-                        ? 'opacity-100 visible translate-y-0'
-                        : 'opacity-0 invisible translate-y-4'
+                    ? 'opacity-100 visible translate-y-0'
+                    : 'opacity-0 invisible translate-y-4'
                     }`}
                 onMouseEnter={() => setShowMenuDropdown(true)}
                 onMouseLeave={() => setShowMenuDropdown(false)}
@@ -101,7 +102,7 @@ export default function Navbar() {
                             <Link
                                 key={item}
                                 href={`/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                                className="flex items-center justify-between text-gray-700 hover:text-gray-900 transition-all duration-200 group py-2"
+                                className="flex items-center justify-between text-secondary hover:text-gray-900 transition-all duration-200 group py-2"
                                 style={{
                                     animationDelay: `${index * 50}ms`
                                 }}
@@ -119,7 +120,7 @@ export default function Navbar() {
                 <div className="bg-white rounded-full shadow-2xl border border-gray-100 w-[920px] px-4 py-3 flex justify-between items-center">
                     <Link
                         href="/"
-                        className="text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium px-4 py-2 text-[20px]"
+                        className="text-secondary hover:text-blue-600 transition-colors duration-200 font-medium px-4 py-2 text-[20px]"
                     >
                         Home
                     </Link>
@@ -128,25 +129,25 @@ export default function Navbar() {
                         <button
                             onMouseEnter={() => setShowServicesDropdown(true)}
                             onMouseLeave={() => setShowServicesDropdown(false)}
-                            className="flex items-center space-x-3 bg-gray-900 text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition-all duration-200 text-[20px]"
+                            className="flex items-center space-x-3 text-secondary px-6 py-3 rounded-full font-medium transition-all duration-200 text-[20px]"
                         >
                             <span>Services</span>
-                            <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-                                <Plus className="w-3 h-3 text-white" />
+                            <div className="w-5 h-5 bg-green rounded-full flex items-center justify-center">
+                                <BottomArrow />
                             </div>
                         </button>
                     </div>
 
                     <Link
                         href="/work"
-                        className="text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium px-4 py-2 text-[20px]"
+                        className="text-secondary hover:text-blue-600 transition-colors duration-200 font-medium px-4 py-2 text-[20px]"
                     >
                         Our Work
                     </Link>
 
                     <Link
                         href="/about"
-                        className="text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium px-4 py-2 text-[20px]"
+                        className="text-secondary hover:text-blue-600 transition-colors duration-200 font-medium px-4 py-2 text-[20px]"
                     >
                         Who We Are
                     </Link>
@@ -155,18 +156,18 @@ export default function Navbar() {
                         <button
                             onMouseEnter={() => setShowMenuDropdown(true)}
                             onMouseLeave={() => setShowMenuDropdown(false)}
-                            className="flex items-center space-x-3 bg-gray-900 text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition-all duration-200 text-[20px]"
+                            className="flex items-center space-x-3 text-secondary px-6 py-3 rounded-full font-medium transition-all duration-200 text-[20px]"
                         >
                             <span>Menu</span>
-                            <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-                                <Plus className="w-3 h-3 text-white" />
+                            <div className="w-5 h-5 bg-green rounded-full flex items-center justify-center">
+                                <Plus className="w-3 h-3 text-secondary" />
                             </div>
                         </button>
                     </div>
 
                     <Link
                         href="/contact"
-                        className="bg-green-500 text-white px-8 py-3 rounded-full hover:bg-green-600 transition-all duration-200 font-medium text-[20px] shadow-lg hover:shadow-xl transform hover:scale-105"
+                        className="bg-green text-black px-8 py-3 rounded-full transition-all duration-200 font-medium text-[20px] shadow-lg hover:shadow-xl transform hover:scale-105"
                     >
                         Contact Us
                     </Link>

@@ -65,3 +65,19 @@ body {
     text-wrap: balance;
   }
 }
+
+.bg-green {
+  background-color: #00FC09;
+}
+
+.text-green {
+  color: #00FC09;
+}
+
+.text-secondary {
+  color: #101820;
+}
+
+.bg-secondary {
+  color: #101820;
+}
