@@ -39,7 +39,7 @@ const menuItems = [
 ]
 
 export default function Navbar() {
-    const [showServicesDropdown, setShowServicesDropdown] = useState(true)
+    const [showServicesDropdown, setShowServicesDropdown] = useState(false)
     const [showMenuDropdown, setShowMenuDropdown] = useState(false)
 
     return (

@@ -104,7 +104,6 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
   font-family: Asgard, Helvetica, sans-serif;
 }
 

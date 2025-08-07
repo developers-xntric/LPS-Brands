@@ -2,7 +2,7 @@ import React from 'react'
 
 const LogoLPS = () => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="193" height="116" viewBox="0 0 193 116" fill="none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="133" height="76" viewBox="0 0 193 116" fill="none">
             <g clip-path="url(#clip0_1_1157)">
                 <path d="M52.326 29.3533L28.5026 17.0985L13.337 36.5895L-7 75.2799L14.2667 115.663H52.326L71.3266 91.2113L52.326 29.3533Z" fill="#101820" />
                 <path d="M49.1883 58.7067C49.5369 68.1604 42.2156 76.0386 32.8024 76.3887C23.3893 76.7388 15.545 69.3859 15.1964 59.9322C14.8478 50.4784 22.1691 42.6003 31.5822 42.2501C40.9372 41.9 48.8396 49.3113 49.1883 58.7067Z" fill="white" />
