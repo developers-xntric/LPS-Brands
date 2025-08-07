@@ -25,3 +25,11 @@ body {
     text-wrap: balance;
   }
 }
+
+@font-face {
+  font-family: "Futuru";
+  src: url("/fonts/asgard/AsgardTrial-Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: medium;
+  font-display: swap;
+}
