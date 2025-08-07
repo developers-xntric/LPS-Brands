@@ -53,7 +53,7 @@ export default function Navbar() {
                 onMouseEnter={() => setShowServicesDropdown(true)}
                 onMouseLeave={() => setShowServicesDropdown(false)}
             >
-                <div className="bg-white shadow-2xl border border-gray-100 p-8 min-w-[780px]" style={{
+                <div className="bg-white shadow-2xl border border-gray-100 p-8 min-w-[760px]" style={{
                     borderRadius: "20px 20px 0 0"
                 }}>
                     <div className="grid grid-cols-3 gap-12">
@@ -109,7 +109,7 @@ export default function Navbar() {
                                     animationDelay: `${index * 50}ms`
                                 }}
                             >
-                                <span className="font-[500] text-[16px]">{item}</span>
+                                <span className="font-semibold text-[16px]">{item}</span>
                                 <ArrowUpRight className="w-4 h-4 text-green group-hover:opacity-100 transition-all duration-200 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                             </Link>
                         ))}
@@ -119,10 +119,10 @@ export default function Navbar() {
 
             {/* Bottom Navigation Bar */}
             <nav className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
-                <div className="bg-white rounded-full shadow-2xl border border-gray-100 w-[780px] px-4 py-2 flex justify-between items-center">
+                <div className="bg-white rounded-full shadow-2xl border border-gray-100 w-[760px] px-4 py-2 flex justify-between items-center">
                     <Link
                         href="/"
-                        className="text-secondary hover:text-white hover:bg-black transition-colors duration-200 font-[500] px-4 py-2 text-[18px] rounded-full"
+                        className="text-secondary hover:text-white hover:bg-black transition-colors duration-200 font-semibold px-4 py-2 text-[16px] rounded-full font-['Exo']"
                     >
                         Home
                     </Link>
@@ -131,7 +131,7 @@ export default function Navbar() {
                         <button
                             onMouseEnter={() => setShowServicesDropdown(true)}
                             onMouseLeave={() => setShowServicesDropdown(false)}
-                            className="flex items-center space-x-3 text-secondary px-6 py-3 font-[500] transition-all duration-200 text-[18px] hover:text-white hover:bg-black rounded-full arrow-main"
+                            className="flex items-center space-x-3 text-secondary px-6 py-3 font-semibold transition-all duration-200 text-[16px] hover:text-white hover:bg-black rounded-full arrow-main font-['Exo']"
                         >
                             <span>Services</span>
                             <div className="w-5 h-5 bg-green rounded-full flex items-center justify-center arrow-container">
@@ -142,14 +142,14 @@ export default function Navbar() {
 
                     <Link
                         href="/work"
-                        className="text-secondary hover:text-white hover:bg-black transition-colors duration-200 font-[500] px-4 py-2 text-[18px] rounded-full"
+                        className="text-secondary hover:text-white hover:bg-black transition-colors duration-200 font-semibold px-4 py-2 text-[16px] rounded-full font-['Exo']"
                     >
                         Our Work
                     </Link>
 
                     <Link
                         href="/about"
-                        className="text-secondary hover:text-white hover:bg-black transition-colors duration-200 font-[500] px-4 py-2 text-[18px] rounded-full"
+                        className="text-secondary hover:text-white hover:bg-black transition-colors duration-200 font-semibold px-4 py-2 text-[16px] rounded-full font-['Exo']"
                     >
                         Who We Are
                     </Link>
@@ -158,7 +158,7 @@ export default function Navbar() {
                         <button
                             onMouseEnter={() => setShowMenuDropdown(true)}
                             onMouseLeave={() => setShowMenuDropdown(false)}
-                            className="flex hover:text-white hover:bg-black items-center space-x-3 text-secondary px-6 py-3 font-[500] transition-all duration-200 text-[18px] rounded-full arrow-main"
+                            className="flex hover:text-white hover:bg-black items-center space-x-3 text-secondary px-6 py-3 font-semibold transition-all duration-200 text-[16px] rounded-full font-['Exo'] arrow-main"
                         >
                             <span>Menu</span>
                             <div className="w-5 h-5 bg-green rounded-full flex items-center justify-center arrow-container">
@@ -169,7 +169,7 @@ export default function Navbar() {
 
                     <Link
                         href="/contact"
-                        className="bg-green text-black px-8 py-3 rounded-full transition-all duration-200 font-[500] text-[18px]  shadow-lg hover:shadow-xl transform hover:scale-105"
+                        className="bg-green text-black px-8 py-3 rounded-full transition-all duration-200 font-semibold text-[16px]  shadow-lg hover:shadow-xl transform hover:scale-105 font-['Exo']"
                     >
                         Contact Us
                     </Link>
