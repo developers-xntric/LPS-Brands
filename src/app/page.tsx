@@ -1,5 +1,5 @@
 export default function Home() {
   return (
-    <h1 className="font-bold">LPS BRANDS</h1>
+    <h1 className="font-bold bg-orange-100 h-screen text-black text-5xl">LPS BRANDS</h1>
   );
 }
