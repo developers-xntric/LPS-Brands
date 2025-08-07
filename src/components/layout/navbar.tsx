@@ -1,25 +1,26 @@
 "use client"
 
-import { useState } from "react"
+import { ArrowUpRight } from 'lucide-react'
+import Image from "next/image"
 import Link from "next/link"
-import { Plus, ArrowUpRight } from 'lucide-react'
+import { useState } from "react"
 import BottomArrow from "../icons/bottom-arrow"
 
 const servicesData = {
-    Identity: [
+    "Identity": [
         "Leadership Branding",
         "Corporate Branding",
         "Social Media",
         "Public Relations"
     ],
-    Communication: [
+    "Communication Campaigns": [
         "Creative",
         "Production",
         "Influencers",
         "Gen AI",
         "Short Form Video"
     ],
-    Experiences: [
+    "Experiences": [
         "Digital",
         "Website & Apps",
         "Events",
@@ -38,25 +39,30 @@ const menuItems = [
 ]
 
 export default function Navbar() {
-    const [showServicesDropdown, setShowServicesDropdown] = useState(false)
+    const [showServicesDropdown, setShowServicesDropdown] = useState(true)
     const [showMenuDropdown, setShowMenuDropdown] = useState(false)
 
     return (
         <>
             {/* Services Mega Menu Dropdown */}
             <div
-                className={`fixed bottom-24 left-1/2 transform -translate-x-1/2 z-40 transition-all duration-300 ease-out ${showServicesDropdown
+                className={`fixed bottom-16 left-1/2 transform -translate-x-1/2 z-40 transition-all duration-300 ease-out ${showServicesDropdown
                     ? 'opacity-100 visible translate-y-0'
                     : 'opacity-0 invisible translate-y-4'
                     }`}
                 onMouseEnter={() => setShowServicesDropdown(true)}
                 onMouseLeave={() => setShowServicesDropdown(false)}
             >
-                <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 w-[820px] max-w-[90vw]">
+                <div className="bg-white shadow-2xl border border-gray-100 p-8 min-w-[760px]" style={{
+                    borderRadius: "20px 20px 0 0"
+                }}>
                     <div className="grid grid-cols-3 gap-12">
+                        <div className="absolute top-24 bg-black/30 w-[92%]">
+                            <Image src={"/layout/hori-line.svg"} alt="" width={100} height={100} />
+                        </div>
                         {Object.entries(servicesData).map(([category, items], categoryIndex) => (
                             <div key={category} className="relative">
-                                <h3 className="text-xl font-bold text-secondary mb-6 pb-3 border-b border-gray-200">
+                                <h3 className={`text-2xl font-normal text-secondary ${category !== "Communication Campaigns" ? "mb-9 pb-3" : "mb-4 relative bottom-[5px]"}`}>
                                     {category}
                                 </h3>
                                 <div className="space-y-4">
@@ -64,20 +70,16 @@ export default function Navbar() {
                                         <Link
                                             key={item}
                                             href={`/services/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                                            className="flex items-center justify-between text-secondary hover:text-gray-900 transition-all duration-200 group py-1"
+                                            className="flex items-center text-secondary gap-2 hover:text-gray-900 transition-all duration-200 group py-1 nav-hover"
                                             style={{
                                                 animationDelay: `${(categoryIndex * items.length + itemIndex) * 50}ms`
                                             }}
                                         >
-                                            <span className="font-[500] text-[15px]">{item}</span>
-                                            <ArrowUpRight className="w-4 h-4 text-green group-hover:opacity-100 transition-all duration-200 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                                            <span className="font-normal tracking-wide text-[16px]">{item}</span>
+                                            <ArrowUpRight className="w-5 h-5 text-green group-hover:opacity-100 transition-all duration-200 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                                         </Link>
                                     ))}
                                 </div>
-                                {/* Vertical divider */}
-                                {categoryIndex < 2 && (
-                                    <div className="absolute top-0 right-0 w-px h-full bg-gray-200"></div>
-                                )}
                             </div>
                         ))}
                     </div>

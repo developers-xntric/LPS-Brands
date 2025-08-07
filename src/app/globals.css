@@ -81,3 +81,15 @@ body {
 .bg-secondary {
   color: #101820;
 }
+
+.nav-hover:hover {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-color: #00FC09;
+  text-decoration-thickness: 10%;
+  text-underline-offset: 30%;
+  text-underline-position: from-font;
+  transition: all;
+  animation-duration: 2s;
+}
