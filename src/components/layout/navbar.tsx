@@ -56,7 +56,7 @@ export default function Navbar() {
                     <div className="grid grid-cols-3 gap-12">
                         {Object.entries(servicesData).map(([category, items], categoryIndex) => (
                             <div key={category} className="relative">
-                                <h3 className="text-xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">
+                                <h3 className="text-xl font-bold text-secondary mb-6 pb-3 border-b border-gray-200">
                                     {category}
                                 </h3>
                                 <div className="space-y-4">
@@ -69,8 +69,8 @@ export default function Navbar() {
                                                 animationDelay: `${(categoryIndex * items.length + itemIndex) * 50}ms`
                                             }}
                                         >
-                                            <span className="font-medium text-[15px]">{item}</span>
-                                            <ArrowUpRight className="w-4 h-4 text-green-500 opacity-0 group-hover:opacity-100 transition-all duration-200 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                                            <span className="font-[500] text-[15px]">{item}</span>
+                                            <ArrowUpRight className="w-4 h-4 text-green group-hover:opacity-100 transition-all duration-200 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                                         </Link>
                                     ))}
                                 </div>
@@ -94,7 +94,7 @@ export default function Navbar() {
                 onMouseLeave={() => setShowMenuDropdown(false)}
             >
                 <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 w-[320px]">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-8 pb-4 border-b border-gray-200">
+                    <h3 className="text-2xl font-bold text-secondary mb-8 pb-4 border-b border-gray-200">
                         Menu
                     </h3>
                     <div className="space-y-6">
@@ -102,13 +102,13 @@ export default function Navbar() {
                             <Link
                                 key={item}
                                 href={`/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                                className="flex items-center justify-between text-secondary hover:text-gray-900 transition-all duration-200 group py-2"
+                                className="flex items-center justify-between text-secondary transition-all duration-200 group py-2"
                                 style={{
                                     animationDelay: `${index * 50}ms`
                                 }}
                             >
-                                <span className="font-medium text-[16px]">{item}</span>
-                                <ArrowUpRight className="w-4 h-4 text-green-500 opacity-0 group-hover:opacity-100 transition-all duration-200 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                                <span className="font-[500] text-[16px]">{item}</span>
+                                <ArrowUpRight className="w-4 h-4 text-green group-hover:opacity-100 transition-all duration-200 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                             </Link>
                         ))}
                     </div>
@@ -117,10 +117,10 @@ export default function Navbar() {
 
             {/* Bottom Navigation Bar */}
             <nav className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
-                <div className="bg-white rounded-full shadow-2xl border border-gray-100 w-[920px] px-4 py-3 flex justify-between items-center">
+                <div className="bg-white rounded-full shadow-2xl border border-gray-100 w-[760px] ps-4 flex justify-between items-center">
                     <Link
                         href="/"
-                        className="text-secondary hover:text-blue-600 transition-colors duration-200 font-medium px-4 py-2 text-[20px]"
+                        className="text-secondary hover:text-white hover:bg-black transition-colors duration-200 font-[500] px-4 py-2 text-[18px] rounded-full"
                     >
                         Home
                     </Link>
@@ -129,7 +129,7 @@ export default function Navbar() {
                         <button
                             onMouseEnter={() => setShowServicesDropdown(true)}
                             onMouseLeave={() => setShowServicesDropdown(false)}
-                            className="flex items-center space-x-3 text-secondary px-6 py-3 rounded-full font-medium transition-all duration-200 text-[20px]"
+                            className="flex items-center space-x-3 text-secondary px-6 py-3 font-[500] transition-all duration-200 text-[18px] hover:text-white hover:bg-black rounded-full"
                         >
                             <span>Services</span>
                             <div className="w-5 h-5 bg-green rounded-full flex items-center justify-center">
@@ -140,14 +140,14 @@ export default function Navbar() {
 
                     <Link
                         href="/work"
-                        className="text-secondary hover:text-blue-600 transition-colors duration-200 font-medium px-4 py-2 text-[20px]"
+                        className="text-secondary hover:text-white hover:bg-black transition-colors duration-200 font-[500] px-4 py-2 text-[18px] rounded-full"
                     >
                         Our Work
                     </Link>
 
                     <Link
                         href="/about"
-                        className="text-secondary hover:text-blue-600 transition-colors duration-200 font-medium px-4 py-2 text-[20px]"
+                        className="text-secondary hover:text-white hover:bg-black transition-colors duration-200 font-[500] px-4 py-2 text-[18px] rounded-full"
                     >
                         Who We Are
                     </Link>
@@ -156,18 +156,18 @@ export default function Navbar() {
                         <button
                             onMouseEnter={() => setShowMenuDropdown(true)}
                             onMouseLeave={() => setShowMenuDropdown(false)}
-                            className="flex items-center space-x-3 text-secondary px-6 py-3 rounded-full font-medium transition-all duration-200 text-[20px]"
+                            className="flex hover:text-white hover:bg-black items-center space-x-3 text-secondary px-6 py-3 font-[500] transition-all duration-200 text-[18px] rounded-full"
                         >
                             <span>Menu</span>
                             <div className="w-5 h-5 bg-green rounded-full flex items-center justify-center">
-                                <Plus className="w-3 h-3 text-secondary" />
+                                <BottomArrow />
                             </div>
                         </button>
                     </div>
 
                     <Link
                         href="/contact"
-                        className="bg-green text-black px-8 py-3 rounded-full transition-all duration-200 font-medium text-[20px] shadow-lg hover:shadow-xl transform hover:scale-105"
+                        className="bg-green text-black px-8 py-3 rounded-full transition-all duration-200 font-[500] text-[18px]  shadow-lg hover:shadow-xl transform hover:scale-105"
                     >
                         Contact Us
                     </Link>
