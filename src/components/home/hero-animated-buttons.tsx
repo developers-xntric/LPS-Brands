@@ -5,7 +5,7 @@ const HeroAnimatedButtons = () => {
     return (
         <section className="container mx-auto px-4 text-center">
             <div className="mx-auto max-w-6xl">
-                <h1 className="text-3xl sm:text-4xl md:text-[60px] font-medium  text-neutral-900">
+                <h1 className="text-3xl sm:text-4xl md:text-[40px] font-medium  text-neutral-900 tracking-wide">
                     <span className="inline">We are a full impact agency</span>{" "}
                     <span className="inline-block align-middle">
                         <HoverVideoPill
@@ -14,7 +14,7 @@ const HeroAnimatedButtons = () => {
                             className="mr-2"
                         />
                     </span>{" "}
-                    <div className='mt-2'>
+                    <div className='mt-3'>
                         <span className="inline-block align-middle">
                             <HoverVideoPill
                                 label="communications"
@@ -28,7 +28,7 @@ const HeroAnimatedButtons = () => {
                                 videoSrc=""
                             />
                         </span>{" "}
-                        <span className="inline">work for you.</span>
+                        <span className="inline">that work for you.</span>
                     </div>
                 </h1>
             </div>
