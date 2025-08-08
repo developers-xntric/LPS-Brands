@@ -81,8 +81,8 @@ export default function HoverVideoPill({
                 className={cn(
                     "relative isolate inline-flex items-center gap-2 rounded-full ring-1 transition-all duration-300",
                     // Base (collapsed) visual
-                    "bg-lime-400 text-neutral-900 ring-lime-300 shadow-sm",
-                    compact ? "h-9 px-3 text-sm" : "h-11 px-4 text-base",
+                    "bg-green text-neutral-900 ring-lime-300 shadow-sm",
+                    compact ? "h-9 px-3 text-sm" : "h-16 px-[56px] text-[24px]",
                     // Expanded visual — turn background/ring transparent so the video layer becomes the focus
                     active && "bg-transparent ring-transparent shadow-none"
                 )}
@@ -96,8 +96,8 @@ export default function HoverVideoPill({
                 {/* Leading circular arrow (hidden when expanded) */}
                 <span
                     className={cn(
-                        "flex items-center justify-center rounded-full bg-blue-600 text-white ring-2 ring-blue-300 transition-all duration-200",
-                        compact ? "h-7 w-7" : "h-8 w-8",
+                        "flex items-center justify-center rounded-full bg-[#2054FC] left-3 text-white transition-all duration-200 absolute",
+                        compact ? "h-7 w-7" : "h-12 w-12",
                         active ? "opacity-0 scale-90" : "opacity-100 scale-100"
                     )}
                     aria-hidden="true"
@@ -107,7 +107,7 @@ export default function HoverVideoPill({
                 {/* Label (hidden when expanded) */}
                 <span
                     className={cn(
-                        "font-semibold tracking-tight whitespace-nowrap transition-opacity duration-150",
+                        "font-semibold tracking-wide whitespace-nowrap transition-opacity duration-150 relative left-7 text-blue text-3xl",
                         active ? "opacity-0" : "opacity-100"
                     )}
                 >

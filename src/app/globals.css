@@ -116,6 +116,14 @@ body {
   color: #101820;
 }
 
+.text-blue {
+  color: #2054FC;
+}
+
+.bg-blue {
+  color: #2054FC;
+}
+
 .nav-hover:hover {
   text-decoration-line: underline;
   text-decoration-style: solid;
@@ -164,6 +172,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 20 14.3% 4.1%;
     --foreground: 60 9.1% 97.8%;
@@ -198,6 +207,7 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
