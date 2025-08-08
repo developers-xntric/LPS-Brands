@@ -1,4 +1,5 @@
 import React from 'react'
+import HoverVideoPill from './hover-video-pills'
 
 const HeroAnimatedButtons = () => {
     return (
