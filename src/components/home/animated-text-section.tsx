@@ -23,8 +23,8 @@ export default function AnimatedTextSection() {
 
                 setTimeout(() => {
                     setIsTranslating(false)
-                }, 100) // Brief pause at bottom
-            }, 400) // Time to translate down
+                }, 400) // Brief pause at bottom
+            }, 300) // Time to translate down
         }, 3000) // Change every 3 seconds
 
         return () => clearInterval(interval)
