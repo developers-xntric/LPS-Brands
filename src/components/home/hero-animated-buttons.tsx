@@ -3,7 +3,7 @@ import HoverVideoPill from './hover-video-pills'
 
 const HeroAnimatedButtons = () => {
     return (
-        <section className="container mx-auto px-4 text-center">
+        <section className="container mx-auto px-4 text-center mt-3">
             <div className="mx-auto max-w-6xl">
                 <h1 className="text-3xl sm:text-4xl md:text-[40px] font-medium  text-neutral-900 tracking-wide">
                     <span className="inline">We are a full impact agency</span>{" "}
