@@ -1,4 +1,5 @@
 import AnimatedTextSection from "@/components/home/animated-text-section";
+import FeaturedWorks from "@/components/home/featured-work";
 import HeroAnimatedButtons from "@/components/home/hero-animated-buttons";
 import LogoLPS from "@/components/icons/lps-logo";
 import Wrapper from "@/components/layout/wrapper";
@@ -47,7 +48,9 @@ export default function Home() {
           {/* Animated Text Section */}
           <AnimatedTextSection />
         </Wrapper>
+        {/* Featured Work Section */}
       </div>
+      <FeaturedWorks />
     </div>
   );
 }
