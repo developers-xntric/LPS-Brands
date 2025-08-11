@@ -107,7 +107,7 @@ export default function HoverVideoPill({
                 {/* Label (hidden when expanded) */}
                 <span
                     className={cn(
-                        "font-semibold tracking-wide whitespace-nowrap transition-opacity duration-150 relative left-7 text-blue text-3xl",
+                        "font-semibold tracking-wide whitespace-nowrap transition-opacity duration-150 relative left-7 text-blue text-3xl ",
                         active ? "opacity-0" : "opacity-100"
                     )}
                 >
@@ -128,13 +128,13 @@ export default function HoverVideoPill({
                             "transition-all duration-300",
                             // Size of the expanded preview
                             active
-                                ? (compact ? "w-[260px] h-[200px]" : "w-[340px] h-[260px]")
+                                ? (compact ? "w-[260px] h-[200px]" : "w-[340px] mb-60 h-[260px]")
                                 : "w-0 h-0",
                         )}
                         style={{
                             borderRadius: active ? 24 : 9999,
                             // Subtle scale for a more "expanding" feel
-                            transform: active ? "scale(1)" : "scale(0.8)",
+                            transform: active ? "scale(1.3)" : "scale(0.8)",
                             opacity: active ? 1 : 0,
                         }}
                     >

@@ -15,7 +15,7 @@ export default function Home() {
         </div>
         {/* Center Animated Heading of Pears In a World Of Apples */}
         <div className="flex justify-center">
-          <Image src={"/home/hero-gif.gif"} alt="Hero" width={620} height={620} unoptimized />
+          <Image src={"/home/hero-gif.gif"} alt="Hero" width={750} height={620} unoptimized />
         </div>
         {/* Bottom Paragraph With Animated Video Button */}
         <HeroAnimatedButtons />
