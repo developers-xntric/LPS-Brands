@@ -53,12 +53,16 @@ export default function Navbar() {
                 onMouseEnter={() => setShowServicesDropdown(true)}
                 onMouseLeave={() => setShowServicesDropdown(false)}
             >
-                <div className="bg-white shadow-2xl border border-gray-100 p-8 min-w-[760px]" style={{
+                <div className="bg-white shadow-2xl border border-gray-100 py-8 px-16 min-w-[760px]" style={{
                     borderRadius: "20px 20px 0 0"
                 }}>
                     <div className="grid grid-cols-3 gap-12">
-                        <div className="absolute top-24 bg-black/30 w-[92%]">
+                        <div className="absolute top-24 bg-black/20 w-[79%]">
                             <Image src={"/layout/hori-line.svg"} alt="" width={100} height={100} />
+                        </div>
+                        <div className="absolute top-24 left-[33%] bg-black/20 w-[1.5px] h-[65%]">
+                        </div>
+                        <div className="absolute top-24 left-[62%] bg-black/20 w-[1.3px] h-[65%]">
                         </div>
                         {Object.entries(servicesData).map(([category, items], categoryIndex) => (
                             <div key={category} className="relative">
