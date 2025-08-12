@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="bg-[url('/home/hero-bg.png')] bg-center bg-cover ">
-      <div className="2xl:max-w-[1440px] mx-auto w-[95%]">
+      <div className="2xl:max-w-[1740px] mx-auto ">
         {/* Top Left LPS Logo */}
         <div className="p-4 ms-6">
           <LogoLPS />
@@ -23,22 +23,22 @@ export default function Home() {
         <Wrapper>
           {/* WHY PEARS Section */}
           <div className="mb-8 mt-20 flex justify-between">
-            <h1 className="flex flex-col -space-y-4 text-8xl font-bold mb-8 leading-none">
-              <span className="gradient-text text-transparent">
+            <h1 className="flex flex-col -space-y-6 text-[110px] font-extrabold mb-8 leading-none">
+              <span className="gradient-text text-transparent tracking-tight">
                 WHY
               </span>
-              <span className="gradient-text text-transparent">
+              <span className="gradient-text text-transparent tracking-tight">
                 PEARS?
               </span>
             </h1>
 
-            <div className="flex flex-col w-[65%] gap-8 text-gray-700">
-              <p className="text-lg font-['Exo'] leading-relaxed">
+            <div className="flex flex-col w-[60%] gap-8 text-gray-700">
+              <p className="text-lg font-medium font-['Exo'] leading-relaxed">
                 We have fused scale and precision to help you redefine your brand equity, enabling you to connect with
                 people and inspire communities beyond conventional marketing. Our full-impact agency is by your side,
                 helping you innovate with purpose.
               </p>
-              <p className="text-lg font-['Exo'] leading-relaxed">
+              <p className="text-lg font-medium font-['Exo'] leading-relaxed">
                 We have a passion for creative problem-solving that not only delivers results but also sets new
                 benchmarks, resonating deeply with your customers beyond just metrics.
               </p>
