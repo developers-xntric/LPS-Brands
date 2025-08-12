@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const [openDropdowns, setOpenDropdowns] = useState<{
@@ -63,12 +64,7 @@ export default function Footer() {
   const services = [
     {
       name: "Identity",
-      subServices: [
-        "Leadership Branding",
-        "Corporate Branding",
-        "Social Media",
-        "Public Relations",
-      ],
+      subServices: ["Leadership Branding", "Corporate Branding", "Social Media", "Public Relations"],
     },
     {
       name: "Communications",
@@ -80,10 +76,10 @@ export default function Footer() {
     },
   ];
   const socialLinks = [
-    "/social/1.svg",
-    "/social/2.svg",
-    "/social/3.svg",
-    "/social/4.svg",
+    { name: "/social/1.svg", link: "https://www.instagram.com/lps.brands/" },
+    { name: "/social/2.svg", link: "https://www.facebook.com/lpsbrands" },
+    { name: "/social/3.svg", link: "https://www.tiktok.com/@lpsbrands" },
+    { name: "/social/4.svg", link: "https://www.linkedin.com/company/lps-brands/" },
   ];
   return (
     <footer className="bg-[#101820] text-white pb-10 pt-28 mx-auto w-[95%] 2xl:max-w-[1740px] mt-10 rounded-t-[50px]">
@@ -112,7 +108,7 @@ export default function Footer() {
               />
               <Button
                 size="sm"
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white text-slate-800 hover:bg-gray-100 rounded-full w-10 h-10 p-0"
+                className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-white text-slate-800 hover:bg-gray-100 rounded-full w-10 h-10 p-0"
               >
                 <ArrowRight className="w-4 h-4" />
               </Button>
@@ -121,7 +117,11 @@ export default function Footer() {
 
           {/* Right Side - Services */}
           <div className="w-[30%]">
-            <h3 className="text-[22px] font-semibold mb-6">SERVICES</h3>
+            <h3
+              className="text-[22px] font-semibold mb-6"
+            >
+              SERVICES
+            </h3>
             <div className="">
               {services.map((service) => (
                 <div key={service.name} className=" ">
@@ -144,13 +144,7 @@ export default function Footer() {
                   </button>
                   {openDropdowns[service.name] &&
                     service.subServices.length > 0 && (
-                      <div
-                        className={`overflow-hidden transition-all duration-700 ease-in-out ${
-                          openDropdowns[service.name]
-                            ? "max-h-96 opacity-100"
-                            : "max-h-0 opacity-0"
-                        }`}
-                      >
+                      <div className={`overflow-hidden transition-all duration-700 ease-in-out ${openDropdowns[service.name] ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                         <div className="pb-4 space-y-5">
                           {service.subServices.map((subService) => (
                             <div
@@ -174,10 +168,7 @@ export default function Footer() {
         {/* Office Locations */}
         <div className="grid grid-cols-1 md:grid-cols-2 border-t border-b border-[#FFFFFF14] py-12 lg:grid-cols-5 gap-16 mb-12 mt-24">
           {offices.map((office, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-start justify-start text-justify"
-            >
+            <div key={index} className="flex flex-col items-start justify-start text-justify">
               <Image
                 alt="icon"
                 src={office.icon}
@@ -191,7 +182,9 @@ export default function Footer() {
               <div className="text-[1px] 2xl:text-[14px] font-['Exo'] w-[90%]  text-[#FFFFFFB2]  space-y-1 mb-3">
                 <p>{office.address}</p>
               </div>
-              <p className="text-lg font-['Exo']">{office.phone}</p>
+              <p className="text-lg font-['Exo']">
+                {office.phone}
+              </p>
             </div>
           ))}
         </div>
@@ -203,14 +196,9 @@ export default function Footer() {
           </p>
           <div className="flex space-x-4">
             {socialLinks.map((link, index) => (
-              <Image
-                key={index}
-                src={link}
-                alt="icon"
-                width={50}
-                height={50}
-                className="cursor-pointer"
-              />
+              <Link key={index} href={link.link}>
+                <Image src={link.name} alt="icon" width={50} height={50} className="cursor-pointer hover:bg-black rounded-full"  />
+              </Link>
             ))}
           </div>
         </div>
