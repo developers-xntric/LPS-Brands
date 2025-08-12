@@ -81,7 +81,7 @@ export default function Footer() {
     "/social/4.svg",
   ];
   return (
-    <footer className="bg-[#101820] text-white pb-10 pt-28 mx-auto 2xl:max-w-[1740px] mt-10 rounded-t-[50px]">
+    <footer className="bg-[#101820] text-white pb-10 pt-28 mx-auto w-[95%] 2xl:max-w-[1740px] mt-10 rounded-t-[50px]">
       <div className="max-w-[95%] mx-auto">
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start mb-12 gap-8">
@@ -178,7 +178,7 @@ export default function Footer() {
               <h4 className="font-semibold text-[20px] mb-3">
                 {office.country}
               </h4>
-              <div className="text-[14px] font-['Exo'] w-[90%]  text-[#FFFFFFB2]  space-y-1 mb-3">
+              <div className="text-[1px] 2xl:text-[14px] font-['Exo'] w-[90%]  text-[#FFFFFFB2]  space-y-1 mb-3">
                 <p>{office.address}</p>
               </div>
               <p className="text-lg font-['Exo']">
@@ -190,7 +190,7 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center ">
-          <p className=" mb-4 md:mb-0 text-[#CFCCD4] font-['Exo']">
+          <p className=" mb-4 md:mb-0 text-[#CFCCD4] text-sm 3xl:text-base font-['Exo']">
             © 2025 LPS BRANDS – All Rights Reserved
           </p>
           <div className="flex space-x-4">
