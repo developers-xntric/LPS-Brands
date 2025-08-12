@@ -23,7 +23,7 @@ export default function Home() {
         <Wrapper>
           {/* WHY PEARS Section */}
           <div className="mb-8 mt-20 flex justify-between">
-            <h1 className="flex flex-col -space-y-6 text-[110px] font-extrabold mb-8 leading-none">
+            <h1 className="flex flex-col -space-y-6 text-[110px] 2xl:text-[120px] font-extrabold mb-8 leading-none">
               <span className="gradient-text text-transparent tracking-tight">
                 WHY
               </span>
@@ -32,7 +32,7 @@ export default function Home() {
               </span>
             </h1>
 
-            <div className="flex flex-col w-[60%] gap-8 text-gray-700">
+            <div className="flex flex-col w-[60%] 2xl:w-[65%] gap-8 text-gray-700">
               <p className="text-lg font-medium font-['Exo'] leading-relaxed">
                 We have fused scale and precision to help you redefine your brand equity, enabling you to connect with
                 people and inspire communities beyond conventional marketing. Our full-impact agency is by your side,
