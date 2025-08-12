@@ -1,10 +1,10 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Switch } from "@/components/ui/switch"
 import { ArrowUpRight } from "lucide-react"
+import { Button } from "../common/button"
 
 const tabData = {
     identity: {
@@ -28,7 +28,7 @@ export default function WorkTabs() {
     const [activeTab, setActiveTab] = useState<keyof typeof tabData>("communications")
 
     return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto px-8">
             {/* Header */}
             <div className="flex justify-between items-start mb-16">
                 <div className="max-w-3xl">
@@ -38,10 +38,7 @@ export default function WorkTabs() {
                         with <span className="text-green">Unmatched Expertise</span>
                     </h1>
                 </div>
-                <Button className="bg-green-400 hover:bg-green-500 text-black font-medium px-6 py-3 rounded-full">
-                    View Services
-                    <ArrowUpRight className="ml-2 h-4 w-4" />
-                </Button>
+                <Button text="View All Services" />
             </div>
 
             {/* Main Content */}
