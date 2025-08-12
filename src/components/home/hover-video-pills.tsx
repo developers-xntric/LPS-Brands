@@ -110,7 +110,7 @@ export default function HoverVideoPill({
         {/* Label (hidden when expanded) */}
         <span
           className={cn(
-            "font-semibold tracking-wide whitespace-nowrap transition-opacity duration-150 font-['Asgard'] relative left-4 text-blue text-3xl",
+            "font-semibold tracking-wide text-secondary whitespace-nowrap transition-opacity duration-150 font-['Asgard'] relative left-4 text-3xl",
             active ? "opacity-0" : "opacity-100"
           )}
         >
