@@ -1,11 +1,10 @@
 "use client"
 
-import { useState } from "react"
 import { Card } from "@/components/ui/card"
-import { Switch } from "@/components/ui/switch"
-import { ArrowUpRight } from "lucide-react"
+import { ArrowRight, ArrowUpRight } from "lucide-react"
+import { useState } from "react"
 import { Button } from "../common/button"
-
+import { Button as ShadCnButton } from "@/components/ui/button"
 const tabData = {
     identity: {
         title: "Identity",
@@ -42,59 +41,57 @@ export default function WorkTabs() {
             </div>
 
             {/* Main Content */}
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="flex gap-6 items-start font-['Exo']">
                 {/* Left Side - Services */}
-                <div className="space-y-8">
+                <div className="space-y-4 w-[60%]">
                     {/* Identity Section */}
                     <div
-                        className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl p-6 ${activeTab === "identity" ? "border border-green-400/30 bg-green-400/5" : "border border-transparent"
+                        className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl p-6 ${activeTab === "identity" ? "border border-green bg-[#00FC09]/10" : "border border-transparent bg-[#141E29]"
                             }`}
                         onClick={() => setActiveTab("identity")}
                     >
                         <div
-                            className={`inline-block px-4 py-2 rounded-full ${activeTab === "identity" ? "bg-green-400 text-black" : "bg-slate-800 text-white"
+                            className={`inline-block px-8 py-2 rounded-full ${activeTab === "identity" ? "bg-green text-secondary" : "bg-white text-secondary"
                                 }`}
                         >
-                            <span className="text-sm font-medium">Identity</span>
+                            <span className="text-md relative top-[1px] font-normal">Identity</span>
                         </div>
-                        <p className="text-slate-300 leading-relaxed">{tabData.identity.description}</p>
+                        <p className="text-white leading-relaxed">{tabData.identity.description}</p>
                     </div>
 
                     {/* Communication Campaigns Section */}
                     <div
-                        className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl p-6 ${activeTab === "communications"
-                            ? "border border-green-400/30 bg-green-400/5"
-                            : "border border-transparent"
+                        className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl p-6 ${activeTab === "communications" ? "border border-green bg-[#00FC09]/10" : "border border-transparent bg-[#141E29]"
                             }`}
                         onClick={() => setActiveTab("communications")}
                     >
                         <div
-                            className={`inline-block px-4 py-2 rounded-full ${activeTab === "communications" ? "bg-green-400 text-black" : "bg-slate-800 text-white"
+                            className={`inline-block px-8 py-2 rounded-full ${activeTab === "communications" ? "bg-green text-secondary" : "bg-white text-secondary"
                                 }`}
                         >
-                            <span className="text-sm font-medium">Communications</span>
+                            <span className="text-md relative top-[1px] font-normal">Communications</span>
                         </div>
-                        <p className="text-slate-300 leading-relaxed">{tabData.communications.description}</p>
+                        <p className="text-white leading-relaxed">{tabData.communications.description}</p>
                     </div>
 
                     {/* Experiences Section */}
                     <div
-                        className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl p-6 ${activeTab === "experiences" ? "border border-green-400/30 bg-green-400/5" : "border border-transparent"
+                        className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl p-6 ${activeTab === "experiences" ? "border border-green bg-[#00FC09]/10" : "border border-transparent bg-[#141E29]"
                             }`}
                         onClick={() => setActiveTab("experiences")}
                     >
                         <div
-                            className={`inline-block px-4 py-2 rounded-full ${activeTab === "experiences" ? "bg-green-400 text-black" : "bg-slate-800 text-white"
+                            className={`inline-block px-8 py-2 rounded-full ${activeTab === "experiences" ? "bg-green text-secondary" : "bg-white text-secondary"
                                 }`}
                         >
-                            <span className="text-sm font-medium">Experiences</span>
+                            <span className="text-md relative top-[1px] font-normal">Experiences</span>
                         </div>
-                        <p className="text-slate-300 leading-relaxed">{tabData.experiences.description}</p>
+                        <p className="text-white leading-relaxed">{tabData.experiences.description}</p>
                     </div>
                 </div>
 
                 {/* Right Side - Dynamic Content Card */}
-                <div className="lg:sticky lg:top-12">
+                <div className="lg:sticky lg:top-12 w-[40%]">
                     <Card className="bg-white text-black p-8 rounded-3xl">
                         <div className="space-y-6">
                             {/* Icon */}
@@ -103,12 +100,12 @@ export default function WorkTabs() {
                             </div>
 
                             {/* Dynamic Title */}
-                            <h2 className="text-2xl font-bold whitespace-pre-line">{tabData[activeTab].title}</h2>
+                            <h2 className="text-5xl font-bold whitespace-pre-line">{tabData[activeTab].title}</h2>
 
                             {/* Dynamic Services List */}
-                            <div className="space-y-3">
+                            <div className="space-y-2">
                                 {tabData[activeTab].services.map((service, index) => (
-                                    <div key={index} className="text-slate-600 font-medium">
+                                    <div key={index} className="text-black font-normal">
                                         {service}
                                     </div>
                                 ))}
@@ -116,8 +113,10 @@ export default function WorkTabs() {
 
                             {/* Connect Toggle */}
                             <div className="flex items-center justify-between pt-4">
-                                <span className="text-sm font-medium">Connect with an expert</span>
-                                <Switch className="data-[state=checked]:bg-green-400" />
+                                <ShadCnButton className="rounded-3xl text-md flex justify-between" size={"lg"}>
+                                    <span className="relative top-[1px]">Connect with an expert</span>
+                                    <div className="w-9 h-9 rounded-full bg-white flex justify-center items-center"><ArrowRight color="black" /></div>
+                                </ShadCnButton>
                             </div>
                         </div>
                     </Card>
