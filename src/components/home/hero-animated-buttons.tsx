@@ -10,22 +10,22 @@ const HeroAnimatedButtons = () => {
                     <span className="inline-block align-middle">
                         <HoverVideoPill
                             label="Identity"
-                            videoSrc=""
-                            className="mr-2"
+                            videoSrc="/home/Communications1.webm"
+                            className="mr-2 "
                         />
                     </span>{" "}
                     <div className='mt-3'>
                         <span className="inline-block align-middle">
                             <HoverVideoPill
                                 label="Communications"
-                                videoSrc=""
+                               videoSrc="/home/exper-1.webm"
                                 className="mr-2"
                             />
                         </span>{"and "}
                         <span className="inline-block align-middle">
                             <HoverVideoPill
                                 label="Experiences"
-                                videoSrc=""
+                                   videoSrc="/home/IdentityAnimation1.webm"
                             />
                         </span>{" "}
                         <span className="inline">that work for you.</span>

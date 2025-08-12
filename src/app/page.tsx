@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="bg-[url('/home/hero-bg.png')] bg-center bg-cover h-[140vh]">
+    <div className="bg-[url('/home/hero-bg.png')] bg-center bg-cover ">
       <div className="2xl:max-w-[1440px] mx-auto w-[95%]">
         {/* Top Left LPS Logo */}
         <div className="p-4 ms-6">
@@ -15,7 +15,7 @@ export default function Home() {
         </div>
         {/* Center Animated Heading of Pears In a World Of Apples */}
         <div className="flex justify-center">
-          <Image src={"/home/hero-gif.gif"} alt="Hero" width={750} height={620} unoptimized />
+          <Image src={"/home/hero-gif.gif"} alt="Hero" width={850} height={620} unoptimized />
         </div>
         {/* Bottom Paragraph With Animated Video Button */}
         <HeroAnimatedButtons />
@@ -23,7 +23,7 @@ export default function Home() {
         <Wrapper>
           {/* WHY PEARS Section */}
           <div className="mb-8 mt-20 flex justify-between">
-            <h1 className="flex flex-col -gap-6 text-8xl font-bold mb-8 leading-none">
+            <h1 className="flex flex-col -space-y-4 text-8xl font-bold mb-8 leading-none">
               <span className="gradient-text text-transparent">
                 WHY
               </span>
