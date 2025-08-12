@@ -173,7 +173,7 @@ export default function Footer() {
                 src={office.icon}
                 width={40}
                 height={40}
-                className="mb-4 h-[90px] w-[70px]"
+                className="mb-4 3xl:h-[90px] 3xl:w-[70px] h-[70px] w-[50px]"
               />
               <h4 className="font-semibold text-[20px] mb-3">
                 {office.country}
