@@ -53,7 +53,7 @@ export default function Navbar() {
                 onMouseEnter={() => setShowServicesDropdown(true)}
                 onMouseLeave={() => setShowServicesDropdown(false)}
             >
-                <div className="bg-white shadow-2xl border border-gray-100 py-8 px-16 min-w-[760px]" style={{
+                <div className="bg-white shadow-2xl border border-gray-100 py-12 px-16 w-[760px]" style={{
                     borderRadius: "20px 20px 0 0"
                 }}>
                     <div className="grid grid-cols-3 gap-12">
@@ -185,7 +185,7 @@ export default function Navbar() {
             {/* Background overlay for dropdowns */}
             {(showServicesDropdown || showMenuDropdown) && (
                 <div
-                    className="fixed inset-0 z-20 bg-black bg-opacity-5 backdrop-blur-sm transition-all duration-300"
+                    className="fixed inset-0 z-20 transition-all duration-300"
                     onClick={() => {
                         setShowServicesDropdown(false)
                         setShowMenuDropdown(false)
