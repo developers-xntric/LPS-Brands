@@ -50,7 +50,7 @@ export default function Home() {
         </Wrapper>
         {/* Featured Work Section */}
       </div>
-      {/* <FeaturedWorks /> */}
+      <FeaturedWorks />
     </div>
   );
 }
