@@ -113,7 +113,7 @@ export default function WorkTabs() {
 
                             {/* Connect Toggle */}
                             <div className="flex items-center justify-between pt-4">
-                                <ShadCnButton className="rounded-3xl text-md flex justify-between" size={"lg"}>
+                                <ShadCnButton className="rounded-3xl text-md flex justify-between hover:bg-[#00FC09] hover:text-black" size={"lg"}>
                                     <span className="relative top-[1px]">Connect with an expert</span>
                                     <div className="w-9 h-9 rounded-full bg-white flex justify-center items-center"><ArrowRight color="black" /></div>
                                 </ShadCnButton>
