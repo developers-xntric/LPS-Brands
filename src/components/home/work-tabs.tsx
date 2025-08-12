@@ -92,11 +92,11 @@ export default function WorkTabs() {
 
                 {/* Right Side - Dynamic Content Card */}
                 <div className="lg:sticky lg:top-12 w-[40%]">
-                    <Card className="bg-white text-black p-8 rounded-3xl">
+                    <Card className="bg-white text-black p-8 rounded-[35px]">
                         <div className="space-y-6">
                             {/* Icon */}
-                            <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center">
-                                <ArrowUpRight className="h-6 w-6 text-white" />
+                            <div className="w-14 h-14 bg-black rounded-full flex items-center justify-center">
+                                <ArrowUpRight className="h-7 w-7 text-white" />
                             </div>
 
                             {/* Dynamic Title */}
@@ -112,7 +112,7 @@ export default function WorkTabs() {
                             </div>
 
                             {/* Connect Toggle */}
-                            <div className="flex items-center justify-between pt-4">
+                            <div className="flex justify-end pt-4">
                                 <ShadCnButton className="rounded-3xl text-md flex justify-between hover:bg-[#00FC09] hover:text-black" size={"lg"}>
                                     <span className="relative top-[1px]">Connect with an expert</span>
                                     <div className="w-9 h-9 rounded-full bg-white flex justify-center items-center"><ArrowRight color="black" /></div>
