@@ -5,6 +5,9 @@ import LogoLPS from "@/components/icons/lps-logo";
 import Wrapper from "@/components/layout/wrapper";
 import Image from "next/image";
 
+
+
+
 export default function Home() {
   return (
     <div className="bg-[url('/home/hero-bg.png')] bg-center bg-cover ">
