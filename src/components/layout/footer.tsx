@@ -63,7 +63,12 @@ export default function Footer() {
   const services = [
     {
       name: "Identity",
-      subServices: ["Leadership Branding", "Corporate Branding", "Social Media", "Public Relations"],
+      subServices: [
+        "Leadership Branding",
+        "Corporate Branding",
+        "Social Media",
+        "Public Relations",
+      ],
     },
     {
       name: "Communications",
@@ -116,11 +121,7 @@ export default function Footer() {
 
           {/* Right Side - Services */}
           <div className="w-[30%]">
-            <h3
-              className="text-[22px] font-semibold mb-6"
-            >
-              SERVICES
-            </h3>
+            <h3 className="text-[22px] font-semibold mb-6">SERVICES</h3>
             <div className="">
               {services.map((service) => (
                 <div key={service.name} className=" ">
@@ -143,7 +144,13 @@ export default function Footer() {
                   </button>
                   {openDropdowns[service.name] &&
                     service.subServices.length > 0 && (
-                      <div className={`overflow-hidden transition-all duration-700 ease-in-out ${openDropdowns[service.name] ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                      <div
+                        className={`overflow-hidden transition-all duration-700 ease-in-out ${
+                          openDropdowns[service.name]
+                            ? "max-h-96 opacity-100"
+                            : "max-h-0 opacity-0"
+                        }`}
+                      >
                         <div className="pb-4 space-y-5">
                           {service.subServices.map((subService) => (
                             <div
@@ -167,7 +174,10 @@ export default function Footer() {
         {/* Office Locations */}
         <div className="grid grid-cols-1 md:grid-cols-2 border-t border-b border-[#FFFFFF14] py-12 lg:grid-cols-5 gap-16 mb-12 mt-24">
           {offices.map((office, index) => (
-            <div key={index} className="flex flex-col items-start justify-start text-justify">
+            <div
+              key={index}
+              className="flex flex-col items-start justify-start text-justify"
+            >
               <Image
                 alt="icon"
                 src={office.icon}
@@ -181,9 +191,7 @@ export default function Footer() {
               <div className="text-[1px] 2xl:text-[14px] font-['Exo'] w-[90%]  text-[#FFFFFFB2]  space-y-1 mb-3">
                 <p>{office.address}</p>
               </div>
-              <p className="text-lg font-['Exo']">
-                {office.phone}
-              </p>
+              <p className="text-lg font-['Exo']">{office.phone}</p>
             </div>
           ))}
         </div>
@@ -194,8 +202,15 @@ export default function Footer() {
             © 2025 LPS BRANDS – All Rights Reserved
           </p>
           <div className="flex space-x-4">
-            {socialLinks.map((link, index) => ( 
-              <Image key={index} src={link} alt="icon" width={50} height={50} className="cursor-pointer" />
+            {socialLinks.map((link, index) => (
+              <Image
+                key={index}
+                src={link}
+                alt="icon"
+                width={50}
+                height={50}
+                className="cursor-pointer"
+              />
             ))}
           </div>
         </div>
