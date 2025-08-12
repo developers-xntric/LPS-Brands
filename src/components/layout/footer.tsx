@@ -103,7 +103,7 @@ export default function Footer() {
               <input
                 type="text"
                 placeholder="Connect with an expert"
-                className="w-full bg-slate-700 text-white placeholder-gray-400 px-6 py-4 rounded-full pr-14 focus:outline-none focus:ring-2 focus:ring-[#00FC09]"
+                className="w-full bg-[#282F36] border text-white placeholder-[#FFFFFF] px-6 py-4 rounded-full pr-14"
               />
               <Button
                 size="sm"
