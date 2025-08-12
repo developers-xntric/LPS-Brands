@@ -38,13 +38,13 @@ export default function HoverVideoPill({
       try {
         v.currentTime = 0;
         const p = v.play();
-        if (p) p.catch(() => {});
-      } catch {}
+        if (p) p.catch(() => { });
+      } catch { }
     } else {
       try {
         v.pause();
         v.currentTime = 0;
-      } catch {}
+      } catch { }
     }
   }, [active]);
 
@@ -110,7 +110,7 @@ export default function HoverVideoPill({
         {/* Label (hidden when expanded) */}
         <span
           className={cn(
-            "font-semibold tracking-wide whitespace-nowrap transition-opacity duration-150 font-['Asgard'] relative left-4 text-blue text-3xl text-secondary",
+            "font-semibold tracking-wide whitespace-nowrap transition-opacity duration-150 font-['Asgard'] relative left-4 text-blue text-3xl",
             active ? "opacity-0" : "opacity-100"
           )}
         >
