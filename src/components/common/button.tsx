@@ -9,7 +9,7 @@ export const Button = ({ text = "View All Work" }: { text: string }) => {
                 <span className='relative top-[2px]'>{text}</span>
             </B>
             <div className="w-[50px] h-[50px] bg-white rounded-full flex justify-center items-center cursor-pointer">
-                <ArrowRight className="h-5 w-5" />
+                <ArrowRight className="h-6 w-6 font-bold" />
             </div>
         </div>
     )
