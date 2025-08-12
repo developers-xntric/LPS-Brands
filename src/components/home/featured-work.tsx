@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Wrapper from "../layout/wrapper"
 import { projects } from "@/data/home-work"
+import WorkTabs from "./work-tabs"
 
 export default function FeaturedWorks() {
     return (
@@ -49,6 +50,7 @@ export default function FeaturedWorks() {
                         ))}
                     </div>
                 </div>
+                <WorkTabs />
             </section>
         </Wrapper>
     )
