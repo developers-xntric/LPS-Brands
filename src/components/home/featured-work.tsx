@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Wrapper from "../layout/wrapper"
 import { projects } from "@/data/home-work"
 import WorkTabs from "./work-tabs"
+import { Button } from "../common/button"
 
 export default function FeaturedWorks() {
     return (
@@ -17,14 +17,7 @@ export default function FeaturedWorks() {
                             Our solutions recognize identity in message technologies, filling brand storytelling gap platform expertise.
                         </p>
 
-                        <div className="flex justify-center items-center">
-                            <Button className="bg-green text-black h-[50px] w-[150px] rounded-full flex items-center            font-semibold transition-all duration-300 hover:bg-[#2054FC] hover:text-white">
-                                View All Work
-                            </Button>
-                            <div className="w-[50px] h-[50px] bg-white rounded-full flex justify-center items-center cursor-pointer">
-                                <ArrowRight className="h-5 w-5" />
-                            </div>
-                        </div>
+                        <Button text="View All Work" />
                     </div>
 
                     {/* Projects Grid */}
