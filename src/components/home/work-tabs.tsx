@@ -27,7 +27,7 @@ export default function WorkTabs() {
     const [activeTab, setActiveTab] = useState<keyof typeof tabData>("communications")
 
     return (
-        <div className="max-w-7xl mx-auto px-8">
+        <div className=" mx-auto px-8">
             {/* Header */}
             <div className="flex justify-between items-start mb-16">
                 <div className="max-w-3xl">
@@ -46,7 +46,7 @@ export default function WorkTabs() {
                 <div className="space-y-4 w-[60%]">
                     {/* Identity Section */}
                     <div
-                        className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl p-6 ${activeTab === "identity" ? "border border-green bg-[#00FC09]/10" : "border border-transparent bg-[#141E29]"
+                        className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl p-6 hover:border hover:border-[#00FC09] hover:bg-[#00FC09]/10 ${activeTab === "identity" ? "border border-green bg-[#00FC09]/10" : "border border-transparent bg-[#141E29]"
                             }`}
                         onClick={() => setActiveTab("identity")}
                     >
@@ -61,7 +61,7 @@ export default function WorkTabs() {
 
                     {/* Communication Campaigns Section */}
                     <div
-                        className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl p-6 ${activeTab === "communications" ? "border border-green bg-[#00FC09]/10" : "border border-transparent bg-[#141E29]"
+                        className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl hover:border hover:border-[#00FC09] hover:bg-[#00FC09]/10 p-6 ${activeTab === "communications" ? "border border-green bg-[#00FC09]/10" : "border border-transparent bg-[#141E29]"
                             }`}
                         onClick={() => setActiveTab("communications")}
                     >
@@ -76,7 +76,7 @@ export default function WorkTabs() {
 
                     {/* Experiences Section */}
                     <div
-                        className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl p-6 ${activeTab === "experiences" ? "border border-green bg-[#00FC09]/10" : "border border-transparent bg-[#141E29]"
+                        className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl p-6 hover:border hover:border-[#00FC09] hover:bg-[#00FC09]/10 ${activeTab === "experiences" ? "border border-green bg-[#00FC09]/10" : "border border-transparent bg-[#141E29]"
                             }`}
                         onClick={() => setActiveTab("experiences")}
                     >
