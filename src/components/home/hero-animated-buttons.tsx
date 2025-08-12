@@ -9,23 +9,23 @@ const HeroAnimatedButtons = () => {
                     <span className="inline">We are a full impact agency</span>{" "}
                     <span className="inline-block align-middle">
                         <HoverVideoPill
-                            label="Identity"
-                            videoSrc=""
-                            className="mr-2"
+                            label="identity"
+                            videoSrc="/home/Communications1.webm"
+                            className="mr-2 "
                         />
                     </span>{" "}
                     <div className='mt-3'>
                         <span className="inline-block align-middle">
                             <HoverVideoPill
-                                label="Communications"
-                                videoSrc=""
+                                label="communications"
+                               videoSrc="/home/exper-1.webm"
                                 className="mr-2"
                             />
                         </span>{"and "}
                         <span className="inline-block align-middle">
                             <HoverVideoPill
-                                label="Experiences"
-                                videoSrc=""
+                                label="experiences"
+                                   videoSrc="/home/IdentityAnimation1.webm"
                             />
                         </span>{" "}
                         <span className="inline">that work for you.</span>
