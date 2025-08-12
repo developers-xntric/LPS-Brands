@@ -94,21 +94,21 @@ export default function Footer() {
               width={160}
               height={90}
             />
-            <p className="text-[#FFFFFF] 2xl:text-[20px] leading-8 my-8">
+            <p className="text-[#FFFFFF] 2xl:text-[20px] leading-7 my-8">
               We are a full impact agency Identity Communications and
               Experiences that work for you.
             </p>
 
             {/* Connect with Expert Input */}
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Connect with an expert"
-                className="w-full bg-[#282F36] border text-white placeholder-[#FFFFFF] px-6 py-4 rounded-full pr-14"
-              />
+            <div className="relative w-[60%]">
+              <button
+                className="w-full text-start bg-[#282F36] border text-white placeholder-[#FFFFFF] px-6 py-4 rounded-full pr-14"
+              >
+                Connect with an expert
+              </button>
               <Button
                 size="sm"
-                className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-white text-slate-800 hover:bg-gray-100 rounded-full w-10 h-10 p-0"
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white text-slate-800 hover:bg-gray-100 rounded-full w-10 h-10 p-0"
               >
                 <ArrowRight className="w-4 h-4" />
               </Button>
@@ -182,7 +182,8 @@ export default function Footer() {
               <div className="text-[1px] 2xl:text-[14px] font-['Exo'] w-[90%]  text-[#FFFFFFB2]  space-y-1 mb-3">
                 <p>{office.address}</p>
               </div>
-              <p className="text-lg font-['Exo']">
+              <p
+               className="text-lg font-['Exo']">
                 {office.phone}
               </p>
             </div>
