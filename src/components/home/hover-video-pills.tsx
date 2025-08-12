@@ -70,7 +70,7 @@ export default function HoverVideoPill({
       ref={rootRef}
       className={cn("relative inline-block align-middle", className)}
       style={{
-        zIndex: active ? 9999 : "auto", // active hone par sabse upar
+        zIndex: active ? 9999 : "auto", 
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

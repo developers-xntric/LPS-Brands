@@ -29,9 +29,9 @@ export default function WorkTabs() {
     return (
         <div className=" mx-auto px-8">
             {/* Header */}
-            <div className="flex justify-between items-start mb-16">
+            <div className="flex justify-between items-center mb-16">
                 <div className="max-w-3xl">
-                    <h1 className="text-4xl md:text-[56px] font-normal leading-tight text-white">
+                    <h1 className="text-4xl md:text-[56px] font-normal leading-[60px] text-white">
                         Delivering Solutions
                         <br />
                         with <span className="text-green">Unmatched Expertise</span>
@@ -51,7 +51,7 @@ export default function WorkTabs() {
                         onClick={() => setActiveTab("identity")}
                     >
                         <div
-                            className={`inline-block px-8 py-2 rounded-full ${activeTab === "identity" ? "bg-green text-secondary" : "bg-white text-secondary"
+                            className={`inline-block px-8 py-2 rounded-full ${activeTab === "identity" ? "bg-white text-secondary" : "bg-white text-secondary"
                                 }`}
                         >
                             <span className="text-md relative top-[1px] font-normal">Identity</span>
@@ -66,7 +66,7 @@ export default function WorkTabs() {
                         onClick={() => setActiveTab("communications")}
                     >
                         <div
-                            className={`inline-block px-8 py-2 rounded-full ${activeTab === "communications" ? "bg-green text-secondary" : "bg-white text-secondary"
+                            className={`inline-block px-8 py-2 rounded-full ${activeTab === "communications" ? "bg-white text-secondary" : "bg-white text-secondary"
                                 }`}
                         >
                             <span className="text-md relative top-[1px] font-normal">Communications</span>
@@ -81,7 +81,7 @@ export default function WorkTabs() {
                         onClick={() => setActiveTab("experiences")}
                     >
                         <div
-                            className={`inline-block px-8 py-2 rounded-full ${activeTab === "experiences" ? "bg-green text-secondary" : "bg-white text-secondary"
+                            className={`inline-block px-8 py-2 rounded-full ${activeTab === "experiences" ? "bg-white text-secondary" : "bg-white text-secondary"
                                 }`}
                         >
                             <span className="text-md relative top-[1px] font-normal">Experiences</span>
