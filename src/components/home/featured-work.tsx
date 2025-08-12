@@ -28,14 +28,14 @@ export default function FeaturedWorks() {
             {projects.map((project, index) => (
               <div
                 key={project.id}
-                className={`group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
+                className={`group cursor-pointer transition-all duration-300 hover:scale-105  ${
                   index === 1 || index === 4
                     ? "md:col-span-1 lg:col-span-1"
                     : ""
                 }`}
               >
                 <div
-                  className={`relative overflow-hidden rounded-2xl bg-slate-800 shadow-lg ${
+                  className={`relative overflow-hidden rounded-2xl bg-slate-800 ${
                     (index == 1 || index == 4) && "top-14"
                   }`}
                 >
@@ -44,9 +44,9 @@ export default function FeaturedWorks() {
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
                       fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                      className="object-cover h-fit transition-transform duration-300 group-hover:scale-[1.02]"
                     />
-                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 </div>
               </div>
