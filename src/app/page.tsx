@@ -6,10 +6,10 @@ import Industries from "@/components/home/industries";
 export default function Home() {
   return (
     <div>
-      {/* <HeroSection />
-      <FeaturedWorks /> */}
+      <HeroSection />
+      <FeaturedWorks />
       <GlobalPresence />
-      {/* <Industries /> */}
+      <Industries />
     </div>
   );
 }

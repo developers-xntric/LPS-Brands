@@ -1,10 +1,12 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import Wrapper from '../layout/wrapper';
 import Image from 'next/image';
 import globalPresenceAwards from '@/data/global-presence-awards';
 import YearsAwwards from './city-slider';
 
 const GlobalPresence = () => {
+    const [isHovered, setIsHovered] = useState(false);
     return (
         <Wrapper>
             <div className='flex flex-col xl:flex-row gap-10 xl:justify-between py-16'>
@@ -21,13 +23,28 @@ const GlobalPresence = () => {
                         </div>
                         <div className='w-[100%] left-[40%] lg:left-[33%] absolute inset-0 mt-10 lg:mt-0'>
                             <div>
-                                <Image src={'/home/Egypt.webp'} alt='Cities' width={165} height={150} className='inline-block w-[110px] lg:w-[170px]' />
-                                <Image src={'/home/Canada.webp'} alt='Cities' width={220} height={250} className='inline-block w-[175px] lg:w-[235px] relative top-[26px] lg:top-[50px]' />
+                                <Image src={isHovered ? "/home/cairo.webp" : '/home/Egypt.webp'} alt='Cities' width={165} height={150} className='inline-block w-[110px] lg:w-[170px] cursor-pointer'
+                                    onMouseEnter={() => setIsHovered(true)}
+                                    onMouseLeave={() => setIsHovered(false)}
+                                />
+                                <Image src={isHovered ? "/home/toronto.webp" : '/home/Canada.webp'} alt='Cities' width={220} height={250} className='inline-block w-[175px] lg:w-[235px] relative top-[26px] lg:top-[50px] cursor-pointer'
+                                    onMouseEnter={() => setIsHovered(true)}
+                                    onMouseLeave={() => setIsHovered(false)}
+                                />
                             </div>
                             <div className='relative right-[23.5%] xl:right-[26%] 2xl:right-[19.75%]'>
-                                <Image src={'/home/Saudi.webp'} alt='Cities' width={190} height={200} className='inline-block w-[142px] lg:w-[190px] relative bottom-[50px] lg:bottom-[75px] 2xl:bottom-[75px]' />
-                                <Image src={'/home/UAE.webp'} alt='Cities' width={275} height={250} className='inline-block w-[200px] lg:w-[290px]' />
-                                <Image src={'/home/UK.webp'} alt='Cities' width={185} height={200} className='inline-block relative bottom-10 lg:bottom-[66px] w-[160px] lg:w-[210px]' />
+                                <Image src={isHovered ? "/home/riyadh.webp" : '/home/Saudi.webp'} alt='Cities' width={190} height={200} className='inline-block w-[142px] lg:w-[190px] relative bottom-[50px] lg:bottom-[75px] 2xl:bottom-[75px] cursor-pointer'
+                                    onMouseEnter={() => setIsHovered(true)}
+                                    onMouseLeave={() => setIsHovered(false)}
+                                />
+                                <Image src={isHovered ? "/home/dubai.webp" : '/home/UAE.webp'} alt='Cities' width={275} height={250} className='inline-block w-[200px] lg:w-[290px] cursor-pointer'
+                                    onMouseEnter={() => setIsHovered(true)}
+                                    onMouseLeave={() => setIsHovered(false)}
+                                />
+                                <Image src={isHovered ? "/home/adlz.webp" : '/home/UK.webp'} alt='Cities' width={185} height={200} className='inline-block relative bottom-10 lg:bottom-[66px] w-[160px] lg:w-[210px] cursor-pointer'
+                                    onMouseEnter={() => setIsHovered(true)}
+                                    onMouseLeave={() => setIsHovered(false)}
+                                />
                             </div>
                         </div>
                     </div>
