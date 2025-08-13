@@ -29,8 +29,8 @@ export function MeetThePears() {
 
     return (
         <Wrapper>
-            <div className="flex items-center justify-between mb-8">
-                <h2 className="text-6xl font-bold text-foreground">Meet the Pears</h2>
+            <div className="flex items-center justify-between mb-4">
+                <h2 className="text-6xl font-normal text-foreground">Meet the Pears</h2>
 
                 <div className="flex gap-2">
                     <Button
@@ -63,7 +63,7 @@ export function MeetThePears() {
                         <div
                             key={member.id}
                             className={cn(
-                                "relative flex-shrink-0 w-56 rounded-xl overflow-hidden cursor-pointer transition-all duration-300 ease-out",
+                                "relative flex-shrink-0 w-[290px] rounded-xl overflow-hidden cursor-pointer transition-all ease-out",
                                 hoveredCard === member.id ? "transform -translate-y-4" : "",
                             )}
                             onMouseEnter={() => setHoveredCard(member.id)}
