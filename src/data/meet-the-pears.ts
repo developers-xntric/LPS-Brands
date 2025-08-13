@@ -6,9 +6,9 @@ interface TeamMember {
 
 export const teamMembers: TeamMember[] = [
     {
-        id: "gareth",
-        defaultImage: "/placeholder-9c2k9.png",
-        hoverImage: "/confident-creative-director.png",
+        id: "Asim",
+        defaultImage: "/team/t1.webp",
+        hoverImage: "/team/th1.webp",
     },
     {
         id: "hamza",
