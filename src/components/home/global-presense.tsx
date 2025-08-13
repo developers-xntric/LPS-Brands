@@ -14,19 +14,19 @@ const GlobalPresence = () => {
                             <h2 className='text-5xl'>
                                 Global Presence
                             </h2>
-                            <p className='text-xl font-medium'>
+                            <p className='text-lg leading-6 font-medium'>
                                 We proudly serve clients across multiple regions
                             </p>
                         </div>
                         <div className='w-[100%] left-[33%] absolute inset-0'>
                             <div>
-                                <Image src={'/home/Egypt.webp'} alt='Cities' width={150} height={150} className='inline-block' />
-                                <Image src={'/home/Canada.webp'} alt='Cities' width={220} height={250} className='inline-block relative top-10' />
+                                <Image src={'/home/Egypt.webp'} alt='Cities' width={165} height={150} className='inline-block' />
+                                <Image src={'/home/Canada.webp'} alt='Cities' width={220} height={250} className='inline-block relative top-[50px]' />
                             </div>
-                            <div className='relative right-[26.8%]'>
-                                <Image src={'/home/Saudi.webp'} alt='Cities' width={200} height={200} className='inline-block relative bottom-14' />
-                                <Image src={'/home/UAE.webp'} alt='Cities' width={230} height={250} className='inline-block' />
-                                <Image src={'/home/UK.webp'} alt='Cities' width={200} height={200} className='inline-block relative bottom-10' />
+                            <div className='relative right-[26%]'>
+                                <Image src={'/home/Saudi.webp'} alt='Cities' width={190} height={200} className='inline-block relative bottom-14' />
+                                <Image src={'/home/UAE.webp'} alt='Cities' width={275} height={250} className='inline-block' />
+                                <Image src={'/home/UK.webp'} alt='Cities' width={185} height={200} className='inline-block relative bottom-[66px]' />
                             </div>
                         </div>
                     </div>
