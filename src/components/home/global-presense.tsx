@@ -1,39 +1,14 @@
-import React from 'react'
-import Wrapper from '../layout/wrapper'
-import Image from 'next/image'
-
-const data = [{
-    image: "/home/a1.webp",
-    heading: "2024",
-    text: "Campaign Middle East Influencer Management Team of the Year"
-}, {
-    image: "/home/a2.webp",
-    heading: "2023",
-    text: "Shortlisted amongst the Top Five Social Media Agencies in the globe; the sole MENA agency to be included in the category"
-}, {
-    image: "/home/a3.webp",
-    heading: "2023",
-    text: "Social content partners for Visit Dubai; Created global virality for the brand with CGI video storytelling"
-}, {
-    image: "/home/a4.webp",
-    heading: "2023",
-    text: "Registered Successes for strategic brand organizations like Dubai Chambers, Liva Insurance, Dubai SIlicon Oasis"
-}, {
-    image: "/home/a5.webp",
-    heading: "2023",
-    text: "An award-winning video production team from idea to execution to last mile adaptations; with experience across BtoC and BtoB sectors"
-}, {
-    image: "/home/a6.webp",
-    heading: "2022",
-    text: "Built products for new age platforms - game streaming, short form videos and live commerce with successful brand adoption"
-}]
+import React from 'react';
+import Wrapper from '../layout/wrapper';
+import Image from 'next/image';
+import globalPresenceAwards from '@/data/global-presence-awards';
 
 const GlobalPresence = () => {
     return (
         <Wrapper>
             <div className='flex justify-between py-16'>
-                <div className='relative w-[61%] bg-[url("/home/bg-grad.png")] bg-cover bg-center h-[650px] rounded-3xl'>
-                    <Image src={'/home/zig-zag.png'} alt='' width={200} height={200} className='absolute top-10 -right-14' />
+                <div className='relative w-[65%] bg-[url("/home/bg-grad.png")] bg-cover bg-center rounded-[50px]'>
+                    <Image src={'/home/zig-zag.png'} alt='' width={170} height={200} className='absolute top-12 -right-14' />
                     <div className='relative w-[85%] mx-auto h-[65%] mt-20 flex gap-10'>
                         <div className='w-[200px]'>
                             <h2 className='text-5xl'>
@@ -56,8 +31,19 @@ const GlobalPresence = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-[32%]'>
+                <div className='w-[30%]'>
                     <h2 className='text-center text-5xl font-["Exo"] font-[700]'>Awards</h2>
+                    <div className='space-y-3'>
+                        {globalPresenceAwards.map((item) => <div className='flex gap-5 items-center'>
+                            <div className='min-w-[39%]'>
+                                <Image src={item.image} alt='Awards' width={200} height={200} className='w-full h-full' />
+                            </div>
+                            <div className='space-y-1 font-["Exo"]'>
+                                <h3 className='text-2xl'>{item.heading}</h3>
+                                <p className='text-sm font-medium leading-4'>{item.text}</p>
+                            </div>
+                        </div>)}
+                    </div>
                 </div>
             </div>
         </Wrapper>
