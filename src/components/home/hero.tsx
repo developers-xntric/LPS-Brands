@@ -29,7 +29,7 @@ const HeroSection = () => {
         <Wrapper>
           {/* WHY PEARS Section */}
           <div className="mb-8 mt-20 flex justify-between">
-            <h1 className="flex flex-col -gap-6 text-8xl font-bold mb-8 leading-none">
+            <h1 className="flex flex-col -space-y-6 text-8xl font-bold mb-8 leading-none">
               <span className="gradient-text text-transparent">WHY</span>
               <span className="gradient-text text-transparent">PEARS?</span>
             </h1>
