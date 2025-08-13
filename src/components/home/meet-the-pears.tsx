@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Wrapper from "../layout/wrapper"
 import { teamMembers } from "@/data/meet-the-pears"
+import Image from "next/image"
 
 export function MeetThePears() {
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -37,23 +38,23 @@ export function MeetThePears() {
                         size="icon"
                         onClick={handlePrevious}
                         disabled={currentIndex === 0}
-                        className="rounded-full w-12 h-12 border-2 bg-transparent"
+                        className="rounded-full w-12 h-12 border-2 bg-transparent border-blue"
                     >
-                        <ChevronLeft className="h-5 w-5" />
+                        <ChevronLeft className="h-5 w-5 text-blue" />
                     </Button>
                     <Button
                         variant="outline"
                         size="icon"
                         onClick={handleNext}
                         disabled={currentIndex >= maxIndex}
-                        className="rounded-full w-12 h-12 border-2"
+                        className="rounded-full w-12 h-12 border-2 bg-transparent border-blue"
                     >
-                        <ChevronRight className="h-5 w-5" />
+                        <ChevronRight className="h-5 w-5 text-blue" />
                     </Button>
                 </div>
             </div>
 
-            <div className="overflow-hidden">
+            <div className="overflow-x-hidden py-10">
                 <div
                     className="flex gap-4 transition-transform duration-500 ease-out"
                     style={{ transform: `translateX(${translateX}px)` }}
@@ -62,14 +63,16 @@ export function MeetThePears() {
                         <div
                             key={member.id}
                             className={cn(
-                                "relative flex-shrink-0 w-64 h-96 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 ease-out",
-                                hoveredCard === member.id ? "transform -translate-y-4 shadow-2xl" : "shadow-lg",
+                                "relative flex-shrink-0 w-56 rounded-xl overflow-hidden cursor-pointer transition-all duration-300 ease-out",
+                                hoveredCard === member.id ? "transform -translate-y-4" : "",
                             )}
                             onMouseEnter={() => setHoveredCard(member.id)}
                             onMouseLeave={() => setHoveredCard(null)}
                         >
-                            <img
+                            <Image
                                 src={hoveredCard === member.id ? member.hoverImage : member.defaultImage}
+                                width={500}
+                                height={500}
                                 alt={member.id}
                                 className="w-full h-full object-cover transition-opacity duration-300"
                             />
