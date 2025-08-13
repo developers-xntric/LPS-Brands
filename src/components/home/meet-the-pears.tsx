@@ -4,47 +4,10 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
+import Wrapper from "../layout/wrapper"
+import { teamMembers } from "@/data/meet-the-pears"
 
-interface TeamMember {
-    id: string
-    defaultImage: string
-    hoverImage: string
-}
-
-const teamMembers: TeamMember[] = [
-    {
-        id: "gareth",
-        defaultImage: "/placeholder-9c2k9.png",
-        hoverImage: "/confident-creative-director.png",
-    },
-    {
-        id: "hamza",
-        defaultImage: "/placeholder-953bo.png",
-        hoverImage: "/young-man-presenting.png",
-    },
-    {
-        id: "sharanya",
-        defaultImage: "/confident-designer.png",
-        hoverImage: "/senior-designer-woman.png",
-    },
-    {
-        id: "mostafa",
-        defaultImage: "/young-designer-teal.png",
-        hoverImage: "/energetic-designer-jump.png",
-    },
-    {
-        id: "sarvesh",
-        defaultImage: "/placeholder-f7uv0.png",
-        hoverImage: "/marketing-lead-navy-suit.png",
-    },
-    {
-        id: "riley",
-        defaultImage: "/placeholder.svg?height=400&width=300",
-        hoverImage: "/placeholder.svg?height=400&width=300",
-    },
-]
-
-export function MeetThePearsCarousel() {
+export function MeetThePears() {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [hoveredCard, setHoveredCard] = useState<string | null>(null)
 
@@ -64,7 +27,7 @@ export function MeetThePearsCarousel() {
     const translateX = -(currentIndex * (cardWidth + gap))
 
     return (
-        <section className="w-full">
+        <Wrapper>
             <div className="flex items-center justify-between mb-8">
                 <h2 className="text-6xl font-bold text-foreground">Meet the Pears</h2>
 
@@ -114,6 +77,6 @@ export function MeetThePearsCarousel() {
                     ))}
                 </div>
             </div>
-        </section>
+        </Wrapper>
     )
 }
