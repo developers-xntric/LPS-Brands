@@ -71,8 +71,8 @@ export function MeetThePears() {
                         >
                             <Image
                                 src={hoveredCard === member.id ? member.hoverImage : member.defaultImage}
-                                width={500}
-                                height={500}
+                                width={1000}
+                                height={1000}
                                 alt={member.id}
                                 className="w-full h-full object-cover transition-opacity duration-300"
                             />
