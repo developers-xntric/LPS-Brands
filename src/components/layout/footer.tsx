@@ -1,15 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  ChevronDown,
-  ArrowRight,
-  Instagram,
-  Facebook,
-  Linkedin,
-  ChevronUp,
-  ArrowUpRight,
-} from "lucide-react";
+import { ChevronDown, ArrowRight, ChevronUp, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -64,7 +56,12 @@ export default function Footer() {
   const services = [
     {
       name: "Identity",
-      subServices: ["Leadership Branding", "Corporate Branding", "Social Media", "Public Relations"],
+      subServices: [
+        "Leadership Branding",
+        "Corporate Branding",
+        "Social Media",
+        "Public Relations",
+      ],
     },
     {
       name: "Communications",
@@ -79,11 +76,14 @@ export default function Footer() {
     { name: "/social/1.svg", link: "https://www.instagram.com/lps.brands/" },
     { name: "/social/2.svg", link: "https://www.facebook.com/lpsbrands" },
     { name: "/social/3.svg", link: "https://www.tiktok.com/@lpsbrands" },
-    { name: "/social/4.svg", link: "https://www.linkedin.com/company/lps-brands/" },
+    {
+      name: "/social/4.svg",
+      link: "https://www.linkedin.com/company/lps-brands/",
+    },
   ];
   return (
-    <footer className="bg-[#101820] text-white pb-10 pt-28 mx-auto w-[95%] 2xl:max-w-[1740px] mt-10 rounded-t-[50px]">
-      <div className="max-w-[95%] mx-auto">
+    <footer className="bg-[#101820] text-white pb-10 pt-28 mx-auto w-[95%] 2xl:max-w-[1740px] mt-10 rounded-t-[60px]">
+      <div className="max-w-[93%] mx-auto">
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start mb-12 gap-8">
           {/* Left Side - Logo and Description */}
@@ -94,34 +94,30 @@ export default function Footer() {
               width={160}
               height={90}
             />
-            <p className="text-[#FFFFFF] 2xl:text-[20px] leading-7 my-8">
+            <p className="text-[#FFFFFF] 2xl:text-[20px] leading-7 font-light my-8">
               We are a full impact agency Identity Communications and
               Experiences that work for you.
             </p>
 
             {/* Connect with Expert Input */}
-            <div className="relative w-[60%]">
-              <button
-                className="w-full text-start bg-[#282F36] border text-white placeholder-[#FFFFFF] px-6 py-4 rounded-full pr-14"
-              >
-                Connect with an expert
-              </button>
-              <Button
-                size="sm"
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white text-slate-800 hover:bg-gray-100 rounded-full w-10 h-10 p-0"
-              >
-                <ArrowRight className="w-4 h-4" />
-              </Button>
+            <div className="relative w-[60%] 2xl:w-[75%] group  ">
+              <Link href={"/contact"}>
+                <button className="w-full text-start 2xl:text-xl bg-[#282F36] group-hover:bg-[#636262] transition-all duration-500 border text-white placeholder-[#FFFFFF] px-6 py-4 rounded-full pr-14">
+                  Connect with an expert
+                </button>
+                <Button
+                  size="sm"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white text-slate-800 hover:bg-gray-100 rounded-full w-10 h-10 p-0"
+                >
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
             </div>
           </div>
 
           {/* Right Side - Services */}
           <div className="w-[30%]">
-            <h3
-              className="text-[22px] font-semibold mb-6"
-            >
-              SERVICES
-            </h3>
+            <h3 className="text-[22px] font-semibold mb-6">SERVICES</h3>
             <div className="">
               {services.map((service) => (
                 <div key={service.name} className=" ">
@@ -133,28 +129,34 @@ export default function Footer() {
                         : "text-gray-300 hover:text-[#00FC09]"
                     }`}
                   >
-                    <span className="font-medium text-[20px] border-b border-[#FFFFFF14] pb-2 w-full transition-colors duration-500 group-hover:border-[#00FC09]">
+                    <span className="font-medium text-[20px] border-b  border-[#FFFFFF14] pb-2 w-full transition-colors duration-500 group-hover:border-[#00FC09] text-white">
                       {service.name}
                     </span>
                     {openDropdowns[service.name] ? (
-                      <ChevronUp className="w-6 h-6 text-[#00FC09]" />
+                      <ChevronUp className="w-6 h-6 text-[#00FC09] relative right-5" />
                     ) : (
-                      <ChevronDown className="w-6 h-6 text-gray-300 group-hover:text-[#00FC09]" />
+                      <ChevronDown className="w-6 h-6 text-gray-300 group-hover:text-[#00FC09] relative right-5" />
                     )}
                   </button>
                   {openDropdowns[service.name] &&
                     service.subServices.length > 0 && (
-                      <div className={`overflow-hidden transition-all duration-700 ease-in-out ${openDropdowns[service.name] ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                      <div
+                        className={`overflow-hidden transition-all duration-700 ease-in-out pt-3 ${
+                          openDropdowns[service.name]
+                            ? "max-h-96 opacity-100"
+                            : "max-h-0 opacity-0"
+                        }`}
+                      >
                         <div className="pb-4 space-y-5">
                           {service.subServices.map((subService) => (
                             <div
                               key={subService}
                               className="flex items-center gap-3 pl-0 group"
                             >
-                              <span className="text-gray-300 hover:border-b hover:border-white  transition-colors duration-500   text-[18px]  cursor-pointer">
+                              <span className="text-gray-300 hover:border-b hover:border-[#00FC09]  transition-colors duration-500 text-[18px]  cursor-pointer">
                                 {subService}
                               </span>
-                              <ArrowUpRight className="w-5 h-5 text-[#00FC09] group-hover:text-white  transition-all duration-500 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                              <ArrowUpRight className="w-5 h-5 text-[#00FC09] group-hover:text-[#00FC09] transition-all duration-500 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                             </div>
                           ))}
                         </div>
@@ -166,9 +168,12 @@ export default function Footer() {
           </div>
         </div>
         {/* Office Locations */}
-        <div className="grid grid-cols-1 md:grid-cols-2 border-t border-b border-[#FFFFFF14] py-12 lg:grid-cols-5 gap-16 mb-12 mt-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 border-t border-b border-[#FFFFFF14] py-12 lg:grid-cols-5 2xl:gap-16 gap-10 mb-12 mt-2">
           {offices.map((office, index) => (
-            <div key={index} className="flex flex-col items-start justify-start text-justify">
+            <div
+              key={index}
+              className="flex flex-col items-start justify-start "
+            >
               <Image
                 alt="icon"
                 src={office.icon}
@@ -176,16 +181,19 @@ export default function Footer() {
                 height={40}
                 className="mb-4 3xl:h-[90px] 3xl:w-[70px] h-[70px] w-[50px]"
               />
-              <h4 className="font-semibold text-[20px] mb-3">
+              <h4 className={`font-semibold text-[20px] mb-3`}>
                 {office.country}
               </h4>
-              <div className="text-[1px] 2xl:text-[14px] font-['Exo'] w-[90%]  text-[#FFFFFFB2]  space-y-1 mb-3">
+              <div
+                className={`text-[13px] 2xl:text-[14px]  ${
+                  index === 2 ? "2xl:w-[90%] w-[100%]" : "w-[90%]"
+                } font-['Exo'] text-[#FFFFFFB2]  space-y-1 mb-3`}
+              >
                 <p>{office.address}</p>
               </div>
-              <p
-               className="text-lg font-['Exo']">
+              <a href={`tel:${office.phone}`} className="text-lg font-['Exo']">
                 {office.phone}
-              </p>
+              </a>
             </div>
           ))}
         </div>
@@ -198,7 +206,13 @@ export default function Footer() {
           <div className="flex space-x-4">
             {socialLinks.map((link, index) => (
               <Link key={index} href={link.link}>
-                <Image src={link.name} alt="icon" width={50} height={50} className="cursor-pointer hover:bg-black rounded-full"  />
+                <Image
+                  src={link.name}
+                  alt="icon"
+                  width={50}
+                  height={50}
+                  className="cursor-pointer hover:border-none hover:bg-black rounded-full"
+                />
               </Link>
             ))}
           </div>
