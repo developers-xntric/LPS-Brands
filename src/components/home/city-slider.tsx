@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 
-const awwards = ["/home/i1.png", "/home/i2.png", "/home/i3.png", "/home/i4.png", "/home/i5.png"]
+const awwards = ["/home/i1.png", "/home/i2.png", "/home/i3.png", "/home/i4.png", "/home/i5.png", "/home/i6.webp", "/home/i7.webp", "/home/i8.webp", "/home/i9.webp"]
 
 function YearsAwwards() {
     const [duration, setDuration] = useState(20);
