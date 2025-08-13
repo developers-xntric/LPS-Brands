@@ -10,7 +10,7 @@ const GlobalPresence = () => {
                 <div className='relative w-[65%] bg-[url("/home/bg-grad.png")] bg-cover bg-center rounded-[50px]'>
                     <Image src={'/home/zig-zag.png'} alt='' width={170} height={200} className='absolute top-12 -right-14' />
                     <div className='relative w-[85%] mx-auto h-[65%] mt-20 flex gap-10'>
-                        <div className='w-[200px]'>
+                        <div className='w-[170px] space-y-4 relative left-[7.4%]'>
                             <h2 className='text-5xl'>
                                 Global Presence
                             </h2>
@@ -20,11 +20,11 @@ const GlobalPresence = () => {
                         </div>
                         <div className='w-[100%] left-[33%] absolute inset-0'>
                             <div>
-                                <Image src={'/home/Egypt.webp'} alt='Cities' width={165} height={150} className='inline-block' />
-                                <Image src={'/home/Canada.webp'} alt='Cities' width={220} height={250} className='inline-block relative top-[50px]' />
+                                <Image src={'/home/Egypt.webp'} alt='Cities' width={165} height={150} className='inline-block w-[170px]' />
+                                <Image src={'/home/Canada.webp'} alt='Cities' width={220} height={250} className='inline-block w-[235px] relative top-[50px]' />
                             </div>
                             <div className='relative right-[26%]'>
-                                <Image src={'/home/Saudi.webp'} alt='Cities' width={190} height={200} className='inline-block relative bottom-14' />
+                                <Image src={'/home/Saudi.webp'} alt='Cities' width={190} height={200} className='inline-block relative bottom-[70px]' />
                                 <Image src={'/home/UAE.webp'} alt='Cities' width={275} height={250} className='inline-block' />
                                 <Image src={'/home/UK.webp'} alt='Cities' width={185} height={200} className='inline-block relative bottom-[66px]' />
                             </div>
