@@ -2,12 +2,13 @@ import React from 'react';
 import Wrapper from '../layout/wrapper';
 import Image from 'next/image';
 import globalPresenceAwards from '@/data/global-presence-awards';
+import YearsAwwards from './city-slider';
 
 const GlobalPresence = () => {
     return (
         <Wrapper>
             <div className='flex flex-col xl:flex-row gap-10 xl:justify-between py-16'>
-                <div className='relative h-[630px] lg:h-[850px] xl:w-[65%] bg-[url("/home/bg-grad.png")] bg-cover bg-center rounded-[50px]'>
+                <div className='relative h-[630px] lg:h-[850px] xl:h-auto xl:w-[65%] bg-[url("/home/bg-grad.png")] bg-cover bg-center rounded-[50px]'>
                     <Image src={'/home/zig-zag.png'} alt='' width={170} height={200} className='absolute top-12 -right-14' />
                     <div className='relative w-[85%] mx-auto h-[65%] mt-20 flex gap-10'>
                         <div className='w-[170px] space-y-4 relative left-[7.4%]'>
@@ -30,6 +31,7 @@ const GlobalPresence = () => {
                             </div>
                         </div>
                     </div>
+                    <YearsAwwards />
                 </div>
                 <div className='xl:w-[30%]'>
                     <h2 className='text-center text-5xl font-["Exo"] font-[700]'>Awards</h2>
