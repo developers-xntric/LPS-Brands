@@ -7,8 +7,8 @@ import Wrapper from "../layout/wrapper";
 
 const HeroSection = () => {
   return (
-    <div className="bg-[url('/home/hero-bg.png')] bg-center bg-cover">
-      <div className="2xl:max-w-[1790px] mx-auto w-[95%]">
+    <div className="bg-[url('/home/Hero.png') bg-center bg-cover ">
+      <div className="2xl:max-w-[1800px] mx-auto w-[95%] pb-20">
         {/* Top Left LPS Logo */}
         <div className="p-4 ms-6">
           <LogoLPS />
@@ -18,7 +18,7 @@ const HeroSection = () => {
           <Image
             src={"/home/hero-gif.gif"}
             alt="Hero"
-            width={620}
+            width={800}
             height={620}
             unoptimized
           />

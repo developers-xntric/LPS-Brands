@@ -50,7 +50,7 @@ export default function AnimatedTextSection() {
     <div className="flex items-center gap-10 text-4xl font-bold">
       <span className="text-blue text-[80px] tracking-tight">We</span>
 
-      <div className="relative overflow-hidden h-[3.5rem] w-full  inline-block align-middle">
+      <div className="relative overflow-hidden space-y-1 h-[3.5rem] w-full  inline-block align-middle">
         {/* current phrase */}
         <div
           key={currentPhraseIndex}

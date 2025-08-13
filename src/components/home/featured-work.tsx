@@ -7,7 +7,7 @@ import { Button } from "../common/button";
 export default function FeaturedWorks() {
   return (
     <Wrapper>
-      <section className="bg-[#101820] rounded-[60px] py-16 px-4 sm:px-6 lg:px-8 mt-32">
+      <section className="bg-[#101820] rounded-[60px] py-16 px-4 sm:px-6 lg:px-8 ">
         <div className="max-w-[95%] mx-auto mb-40">
           {/* Header */}
           <div className="text-center mb-10 font-['Exo']">
