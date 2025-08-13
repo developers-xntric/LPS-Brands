@@ -7,7 +7,7 @@ const GlobalPresence = () => {
     return (
         <Wrapper>
             <div className='flex flex-col xl:flex-row gap-10 xl:justify-between py-16'>
-                <div className='relative h-[750px] xl:w-[65%] bg-[url("/home/bg-grad.png")] bg-cover bg-center rounded-[50px]'>
+                <div className='relative h-[630px] lg:h-[850px] xl:w-[65%] bg-[url("/home/bg-grad.png")] bg-cover bg-center rounded-[50px]'>
                     <Image src={'/home/zig-zag.png'} alt='' width={170} height={200} className='absolute top-12 -right-14' />
                     <div className='relative w-[85%] mx-auto h-[65%] mt-20 flex gap-10'>
                         <div className='w-[170px] space-y-4 relative left-[7.4%]'>
@@ -18,15 +18,15 @@ const GlobalPresence = () => {
                                 We proudly serve clients across multiple regions
                             </p>
                         </div>
-                        <div className='w-[100%] left-[33%] absolute inset-0'>
+                        <div className='w-[100%] left-[40%] lg:left-[33%] absolute inset-0 mt-10 lg:mt-0'>
                             <div>
-                                <Image src={'/home/Egypt.webp'} alt='Cities' width={165} height={150} className='inline-block lg:w-[170px]' />
-                                <Image src={'/home/Canada.webp'} alt='Cities' width={220} height={250} className='inline-block lg:w-[235px] relative top-[50px]' />
+                                <Image src={'/home/Egypt.webp'} alt='Cities' width={165} height={150} className='inline-block w-[110px] lg:w-[170px]' />
+                                <Image src={'/home/Canada.webp'} alt='Cities' width={220} height={250} className='inline-block w-[175px] lg:w-[235px] relative lg:top-[50px]' />
                             </div>
                             <div className='relative right-[23.5%] xl:right-[26%] 2xl:right-[19.75%]'>
-                                <Image src={'/home/Saudi.webp'} alt='Cities' width={190} height={200} className='inline-block lg:w-[190px] relative bottom-[70px] 2xl:bottom-[75px]' />
-                                <Image src={'/home/UAE.webp'} alt='Cities' width={275} height={250} className='inline-block lg:w-[290px]' />
-                                <Image src={'/home/UK.webp'} alt='Cities' width={185} height={200} className='inline-block relative bottom-[66px] lg:w-[210px]' />
+                                <Image src={'/home/Saudi.webp'} alt='Cities' width={190} height={200} className='inline-block w-[142px] lg:w-[190px] relative lg:bottom-[70px] 2xl:bottom-[75px]' />
+                                <Image src={'/home/UAE.webp'} alt='Cities' width={275} height={250} className='inline-block w-[200px] lg:w-[290px]' />
+                                <Image src={'/home/UK.webp'} alt='Cities' width={185} height={200} className='inline-block relative lg:bottom-[66px] w-[160px] lg:w-[210px]' />
                             </div>
                         </div>
                     </div>
