@@ -5,6 +5,7 @@ import type React from "react"
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import Wrapper from "../layout/wrapper"
 
 interface Article {
     id: number
@@ -147,14 +148,14 @@ export function ArticlesCarousel() {
     }
 
     return (
-        <section className="w-full">
+        <Wrapper>
             <div className="mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">Our Articles</h2>
 
                 <div className="relative overflow-hidden">
                     <div
                         ref={carouselRef}
-                        className="flex gap-6 transition-transform duration-500 ease-out cursor-grab active:cursor-grabbing"
+                        className="flex gap-6 transition-transform duration-500 ease-out cursor-grab active:cursor-grabbing py-10"
                         style={{
                             transform: `translateX(${translateX + dragOffset}px)`,
                             transition: isDragging ? "none" : "transform 0.5s ease-out",
@@ -186,7 +187,7 @@ export function ArticlesCarousel() {
                                         {article.title}
                                     </h3>
 
-                                    <Button className="bg-green-500 hover:bg-green-600 text-white font-medium px-6 py-2 rounded-full transition-colors duration-200">
+                                    <Button className="bg-green hover:bg-green-600 text-white font-medium px-6 py-2 rounded-full transition-colors duration-200">
                                         See more
                                     </Button>
                                 </div>
@@ -202,14 +203,14 @@ export function ArticlesCarousel() {
                             key={index}
                             onClick={() => goToSlide(index)}
                             className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
-                                    ? "bg-foreground scale-110"
-                                    : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                                ? "bg-foreground scale-110"
+                                : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                                 }`}
                             aria-label={`Go to slide ${index + 1}`}
                         />
                     ))}
                 </div>
             </div>
-        </section>
+        </Wrapper>
     )
 }
