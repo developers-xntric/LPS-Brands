@@ -107,7 +107,8 @@ export default function BlogCarousel({ posts }: BlogCarouselProps) {
                                         width={600}
                                         height={600}
                                     />
-                                    <h3 className="text-white text-xl font-medium mb-3 line-clamp-2 leading-tight px-2 my-6">{post.title}</h3>
+                                    <span className="text-sm text-green relative px-2 top-4">Blog</span>
+                                    <h3 className="text-white text-xl font-bold mb-3 line-clamp-2 leading-tight px-2 my-6">{post.title}</h3>
                                     <button className="text-blue-400 text-sm hover:text-blue-300 transition-colors px-2">
                                         {post.readMore}
                                     </button>
