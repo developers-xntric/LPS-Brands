@@ -67,26 +67,26 @@ export const blogPosts = [
 export const instagramVideos = [
     {
         id: 1,
-        thumbnail: "/gaming-colorful.png",
-        url: "https://www.instagram.com/reel/C8xYzAbPqRs/",
+        thumbnail: "/blogs/i1.webp",
+        url: "https://www.instagram.com/reel/DJjRMBaNbyX/",
         title: "Gaming Content",
     },
     {
         id: 2,
-        thumbnail: "/tech-talk-green.png",
-        url: "https://www.instagram.com/reel/C9mNpQrSdFg/",
+        thumbnail: "/blogs/i2.webp",
+        url: "https://www.instagram.com/reel/DJbKw0QxSb1/",
         title: "Tech Talk",
     },
     {
         id: 3,
-        thumbnail: "/design-tech.png",
-        url: "https://www.instagram.com/reel/C7kLmOpRtUv/",
+        thumbnail: "/blogs/i3.webp",
+        url: "https://www.instagram.com/p/DJV5zK0z4Vt/",
         title: "Design & Technology",
     },
     {
         id: 4,
-        thumbnail: "/creative-abstract.png",
-        url: "https://www.instagram.com/reel/C6hJkMnQwXy/",
+        thumbnail: "/blogs/i4.webp",
+        url: "https://www.instagram.com/reel/DJBWuxvTwhX/",
         title: "Creative Content",
     },
 ]

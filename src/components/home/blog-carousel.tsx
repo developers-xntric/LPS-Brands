@@ -1,5 +1,6 @@
 "use client"
 import { BlogCarouselProps } from "@/data/blog-section"
+import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
 import type React from "react"
 
@@ -9,26 +10,7 @@ export default function BlogCarousel({ posts }: BlogCarouselProps) {
     const [isDragging, setIsDragging] = useState(false)
     const [startX, setStartX] = useState(0)
     const [translateX, setTranslateX] = useState(0)
-    const [slideWidth, setSlideWidth] = useState(0)
     const containerRef = useRef<HTMLDivElement>(null)
-    const innerRef = useRef<any>(null)
-
-    const calculateSlideWidth = () => {
-        if (innerRef.current) {
-            const gap = parseFloat(getComputedStyle(innerRef.current).gap) || 0
-            const cards = innerRef.current.children
-            if (cards.length > 0) {
-                const cardWidth = cards[0].offsetWidth
-                setSlideWidth(cardWidth + gap)
-            }
-        }
-    }
-
-    useEffect(() => {
-        calculateSlideWidth()
-        window.addEventListener("resize", calculateSlideWidth)
-        return () => window.removeEventListener("resize", calculateSlideWidth)
-    }, [posts])
 
     useEffect(() => {
         if (isAutoPlaying && !isDragging) {
@@ -55,7 +37,7 @@ export default function BlogCarousel({ posts }: BlogCarouselProps) {
         if (!isDragging) return
         setIsDragging(false)
 
-        const threshold = slideWidth ? slideWidth / 2 : 100
+        const threshold = 100
         if (Math.abs(translateX) > threshold) {
             if (translateX > 0 && currentIndex > 0) {
                 setCurrentIndex((prev) => prev - 1)
@@ -98,31 +80,41 @@ export default function BlogCarousel({ posts }: BlogCarouselProps) {
                 onTouchEnd={handleTouchEnd}
             >
                 <div
-                    ref={innerRef}
-                    className="flex gap-5 transition-transform duration-500 ease-out"
+                    className="flex gap-5 transition-transform duration-500 ease-out relative right-40"
                     style={{
-                        transform: `translateX(${-(currentIndex * slideWidth) + (isDragging ? translateX : 0)}px)`,
+                        transform: `translateX(calc(-${currentIndex * 25}% + ${isDragging ? translateX : 0}px))`,
                     }}
                 >
-                    {posts.map((post) => (
-                        <div
-                            key={post.id}
-                            className="flex-shrink-0 w-[30%] px-3 h-96 rounded-2xl"
-                        >
-                            <div className="rounded-2xl h-96 overflow-hidden">
-                                <img
-                                    src={post.image}
-                                    alt={post.title}
-                                    className="w-full h-64 rounded-2xl"
-                                    draggable={false}
-                                />
-                                <h3 className="text-white text-sm font-medium mb-3 line-clamp-2 leading-relaxed px-2">{post.title}</h3>
-                                <button className="text-blue-400 text-sm hover:text-blue-300 transition-colors px-2">
-                                    {post.readMore}
-                                </button>
+                    {posts.map((post, index) => {
+                        const visibleStart = currentIndex
+                        const visibleEnd = currentIndex + 3
+                        const isInView = index >= visibleStart && index <= visibleEnd
+                        const relativeIndex = index - currentIndex
+                        const isCenter = relativeIndex === 1 || relativeIndex === 2
+                        const scaleClass = isCenter && isInView ? "h-72" : "h-56"
+
+                        return (
+                            <div
+                                key={post.id}
+                                className={`flex-shrink-0 w-[28%] px-3 transition-transform duration-500 rounded-2xl  ${isCenter ? "z-10" : "z-0"}`}
+                            >
+                                <div className="rounded-2xl overflow-hidden">
+                                    <Image
+                                        src={post.image}
+                                        alt={post.title}
+                                        className={`w-full ${scaleClass} rounded-2xl object-cover`}
+                                        draggable={false}
+                                        width={600}
+                                        height={600}
+                                    />
+                                    <h3 className="text-white text-xl font-medium mb-3 line-clamp-2 leading-tight px-2 my-6">{post.title}</h3>
+                                    <button className="text-blue-400 text-sm hover:text-blue-300 transition-colors px-2">
+                                        {post.readMore}
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        )
+                    })}
                 </div>
             </div>
         </div>
