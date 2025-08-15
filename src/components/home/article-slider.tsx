@@ -2,9 +2,8 @@
 
 import type React from "react"
 
-import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+import { useEffect, useRef, useState } from "react"
 import Wrapper from "../layout/wrapper"
 
 interface Article {
@@ -17,32 +16,32 @@ interface Article {
 const articles: Article[] = [
     {
         id: 1,
-        title: "The death knell for subjectivity: Data breeds insights",
+        title: "From Design to Deployment: The UX Principles that Drive Engagement in MENA",
         image: "/article/a1.webp",
     },
     {
         id: 2,
-        title: "LPS wins Wasl Group's social media and content mandate",
+        title: "What Should You Look Out for While Searching for the Best Creative Agency in Dubai?",
         image: "/article/a2.webp",
     },
     {
         id: 3,
-        title: "From Design to Deployment: The UX Principles that Drive Engagement in MENA",
+        title: "Content Alone Isn’t Enough: Are GCC Businesses Leveraging Social Media Enough?",
         image: "/article/a3.webp",
     },
     {
         id: 4,
-        title: "Digital Transformation in the Middle East: A Comprehensive Guide",
+        title: "Ajmal Perfumes narrates ‘The Untold Stories’ with celebrity perfumers",
         image: "/article/a4.webp",
     },
     {
         id: 5,
-        title: "Building Scalable Web Applications with Modern Frameworks",
+        title: "The death knell for subjectivity: Data breeds insights",
         image: "/article/a5.webp",
     },
     {
         id: 6,
-        title: "Building Scalable Web Applications with Modern Frameworks",
+        title: "LPS wins Wasl Group’s social media and content mandate",
         image: "/article/a6.webp",
     },
 ]
@@ -174,40 +173,37 @@ export function ArticlesCarousel() {
                         onTouchEnd={handleDragEnd}
                     >
                         {articles.map((article) => (
-                            <Card
+                            <div
                                 key={article.id}
-                                className="flex-shrink-0 w-80 bg-card border-0 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                                className="flex-shrink-0 w-[400px] overflow-hidden"
                             >
-                                <div className="relative overflow-hidden rounded-t-lg">
+                                <div className="flex flex-col gap-4 relative overflow-hidden rounded-2xl">
                                     <img
                                         src={article.image || "/placeholder.svg"}
                                         alt={article.title}
-                                        className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
+                                        className="w-full h-72 object-cover transition-transform duration-300 hover:scale-105"
                                         draggable={false}
                                     />
-                                </div>
-
-                                <div className="p-6">
-                                    <h3 className="text-xl font-semibold text-foreground mb-4 line-clamp-2 leading-tight">
+                                    <h3 className="text-xl font-['Exo'] font-semibold text-black leading-tight">
                                         {article.title}
                                     </h3>
 
-                                    <Button className="bg-green hover:bg-green-600 text-white font-medium px-6 py-2 rounded-full transition-colors duration-200">
+                                    <Button className="bg-[#00FF00] hover:bg-[#2054FC] text-black hover:text-white font-medium text-lg w-32 h-12 rounded-full transition-colors duration-200">
                                         See more
                                     </Button>
                                 </div>
-                            </Card>
+                            </div>
                         ))}
                     </div>
                 </div>
 
                 {/* Pagination dots */}
-                <div className="flex justify-center mt-8 gap-2">
+                <div className="flex justify-center gap-2">
                     {Array.from({ length: maxIndex + 1 }, (_, index) => (
                         <button
                             key={index}
                             onClick={() => goToSlide(index)}
-                            className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
+                            className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex
                                 ? "bg-foreground scale-110"
                                 : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                                 }`}
