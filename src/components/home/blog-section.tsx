@@ -1,8 +1,8 @@
 "use client"
 import { Button } from "../common/button"
+import Wrapper from "../layout/wrapper"
 import BlogCarousel from "./blog-carousel"
 import InstagramVideos from "./instagram-videos"
-import { ArrowRight } from "lucide-react"
 
 const blogPosts = [
     {
@@ -72,8 +72,8 @@ const instagramVideos = [
 
 export default function BlogsSection() {
     return (
-        <div className="w-full bg-slate-900 text-white px-8 py-12">
-            <div className="max-w-7xl mx-auto">
+        <Wrapper>
+            <div className="max-w-7xl mx-auto bg-[url('/home/blog-bg.png')] rounded-3xl bg-center bg-cover bg-no-repeat">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-12">
                     <h1 className="text-4xl font-bold text-white">Blogs</h1>
@@ -86,6 +86,6 @@ export default function BlogsSection() {
                 {/* Instagram Videos Section */}
                 <InstagramVideos videos={instagramVideos} />
             </div>
-        </div>
+        </Wrapper>
     )
 }
