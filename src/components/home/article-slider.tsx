@@ -18,27 +18,32 @@ const articles: Article[] = [
     {
         id: 1,
         title: "The death knell for subjectivity: Data breeds insights",
-        image: "/professional-man-office.png",
+        image: "/article/a1.webp",
     },
     {
         id: 2,
         title: "LPS wins Wasl Group's social media and content mandate",
-        image: "/placeholder-ba2ke.png",
+        image: "/article/a2.webp",
     },
     {
         id: 3,
         title: "From Design to Deployment: The UX Principles that Drive Engagement in MENA",
-        image: "/ux-principles-infographic.png",
+        image: "/article/a3.webp",
     },
     {
         id: 4,
         title: "Digital Transformation in the Middle East: A Comprehensive Guide",
-        image: "/digital-middle-east.png",
+        image: "/article/a4.webp",
     },
     {
         id: 5,
         title: "Building Scalable Web Applications with Modern Frameworks",
-        image: "/developer-multiple-screens.png",
+        image: "/article/a5.webp",
+    },
+    {
+        id: 6,
+        title: "Building Scalable Web Applications with Modern Frameworks",
+        image: "/article/a6.webp",
     },
 ]
 
