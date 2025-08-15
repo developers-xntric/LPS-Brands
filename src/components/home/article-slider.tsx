@@ -79,7 +79,8 @@ export function ArticlesCarousel() {
 
     // Update translateX when currentIndex changes
     useEffect(() => {
-        const cardWidth = 400 // Approximate card width including gap
+        // Approximate card width including gap
+        const cardWidth = 400
         setTranslateX(-currentIndex * cardWidth)
     }, [currentIndex])
 
@@ -184,7 +185,7 @@ export function ArticlesCarousel() {
                                         className="w-full h-72 object-cover transition-transform duration-300 hover:scale-105"
                                         draggable={false}
                                     />
-                                    <h3 className="text-xl font-['Exo'] font-semibold text-black leading-tight">
+                                    <h3 className="text-xl font-['Exo'] font-semibold text-black leading-tight min-h-20">
                                         {article.title}
                                     </h3>
 
