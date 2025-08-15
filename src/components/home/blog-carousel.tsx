@@ -1,17 +1,7 @@
 "use client"
+import { BlogCarouselProps } from "@/data/blog-section"
 import { useState, useEffect, useRef } from "react"
 import type React from "react"
-
-interface BlogPost {
-    id: number
-    title: string
-    image: string
-    readMore: string
-}
-
-interface BlogCarouselProps {
-    posts: BlogPost[]
-}
 
 export default function BlogCarousel({ posts }: BlogCarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0)

@@ -1,3 +1,14 @@
+export interface BlogPost {
+    id: number
+    title: string
+    image: string
+    readMore: string
+}
+
+export interface BlogCarouselProps {
+    posts: BlogPost[]
+}
+
 export const blogPosts = [
     {
         id: 1,
