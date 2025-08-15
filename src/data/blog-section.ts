@@ -1,3 +1,13 @@
+export interface InstagramVideo {
+    id: number
+    thumbnail: string
+    url: string
+    title: string
+}
+
+export interface InstagramVideosProps {
+    videos: InstagramVideo[]
+}
 export interface BlogPost {
     id: number
     title: string

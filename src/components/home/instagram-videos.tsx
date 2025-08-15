@@ -1,15 +1,6 @@
 "use client"
 
-interface InstagramVideo {
-    id: number
-    thumbnail: string
-    url: string
-    title: string
-}
-
-interface InstagramVideosProps {
-    videos: InstagramVideo[]
-}
+import { InstagramVideo, InstagramVideosProps } from "@/data/blog-section"
 
 export default function InstagramVideos({ videos }: InstagramVideosProps) {
     const handleVideoClick = (video: InstagramVideo) => {
