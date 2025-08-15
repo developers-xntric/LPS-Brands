@@ -79,7 +79,7 @@ export default function BlogCarousel({ posts }: BlogCarouselProps) {
                 onTouchEnd={handleTouchEnd}
             >
                 <div
-                    className="flex transition-transform duration-500 ease-out"
+                    className="flex gap-5 transition-transform duration-500 ease-out"
                     style={{
                         transform: `translateX(calc(-${currentIndex * 25}% + ${isDragging ? translateX : 0}px))`,
                     }}

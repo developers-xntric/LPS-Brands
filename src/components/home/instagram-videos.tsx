@@ -9,7 +9,7 @@ export default function InstagramVideos({ videos }: InstagramVideosProps) {
 
     return (
         <div>
-            <div className="grid grid-cols-4 gap-6">
+            <div className="grid grid-cols-4 gap-6 px-12">
                 {videos.map((video) => (
                     <div
                         key={video.id}
