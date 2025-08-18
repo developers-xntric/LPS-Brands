@@ -6,12 +6,15 @@ export default function ProductionEvolutionSection() {
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-6xl font-bold text-secondary mb-6 font-['Exo'] max-w-5xl mx-auto">
-                        Let Modern 
+                    <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6 font-['Exo'] max-w-4xl mx-auto">
+                        Let Modern
                         <span className="text-green"> Leadership Branding</span> Shape Your Identity as a Leader
                     </h2>
-                    <div className="inline-block bg-blue-400 text-white px-6 py-3 rounded-full font-medium">
-                        A Smarter, More Impactful Approach
+                    <div className="inline-block bg-blue mt-4 text-white h-[90px] w-[970px] rounded-xl font-semibold text-5xl rotate-[2.2deg] font-sans hover:bg-[#00FC09] transition-all duration-300" style={{
+                        alignContent: "center",
+                        boxShadow: "5px 10px #000000"
+                    }}>
+                        We Help You Build Your Leadership Brand
                     </div>
                 </div>
 
