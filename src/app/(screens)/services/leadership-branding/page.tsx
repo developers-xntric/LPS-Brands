@@ -4,7 +4,7 @@ import React from 'react'
 const LeadershipBranding = () => {
     return (
         <div>
-            <CareersHero />
+            <CareersHero heading='LEADERSHIP BRANDING' bottom={false} />
         </div>
     )
 }
