@@ -41,7 +41,7 @@ export default function ContactFormSection() {
                 <div className="flex gap-6 mb-8 font-['Exo']">
                     {/* Full Name Field */}
                     <div className="space-y-2">
-                        <label htmlFor="fullName" className="text-lg font-normal text-foreground">
+                        <label htmlFor="fullName" className="text-lg font-bold text-foreground">
                             Full Name
                         </label>
                         <Input
@@ -51,14 +51,14 @@ export default function ContactFormSection() {
                             placeholder="Full Name"
                             value={formData.fullName}
                             onChange={handleInputChange}
-                            className="h-12 text-base border-gray-300 rounded-lg w-96"
+                            className="h-12 text-base border-black rounded-lg w-96"
                             required
                         />
                     </div>
 
                     {/* Email Field */}
                     <div className="space-y-2">
-                        <label htmlFor="email" className="text-lg font-normal text-foreground">
+                        <label htmlFor="email" className="text-lg font-bold text-foreground">
                             Email
                         </label>
                         <Input
@@ -68,14 +68,14 @@ export default function ContactFormSection() {
                             placeholder="Email"
                             value={formData.email}
                             onChange={handleInputChange}
-                            className="h-12 text-base border-gray-300 rounded-lg w-96"
+                            className="h-12 text-base border-black rounded-lg w-96"
                             required
                         />
                     </div>
 
                     {/* Phone Field */}
                     <div className="space-y-2">
-                        <label htmlFor="phone" className="text-lg font-normal text-foreground">
+                        <label htmlFor="phone" className="text-lg font-bold text-foreground">
                             Phone
                         </label>
                         <div className="relative">
@@ -92,7 +92,7 @@ export default function ContactFormSection() {
                                 placeholder="050 123 4567"
                                 value={formData.phone}
                                 onChange={handleInputChange}
-                                className="h-12 text-base border-gray-300 rounded-lg pl-16 w-96"
+                                className="h-12 text-base border-black rounded-lg pl-16 w-96"
                                 required
                             />
                         </div>
@@ -103,7 +103,7 @@ export default function ContactFormSection() {
                 <div className="flex justify-start">
                     <Button
                         type="submit"
-                        className="bg-green text-secondary font-medium px-12 py-3 text-lg rounded-full h-auto"
+                        className="bg-green text-secondary font-normal px-12 py-4 text-xl rounded-full h-auto hover:bg-[#2054FC] hover:text-white"
                     >
                         Connect with an expert
                     </Button>
