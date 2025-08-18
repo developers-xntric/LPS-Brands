@@ -54,7 +54,7 @@ export default function FAQPage() {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h1 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h1>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-lg font-['Exo'] text-gray-600 max-w-2xl mx-auto">
                         Find answers to common questions about our services, process, and how we can help your business grow.
                     </p>
                 </div>
@@ -64,13 +64,13 @@ export default function FAQPage() {
                     {faqs.map((faq, index) => (
                         <div
                             key={index}
-                            className="border-2 border-black rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-200"
+                            className="border-[1px] border-black rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-200"
                         >
                             <button
                                 onClick={() => toggleItem(index)}
                                 className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
                             >
-                                <h3 className="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>
+                                <h3 className="text-xl font-semibold text-gray-900 pr-4">{faq.question}</h3>
                                 <ChevronDown
                                     className={`w-5 h-5 text-black transition-transform duration-200 flex-shrink-0 ${openItems.includes(index) ? "rotate-180" : ""
                                         }`}
@@ -83,7 +83,7 @@ export default function FAQPage() {
                             >
                                 <div className="px-6 pb-5">
                                     <div className="border-t border-gray-100 pt-4">
-                                        <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                                        <p className="text-gray-700 leading-tight font-['Exo']">{faq.answer}</p>
                                     </div>
                                 </div>
                             </div>
