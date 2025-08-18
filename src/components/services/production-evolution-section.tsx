@@ -1,9 +1,10 @@
 import Image from "next/image"
+import Wrapper from "../layout/wrapper"
 
 export default function ProductionEvolutionSection() {
     return (
-        <section className="bg-gray-50 py-16 px-4">
-            <div className="max-w-6xl mx-auto">
+        <Wrapper>
+            <div className="mx-auto py-16">
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6 font-['Exo'] max-w-4xl mx-auto">
@@ -19,28 +20,24 @@ export default function ProductionEvolutionSection() {
                 </div>
 
                 {/* Main Content Grid */}
-                <div className="grid lg:grid-cols-2 gap-12 items-start">
+                <div className="grid lg:grid-cols-2 items-start">
                     {/* Left Column - Text with Green Circle */}
                     <div className="relative">
                         {/* Green Circle Background */}
-                        <div className="absolute -left-8 -top-8 w-32 h-32 bg-green-100 rounded-full opacity-60"></div>
+                        {/* <div className="absolute -left-8 -top-8 w-32 h-32 bg-green-100 rounded-full opacity-60"></div> */}
 
-                        <div className="relative z-10 bg-white p-8 rounded-lg shadow-sm">
-                            <p className="text-gray-700 leading-relaxed text-base">
-                                In today's dynamic marketing world, production isn't just about creating content—it's about making smart
-                                decisions that unlock creative value at every budget level at the speed development demands. We've
-                                developed a strategic approach that transforms constraints into creative springboards. Whether it's a
-                                full-scale shoot or a lean content sprint, we tailor our strategy to maximize platform relevance,
-                                cultural resonance, and ROI.
+                        <div className="relative z-10 p-8 rounded-lg shadow-sm top-14">
+                            <p className="text-secondary leading-7 font-medium text-lg font-['Exo']">
+                                Leadership branding is the cornerstone of how you’re seen, appreciated, and followed in the competitive environment of today, not simply a slogan. Whether your role is changemaker, entrepreneur, or executive, your own leadership brand determines your effect. Establishing a leadership brand requires establishing your beliefs, approach of communication, and special presence you provide to every room.
                             </p>
                         </div>
                     </div>
 
                     {/* Right Column - Jewelry Image */}
                     <div className="relative">
-                        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div className="rounded-lg shadow-sm overflow-hidden">
                             <Image
-                                src="/images/jewelry-packaging.png"
+                                src="/services/pe1.webp"
                                 alt="Luxury jewelry packaging display"
                                 width={600}
                                 height={400}
@@ -51,12 +48,12 @@ export default function ProductionEvolutionSection() {
                 </div>
 
                 {/* Bottom Section */}
-                <div className="grid lg:grid-cols-2 gap-12 items-center mt-16">
+                <div className="grid lg:grid-cols-2 items-center">
                     {/* Left - Urban Display Image */}
                     <div className="relative">
-                        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div className="bg-white shadow-sm overflow-hidden">
                             <Image
-                                src="/urban-digital-display.png"
+                                src="/services/pe2.webp"
                                 alt="Digital display in urban setting"
                                 width={500}
                                 height={300}
@@ -67,16 +64,14 @@ export default function ProductionEvolutionSection() {
 
                     {/* Right - Text Content */}
                     <div className="relative">
-                        <div className="bg-white p-8 rounded-lg shadow-sm">
-                            <p className="text-gray-700 leading-relaxed text-base">
-                                Our strength lies in designing for efficiency—refining scripts, selecting media wisely, and optimizing
-                                every frame for impact. It's how we deliver scroll-stopping content that not only looks premium, but
-                                performs like it too—proving that budget boundaries don't limit ideas, they elevate them.
+                        <div className="p-8 shadow-sm">
+                            <p className="text-secondary font-medium leading-7 text-lg font-['Exo']">
+                                This goes beyond just leadership. In a society where authority is acquired by authenticity, cultural design for impact, relevance, and influence follows. A leadership brand is the junction between your view of yourself and your professional identity. It’s about regularly and honestly presenting your leadership style, beliefs, strengths, and purpose.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </Wrapper>
     )
 }
