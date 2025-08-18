@@ -128,6 +128,10 @@ body {
   color: #2054FC;
 }
 
+.border-blue {
+  border-color: #2054FC;
+}
+
 .nav-hover:hover {
   text-decoration-line: underline;
   text-decoration-style: solid;
@@ -224,5 +228,3 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-
