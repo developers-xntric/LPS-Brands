@@ -5,6 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import Wrapper from "../layout/wrapper"
 
 export default function ContactFormSection() {
     const [formData, setFormData] = useState({
@@ -28,19 +29,19 @@ export default function ContactFormSection() {
     }
 
     return (
-        <section className="py-16 px-4 max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
+        <Wrapper>
+            <div className="mb-12 py-16">
+                <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4 leading-tight max-w-7xl">
                     Have Questions or Ready to Start Your Project?
+                    Get in Touch with Us Today!
                 </h2>
-                <h3 className="text-4xl md:text-5xl font-bold text-foreground">Get in Touch with Us Today!</h3>
             </div>
 
-            <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <form onSubmit={handleSubmit} className="mx-auto">
+                <div className="flex gap-6 mb-8 font-['Exo']">
                     {/* Full Name Field */}
                     <div className="space-y-2">
-                        <label htmlFor="fullName" className="text-sm font-medium text-foreground">
+                        <label htmlFor="fullName" className="text-lg font-normal text-foreground">
                             Full Name
                         </label>
                         <Input
@@ -50,14 +51,14 @@ export default function ContactFormSection() {
                             placeholder="Full Name"
                             value={formData.fullName}
                             onChange={handleInputChange}
-                            className="h-12 text-base border-gray-300 rounded-lg"
+                            className="h-12 text-base border-gray-300 rounded-lg w-96"
                             required
                         />
                     </div>
 
                     {/* Email Field */}
                     <div className="space-y-2">
-                        <label htmlFor="email" className="text-sm font-medium text-foreground">
+                        <label htmlFor="email" className="text-lg font-normal text-foreground">
                             Email
                         </label>
                         <Input
@@ -67,14 +68,14 @@ export default function ContactFormSection() {
                             placeholder="Email"
                             value={formData.email}
                             onChange={handleInputChange}
-                            className="h-12 text-base border-gray-300 rounded-lg"
+                            className="h-12 text-base border-gray-300 rounded-lg w-96"
                             required
                         />
                     </div>
 
                     {/* Phone Field */}
                     <div className="space-y-2">
-                        <label htmlFor="phone" className="text-sm font-medium text-foreground">
+                        <label htmlFor="phone" className="text-lg font-normal text-foreground">
                             Phone
                         </label>
                         <div className="relative">
@@ -91,7 +92,7 @@ export default function ContactFormSection() {
                                 placeholder="050 123 4567"
                                 value={formData.phone}
                                 onChange={handleInputChange}
-                                className="h-12 text-base border-gray-300 rounded-lg pl-16"
+                                className="h-12 text-base border-gray-300 rounded-lg pl-16 w-96"
                                 required
                             />
                         </div>
@@ -102,12 +103,12 @@ export default function ContactFormSection() {
                 <div className="flex justify-start">
                     <Button
                         type="submit"
-                        className="bg-green-500 hover:bg-green-600 text-white font-medium px-8 py-3 rounded-full text-base h-auto"
+                        className="bg-green text-secondary font-medium px-12 py-3 text-lg rounded-full h-auto"
                     >
                         Connect with an expert
                     </Button>
                 </div>
             </form>
-        </section>
+        </Wrapper>
     )
 }
