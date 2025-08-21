@@ -6,7 +6,7 @@ import React from 'react'
 const LeadershipBranding = () => {
     return (
         <div>
-            <CareersHero heading='LEADERSHIP BRANDING' bottom={false} />
+            <CareersHero heading='LEADERSHIP BRANDING' highlight='LEADERSHIP BRANDING' bottom={false} />
             <ProductionEvolutionSection />
             <ContactFormSection />
         </div>
