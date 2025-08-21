@@ -8,8 +8,8 @@ import React from "react";
 function Careers() {
   return (
     <div>
-      <CareersHero />
-    
+      <CareersHero button={true} />
+
       <CareersSecond />
       <div className="overflow-x-hidden">
         <CareersThird />
@@ -19,7 +19,7 @@ function Careers() {
           Didn’t find a role that <br /> clicks? <br /> Let us know what suits
           you <br /> best!
         </h2>
-        <Button text="Submit Your Resume" bg="bg-black"/>
+        <Button text="Submit Your Resume" bg="bg-black" />
       </div>
     </div>
   );

@@ -5,11 +5,14 @@ import CareersImageGrid from "./career-image-grid";
 
 interface ServiceInnerProps {
   heading?: string;
-  highlight?: string;   // <-- new prop
+  highlight?: string;
   bottom?: boolean;
+  text?: string;
+  button?: boolean;
+  image?: "single" | "grid";
 }
 
-function CareersHero({ heading, highlight, bottom = true }: ServiceInnerProps) {
+function CareersHero({ heading, highlight, bottom = true, text, button, image = "grid" }: ServiceInnerProps) {
   const renderHeading = () => {
     if (!heading) {
       return (
@@ -26,7 +29,7 @@ function CareersHero({ heading, highlight, bottom = true }: ServiceInnerProps) {
     if (highlight && heading.includes(highlight)) {
       const parts = heading.split(new RegExp(`(${highlight})`, "gi"));
       return (
-        <h1 className="text-[80px] font-bold">
+        <h1 className="text-[75px] font-bold uppercase max-w-[70%] leading-[80px]">
           {parts.map((part, i) =>
             part.toLowerCase() === highlight.toLowerCase() ? (
               <span key={i} className="gradient-text">
@@ -61,17 +64,18 @@ function CareersHero({ heading, highlight, bottom = true }: ServiceInnerProps) {
 
         {/* Bottom Section */}
         {bottom && (
-          <div className="flex flex-col items-start gap-4">
-            <p className="text-lg font-['Exo'] leading-relaxed">
-              Looking for a career that’s all about making, shaping, and
-              celebrating the extraordinary?
+          <div className="flex flex-col items-start gap-4 mt-4 max-w-[65%]">
+            <p className="text-xl font-normal font-['Exo'] leading-relaxed">
+              {text ? text : "Looking for a career that’s all about making shaping, and celebrating the extraordinary?"}
             </p>
-            <p className="text-lg font-['Exo'] leading-relaxed">Then you’re home!</p>
-            <Button text="Join Our Team" bg="bg-black" />
+            {button && <>
+              <p className="text-lg font-['Exo'] leading-relaxed">Then you’re home!</p>
+              <Button text="Join Our Team" bg="bg-black" />
+            </>}
           </div>
         )}
 
-        {bottom && <CareersImageGrid />}
+        {bottom && <CareersImageGrid image={image} />}
       </div>
     </div>
   );
