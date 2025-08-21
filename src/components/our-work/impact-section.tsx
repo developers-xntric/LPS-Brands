@@ -115,7 +115,7 @@ export default function ImpactSection() {
       <div className="relative">
         <div className="relative overflow-hidden shadow-2xl mt-10">
           <video
-            src="/work/i1.mp4" 
+            src="/work/v1.webm" 
             width={600}
             height={400}
             className="w-full h-auto object-cover"
@@ -123,6 +123,7 @@ export default function ImpactSection() {
             loop
             muted
             playsInline
+            controls
           />
         </div>
       </div>
