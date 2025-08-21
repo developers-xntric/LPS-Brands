@@ -1,0 +1,77 @@
+import Image from "next/image"
+import Wrapper from "../layout/wrapper"
+
+export default function ProductionEvolutionSection() {
+    return (
+        <Wrapper>
+            <div className="mx-auto py-16">
+                {/* Header */}
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6 font-['Exo'] max-w-4xl mx-auto">
+                        Let Modern
+                        <span className="text-green"> Leadership Branding</span> Shape Your Identity as a Leader
+                    </h2>
+                    <div className="inline-block bg-blue mt-4 text-white h-[90px] w-[970px] rounded-xl font-semibold text-5xl rotate-[2.2deg] font-sans hover:bg-[#00FC09] transition-all duration-300" style={{
+                        alignContent: "center",
+                        boxShadow: "5px 10px #000000"
+                    }}>
+                        We Help You Build Your Leadership Brand
+                    </div>
+                </div>
+
+                {/* Main Content Grid */}
+                <div className="grid lg:grid-cols-2 items-start">
+                    {/* Left Column - Text with Green Circle */}
+                    <div className="relative">
+                        {/* Green Circle Background */}
+                        {/* <div className="absolute -left-8 -top-8 w-32 h-32 bg-green-100 rounded-full opacity-60"></div> */}
+
+                        <div className="relative z-10 p-8 rounded-lg shadow-sm top-14">
+                            <p className="text-secondary leading-7 font-medium text-lg font-['Exo']">
+                                Leadership branding is the cornerstone of how you’re seen, appreciated, and followed in the competitive environment of today, not simply a slogan. Whether your role is changemaker, entrepreneur, or executive, your own leadership brand determines your effect. Establishing a leadership brand requires establishing your beliefs, approach of communication, and special presence you provide to every room.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Right Column - Jewelry Image */}
+                    <div className="relative">
+                        <div className="rounded-lg shadow-sm overflow-hidden">
+                            <Image
+                                src="/services/pe1.webp"
+                                alt="Luxury jewelry packaging display"
+                                width={600}
+                                height={400}
+                                className="w-full h-auto object-cover"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                {/* Bottom Section */}
+                <div className="grid lg:grid-cols-2 items-center">
+                    {/* Left - Urban Display Image */}
+                    <div className="relative">
+                        <div className="bg-white shadow-sm overflow-hidden">
+                            <Image
+                                src="/services/pe2.webp"
+                                alt="Digital display in urban setting"
+                                width={500}
+                                height={300}
+                                className="w-full h-auto object-cover"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Right - Text Content */}
+                    <div className="relative">
+                        <div className="p-8 shadow-sm">
+                            <p className="text-secondary font-medium leading-7 text-lg font-['Exo']">
+                                This goes beyond just leadership. In a society where authority is acquired by authenticity, cultural design for impact, relevance, and influence follows. A leadership brand is the junction between your view of yourself and your professional identity. It’s about regularly and honestly presenting your leadership style, beliefs, strengths, and purpose.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Wrapper>
+    )
+}

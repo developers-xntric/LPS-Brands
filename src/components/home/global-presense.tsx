@@ -9,8 +9,8 @@ import HoverImage from "./hover-image";
 const GlobalPresence = () => {
     return (
         <Wrapper>
-            <div className="flex flex-col xl:flex-row gap-10 xl:justify-between py-16">
-                <div className="relative h-[630px] lg:h-[850px] xl:h-auto xl:w-[65%] bg-[url('/home/bg-grad.png')] bg-cover bg-center rounded-[50px]">
+            <div className="flex flex-col xl:flex-row gap-10 xl:justify-between py-16 relative">
+                <div className="relative h-[630px] lg:h-[760px] xl:w-[65%] bg-[url('/home/bg-grad.png')] bg-cover bg-center rounded-[50px]">
                     <HoverImage
                         defaultSrc="/home/zig-zag.png"
                         hoverSrc="/home/zig-zag.png"
@@ -75,7 +75,6 @@ const GlobalPresence = () => {
                             </div>
                         </div>
                     </div>
-
                     <YearsAwwards />
                 </div>
 
