@@ -20,8 +20,8 @@ function CareersHero({ heading, bottom = true }: ServiceInnerProps) {
         <div className="mt-20 flex flex-col items-start -space-y-8">
           {heading ? <h1 className="text-[80px] font-bold gradient-text">{heading}</h1> : <>
             <h1 className="text-[65px] font-bold">CAREERS WITH</h1>{" "}
-            <span className="gradient-text text-[65px] font-bold">
-              LPS BRANDS
+            <span className="text-[65px] font-bold">
+              <span className="text-black">— </span> <span className="gradient-text">LPS BRANDS</span>
             </span>
           </>}
         </div>
