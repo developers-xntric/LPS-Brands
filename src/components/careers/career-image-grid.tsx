@@ -32,8 +32,13 @@ function CareersImageGrid({ image }: { image: "single" | "grid" }) {
             className="rounded-tl-[70px]"
           />
         </div>
-      </div> : <div>
-
+      </div> : <div className="relative bottom-28">
+        <Image
+          src={"/work/i1.webp"}
+          width={1500}
+          height={700}
+          alt="Team Working"
+        />
       </div>}
     </div>
   );
