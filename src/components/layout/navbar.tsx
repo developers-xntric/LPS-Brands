@@ -154,7 +154,7 @@ export default function Navbar() {
                     </Link>
 
                     <Link
-                        href="/about"
+                        href="/about-us"
                         className="text-secondary hover:text-white hover:bg-black transition-colors duration-200 font-semibold px-4 py-2 text-[16px] rounded-full font-['Exo']"
                     >
                         Who We Are

@@ -48,7 +48,7 @@ function CareersHero({ heading, highlight, bottom = true, text, button, image = 
 
   return (
     <div
-      className={`bg-[url('/home/Hero.png')] bg-center bg-cover ${bottom ? "min-h-screen" : "min-h-96"
+      className={`bg-[url('/home/Hero.png')] bg-center bg-cover ${bottom ? "" : "min-h-96"
         }`}
     >
       <div className="2xl:max-w-[1700px] mx-auto w-[95%] ">
@@ -61,7 +61,11 @@ function CareersHero({ heading, highlight, bottom = true, text, button, image = 
         <div className="mt-20 flex flex-col items-start -space-y-8">
           {renderHeading()}
         </div>
-
+        {(text && !bottom) && <div className="flex flex-col items-start gap-4 mt-4 max-w-[65%] py-10">
+          <p className="text-xl font-medium font-['Exo'] leading-tight">
+            {text}
+          </p>
+        </div>}
         {/* Bottom Section */}
         {bottom && (
           <div className="flex flex-col items-start gap-4 mt-4 max-w-[65%]">

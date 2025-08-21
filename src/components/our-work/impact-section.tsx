@@ -73,7 +73,7 @@ export default function ImpactSection() {
 
           {/* Statistics Grid */}
         </div>
-        <div className="w-full flex justify-between pt-8">
+        <div className="w-full flex justify-between">
           {/* Stat 1 */}
           <div className="space-y-2">
             <div className="flex items-baseline gap-1">
