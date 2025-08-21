@@ -111,18 +111,18 @@ export default function ImpactSection() {
           </div>
         </div>
 
-
-
       </div>
       <div className="relative">
         <div className="relative overflow-hidden shadow-2xl mt-10">
-          <Image
-            src="/work/i1.webp"
-            alt="Dubai Chambers building with modern architecture and palm trees"
+          <video
+            src="/work/i1.mp4" 
             width={600}
             height={400}
             className="w-full h-auto object-cover"
-            priority
+            autoPlay
+            loop
+            muted
+            playsInline
           />
         </div>
       </div>
