@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
 
-function CareersImageGrid() {
+function CareersImageGrid({ image }: { image: "single" | "grid" }) {
   return (
     <div className="2xl:max-w-[1700px] w-[95%] mx-auto relative 2xl:top-72 top-52">
-      <div className="grid grid-cols-3 gap-4 ">
+      {image === "grid" ? <div className="grid grid-cols-3 gap-4 ">
         <div className="relative">
           <Image
             src={"/careers/careers-3.webp"}
@@ -32,7 +32,15 @@ function CareersImageGrid() {
             className="rounded-tl-[70px]"
           />
         </div>
-      </div>
+      </div> : <div className="relative bottom-28">
+        <Image
+          src={"/work/i1.webp"}
+          width={1000}
+          height={400}
+          className="w-full h-auto"
+          alt="Team Working"
+        />
+      </div>}
     </div>
   );
 }
