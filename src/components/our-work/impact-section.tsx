@@ -1,7 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
+import { useEffect, useState } from "react"
 
 interface CounterProps {
   end: number
@@ -66,7 +65,7 @@ export default function ImpactSection() {
           <p className="text-secondary font-['Exo'] text-lg leading-relaxed max-w-xl">
             In collaboration with Dubai Chambers for more than six year, we committed to achieving key objectives that
             included cultivating a coherent creative and social media strategy, developing compelling content, and
-            enhancing brand awareness. The unification of the entity's digital experience and identity by seamlessly
+            enhancing brand awareness. The unification of the entity&apos;s digital experience and identity by seamlessly
             integrating multifaceted campaigns, events, activations, and built engagement with its various targeted
             business groups across its three chambers.
           </p>
