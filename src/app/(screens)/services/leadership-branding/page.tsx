@@ -1,6 +1,7 @@
 import CareersHero from '@/components/careers/careers-hero';
 import BrandingStart from '@/components/services/branding-start';
 import BuildingBrandsCards from '@/components/services/building-brands-cards';
+import DisplayFeatured from '@/components/services/display-featured';
 import ContactFormSection from '@/components/services/form';
 import ProductionEvolutionSection from '@/components/services/production-evolution-section';
 import Timeline from '@/components/services/time-line';
@@ -14,6 +15,7 @@ const LeadershipBranding = () => {
             <Timeline/>
             <BuildingBrandsCards/>
             <BrandingStart/>
+            <DisplayFeatured/>
             <ContactFormSection />
         </div>
     )
