@@ -8,7 +8,7 @@ import React from "react";
 function Careers() {
   return (
     <div>
-      <CareersHero button={true} />
+      <CareersHero button={true} careers={true} />
 
       <CareersSecond />
       <div className="overflow-x-hidden">
