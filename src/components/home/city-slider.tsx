@@ -8,7 +8,7 @@ const awwards = ["/home/i1.png", "/home/i2.png", "/home/i3.png", "/home/i4.png",
 function YearsAwwards() {
     const [duration, setDuration] = useState(20);
 
-    const duplicatedAwards = useMemo(() => [...awwards, ...awwards], [awwards]);
+    const duplicatedAwards = useMemo(() => [...awwards, ...awwards], []);
 
     useEffect(() => {
         const handleResize = () => {
