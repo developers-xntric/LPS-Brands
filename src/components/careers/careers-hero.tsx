@@ -52,7 +52,7 @@ function CareersHero({ heading, highlight, bottom = true, text, button, image = 
       className={`bg-[url('/home/Hero.png')] bg-center bg-cover ${bottom ? "" : "min-h-96"
         }`}
     >
-      <div className="2xl:max-w-[1700px] mx-auto w-[95%] ">
+      <div className={`2xl:max-w-[1700px] mx-auto ${careers ? 'w-[95%]' : 'w-[90%]'}`}>
         {/* Top Left LPS Logo */}
         <div className="pt-4">
           <LogoLPS />
