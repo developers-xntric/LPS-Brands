@@ -10,13 +10,13 @@ const FourSection = () => {
           <h3 className='text-[50px] text-[#FFFFFF] leading-[50px]'>
             How we understand the market shift
           </h3>
-          <p className='text-[24px] text-[#FFFFFF] my-10'>
+          <p className='text-[24px] text-[#FFFFFF] my-10 font-light'>
             We examine the changing expectations of a hyperaware, hyperconnected public. 
             From Generation Z voters to retirees, we track digital behaviour patterns among 
             different citizen groups. We examine worldwide civic tech, e-governance, and 
             citizen involvement tools trends.
           </p>
-          <p className='text-[24px] text-[#FFFFFF] my-10'>
+          <p className='text-[24px] text-[#FFFFFF] my-10 font-light'>
             Monitoring the changes in public attitude, trust, and participation across several 
             media, we investigate how behavioural science can be in line with policy 
             communication. We note where people search for information and their expected speed.
