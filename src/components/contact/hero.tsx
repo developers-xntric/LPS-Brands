@@ -83,7 +83,7 @@ function ContactHero() {
     );
 
     return (
-        <div className={`bg-[url('/home/Hero.png')] bg-center bg-cover`}>
+        <div className={`bg-[url('/home/Hero.png')] bg-center bg-cover pb-16`}>
             <div className={`2xl:max-w-[1700px] mx-auto w-[90%]`}>
                 {/* Top Left LPS Logo */}
                 <div className="pt-4">
@@ -95,7 +95,7 @@ function ContactHero() {
                     {/* Left: existing heading + copy */}
                     <div>
                         <div className="mt-10 flex flex-col uppercase items-start -space-y-8">
-                            <h1 className="text-[52px] md:text-[80px] font-bold flex flex-col -space-y-10 leading-none">
+                            <h1 className="text-[52px] md:text-[80px] font-bold flex flex-col leading-none">
                                 <span>Let’s work</span>
                                 <span className="gradient-text">— together.</span>
                             </h1>
@@ -324,11 +324,16 @@ function ContactHero() {
                                     <div className="pt-2 flex items-center justify-between gap-3">
                                         <button
                                             type="button"
-                                            onClick={() => setStep(1)}
+                                            onClick={(e) => {
+                                                e.preventDefault();      // don’t let the form submit
+                                                e.stopPropagation();     // don’t bubble to form handlers
+                                                setStep(1);              // go back to choices
+                                            }}
                                             className="px-5 py-3 rounded-xl font-semibold border border-black/20 hover:bg-black/5 transition"
                                         >
                                             Previous
                                         </button>
+
                                         <button
                                             type="submit"
                                             className="px-6 py-3 rounded-xl font-semibold text-black bg-[#00FC09] hover:opacity-90 transition"
@@ -336,6 +341,7 @@ function ContactHero() {
                                             Submit
                                         </button>
                                     </div>
+
 
                                     {/* (Optional) include hidden selections so they submit with the form if you post it */}
                                     <input type="hidden" name="identity" value={identity.join(", ")} />
