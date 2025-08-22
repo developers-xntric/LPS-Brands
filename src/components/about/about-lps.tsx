@@ -8,8 +8,7 @@ export function AboutLPS() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-0">
                     {/* Column 1 - From Social-First to 360 Impact Builders */}
                     <div
-                        className="flex flex-col items-start space-y-6 lg:pr-12 lg:border-r border-r-0 py-16 font-['Exo']"
-                        style={{ borderColor: "#00FC09" }}
+                        className="flex flex-col items-start space-y-6 lg:pr-8 lg:border-r border-r-0 py-16 font-['Exo'] border-[#00FC09]/70"
                     >
                         <div
                             className="w-16 h-16 rounded-2xl flex items-center justify-center text-white font-bold text-lg"
@@ -36,8 +35,7 @@ export function AboutLPS() {
 
                     {/* Column 2 - What We Do */}
                     <div
-                        className="flex flex-col items-start space-y-6 lg:px-12 lg:border-r border-r-0 py-16"
-                        style={{ borderColor: "#00FC09" }}
+                        className="flex flex-col items-start space-y-6 lg:px-10 lg:border-r border-r-0 py-16 border-[#00FC09]/70"
                     >
                         <div
                             className="w-16 h-16 rounded-2xl flex items-center justify-center text-white font-bold text-lg"
