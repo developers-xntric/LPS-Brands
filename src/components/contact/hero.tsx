@@ -74,7 +74,7 @@ function ContactHero() {
         <button
             type="button"
             onClick={onClick}
-            className={`px-3 py-2 rounded-full border text-sm transition
+            className={`px-5 py-3 rounded-full border text-md tracking-wide transition
         ${checked ? "bg-[#00FC09] border-[#00FC09]" : "border-black/20 bg-white"}
       `}
         >
@@ -116,13 +116,12 @@ function ContactHero() {
                     <div className="w-full">
                         <div className="rounded-2xl bg-white/80 backdrop-blur border border-black/10 shadow-xl p-6 md:p-8">
                             {/* Form heading required on the form */}
-                            <h2 className="text-2xl md:text-3xl font-extrabold leading-tight">
-                                Let us know <br className="hidden md:block" />
-                                about your project
+                            <h2 className="text-2xl md:text-3xl font-extrabold leading-tight uppercase max-w-md">
+                                <span>Let us know about your </span>
+                                <span className="text-blue">project </span>
+                                <span>So We Can Connect You With The Right </span>
+                                <span className="text-blue">pear</span>
                             </h2>
-                            <p className="mt-1 text-base md:text-lg font-semibold">
-                                So We Can Connect You With The Right pear
-                            </p>
 
                             {/* Step indicator */}
                             <div className="mt-4 mb-6 flex items-center gap-2">
@@ -142,11 +141,11 @@ function ContactHero() {
                                         e.preventDefault();
                                         setStep(2);
                                     }}
-                                    className="space-y-6"
+                                    className="space-y-6 font-['Exo']"
                                 >
                                     {/* Identity */}
                                     <div>
-                                        <label className="block text-sm font-bold uppercase tracking-wide mb-2">
+                                        <label className="block text-lg font-bold uppercase tracking-wide mb-2">
                                             Identity
                                         </label>
                                         <div className="flex flex-wrap gap-2">
@@ -163,7 +162,7 @@ function ContactHero() {
 
                                     {/* Communication Campaigns */}
                                     <div>
-                                        <label className="block text-sm font-bold uppercase tracking-wide mb-2">
+                                        <label className="block text-lg font-bold uppercase tracking-wide mb-2">
                                             Communication Campaigns
                                         </label>
                                         <div className="flex flex-wrap gap-2">
@@ -182,7 +181,7 @@ function ContactHero() {
 
                                     {/* Experiences */}
                                     <div>
-                                        <label className="block text-sm font-bold uppercase tracking-wide mb-2">
+                                        <label className="block text-lg font-bold uppercase tracking-wide mb-2">
                                             Experiences
                                         </label>
                                         <div className="flex flex-wrap gap-2">
