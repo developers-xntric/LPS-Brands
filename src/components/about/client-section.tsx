@@ -39,7 +39,7 @@ export function ClientsSection() {
 
                     {hoveredBrand !== null && (
                         <div
-                            className="absolute z-50 pointer-events-none animate-in fade-in zoom-in-95 duration-200"
+                            className="w-[500px] h-64 absolute z-50 pointer-events-none animate-in fade-in zoom-in-95 duration-200"
                             style={{
                                 top: `${Math.floor(hoveredBrand / 6) * (128 + 24) - 200}px`,
                                 left: `${(hoveredBrand % 6) * (100 / 6)}%`,
@@ -47,11 +47,11 @@ export function ClientsSection() {
                                 marginLeft: `${100 / 12}%`,
                             }}
                         >
-                            <div className="bg-black rounded-2xl p-4 shadow-2xl">
+                            <div className="rounded-2xl shadow-2xl">
                                 <Image
-                                    src={brands[hoveredBrand].popupImage || "/placeholder.svg"}
+                                    src={brands[hoveredBrand].popupImage}
                                     alt={`${brands[hoveredBrand].name} popup`}
-                                    className=" object-cover rounded-xl"
+                                    className="w-full h-full object-cover rounded-xl"
                                     width={500}
                                     height={500}
                                 />
