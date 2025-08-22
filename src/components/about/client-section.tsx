@@ -23,11 +23,17 @@ export function ClientsSection() {
                     {brands.map((brand, index) => (
                         <div
                             key={`${brand.name}-${index}`}
-                            className="relative bg-gray-200 rounded-2xl h-32 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                            className="relative rounded-2xl h-24 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg"
                             onMouseEnter={() => setHoveredBrand(index)}
                             onMouseLeave={() => setHoveredBrand(null)}
                         >
-                            <span className="text-2xl font-bold text-black">{brand.logo}</span>
+                            <Image
+                                src={brand.logo}
+                                alt={`${brand.logo} popup`}
+                                className="w-full h-full object-cover rounded-xl"
+                                width={500}
+                                height={500}
+                            />
                         </div>
                     ))}
 
