@@ -29,13 +29,13 @@ const servicesData = {
 }
 
 const menuItems = [
-    {name:"Home", link: "/"},
-    {name:"Who We Are", link: "/who-we-are"},
-    {name:"Our Industries", link: "/our-industry"},
-    {name:"Our Work", link: "/our-work"},
-    {name:"Services", link: "/services"},
-    {name:"Blog", link: "/blog"},
-    {name:"Careers", link: "/careers"}
+    { name: "Home", link: "/" },
+    { name: "Who We Are", link: "/who-we-are" },
+    { name: "Our Industries", link: "/our-industry" },
+    { name: "Our Work", link: "/our-work" },
+    { name: "Services", link: "/services" },
+    { name: "Blog", link: "/blog" },
+    { name: "Careers", link: "/careers" }
 ]
 
 export default function Navbar() {
@@ -174,7 +174,7 @@ export default function Navbar() {
                     </div>
 
                     <Link
-                        href="/contact"
+                        href="/contact-us"
                         className="bg-green text-black px-8 py-3 rounded-full transition-all duration-200 font-semibold text-[16px]  shadow-lg hover:shadow-xl transform hover:scale-105 font-['Exo']"
                     >
                         Contact Us
