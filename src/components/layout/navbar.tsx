@@ -29,13 +29,13 @@ const servicesData = {
 }
 
 const menuItems = [
-    "Home",
-    "Who We Are",
-    "Our Industries",
-    "Our Work",
-    "Services",
-    "Blog",
-    "Careers"
+    {name:"Home", link: "/"},
+    {name:"Who We Are", link: "/who-we-are"},
+    {name:"Our Industries", link: "/our-industry"},
+    {name:"Our Work", link: "/our-work"},
+    {name:"Services", link: "/services"},
+    {name:"Blog", link: "/blog"},
+    {name:"Careers", link: "/careers"}
 ]
 
 export default function Navbar() {
@@ -108,14 +108,14 @@ export default function Navbar() {
                     <div>
                         {menuItems.map((item, index) => (
                             <Link
-                                key={item}
-                                href={`/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                                key={index}
+                                href={`${item.link}`}
                                 className="flex items-center gap-3 text-secondary transition-all duration-200 group py-2"
                                 style={{
                                     animationDelay: `${index * 50}ms`
                                 }}
                             >
-                                <span className="font-normal text-[16px]">{item}</span>
+                                <span className="font-normal text-[16px]">{item.name}</span>
                                 <ArrowUpRight className="w-4 h-4 text-green group-hover:opacity-100 transition-all duration-200 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                             </Link>
                         ))}
@@ -147,7 +147,7 @@ export default function Navbar() {
                     </div>
 
                     <Link
-                        href="/work"
+                        href="/our-work"
                         className="text-secondary hover:text-white hover:bg-black transition-colors duration-200 font-semibold px-4 py-2 text-[16px] rounded-full font-['Exo']"
                     >
                         Our Work
