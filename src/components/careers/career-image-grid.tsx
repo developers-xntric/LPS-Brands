@@ -3,7 +3,7 @@ import React from "react";
 
 function CareersImageGrid({ image }: { image: "single" | "grid" }) {
   return (
-    <div className="2xl:max-w-[1700px] w-[95%] mx-auto relative 2xl:top-72 top-52">
+    <div className="2xl:max-w-[1700px] w-[100%] mx-auto relative 2xl:top-72 top-52">
       {image === "grid" ? <div className="grid grid-cols-3 gap-4 ">
         <div className="relative">
           <Image
