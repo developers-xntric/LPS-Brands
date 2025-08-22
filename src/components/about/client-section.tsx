@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image"
 import { useState } from "react"
 
 const brands = [
@@ -41,10 +42,12 @@ export function ClientsSection() {
                             }}
                         >
                             <div className="bg-black rounded-2xl p-4 shadow-2xl">
-                                <img
+                                <Image
                                     src={brands[hoveredBrand].popupImage || "/placeholder.svg"}
                                     alt={`${brands[hoveredBrand].name} popup`}
-                                    className="w-80 h-60 object-cover rounded-xl"
+                                    className=" object-cover rounded-xl"
+                                    width={500}
+                                    height={500}
                                 />
                             </div>
                         </div>

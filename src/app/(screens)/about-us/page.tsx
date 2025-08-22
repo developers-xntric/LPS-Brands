@@ -1,4 +1,5 @@
 import { AboutLPS } from '@/components/about/about-lps'
+import { ClientsSection } from '@/components/about/client-section'
 import ImageSection from '@/components/about/image-section'
 import AboutHero from '@/components/careers/careers-hero'
 import { MeetThePears } from '@/components/home/meet-the-pears'
@@ -13,6 +14,7 @@ const AboutUs = () => {
             <ImageSection />
             <AboutLPS />
             <MeetThePears />
+            <ClientsSection />
         </div>
     )
 }
