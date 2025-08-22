@@ -10,9 +10,10 @@ interface ServiceInnerProps {
   text?: string;
   button?: boolean;
   image?: "single" | "grid";
+  careers?: boolean;
 }
 
-function CareersHero({ heading, highlight, bottom = true, text, button, image = "grid" }: ServiceInnerProps) {
+function CareersHero({ heading, highlight, bottom = true, text, button, image = "grid", careers = false }: ServiceInnerProps) {
   const renderHeading = () => {
     if (!heading) {
       return (

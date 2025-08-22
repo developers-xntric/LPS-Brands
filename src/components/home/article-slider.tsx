@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 import Wrapper from "../layout/wrapper"
 import { articles } from "@/data/article-slider"
+import Image from "next/image"
 
 export function ArticlesCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -140,11 +141,13 @@ export function ArticlesCarousel() {
                                 className="flex-shrink-0 w-[400px] overflow-hidden"
                             >
                                 <div className="flex flex-col gap-4 relative overflow-hidden rounded-2xl">
-                                    <img
+                                    <Image
                                         src={article.image || "/placeholder.svg"}
                                         alt={article.title}
                                         className="w-full h-72 object-cover transition-transform duration-300 hover:scale-105"
                                         draggable={false}
+                                        width={1000}
+                                        height={1000}
                                     />
                                     <h3 className="text-xl font-['Exo'] font-semibold text-black leading-tight min-h-20">
                                         {article.title}

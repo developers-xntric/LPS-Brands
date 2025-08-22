@@ -1,14 +1,12 @@
-import CareersImageGrid from "@/components/careers/career-image-grid";
 import CareersHero from "@/components/careers/careers-hero";
 import CareersSecond from "@/components/careers/careers-second";
 import { CareersThird } from "@/components/careers/careers-third";
 import { Button } from "@/components/common/button";
-import React from "react";
 
 function Careers() {
   return (
     <div>
-      <CareersHero button={true} />
+      <CareersHero button={true} careers={true} />
 
       <CareersSecond />
       <div className="overflow-x-hidden">

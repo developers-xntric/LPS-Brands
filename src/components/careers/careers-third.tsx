@@ -19,7 +19,6 @@ export function CareersThird() {
   const imagePaths = [...images, ...images];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const visibleCards = 5;
   const cardWidth = 256; // w-64
   const gap = 16; // gap-4
   const translateX = -(currentIndex * (cardWidth + gap));

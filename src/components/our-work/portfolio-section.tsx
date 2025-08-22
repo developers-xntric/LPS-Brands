@@ -18,7 +18,7 @@ export default function PortfolioSection() {
                             <p className="text-sm text-secondary font-medium font-['Exo']">2023 - Present</p>
                             <p className="text-secondary leading-relaxed font-['Exo']">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                                industry's standard dummy text ever since the 1500s.
+                                industry&apos;s standard dummy text ever since the 1500s.
                             </p>
                         </div>
                     </div>
@@ -36,7 +36,7 @@ export default function PortfolioSection() {
                             <p className="text-sm text-gray-600 font-medium font-['Exo']">2023 - Present</p>
                             <p className="text-secondary leading-relaxed font-['Exo']">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                                industry's standard dummy text ever since the 1500s.
+                                industry&apos;s standard dummy text ever since the 1500s.
                             </p>
                         </div>
                     </div>
