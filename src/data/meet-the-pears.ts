@@ -15,11 +15,12 @@ export const teamMembers: TeamMember[] = [
         defaultImage: "/team/t2.webp",
         hoverImage: "/team/th2.webp",
     },
-    {
-        id: "3",
-        defaultImage: "/team/t3.webp",
-        hoverImage: "/team/th3.webp",
-    },
+    // Servesh Removed
+    // {
+    //     id: "3",
+    //     defaultImage: "/team/t3.webp",
+    //     hoverImage: "/team/th3.webp",
+    // },
     {
         id: "4",
         defaultImage: "/team/t4.webp",
