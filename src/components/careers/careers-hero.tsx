@@ -63,9 +63,7 @@ function CareersHero({ heading, highlight, bottom = true, text, button, image = 
           {renderHeading()}
         </div>
         {(text && !bottom) && <div className="flex flex-col items-start gap-4 mt-4 max-w-[65%] py-10">
-          <p className="text-xl font-medium font-['Exo'] leading-tight">
-            {text}
-          </p>
+          <p className="text-xl font-medium font-['Exo'] leading-tight" dangerouslySetInnerHTML={{ __html: text }}></p>
         </div>}
         {/* Bottom Section */}
         {bottom && (
