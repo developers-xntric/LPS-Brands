@@ -2,18 +2,12 @@
 import { useState } from "react"
 
 const brands = [
-    { name: "Crocs", logo: "🐊", popupImage: "/images/crocs-popup.png" },
-    { name: "Dubai", logo: "🏙️", popupImage: "/images/dubai-popup.png" },
-    { name: "Mentos", logo: "mentos", popupImage: "/images/mentos-popup.png" },
-    { name: "Skechers", logo: "SKECHERS", popupImage: "/images/skechers-popup.png" },
-    { name: "Dolby", logo: "🔊 Dolby", popupImage: "/images/dolby-popup.png" },
-    { name: "NYSAA", logo: "NYSAA", popupImage: "/images/nysaa-popup.png" },
-    { name: "NYSAA", logo: "NYSAA", popupImage: "/images/nysaa-popup.png" },
-    { name: "Dolby", logo: "🔊 Dolby", popupImage: "/images/dolby-popup.png" },
-    { name: "Skechers", logo: "SKECHERS", popupImage: "/images/skechers-popup.png" },
-    { name: "Mentos", logo: "mentos", popupImage: "/images/mentos-popup.png" },
-    { name: "Dubai", logo: "🏙️", popupImage: "/images/dubai-popup.png" },
-    { name: "Crocs", logo: "🐊", popupImage: "/images/crocs-popup.png" },
+    { name: "Crocs", logo: "/about/1.webp", popupImage: "/about/11.webp" },
+    { name: "Dubai", logo: "/about/2.webp", popupImage: "/about/22.webp" },
+    { name: "Mentos", logo: "/about/3.webp", popupImage: "/about/33.webp" },
+    { name: "Skechers", logo: "/about/4.webp", popupImage: "/about/44.webp" },
+    { name: "Dolby", logo: "/about/5.webp", popupImage: "/about/55.webp" },
+    { name: "NYSAA", logo: "/about/6.webp", popupImage: "/about/66.webp" },
 ]
 
 export function ClientsSection() {
