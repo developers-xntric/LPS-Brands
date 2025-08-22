@@ -13,7 +13,7 @@ const servicesData = {
         "Social Media",
         "Public Relations"
     ],
-    "Communication Campaigns": [
+    "Communication": [
         "Creative",
         "Production",
         "Influencers",
@@ -66,7 +66,7 @@ export default function Navbar() {
                         </div>
                         {Object.entries(servicesData).map(([category, items], categoryIndex) => (
                             <div key={category} className="relative">
-                                <h3 className={`text-2xl font-normal text-secondary ${category !== "Communication Campaigns" ? "mb-9 pb-3" : "mb-4 relative bottom-[5px]"}`}>
+                                <h3 className={`text-2xl font-normal text-secondary mb-9 pb-3`}>
                                     {category}
                                 </h3>
                                 <div className="space-y-3">
