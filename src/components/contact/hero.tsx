@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import LogoLPS from "../icons/lps-logo";
+import { Button } from "../common/button";
 
 const IDENTITY_OPTIONS = [
     "Leadership Branding",
@@ -213,7 +214,7 @@ function ContactHero() {
                                         <div>
                                             <label
                                                 htmlFor="fullName"
-                                                className="block text-sm font-semibold mb-1"
+                                                className="block text-lg font-normal font-['Exo'] mb-1"
                                             >
                                                 Full Name
                                             </label>
@@ -231,7 +232,7 @@ function ContactHero() {
                                         <div>
                                             <label
                                                 htmlFor="email"
-                                                className="block text-sm font-semibold mb-1"
+                                                className="block text-lg font-normal font-['Exo'] mb-1"
                                             >
                                                 Email
                                             </label>
@@ -249,7 +250,7 @@ function ContactHero() {
                                         <div>
                                             <label
                                                 htmlFor="phone"
-                                                className="block text-sm font-semibold mb-1"
+                                                className="block text-lg font-normal font-['Exo'] mb-1"
                                             >
                                                 Phone
                                             </label>
@@ -266,7 +267,7 @@ function ContactHero() {
                                         <div>
                                             <label
                                                 htmlFor="company"
-                                                className="block text-sm font-semibold mb-1"
+                                                className="block text-lg font-normal font-['Exo'] mb-1"
                                             >
                                                 Company Name
                                             </label>
@@ -284,7 +285,7 @@ function ContactHero() {
                                     <div>
                                         <label
                                             htmlFor="details"
-                                            className="block text-sm font-semibold mb-1"
+                                            className="block text-lg font-normal font-['Exo'] mb-1"
                                         >
                                             Project Details
                                         </label>
@@ -301,7 +302,7 @@ function ContactHero() {
                                     <div>
                                         <label
                                             htmlFor="brief"
-                                            className="block text-sm font-semibold mb-1"
+                                            className="block text-lg font-normal font-['Exo'] mb-1"
                                         >
                                             Project Brief (upload)
                                         </label>
@@ -333,12 +334,7 @@ function ContactHero() {
                                             Previous
                                         </button>
 
-                                        <button
-                                            type="submit"
-                                            className="px-6 py-3 rounded-xl font-semibold text-black bg-[#00FC09] hover:opacity-90 transition"
-                                        >
-                                            Submit
-                                        </button>
+                                        <Button topT={true} bg="bg-black" text="Send Inquiry" />
                                     </div>
 
 
