@@ -49,10 +49,10 @@ function CareersHero({ heading, highlight, bottom = true, text, button, image = 
 
   return (
     <div
-      className={`bg-[url('/home/Hero.png')] bg-center bg-cover ${bottom ? "" : "min-h-96"
+      className={`bg-[url('/home/Hero.png')] bg-center bg-cover ${bottom ? "" : "pb-32"
         }`}
     >
-      <div className={`2xl:max-w-[1700px] mx-auto ${careers ? 'w-[95%]' : 'w-[90%]'}`}>
+      <div className="2xl:max-w-[1700px] mx-auto w-[90%] ">
         {/* Top Left LPS Logo */}
         <div className="pt-4">
           <LogoLPS />
@@ -63,9 +63,7 @@ function CareersHero({ heading, highlight, bottom = true, text, button, image = 
           {renderHeading()}
         </div>
         {(text && !bottom) && <div className="flex flex-col items-start gap-4 mt-4 max-w-[65%] py-10">
-          <p className="text-xl font-medium font-['Exo'] leading-tight">
-            {text}
-          </p>
+          <p className="text-xl font-medium font-['Exo'] leading-tight" dangerouslySetInnerHTML={{ __html: text }}></p>
         </div>}
         {/* Bottom Section */}
         {bottom && (
