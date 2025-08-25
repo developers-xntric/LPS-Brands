@@ -5,7 +5,7 @@ import Image from "next/image"
 export default function PortfolioSection() {
     return (
         <section className="py-16 px-4 bg-white">
-            <div className="max-w-7xl mx-auto">
+            <div className="2xl:max-w-[1740px] w-[90%] mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Samsung 990 Card */}
                     <div className="group cursor-pointer">
