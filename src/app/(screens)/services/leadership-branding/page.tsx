@@ -43,7 +43,29 @@ const LeadershipBranding = () => {
             />
             <ServicesHero heading='Leadership Branding' highlight='Leadership Branding' bottom={false} />
             <ProductionEvolutionSection />
-            <Timeline />
+            <Timeline
+                timelineData={
+                    [{
+                        title: "Identity Discovery & Strategic Clarity",
+                        description:
+                            "We map out your unique leadership DNA—your core values, differentiators, and purpose—and translate it into a compelling brand foundation.",
+                    },
+                    {
+                        title: "Format-Driven Storytelling",
+                        description:
+                            "From bite-sized thought leadership to long-form keynote narratives, we craft your voice across scrolls, stages, and screens.",
+                    },
+                    {
+                        title: "Omnichannel Presence",
+                        description:
+                            "We build dynamic content ecosystems—tailored for digital, earned, and live platforms—to keep your leadership brand active and aligned.",
+                    },
+                    {
+                        title: "Performance-Driven Evolution",
+                        description:
+                            "We continuously optimize your brand's performance through data-driven insights and strategic refinements.",
+                    }]}
+            />
             <BuildingBrandsCards />
             <BrandingStart />
             <DisplayFeatured />
