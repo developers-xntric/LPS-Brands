@@ -53,7 +53,24 @@ const CorporateBranding = () => {
                 ]}
                 images={["/services/pe3.webp", "/services/pe4.webp"]}
             />
-            <Timeline />
+            <Timeline
+                timelineData={[{
+                    title: "Core Discovery & Brand Architecture",
+                    description: "We uncover what makes your brand tick—from mission clarity to stakeholder insights—and craft an authentic blueprint for growth.",
+                },
+                {
+                    title: "Cross-Format Design Language",
+                    description: "We build flexible identity systems that perform across social, digital, and corporate—ensuring consistency and recognition.",
+                },
+                {
+                    title: "Narrative-Led Brand Expression",
+                    description: "We activate stories that matter—rooted in truth, elevated through emotion, and tailored for omnichannel resonance.",
+                },
+                {
+                    title: "Scalable Ecosystems",
+                    description: "From launch to rebrand, we deliver plug-and-play brand tools that empower internal teams and inspire external audiences.",
+                }]}
+            />
             <BuildingBrandsCards />
             <BrandingStart />
             <DisplayFeatured />
