@@ -1,11 +1,11 @@
 "use client";
 
-import type React from "react";
-import dynamic from "next/dynamic";
-import { useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
-import Wrapper from "../layout/wrapper";
+import dynamic from "next/dynamic";
+import type React from "react";
+import { useState } from "react";
 import { Button } from "../common/button";
+import Wrapper from "../layout/wrapper";
 
 const PhoneInput = dynamic(
   () => import("react-phone-input-2").then((m) => m.default),
