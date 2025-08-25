@@ -75,7 +75,16 @@ const CorporateBranding = () => {
                     description: "From launch to rebrand, we deliver plug-and-play brand tools that empower internal teams and inspire external audiences.",
                 }]}
             />
-            <BuildingBrandsCards />
+            <BuildingBrandsCards
+                heading='Our Corporate Branding Strategy, Built for the Future'
+                para='We start with size and clarity and then apply imagination. Rooted on insights, our corporate branding approach seeks to change companies from the inside out. From corporate culture to outside marketing, we create coherent brand systems that inspire engagement and show quantifiable expansion.'
+                t1='Insight-Led Differentiation'
+                p1='We uncover what makes your brand distinct through cultural intelligence, competitive analysis, and stakeholder-driven discovery.'
+                t2='Future-Ready Identity Systems'
+                p2='We design adaptable brand frameworks that not only stay ahead of trends—but define them—across every platform and touchpoint.'
+                t3='Purposeful Storytelling & Activation'
+                p3='Through strategic storytelling and bold rollouts, we create brand experiences that connect emotionally and leave a lasting impression.'
+            />
             <BrandingStart />
             <DisplayFeatured />
             <ContactFormSection />
