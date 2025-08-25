@@ -1,51 +1,52 @@
 "use client";
 
 import type React from "react";
-
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import Wrapper from "../layout/wrapper";
 import { Button } from "../common/button";
 
+// dynamic import to avoid any SSR hiccups
+const PhoneInput = dynamic(
+  () => import("react-phone-input-2").then((m) => m.default),
+  { ssr: false }
+);
+
+// import the library styles
+import "react-phone-input-2/lib/style.css";
+
 export default function ContactFormSection() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-    phone: "",
+    phone: "", // will hold formatted number, e.g. "+971 50 123 4567"
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Handle form submission here
   };
 
   return (
     <Wrapper>
       <div className="py-16">
-        <div className="mb-12 py-">
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb- leading-tight max-w-5xl">
-            Have Questions or Ready to Start Your Project? Get in Touch with Us
-            Today!
+        <div className="mb-12">
+          <h2 className="text-4xl md:text-6xl font-bold text-foreground leading-tight max-w-5xl">
+            Have Questions or Ready to Start Your Project? Get in Touch with Us Today!
           </h2>
         </div>
 
         <form onSubmit={handleSubmit} className="mx-auto">
           <div className="flex gap-6 mb-8 font-['Exo']">
-            {/* Full Name Field */}
+            {/* Full Name */}
             <div className="space-y-2">
-              <label
-                htmlFor="fullName"
-                className="text-lg font-bold text-foreground"
-              >
+              <label htmlFor="fullName" className="text-lg font-bold text-foreground">
                 Full Name
               </label>
               <Input
@@ -60,12 +61,9 @@ export default function ContactFormSection() {
               />
             </div>
 
-            {/* Email Field */}
+            {/* Email */}
             <div className="space-y-2">
-              <label
-                htmlFor="email"
-                className="text-lg font-bold text-foreground"
-              >
+              <label htmlFor="email" className="text-lg font-bold text-foreground">
                 Email
               </label>
               <Input
@@ -80,38 +78,32 @@ export default function ContactFormSection() {
               />
             </div>
 
-            {/* Phone Field */}
+            {/* Phone with country dropdown + flags */}
             <div className="space-y-2">
-              <label
-                htmlFor="phone"
-                className="text-lg font-bold text-foreground"
-              >
+              <label htmlFor="phone" className="text-lg font-bold text-foreground">
                 Phone
               </label>
-              <div className="relative">
-                <div className="absolute left-3 top-1/2 transform -translate-y-1/2 flex items-center gap-2">
-                  <div className="w-6 h-4 bg-gradient-to-b from-green-500 via-white to-black flex items-center justify-center rounded-sm">
-                    <div className="w-1 h-1 bg-red-600 rounded-full"></div>
-                  </div>
-                  <span className="text-gray-500">•</span>
-                </div>
-                <Input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="050 123 4567"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className="h-12 text-base border-black rounded-lg pl-16 w-96"
-                  required
-                />
-              </div>
+
+              <PhoneInput
+                country={"ae"}                  
+                value={formData.phone}
+                onChange={(_val, _country, _e, formattedValue) =>
+                  setFormData((prev) => ({ ...prev, phone: formattedValue }))
+                }
+                placeholder="050 123 4567"
+                inputProps={{ id: "phone", name: "phone", required: true }}
+
+                // Tailwind styling (override lib CSS with !)
+                containerClass="!w-96"
+                inputClass="!w-96 !h-12 !text-base !border !border-black !rounded-lg"
+                buttonClass="!border !border-black !rounded-l-lg"
+                dropdownClass="!text-base !w-[380px] !py-4"
+              />
             </div>
           </div>
 
-          {/* Submit Button */}
           <div className="flex justify-start">
-           <Button text="Connect with an expert" bg="bg-black" />
+            <Button text="Connect with an expert" bg="bg-black" />
           </div>
         </form>
       </div>
