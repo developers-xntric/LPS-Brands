@@ -54,7 +54,7 @@ export function AboutLPS() {
                                         outdated restrictions.
                                     </p>
                                     <p>
-                                        Deep impact is not just a goal—it is our very reason for existence. And to achieve it, we don't rely
+                                        Deep impact is not just a goal—it is our very reason for existence. And to achieve it, we don&apos;t rely
                                         on one, but on everyone in the chain of value creation. Our team is a collective of thinkers and
                                         doers, from both agency and non-agency worlds, working toward a singular mission.
                                     </p>
