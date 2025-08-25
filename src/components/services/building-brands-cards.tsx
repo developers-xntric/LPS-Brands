@@ -2,14 +2,25 @@
 import Image from "next/image";
 import Wrapper from "../layout/wrapper";
 
-export default function BuildingBrandsCards() {
+interface CardProps {
+  heading?: string;
+  para?: string;
+  t1?: string;
+  p1?: string;
+  t2?: string;
+  p2?: string;
+  t3?: string;
+  p3?: string;
+}
+
+export default function BuildingBrandsCards(props: CardProps) {
   return (
     <Wrapper >
-      <div className="bg-gray-50 py-16 px-4 max-w-7xl mx-auto">
+      <div className="py-16 px-4 max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl text-secondary mb-6  font-['Asgard']">
-            Building Brands Behind Iconic Leaders
+            {props.heading ? props.heading : "Building Brands Behind Iconic Leaders"}
           </h2>
           <p className="text-secondary font-medium leading-7 text-xl font-['Exo'] max-w-4xl mx-auto">
             At LPS, leadership branding is seen as a transforming trip with both
