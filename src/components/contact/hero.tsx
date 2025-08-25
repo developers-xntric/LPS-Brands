@@ -127,11 +127,11 @@ function ContactHero() {
                             {/* Step indicator */}
                             <div className="mt-4 mb-6 flex items-center gap-2">
                                 <span
-                                    className={`h-2 w-1/2 rounded-full ${step === 1 ? "bg-[#00FC09]" : "bg-black/15"
+                                    className={`h-1 w-1/2 rounded-full ${step === 1 ? "bg-[#00FC09]" : "bg-black/15"
                                         }`}
                                 />
                                 <span
-                                    className={`h-2 w-1/2 rounded-full ${step === 2 ? "bg-[#00FC09]" : "bg-black/15"
+                                    className={`h-1 w-1/2 rounded-full ${step === 2 ? "bg-[#00FC09]" : "bg-black/15"
                                         }`}
                                 />
                             </div>
