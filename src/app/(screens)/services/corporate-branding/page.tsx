@@ -54,6 +54,10 @@ const CorporateBranding = () => {
                 images={["/services/pe3.webp", "/services/pe4.webp"]}
             />
             <Timeline
+                heading='Why Choose LPS as Your Corporate Branding Agency in Dubai?'
+                text='LPS is your strategic development partner rather than your usual corporate branding agency From insight to effect, we create future-ready companies for the fast-paced, technologically driven environment of today.
+                <br /><br />
+                Our approach extends long-term brand guardianship to guarantee sustained resonance and relevance, not only with regard to branding.'
                 timelineData={[{
                     title: "Core Discovery & Brand Architecture",
                     description: "We uncover what makes your brand tick—from mission clarity to stakeholder insights—and craft an authentic blueprint for growth.",
