@@ -246,3 +246,39 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Ensure full input border appears above all */
+.react-tel-input {
+  overflow: visible !important;
+  position: relative;
+  z-index: 10;
+}
+
+/* Keep full rounded left edge even on open */
+.react-tel-input .flag-dropdown.open .selected-flag,
+.react-tel-input .selected-flag:hover {
+  border-radius: 0.5rem 0 0 0.5rem !important;
+  border: none !important;
+}
+
+/* Keep dropdown fully visible and neat */
+.react-tel-input .country-list {
+  border-radius: 0.5rem !important;
+  border: 1px solid #000 !important;
+  z-index: 50 !important;
+  margin-top: 4px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.react-tel-input input::placeholder {
+  color: #999;
+  /* optional */
+  content: "050 123 4567";
+  /* not working */
+}
+
+/* This is the real trick */
+.react-tel-input input {
+  /* force custom placeholder */
+  placeholder: "050 123 4567" !important;
+}

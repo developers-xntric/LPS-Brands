@@ -75,7 +75,7 @@ function ContactHero() {
         <button
             type="button"
             onClick={onClick}
-            className={`px-5 py-3 rounded-full border text-md tracking-wide transition
+            className={`px-3 py-2 rounded-full border text-sm tracking-wide transition
         ${checked ? "bg-[#00FC09] border-[#00FC09]" : "border-black/20 bg-white"}
       `}
         >
@@ -127,11 +127,11 @@ function ContactHero() {
                             {/* Step indicator */}
                             <div className="mt-4 mb-6 flex items-center gap-2">
                                 <span
-                                    className={`h-2 w-8 rounded-full ${step === 1 ? "bg-[#00FC09]" : "bg-black/15"
+                                    className={`h-1 w-1/2 rounded-full ${step === 1 ? "bg-[#00FC09]" : "bg-black/15"
                                         }`}
                                 />
                                 <span
-                                    className={`h-2 w-8 rounded-full ${step === 2 ? "bg-[#00FC09]" : "bg-black/15"
+                                    className={`h-1 w-1/2 rounded-full ${step === 2 ? "bg-[#00FC09]" : "bg-black/15"
                                         }`}
                                 />
                             </div>
@@ -214,7 +214,7 @@ function ContactHero() {
                                         <div>
                                             <label
                                                 htmlFor="fullName"
-                                                className="block text-lg font-normal font-['Exo'] mb-1"
+                                                className="block text-md font-normal font-['Exo'] mb-1"
                                             >
                                                 Full Name
                                             </label>
@@ -232,7 +232,7 @@ function ContactHero() {
                                         <div>
                                             <label
                                                 htmlFor="email"
-                                                className="block text-lg font-normal font-['Exo'] mb-1"
+                                                className="block text-md font-normal font-['Exo'] mb-1"
                                             >
                                                 Email
                                             </label>
@@ -250,7 +250,7 @@ function ContactHero() {
                                         <div>
                                             <label
                                                 htmlFor="phone"
-                                                className="block text-lg font-normal font-['Exo'] mb-1"
+                                                className="block text-md font-normal font-['Exo'] mb-1"
                                             >
                                                 Phone
                                             </label>
@@ -267,7 +267,7 @@ function ContactHero() {
                                         <div>
                                             <label
                                                 htmlFor="company"
-                                                className="block text-lg font-normal font-['Exo'] mb-1"
+                                                className="block text-md font-normal font-['Exo'] mb-1"
                                             >
                                                 Company Name
                                             </label>
@@ -285,14 +285,14 @@ function ContactHero() {
                                     <div>
                                         <label
                                             htmlFor="details"
-                                            className="block text-lg font-normal font-['Exo'] mb-1"
+                                            className="block text-md font-normal font-['Exo'] mb-1"
                                         >
                                             Project Details
                                         </label>
                                         <textarea
                                             id="details"
                                             name="details"
-                                            rows={5}
+                                            rows={4}
                                             value={form.details}
                                             onChange={onChange}
                                             className="w-full rounded-xl border border-black/15 px-3 py-2 outline-none focus:border-[#00FC09] resize-y"
@@ -302,7 +302,7 @@ function ContactHero() {
                                     <div>
                                         <label
                                             htmlFor="brief"
-                                            className="block text-lg font-normal font-['Exo'] mb-1"
+                                            className="block text-md font-normal font-['Exo'] mb-1"
                                         >
                                             Project Brief (upload)
                                         </label>
