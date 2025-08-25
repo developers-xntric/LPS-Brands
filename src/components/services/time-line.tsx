@@ -44,7 +44,6 @@ export default function Timeline() {
     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
     const ctx = gsap.context(() => {
-      // Moving line animation
       gsap.fromTo(
         lineRef.current,
         { height: 0 },
@@ -60,7 +59,7 @@ export default function Timeline() {
         }
       );
 
-      itemsRef.current.forEach((item, index) => {
+      itemsRef.current.forEach((item) => {
         if (!item) return;
 
         const circle = item.querySelector(".timeline-circle");
