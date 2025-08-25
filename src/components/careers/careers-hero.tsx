@@ -11,9 +11,10 @@ interface ServiceInnerProps {
   button?: boolean;
   image?: "single" | "grid";
   careers?: boolean;
+  blog?: boolean
 }
 
-function CareersHero({ heading, highlight, bottom = true, text, button, image = "grid", careers = false }: ServiceInnerProps) {
+function CareersHero({ heading,blog , highlight, bottom = true, text, button, image = "grid", careers = false }: ServiceInnerProps) {
   const renderHeading = () => {
     if (!heading) {
       return (
@@ -26,6 +27,19 @@ function CareersHero({ heading, highlight, bottom = true, text, button, image = 
         </>
       );
     }
+
+      if (blog) {
+      return (
+        <>
+          <h1 className="text-[65px] font-bold uppercase">Our Blogs</h1>
+          <span className="text-[65px] font-bold">
+            <span className="text-black">— </span>
+            <span className="gradient-text">LPS BRANDS</span>
+          </span>
+        </>
+      );
+    }
+
 
     if (highlight && heading.includes(highlight)) {
       const parts = heading.split(new RegExp(`(${highlight})`, "gi"));
