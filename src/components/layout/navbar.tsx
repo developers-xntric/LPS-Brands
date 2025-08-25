@@ -13,7 +13,7 @@ const servicesData = {
         "Social Media",
         "Public Relations"
     ],
-    "Communication Campaigns": [
+    "Communication": [
         "Creative",
         "Production",
         "Influencers",
@@ -29,13 +29,13 @@ const servicesData = {
 }
 
 const menuItems = [
-    {name:"Home", link: "/"},
-    {name:"Who We Are", link: "/who-we-are"},
-    {name:"Our Industries", link: "/our-industry"},
-    {name:"Our Work", link: "/our-work"},
-    {name:"Services", link: "/services"},
-    {name:"Blog", link: "/blog"},
-    {name:"Careers", link: "/careers"}
+    { name: "Home", link: "/" },
+    { name: "Who We Are", link: "/who-we-are" },
+    { name: "Our Industries", link: "/our-industry" },
+    { name: "Our Work", link: "/our-work" },
+    { name: "Services", link: "/services" },
+    { name: "Blog", link: "/blog" },
+    { name: "Careers", link: "/careers" }
 ]
 
 export default function Navbar() {
@@ -66,7 +66,7 @@ export default function Navbar() {
                         </div>
                         {Object.entries(servicesData).map(([category, items], categoryIndex) => (
                             <div key={category} className="relative">
-                                <h3 className={`text-2xl font-normal text-secondary ${category !== "Communication Campaigns" ? "mb-9 pb-3" : "mb-4 relative bottom-[5px]"}`}>
+                                <h3 className={`text-2xl font-normal text-secondary mb-9 pb-3`}>
                                     {category}
                                 </h3>
                                 <div className="space-y-3">
@@ -174,7 +174,7 @@ export default function Navbar() {
                     </div>
 
                     <Link
-                        href="/contact"
+                        href="/contact-us"
                         className="bg-green text-black px-8 py-3 rounded-full transition-all duration-200 font-semibold text-[16px]  shadow-lg hover:shadow-xl transform hover:scale-105 font-['Exo']"
                     >
                         Contact Us
