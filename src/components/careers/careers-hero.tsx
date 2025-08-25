@@ -11,10 +11,21 @@ interface ServiceInnerProps {
   button?: boolean;
   image?: "single" | "grid";
   careers?: boolean;
-  blog?: boolean
+  url?: string;
+  blog?: boolean;
 }
 
-function CareersHero({ heading,blog , highlight, bottom = true, text, button, image = "grid", careers = false }: ServiceInnerProps) {
+function CareersHero({
+  heading,
+  highlight,
+  bottom = true,
+  text,
+  button,
+  image = "grid",
+  careers = false,
+  blog = false,
+  url,
+}: ServiceInnerProps) {
   const renderHeading = () => {
     if (!heading) {
       return (
@@ -27,8 +38,7 @@ function CareersHero({ heading,blog , highlight, bottom = true, text, button, im
         </>
       );
     }
-
-      if (blog) {
+    if (blog) {
       return (
         <>
           <h1 className="text-[65px] font-bold uppercase">Our Blogs</h1>
@@ -39,7 +49,6 @@ function CareersHero({ heading,blog , highlight, bottom = true, text, button, im
         </>
       );
     }
-
 
     if (highlight && heading.includes(highlight)) {
       const parts = heading.split(new RegExp(`(${highlight})`, "gi"));
@@ -63,10 +72,15 @@ function CareersHero({ heading,blog , highlight, bottom = true, text, button, im
 
   return (
     <div
-      className={`bg-[url('/home/Hero.png')] bg-center bg-cover ${bottom ? "" : "pb-32"
-        }`}
+      className={`bg-[url('/home/Hero.png')] bg-center bg-cover ${
+        bottom ? "" : "pb-32"
+      }`}
     >
-      <div className={`2xl:max-w-[1700px] mx-auto ${careers ? "w-[95%]" : " w-[90%]"}`}>
+      <div
+        className={`2xl:max-w-[1700px] mx-auto ${
+          careers ? "w-[95%]" : " w-[90%]"
+        }`}
+      >
         {/* Top Left LPS Logo */}
         <div className="pt-4">
           <LogoLPS />
@@ -76,23 +90,34 @@ function CareersHero({ heading,blog , highlight, bottom = true, text, button, im
         <div className="mt-20 flex flex-col items-start -space-y-8">
           {renderHeading()}
         </div>
-        {(text && !bottom) && <div className="flex flex-col items-start gap-4 mt-4 max-w-[65%] py-10">
-          <p className="text-xl font-medium font-['Exo'] leading-tight" dangerouslySetInnerHTML={{ __html: text }}></p>
-        </div>}
+        {text && !bottom && (
+          <div className="flex flex-col items-start gap-4 mt-4 2xl:max-w-[35%] w-[60%] py-10">
+            <p
+              className="text-xl font-medium font-['Exo'] leading-tight"
+              dangerouslySetInnerHTML={{ __html: text }}
+            ></p>
+          </div>
+        )}
         {/* Bottom Section */}
         {bottom && (
           <div className="flex flex-col items-start gap-4 mt-4 max-w-[65%]">
             <p className="text-xl font-normal font-['Exo'] leading-relaxed">
-              {text ? text : "Looking for a career that’s all about making shaping, and celebrating the extraordinary?"}
+              {text
+                ? text
+                : "Looking for a career that’s all about making shaping, and celebrating the extraordinary?"}
             </p>
-            {button && <>
-              <p className="text-lg font-['Exo'] leading-relaxed">Then you’re home!</p>
-              <Button text="Join Our Team" bg="bg-black" />
-            </>}
+            {button && (
+              <>
+                <p className="text-lg font-['Exo'] leading-relaxed">
+                  Then you’re home!
+                </p>
+                <Button text="Join Our Team" bg="bg-black" />
+              </>
+            )}
           </div>
         )}
 
-        {bottom && <CareersImageGrid image={image} />}
+        {bottom && <CareersImageGrid image={image} url={url} />}
       </div>
     </div>
   );

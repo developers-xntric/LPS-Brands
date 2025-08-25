@@ -2,21 +2,28 @@
 import Image from "next/image";
 import Wrapper from "../layout/wrapper";
 
-export default function BuildingBrandsCards() {
+interface CardProps {
+  heading?: string;
+  para?: string;
+  t1?: string;
+  p1?: string;
+  t2?: string;
+  p2?: string;
+  t3?: string;
+  p3?: string;
+}
+
+export default function BuildingBrandsCards(props: CardProps) {
   return (
     <Wrapper >
-      <div className="bg-gray-50 py-16 px-4 max-w-7xl mx-auto">
+      <div className="py-16 px-4 max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl text-secondary mb-6  font-['Asgard']">
-            Building Brands Behind Iconic Leaders
+            {props.heading ? props.heading : "Building Brands Behind Iconic Leaders"}
           </h2>
           <p className="text-secondary font-medium leading-7 text-xl font-['Exo'] max-w-4xl mx-auto">
-            At LPS, leadership branding is seen as a transforming trip with both
-            deliberate and flexible nature. It starts with intense
-            self-discovery and develops into deliberate impact on many other
-            platforms. Every step originates in strategic design thinking,
-            empathy, and insight.
+            {props.para ? props.para : "At LPS, leadership branding is seen as a transforming trip with both deliberate and flexible nature. It starts with intense self-discovery and develops into deliberate impact on many other platforms. Every step originates in strategic design thinking, empathy, and insight."}
           </p>
         </div>
 
@@ -41,12 +48,10 @@ export default function BuildingBrandsCards() {
               />
             </div>
             <h3 className="text-2xl font-bold mb-4 group-hover:text-[#101820] transition-colors duration-300">
-              Strategic Discovery
+              {props.t1 ? props.t1 : "Strategic Discovery"}
             </h3>
             <p className="text-white font-['Exo'] group-hover:text-gray-800 transition-colors duration-300 leading-relaxed">
-              We work closely with you to uncover your leadership DNA—your
-              values, vision, and differentiators. This forms the foundation of
-              your personal narrative and positioning strategy.
+              {props.p1 ? props.p1 : "We work closely with you to uncover your leadership DNA—your values, vision, and differentiators. This forms the foundation of your personal narrative and positioning strategy."}
             </p>
           </div>
 
@@ -62,12 +67,10 @@ export default function BuildingBrandsCards() {
               />
             </div>
             <h3 className="text-2xl font-bold mb-4 group-hover:text-white transition-colors duration-300">
-              Content and Platform Mapping
+              {props.t2 ? props.t2 : "Content and Platform Mapping"}
             </h3>
             <p className="text-white font-['Exo'] group-hover:text-gray-300 transition-colors duration-300 leading-relaxed">
-              We identify the most effective formats and channels to amplify
-              your voice—balancing long-term thought leadership with short-form
-              digital storytelling for omnichannel impact.
+              {props.p2 ? props.p2 : "We identify the most effective formats and channels to amplify your voice—balancing long-term thought leadership with short-form digital storytelling for omnichannel impact."}
             </p>
           </div>
 
@@ -90,12 +93,10 @@ export default function BuildingBrandsCards() {
               />
             </div>
             <h3 className="text-2xl font-bold mb-4 group-hover:text-white transition-colors duration-300">
-              Execution with Purpose
+              {props.t3 ? props.t3 : "Execution with Purpose"}
             </h3>
             <p className="text-secondary font-['Exo'] group-hover:text-blue-100 transition-colors duration-300 leading-relaxed">
-              From ghostwritten articles to keynote coaching, social media
-              design to PR amplification, every element is curated with
-              precision. We don&apos;t just create visibility—we build legacy.
+              {props.p3 ? props.p3 : "From ghostwritten articles to keynote coaching, social median design to PR amplification, every element is curated with precision. We don't just create visibility—we build legacy."}
             </p>
           </div>
         </div>
