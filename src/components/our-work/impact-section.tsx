@@ -47,7 +47,7 @@ function AnimatedCounter({ end, duration = 2000, suffix = "" }: CounterProps) {
   )
 }
 
-export default function ImpactSection() {
+export default function ImpactSection({para}:{para?:string}) {
   return (
     <section className="pb-16 pt-32 px-4 w-[90%] 2xl:max-w-[1740px] mx-auto">
       <div className="flex flex-col gap-12 items-start">
@@ -63,16 +63,12 @@ export default function ImpactSection() {
 
           {/* Description */}
           <p className="text-secondary font-['Exo'] text- leading-relaxed w-1/2">
-            In collaboration with Dubai Chambers for more than six year, we committed to achieving key objectives that
-            included cultivating a coherent creative and social media strategy, developing compelling content, and
-            enhancing brand awareness. The unification of the entity&apos;s digital experience and identity by seamlessly
-            integrating multifaceted campaigns, events, activations, and built engagement with its various targeted
-            business groups across its three chambers.
+           {para || "In collaboration with Dubai Chambers for more than six year, we committed to achieving key objectives that included cultivating a coherent creative and social media strategy, developing compelling content, and enhancing brand awareness. The unification of the entity&apos;s digital experience and identity by seamlessly integrating multifaceted campaigns, events, activations, and built engagement with its various targeted business groups across its three chambers."}
           </p>
 
           {/* Statistics Grid */}
         </div>
-        <div className="w-1/2 items-center ml-auto grid grid-cols-2 gap-5 justify-between">
+        <div className="w-full flex justify-between">
           {/* Stat 1 */}
           <div className="space-y-2">
             <div className="flex items-baseline gap-1">

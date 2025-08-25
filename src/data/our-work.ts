@@ -15,7 +15,7 @@ export const lists = [
         img:"/work/7.webp",
         head:"Coffee Planet​",
         para:"As a homegrown specialty coffee brand in the UAE, Coffee Planet wanted to change consumer perceptions and establish itself as the top choice for coffee lovers in the country. The challenge was to reshape brand messaging while maintaining authenticity.",
-        link:"/our-work/a-unified-brand-presence-for-a-unique-three-chamber-model"
+        link:"/our-work/"
     },
     {
         img:"/work/8.webp",
