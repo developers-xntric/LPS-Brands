@@ -42,8 +42,18 @@ const CorporateBranding = () => {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
             />
             <ServicesHero heading='Corporate Branding' highlight='Leadership Branding' bottom={false} />
-            <ProductionEvolutionSection title='Purpose-Driven Corporate Branding That Builds More Than Identity' highlight='Corporate Branding' heading='Brand Expression Through Purposeful Storytelling' text={["Corporate branding nowadays is about creating stories, experiences, and processes that match your brand with mission, culture, and consumer demands, not just a graphic exercise. Corporate branding is seen at LPS as a living, breathing ecosystem that changes with your audience and has a long-lasting effect at every point of contact.", "Whether your company is starting a rebrand, growing internationally, or launching a startup, our systematic approach to corporate branding in Dubai guarantees that your brand is remembered, appreciated, and trusted rather than only seen."]} />
-            < Timeline />
+            <ProductionEvolutionSection
+                title='Purpose-Driven Corporate Branding That Builds More Than Identity'
+                highlight='Corporate Branding'
+                heading='Brand Expression Through Purposeful Storytelling'
+                text={[
+                    "Corporate branding nowadays is about creating stories, experiences, and processes that match your brand with mission, culture, and consumer demands, not just a graphic exercise. Corporate branding is seen at LPS as a living, breathing ecosystem that changes with your audience and has a long-lasting effect at every point of contact.",
+
+                    "Whether your company is starting a rebrand, growing internationally, or launching a startup, our systematic approach to corporate branding in Dubai guarantees that your brand is remembered, appreciated, and trusted rather than only seen."
+                ]}
+                images={["/services/pe3.webp", "/services/pe4.webp"]}
+            />
+            <Timeline />
             <BuildingBrandsCards />
             <BrandingStart />
             <DisplayFeatured />
