@@ -60,7 +60,7 @@ export default function Timeline() {
         }
       );
 
-      itemsRef.current.forEach((item, index) => {
+      itemsRef.current.forEach((item) => {
         if (!item) return;
 
         const circle = item.querySelector(".timeline-circle");
