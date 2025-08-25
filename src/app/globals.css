@@ -247,37 +247,25 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* make the wrapper allow the dropdown to render above */
+/* Ensure full input border appears above all */
 .react-tel-input {
   overflow: visible !important;
+  position: relative;
+  z-index: 10;
 }
 
-/* one continuous border owned by the input */
-.react-tel-input .form-control {
-  height: 3rem !important;
-  /* h-12 */
-  border: 1px solid #000 !important;
-  border-radius: 0.5rem !important;
-  /* rounded-lg */
-  padding-left: 3.5rem !important;
-  /* space for flag (~pl-14) */
-}
-
-/* flag area: no own border, keep same radius on all states */
-.react-tel-input .flag-dropdown,
-.react-tel-input .selected-flag,
+/* Keep full rounded left edge even on open */
 .react-tel-input .flag-dropdown.open .selected-flag,
 .react-tel-input .selected-flag:hover {
-  border: 0 !important;
-  /* remove double border */
   border-radius: 0.5rem 0 0 0.5rem !important;
-  /* keep rounded-l on hover/open */
-  background: #fff !important;
+  border: none !important;
 }
 
-/* dropdown menu look + stacking */
+/* Keep dropdown fully visible and neat */
 .react-tel-input .country-list {
-  z-index: 50 !important;
-  border: 1px solid #000 !important;
   border-radius: 0.5rem !important;
+  border: 1px solid #000 !important;
+  z-index: 50 !important;
+  margin-top: 4px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
