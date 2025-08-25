@@ -57,10 +57,6 @@ export default function Timeline() {
             start: "top 80%",
             end: "bottom 40%",
             scrub: 0.5,
-            onUpdate: (self) => {
-              // const progress = self.progress
-              // lineRef.current.style.boxShadow = `0 0 ${10 * progress}px ${5 * progress}px rgba(0, 255, 0, ${0.5 * progress})`
-            },
           },
         }
       );
@@ -150,7 +146,7 @@ export default function Timeline() {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Side - We deliver this through */}
             <div className="flex flex-col items-center lg:items-start">
-              <h2 className="text-4xl md:text-5xl text-black mb-6 font-['Asgard'] font-semibold">
+              <h2 className="text-4xl md:text-6xl text-black mb-6 font-['Asgard'] font-normal">
                 We <span className="text-blue">deliver</span>
                 <br />
                 this through
@@ -160,15 +156,15 @@ export default function Timeline() {
                 <Image
                   src="/services/lps-logo.webp"
                   alt="Timeline"
-                  width={250}
-                  height={500}
+                  width={290}
+                  height={700}
                 />
               </div>
             </div>
 
             {/* Right Side - Timeline Items */}
-            <div ref={timelineRef} className="relative">
-              <div className="absolute left-6 top-8 bottom-8 xl:bottom-20 w-0.5 bg-gray-200">
+            <div ref={timelineRef} className="relative right-10">
+              <div className="absolute left-7 top-8 bottom-8 xl:bottom-20 w-0.5 bg-gray-200">
                 <div
                   ref={lineRef}
                   className="w-full bg-[#101852] origin-top"
@@ -186,8 +182,8 @@ export default function Timeline() {
                     }}
                     className="flex items-start gap-6 relative"
                   >
-                    <div className="timeline-circle flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center relative z-10 shadow-lg">
-                      <Zap className="timeline-icon w-6 h-6" />
+                    <div className="timeline-circle flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center relative z-10 shadow-lg">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="17" viewBox="0 0 17 12" fill="none"><path d="M0 11.0974L5.80488 0.0974121H16.4784L7.86468 11.0974H0Z" fill="#10181E"></path></svg>
                     </div>
                     <div className="timeline-content flex-1">
                       <h3 className="text-[34px] font-bold text-black mb-3 underline decoration-2 underline-offset-4">
