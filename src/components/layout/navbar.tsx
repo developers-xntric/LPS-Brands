@@ -139,7 +139,7 @@ export default function Navbar() {
                             onMouseLeave={() => setShowServicesDropdown(false)}
                             className="flex items-center space-x-3 text-secondary px-6 py-3 font-semibold transition-all duration-200 text-[16px] hover:text-white hover:bg-black rounded-full arrow-main font-['Exo']"
                         >
-                            <span>Services</span>
+                            <Link href={"/services"}>Services</Link>
                             <div className="w-5 h-5 bg-green rounded-full flex items-center justify-center arrow-container">
                                 <BottomArrow />
                             </div>
