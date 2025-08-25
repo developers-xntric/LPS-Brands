@@ -2,25 +2,23 @@
 
 import type React from "react";
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import Wrapper from "../layout/wrapper";
 import { Button } from "../common/button";
 
-// dynamic import to avoid any SSR hiccups
 const PhoneInput = dynamic(
   () => import("react-phone-input-2").then((m) => m.default),
   { ssr: false }
 );
 
-// import the library styles
 import "react-phone-input-2/lib/style.css";
 
 export default function ContactFormSection() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-    phone: "", // will hold formatted number, e.g. "+971 50 123 4567"
+    phone: "",
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -84,17 +82,13 @@ export default function ContactFormSection() {
                 <label htmlFor="phone" className="text-lg font-bold text-foreground">
                   Phone
                 </label>
-
                 <PhoneInput
                   country={"ae"}
                   value={formData.phone}
                   onChange={(_val, _country, _e, formattedValue) =>
                     setFormData((prev) => ({ ...prev, phone: formattedValue }))
                   }
-                  placeholder="050 123 4567"
-                  inputProps={{ id: "phone", name: "phone", required: true }}
-
-                  // Tailwind styling (override lib CSS with !)
+                  inputProps={{ id: "phone", name: "phone", required: true, placeholder: "050 123 4567" }}
                   containerClass="!w-96"
                   inputClass="!w-96 !h-12 !text-base !border !border-black !rounded-lg"
                   buttonClass="!border !border-black !rounded-l-lg"

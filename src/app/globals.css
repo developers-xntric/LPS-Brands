@@ -269,3 +269,16 @@ body {
   margin-top: 4px !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+
+.react-tel-input input::placeholder {
+  color: #999;
+  /* optional */
+  content: "050 123 4567";
+  /* not working */
+}
+
+/* This is the real trick */
+.react-tel-input input {
+  /* force custom placeholder */
+  placeholder: "050 123 4567" !important;
+}
