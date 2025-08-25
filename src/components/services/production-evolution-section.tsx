@@ -1,15 +1,33 @@
 import Image from "next/image"
 import Wrapper from "../layout/wrapper"
+interface HeadingProps {
+    title?: string;
+    highlight?: string;
+}
+export default function ProductionEvolutionSection({ title, highlight }: HeadingProps) {
 
-export default function ProductionEvolutionSection() {
+    function getHighlightedText(title: string, highlight: string) {
+        const parts = title.split(new RegExp(`(${highlight})`, "gi"));
+        return parts.map((part, i) =>
+            part.toLowerCase() === highlight.toLowerCase() ? (
+                <span key={i} className="text-green">
+                    {part}
+                </span>
+            ) : (
+                part
+            )
+        );
+    }
     return (
         <Wrapper>
             <div className="mx-auto py-16">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6 font-['Exo'] max-w-4xl mx-auto">
-                        Let Modern
-                        <span className="text-green"> Leadership Branding</span> Shape Your Identity as a Leader
+                    <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6 font-['Exo'] max-w-5xl mx-auto">
+                        {getHighlightedText(
+                            title || "Let Modern Leadership Branding Shape Your Identity as a Leader",
+                            highlight || "Leadership Branding"
+                        )}
                     </h2>
                     <div className="inline-block bg-blue mt-4 text-white h-[90px] w-[970px] rounded-xl font-semibold text-5xl rotate-[2.2deg] font-sans hover:bg-[#00FC09] transition-all duration-300" style={{
                         alignContent: "center",
