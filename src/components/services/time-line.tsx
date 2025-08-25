@@ -10,7 +10,7 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function Timeline({ timelineData }: { timelineData: { title: string; description: string }[] }) {
+export default function Timeline({ timelineData, heading, text }: { timelineData: { title: string; description: string }[]; heading?: string; text?: string }) {
   const timelineRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -105,14 +105,10 @@ export default function Timeline({ timelineData }: { timelineData: { title: stri
           {/* Header Section */}
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl text-secondary mb-6 max-w-2xl mx-auto font-['Asgard']">
-              How We Help You Build Your Leadership Brand
+              {heading ? heading : "How We Help You Build Your Leadership Brand"}
             </h2>
             <p className="text-secondary font-medium leading-7 text-lg font-['Exo'] max-w-4xl mx-auto">
-              Our area of expertise at LPS is very customised and goal-oriented
-              leadership branding techniques. Whether your leadership style is
-              visionary entrepreneur, seasoned executive, or rising leader, we
-              assist you to create a brand that speaks to your audience and
-              represents your leadership DNA.
+              {text ? text : "Our area of expertise at LPS is very customised and goal-oriented leadership branding techniques. Whether your leadership style is visionary entrepreneur, seasoned executive, or rising leader, we assist you to create a brand that speaks to your audience and represents your leadership DNA."}
             </p>
           </div>
 
