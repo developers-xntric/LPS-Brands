@@ -77,19 +77,19 @@ const CorporateBranding = () => {
                 }]}
             />
             <BuildingBrandsCards
-                heading='Our Corporate Branding Strategy, Built for the Future'
-                para='We start with size and clarity and then apply imagination. Rooted on insights, our corporate branding approach seeks to change companies from the inside out. From corporate culture to outside marketing, we create coherent brand systems that inspire engagement and show quantifiable expansion.'
+                heading="Social Isn’t Just a Channel. It’s Your Brand's Pulse."
+                para='LPS is the social media marketing agency in uae helping you matter whether your business is a legacy brand negotiating reinventions, a government institution supporting a cause, or a startup seeking attention.'
                 t1='Insight-Led Differentiation'
-                p1='We uncover what makes your brand distinct through cultural intelligence, competitive analysis, and stakeholder-driven discovery.'
+                p1='We begin with a clear strategy rooted in audience behavior, platform dynamics, and business objectives—customized to your tone, vision, and growth stage.'
                 t2='Future-Ready Identity Systems'
-                p2='We design adaptable brand frameworks that not only stay ahead of trends—but define them—across every platform and touchpoint.'
+                p2='We integrate creator partnerships and influencer moments that add voice, visibility, and cultural fluency to your campaigns—amplifying both reach and credibility.'
                 t3='Purposeful Storytelling & Activation'
-                p3='Through strategic storytelling and bold rollouts, we create brand experiences that connect emotionally and leave a lasting impression.'
+                p3='Our team leads community management and social listening—ensuring your brand not only speaks, but listens and responds in real-time to conversations that matter.'
             />
             <BrandingStart
-                heading='The Impact of Branding Done Right'
-                para='Ideal brands never stay the same. Our method of managing corporate brands guarantees that your identity remains relevant even as your company grows. Our ready-to-deploy brand kits, scalable design platforms, and continuous content strategies empower your teams and increase your visibility.'
-                para2='Audiences of today appreciate real, flexible, culturally sensitive businesses. At LPS, we create brands that lead not only keep-up-with. We design identities that change with the times, participate actively in communities, and leave an impact beyond the scroll.'
+                heading='The Power of Social Done Right'
+                para='The job of a social media marketing agency in UAE is about showing up deliberately where it most counts, not about being visible on every platform. Under the direction of appropriate social media marketing solutions, your brand not only exists but also forms culture, fosters confidence, and instantly alters impression. The right social media marketing agency in uae can help you turn your brand into a strong digital voice whether you launch a product, run a campaign, or increase your digital presence.'
+                para2='You get more than simply postings when working with a reputable social media firm in Dubai like LPS; you get a content strategy with purpose, relevance, and outcomes.'
             />
             <DisplayFeatured />
             <ContactFormSection />
