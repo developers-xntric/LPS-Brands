@@ -12,14 +12,14 @@ import React from 'react'
 const schemaData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Public Relations",
+    "name": "Creative Services",
     "description": "Trusted Public Relations Agency for Regional & Global Brands",
     "provider": {
         "@type": "Organization",
         "name": "LPS Brands",
         "url": "https://lps-me.com"
     },
-    "serviceType": "Public Relations",
+    "serviceType": "Creative Services",
     "areaServed": {
         "@type": "Place",
         "name": "Global"
@@ -42,61 +42,63 @@ const CorporateBranding = () => {
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
             />
-            <ServicesHero heading='Public Relations' highlight='Public Relations' bottom={false} />
+            <ServicesHero heading='Creative Services' highlight='Creative Services' bottom={false} />
             <ProductionEvolutionSection
-                title='Trusted Public Relations Agency for Regional & Global Brands'
-                highlight='Public Relations'
-                heading='Services That Go Beyond Traditional PR'
+                title='Creative Branding Agency That Thinks Beyond Aesthetics'
+                highlight='Branding Agency'
+                heading='Creative Branding Ideas That Spark Emotion'
                 text={[
-                    "LPS, a forward-looking PR firm, develops brands people trust and discuss by combining media knowledge, strategy, and narrative. Public opinion may be formed in seconds in the hyperconnected world of today, hence we create deliberate, consistent, and interesting stories that stick out, start a discussion. Whether you run a heritage brand, a scale-up, or a startup, we provide complete solutions that enable you to lead with influence.",
+                    "LPS stands above the noise in a saturated world where businesses scream for attention as a creative branding company motivated by purpose, strategy, and emotional resonance. We create brands that inspire performance, build culture, and move people, not just images. From adaptable design systems to immersive narrative, our creative work links profoundly, regularly, and across all the platforms that count.",
 
-                    "LPS is the strategic voice for your business, not simply another PR firm in Dubai. Every project our team does combines regional richness, global perspective, and journalistic sensibility. From media relations to reputation management, we help you create and control the story before someone else does."
+                    "Grounded in understanding, meant for impact, and developed for the contemporary world, our creative services reflect Being a creative branding firm in Dubai, we mix local cultural fluency with global design thinking to make sure your brand is remembered, felt, and followed rather than only seen. Whether you’re a disruptor preparing to start or a heritage brand seeking to change, we deliberately assist develop your visual and vocal image."
                 ]}
-                images={["/services/pe7.webp", "/services/pe8.webp"]}
+                images={["/services/pe9.webp", "/services/pe10.webp"]}
             />
             <Timeline
-                heading='Why LPS is the Preferred PR Agency in Dubai'
-                text='From regional connections to worldwide reputation growth we have guided companies at all levels in increasing their visibility and significance. Being a reputable public relations firm, we provide both audacious ideas and executional quality, building momentum that counts.
+                heading='What Sets LPS Apart as a Creative Branding Company'
+                text='From Dubai to London, our work connects worldwide yet anchored in localized reality. Top-tier creative branding agency Dubai customers rely on understands the balance between innovation and purpose, therefore enabling firms to stay daring but grounded.
                 <br/><br/>
-                LPS is the PR firm to guide you in leading the discussion whether your goals are to update your story, negotiate a PR crisis, or establish household name.'
+                Whether you want to create a movement, introduce a new product, or improve your identity Let us produce something remarkable.'
                 timelineData={[{
                     title: "Audience-First Storytelling",
-                    description: "We embed ourselves in your brand culture and your audience’s digital spaces, ensuring your story feels as authentic in a tweet as it does in a media briefing.",
+                    description: "We start with a deep dive into audience behavior, cultural relevance, and digital patterns—ensuring every idea is born from insight and built to resonate across communities.",
                 },
                 {
-                    title: "Platform-Ready Messaging",
-                    description: "We tailor messaging across platforms—from an Instagram carousel series for consumers to a LinkedIn article for investors to a Reddit AMA with your founder.",
+                    title: "Native-First Creative Thinking",
+                    description: "Every visual, voice, and format is crafted with contextual precision—whether it’s a cinematic billboard, a TikTok trend, or a luxury print campaign. The story flexes, but the brand stays consistent.",
                 },
                 {
-                    title: "Full-Funnel Social Strategy",
-                    description: "Our approach connects the dots across awareness, engagement, and conversion—building social journeys that are as creatively rich as they are commercially effective.",
+                    title: "Unified Narrative Architecture",
+                    description: "Our campaigns are built with a single, compelling narrative that translates across formats and moments—bridging audiences with cohesion, clarity, and emotional pull.",
                 },
                 {
-                    title: "Multi-Tier Distribution",
-                    description: "We blend earned media, digital PR, influencer relations, and social listening to shape visibility that turns heads—and shifts perception.",
+                    title: "Cross-Disciplinary Creative Craft",
+                    description: "From visual artists to motion designers, strategists to experience makers—our creative teams work as one to deliver bold, immersive brand stories without losing sight of performance.",
                 }]}
             />
             <BuildingBrandsCards
-                heading="Ready to Start a Powerful PR Journey?"
-                para='Let us create a story that links, a reputation that stands the test, and a presence that rules. Your next headline begins here, with LPS, the PR agency in Dubai delivering with intent and impact.'
+                heading="Creative Branding Design That Creates Lasting Impact"
+                para='Our approach to creative branding design balances strategy and storytelling, ensuring that every visual speaks with purpose.'
                 t1='Story-Driven, Platform-Ready Content'
-                p1='We craft narratives—from origin stories to bold vision pieces—tailored for the platforms where your audience engages most.'
+                p1='We start with a deep dive into audience behavior, cultural relevance, and digital patterns—ensuring every idea is born from insight and built to resonate across communities.'
                 t2='End-to-End Activation'
-                p2='From creator partnerships to digital events and press moments, we roll out campaigns that earn attention and drive meaningful traction.'
+                p2='Every visual, voice, and format is crafted with contextual precision—whether it’s a cinematic billboard, a TikTok trend, or a luxury print campaign. The story flexes, but the brand stays consistent.'
                 t3='Agile Monitoring & Response'
-                p3='With real-time sentiment tracking and rapid response strategies, we help you lead conversations and adapt with confidence.'
+                p3='Our campaigns are built with a single, compelling narrative that translates across formats and moments—bridging audiences with cohesion, clarity, and emotional pull.'
             />
             <BrandingStart
-                heading='The Real Impact of Real-Time PR'
-                para='Modern brands are created in scrolls, shares, and tales; they are not created behind closed doors. PR is not optional in a world where a swipe defines the pace. It’s vital. When done well, public relations builds trust rather than just generates headlines.'
-                para2='It increases cultural relevance, shapes leadership, and transforms visibility into ongoing impact. Whether you’re managing a reputation storm, guiding public opinion, or launching the next great app, PR is no longer a department. That is your front line.'
+                heading='The Value of Creative Done Right'
+                para='Grounded in understanding, meant for impact, and developed for the contemporary world, our creative services reflect Being a creative branding firm in Dubai, we mix local cultural fluency with global design thinking to make sure your brand is remembered, felt, and followed rather than only seen.'
+                para2='Whether your brand is a disruptor preparing to debut or a heritage brand wanting to change, we deliberately assist in defining your verbal and visual image. We bring concepts for creative branding that go beyond appearances to life—that which is relevant, resonant, and grounded in customer behavior. Being a top creative branding firm, we provide more than just deliverables; we also provide collaboration, viewpoint, and accuracy.'
             />
             <Wrapper>
                 <div className='py-16'>
-                    <h2 className='text-6xl text-center font-bold'>Shape Narratives. Spark Movements. Stay Remembered.</h2>
-                    <p className='text-xl max-w-5xl mx-auto font-medium text-center mt-10'>At LPS, we do PR but also something more, we live platform first, audience-obsessed, and culturally tailored. We create narratives that rule headlines, dialogues that challenge preconceptions, and visibility supporting value. Because the strongest message people remember, repeat, and gather around in today’s environment shapes everything.
+                    <h2 className='text-6xl text-center font-bold'>Let’s Create What’s Next</h2>
+                    <p className='text-xl max-w-5xl mx-auto font-medium text-center mt-10'>At LPS, we are more than simply a creative branding agency—we are the most natural interpreter for your brand. Being forward-looking creative branding consultants, we explore strategically smart, emotionally compelling, and difficult to ignore deep insights into immersive brand experiences.
                         <br /><br />
-                        Let us create the type of impact that transcends the trend and reverberates louder than any news.</p>
+                        Our team brings innovative branding concepts to life with clarity and impact whether your project is starting a new product, changing your identity, or designing a campaign spanning several cultures and media. From Dubai to the world stage, we create strong, relevant, and performance-oriented brand narratives.
+                        <br /><br />Since only companies with innovative creative branding design stand out in a noisy environment. And only purposeful innovation is really enduring.
+                    </p>
                 </div>
             </Wrapper>
             <DisplayFeatured />
