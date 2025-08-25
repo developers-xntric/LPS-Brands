@@ -60,7 +60,7 @@ export default function Timeline() {
         }
       );
 
-      itemsRef.current.forEach((item) => {
+      itemsRef.current.forEach((item, index) => {
         if (!item) return;
 
         const circle = item.querySelector(".timeline-circle");
@@ -75,6 +75,45 @@ export default function Timeline() {
           scale: 0.8,
         });
 
+        // Create animation timeline for each item
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: item,
+            start: "top 53%",
+            end: "top 27%",
+            toggleActions: "play none none reverse",
+            onEnter: () => {
+              gsap.to(circle, {
+                backgroundColor: "#00FF00",
+                borderColor: "#00FF00",
+                borderWidth: "0px",
+                scale: 1,
+                duration: 0.6,
+                ease: "back.out(1.7)",
+              });
+            },
+            onLeave: () => {
+              // Keep active state when scrolling past
+            },
+            onEnterBack: () => {
+              gsap.set(circle, {
+                backgroundColor: "#00FF00",
+                borderColor: "#00FF00",
+                borderWidth: "0px",
+                scale: 1,
+              });
+            },
+            onLeaveBack: () => {
+              gsap.to(circle, {
+                backgroundColor: "#ffffff",
+                borderColor: "#d1d5db",
+                borderWidth: "2px",
+                scale: 0.8,
+                duration: 0.4,
+              });
+            },
+          },
+        });
       });
     }, timelineRef);
 
