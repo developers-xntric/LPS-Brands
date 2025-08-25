@@ -75,7 +75,7 @@ function ContactHero() {
         <button
             type="button"
             onClick={onClick}
-            className={`px-5 py-3 rounded-full border text-md tracking-wide transition
+            className={`px-3 py-2 rounded-full border text-sm tracking-wide transition
         ${checked ? "bg-[#00FC09] border-[#00FC09]" : "border-black/20 bg-white"}
       `}
         >
@@ -127,11 +127,11 @@ function ContactHero() {
                             {/* Step indicator */}
                             <div className="mt-4 mb-6 flex items-center gap-2">
                                 <span
-                                    className={`h-2 w-8 rounded-full ${step === 1 ? "bg-[#00FC09]" : "bg-black/15"
+                                    className={`h-2 w-1/2 rounded-full ${step === 1 ? "bg-[#00FC09]" : "bg-black/15"
                                         }`}
                                 />
                                 <span
-                                    className={`h-2 w-8 rounded-full ${step === 2 ? "bg-[#00FC09]" : "bg-black/15"
+                                    className={`h-2 w-1/2 rounded-full ${step === 2 ? "bg-[#00FC09]" : "bg-black/15"
                                         }`}
                                 />
                             </div>
