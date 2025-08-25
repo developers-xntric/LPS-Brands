@@ -85,7 +85,11 @@ const CorporateBranding = () => {
                 t3='Purposeful Storytelling & Activation'
                 p3='Through strategic storytelling and bold rollouts, we create brand experiences that connect emotionally and leave a lasting impression.'
             />
-            <BrandingStart />
+            <BrandingStart
+                heading='The Impact of Branding Done Right'
+                para='Ideal brands never stay the same. Our method of managing corporate brands guarantees that your identity remains relevant even as your company grows. Our ready-to-deploy brand kits, scalable design platforms, and continuous content strategies empower your teams and increase your visibility.'
+                para2='Audiences of today appreciate real, flexible, culturally sensitive businesses. At LPS, we create brands that lead not only keep-up-with. We design identities that change with the times, participate actively in communities, and leave an impact beyond the scroll.'
+            />
             <DisplayFeatured />
             <ContactFormSection />
         </div>
