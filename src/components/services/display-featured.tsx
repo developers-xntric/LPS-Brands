@@ -112,7 +112,7 @@ function FlipCard({ item }: FlipCardProps) {
         </div>
 
         {/* Back */}
-        <div className="absolute top-[-55px] inset-0 w-full h-96 flex items-center rounded-3xl overflow-hidden bg-[#c5c5c5] [backface-visibility:hidden]"
+        <div className="absolute top-[-23px] inset-0 w-full h-80 flex items-center rounded-3xl overflow-hidden bg-[#c5c5c5] [backface-visibility:hidden]"
              style={{ transform: "rotateY(180deg)" }}>
           <div className="p-6 flex flex-col items-center justify-center">
             <h3 className="text-[26px] font-bold text-secondary mb-2">

@@ -95,7 +95,7 @@ export default function BuildingBrandsCards() {
             <p className="text-secondary font-['Exo'] group-hover:text-blue-100 transition-colors duration-300 leading-relaxed">
               From ghostwritten articles to keynote coaching, social media
               design to PR amplification, every element is curated with
-              precision. We don't just create visibility—we build legacy.
+              precision. We don&apos;t just create visibility—we build legacy.
             </p>
           </div>
         </div>
