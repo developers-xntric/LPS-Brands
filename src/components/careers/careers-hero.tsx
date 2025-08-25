@@ -11,9 +11,10 @@ interface ServiceInnerProps {
   button?: boolean;
   image?: "single" | "grid";
   careers?: boolean;
+  url?: string;
 }
 
-function CareersHero({ heading, highlight, bottom = true, text, button, image = "grid", careers = false }: ServiceInnerProps) {
+function CareersHero({ heading, highlight, bottom = true, text, button, image = "grid", careers = false,url }: ServiceInnerProps) {
   const renderHeading = () => {
     if (!heading) {
       return (
@@ -78,7 +79,7 @@ function CareersHero({ heading, highlight, bottom = true, text, button, image = 
           </div>
         )}
 
-        {bottom && <CareersImageGrid image={image} />}
+        {bottom && <CareersImageGrid image={image} url={url} />}
       </div>
     </div>
   );

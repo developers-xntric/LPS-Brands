@@ -6,7 +6,7 @@ import React from 'react'
 const DubaiEconomy = () => {
     return (
         <div>
-            <WorkHero heading='Dubai Economy & Tourism' highlight='presence' text='Dubai Chambers entrusted LPS as its strategic communications partner, recognizing the agency’s deep expertise in corporate communication strategies across the Middle East and its community-focused approach.​' image='single' />
+            <WorkHero url='/work/dubai-economy.webp' heading='Dubai Economy & Tourism' highlight='presence' text='Dubai Chambers entrusted LPS as its strategic communications partner, recognizing the agency’s deep expertise in corporate communication strategies across the Middle East and its community-focused approach.​' image='single' />
             <ImpactSection />
             <PortfolioSection />
         </div>

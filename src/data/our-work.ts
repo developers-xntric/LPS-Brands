@@ -9,7 +9,7 @@ export const lists = [
         img:"/work/2.webp",
         head:"Dubai Economy & Tourism",
         para:"We were entrusted as Social Video Partners for Visit Dubai, helping to create a unified brand presence and engaging video content that highlighted Dubai’s unique experiences.",
-        link:"/our-work/a-unified-brand-presence-for-a-unique-three-chamber-model"
+        link:"/our-work/dubai-economy-and-tourism"
     },
     {
         img:"/work/3.webp",
