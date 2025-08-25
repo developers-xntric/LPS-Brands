@@ -1,4 +1,4 @@
-import CareersHero from '@/components/careers/careers-hero';
+import ServicesHero from '@/components/careers/careers-hero';
 import BrandingStart from '@/components/services/branding-start';
 import BuildingBrandsCards from '@/components/services/building-brands-cards';
 import DisplayFeatured from '@/components/services/display-featured';
@@ -41,7 +41,7 @@ const LeadershipBranding = () => {
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
             />
-            <CareersHero heading='Leadership Branding' highlight='Leadership Branding' bottom={false} />
+            <ServicesHero heading='Leadership Branding' highlight='Leadership Branding' bottom={false} />
             <ProductionEvolutionSection />
             <Timeline />
             <BuildingBrandsCards />
