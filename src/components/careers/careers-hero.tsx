@@ -68,7 +68,7 @@ function CareersHero({ heading, highlight, bottom = true, text, button, image = 
         </div>}
         {/* Bottom Section */}
         {bottom && (
-          <div className="flex flex-col items-start gap-4 mt-4 max-w-[65%]">
+          <div className="flex flex-col items-start gap-4 mt-4 w-[40%] 2xl:max-w-[65%]">
             <p className="text-xl font-normal font-['Exo'] leading-relaxed">
               {text ? text : "Looking for a career that’s all about making shaping, and celebrating the extraordinary?"}
             </p>
