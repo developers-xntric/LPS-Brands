@@ -30,7 +30,7 @@ const servicesData = {
 
 const menuItems = [
     { name: "Home", link: "/" },
-    { name: "Who We Are", link: "/who-we-are" },
+    { name: "Who We Are", link: "/about-us" },
     { name: "Our Industries", link: "/our-industry" },
     { name: "Our Work", link: "/our-work" },
     { name: "Services", link: "/services" },
