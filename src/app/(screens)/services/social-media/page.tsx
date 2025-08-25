@@ -11,14 +11,14 @@ import React from 'react'
 const schemaData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Corporate Branding",
-    "description": "Purpose-Driven Corporate Branding That Builds More Than Identity.",
+    "name": "Social Media",
+    "description": "Social Media Marketing Agency In UAE You Can Trust.",
     "provider": {
         "@type": "Organization",
         "name": "LPS Brands",
         "url": "https://lps-me.com"
     },
-    "serviceType": "Corporate Branding",
+    "serviceType": "Social Media",
     "areaServed": {
         "@type": "Place",
         "name": "Global"
@@ -41,38 +41,39 @@ const CorporateBranding = () => {
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
             />
-            <ServicesHero heading='Corporate Branding' highlight='Corporate Branding' bottom={false} />
+            <ServicesHero heading='Social Media' highlight='Social Media' bottom={false} />
             <ProductionEvolutionSection
-                title='Purpose-Driven Corporate Branding That Builds More Than Identity'
-                highlight='Corporate Branding'
-                heading='Brand Expression Through Purposeful Storytelling'
+                title='Social Media Marketing Agency In UAE You Can Trust'
+                highlight='Social Media'
+                heading='Strategic, creative, and results-driven marketing that delivers'
                 text={[
-                    "Corporate branding nowadays is about creating stories, experiences, and processes that match your brand with mission, culture, and consumer demands, not just a graphic exercise. Corporate branding is seen at LPS as a living, breathing ecosystem that changes with your audience and has a long-lasting effect at every point of contact.",
+                    "Your business must own the discussion in the digital environment of today rather than just exist on social media. At LPS, we provide now-oriented social media marketing services. Whether your project is raising awareness, starting a conversation, or producing actual outcomes, our method transforms ordinary materials into cultural capital.",
 
-                    "Whether your company is starting a rebrand, growing internationally, or launching a startup, our systematic approach to corporate branding in Dubai guarantees that your brand is remembered, appreciated, and trusted rather than only seen."
+                    "Being a premium social media agency in Dubai, we reject the idea of one-size-fits-all. To fit your objectives and forward with your audience, we customise plans, narrative, and social-first materials. Because on social media your brand reflects what your audience feels, shares, and discusses rather than what you claim it is."
                 ]}
-                images={["/services/pe3.webp", "/services/pe4.webp"]}
+                images={["/services/pe5.webp", "/services/pe6.webp"]}
             />
             <Timeline
-                heading='Why Choose LPS as Your Corporate Branding Agency in Dubai?'
-                text='LPS is your strategic development partner rather than your usual corporate branding agency From insight to effect, we create future-ready companies for the fast-paced, technologically driven environment of today.
-                <br /><br />
-                Our approach extends long-term brand guardianship to guarantee sustained resonance and relevance, not only with regard to branding.'
+                heading='Why LPS is One of the Best Social Media Marketing Companies in Dubai'
+                text='Leading social media marketing agency in uae we create adaptable ecosystems engaging audiences, converting clients, and maintaining attention span. We don’t just oversee venues. We migrate culture.'
                 timelineData={[{
-                    title: "Core Discovery & Brand Architecture",
-                    description: "We uncover what makes your brand tick—from mission clarity to stakeholder insights—and craft an authentic blueprint for growth.",
+                    title: "Platform-Tuned Creativity",
+                    description: "We craft content to match the behavior, language, and algorithms of each platform—ensuring your brand shows up natively and performs intuitively, wherever your audience scrolls or swipes.",
                 },
                 {
-                    title: "Cross-Format Design Language",
-                    description: "We build flexible identity systems that perform across social, digital, and corporate—ensuring consistency and recognition.",
+                    title: "Cultural Agility in Real Time",
+                    description: "We stay plugged into the moment—translating cultural shifts, trend signals, and conversations into sharp, timely content that feels present and purposeful.",
                 },
                 {
-                    title: "Narrative-Led Brand Expression",
-                    description: "We activate stories that matter—rooted in truth, elevated through emotion, and tailored for omnichannel resonance.",
+                    title: "Full-Funnel Social Strategy",
+                    description: "Our approach connects the dots across awareness, engagement, and conversion—building social journeys that are as creatively rich as they are commercially effective.",
                 },
                 {
-                    title: "Scalable Ecosystems",
-                    description: "From launch to rebrand, we deliver plug-and-play brand tools that empower internal teams and inspire external audiences.",
+                    title: "Creator-Led Amplification",
+                    description: "We collaborate with creators who live the platforms they represent—infusing campaigns with real voices, trusted influence, and cultural authenticity.",
+                }, {
+                    title: "Insight-Driven Optimization",
+                    description: "Our content is never static. With real-time performance tracking and audience intelligence, we continuously evolve your strategy to stay relevant, visible, and ahead of the curve",
                 }]}
             />
             <BuildingBrandsCards
