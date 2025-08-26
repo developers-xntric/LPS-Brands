@@ -79,11 +79,8 @@ const Gaming = () => {
             <BuildingBrandsCards
                 heading="Our Process: Built for Immersion, Designed for Impact"
                 para='Gaming at LPS is where creative storytelling meets competitive engagement. Our process ensures brands earn credibility in gaming culture—not just presence.'
-                // t1='Modular Execution'
                 p1='We begin by identifying your brand’s fit in the gaming universe—audience, genre, platform, and engagement potential.'
-                t2='Format-First Thinking'
                 p2="Strategy is mapped to format—whether that’s a long-term creator collab, an esports partnership, or an interactive activation inside a game."
-                t3='End-to-End Craftsmanship'
                 p3='We work with gaming influencers, production teams, and developers to craft a story-first experience that feels native—not disruptive.'
             />
             <BrandingStart
