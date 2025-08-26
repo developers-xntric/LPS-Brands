@@ -118,6 +118,7 @@ function CareersHero({
         )}
 
         {bottom && <CareersImageGrid image={image} url={url} />}
+      
       </div>
     </div>
   );
