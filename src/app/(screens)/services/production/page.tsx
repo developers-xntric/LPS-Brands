@@ -90,16 +90,6 @@ const CorporateBranding = () => {
                 para2='Our cinematic approach brings a storytelling lens to every project. Whether you need a brand film, documentary, or narrative piece, our film production services bring your vision to life. From script to screen, our media production services encompass every aspect of production, pre, during, and post, for cohesive brand storytelling.'
                 image='/services/o5.webp'
             />
-            <Wrapper>
-                <div className='py-16'>
-                    <h2 className='text-6xl text-center font-bold'>Let’s Create What’s Next</h2>
-                    <p className='text-xl max-w-5xl mx-auto font-medium text-center mt-10'>At LPS, we are more than simply a creative branding agency—we are the most natural interpreter for your brand. Being forward-looking creative branding consultants, we explore strategically smart, emotionally compelling, and difficult to ignore deep insights into immersive brand experiences.
-                        <br /><br />
-                        Our team brings innovative branding concepts to life with clarity and impact whether your project is starting a new product, changing your identity, or designing a campaign spanning several cultures and media. From Dubai to the world stage, we create strong, relevant, and performance-oriented brand narratives.
-                        <br /><br />Since only companies with innovative creative branding design stand out in a noisy environment. And only purposeful innovation is really enduring.
-                    </p>
-                </div>
-            </Wrapper>
             <DisplayFeatured />
             <ContactFormSection />
         </div>
