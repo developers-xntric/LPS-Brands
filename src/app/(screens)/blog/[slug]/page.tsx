@@ -107,12 +107,11 @@ export default async function BlogPage({
 
   // Generate table of contents dynamically
   const tableOfContents = [];
-    console.log(data);
   if (data?.title) {
-    tableOfContents.push({ id: "main-title", title: data.title });
+    tableOfContents.push({ id: "main-title", title: data?.title });
   }
   if (data?.subsections?.length > 0) {
-    data.subsections.forEach(
+    data?.subsections.forEach(
       (subsection: { subtitle: string }, index: number) => {
         if (subsection.subtitle) {
           tableOfContents.push({
@@ -134,14 +133,13 @@ export default async function BlogPage({
     <Wrapper>
 
       <div className="felx flex-col space-y-10">
-        {data.blogCategory === "Blogs"}
         {/* Top Left LPS Logo */}
         <div className="pt-4 pb-10">
           <LogoLPS />
         </div>
         {/* FEATURED IMAGE  */}
         <Image
-          src={`${data.bannerImageURL}`}
+          src={`${data?.bannerImageURL}`}
           alt="LPS Logo"
           width={2000}
           height={2000}
@@ -154,18 +152,18 @@ export default async function BlogPage({
                 id="main-title"
                 className="text-secondary font-['Exo'] leading-[34px] lg:leading-[56px] text-[30px] lg:text-[46px] font-semibold"
               >
-                {data.title}
+                {data?.title}
               </h1>
-              {data.publishedDate && (
+              {data?.publishedDate && (
                 <p className="text-secondary text-[15px] font-medium font-['Exo'] flex items-center gap-2">
                   <Calendar size={16} className="mb-[2px]" />
-                  {data.publishedDate.slice(0, 10)}
+                  {data?.publishedDate.slice(0, 10)}
                 </p>
               )}
               <div className="bg-[#D9D9D9] w-fit px-4 py-1 rounded-full">
-                {data.category && (
+                {data?.category && (
                   <p className="text-secondary text-[15px] font-medium font-['Exo'] flex items-center gap-2">
-                    {data.category}
+                    {data?.category}
                   </p>
                 )}
               </div>
@@ -262,7 +260,7 @@ export default async function BlogPage({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              mainEntity: data.faqs.map(
+              mainEntity: data?.faqs.map(
                 (faq: { question: string; answer: string }) => ({
                   "@type": "Question",
                   name: faq.question,
@@ -291,7 +289,7 @@ export default async function BlogPage({
                       <ul className="toc-list">
                         {tableOfContents.map((item, index) => (
                           <li key={index} className="toc-item">
-                            <Link href={`#${item.id}`} className="toc-link 2xl:text-lg">
+                            <Link href={`#${item.id}`} className="toc-link font-['Exo'] 2xl:text-lg">
                               {item.title}
                             </Link>
                           </li>
@@ -303,14 +301,14 @@ export default async function BlogPage({
 
                 <div className="lg:w-[70%]">
                   <div className="md:px-6 pb-2 md:pb-12 py-12 space-y-12">
-                    {data.description && (
+                    {data?.description && (
                       <div
                         className="text-[15px] lg:text-[18px] text-secondary font-['Exo'] font-medium blog-content"
-                        dangerouslySetInnerHTML={{ __html: data.description }}
+                        dangerouslySetInnerHTML={{ __html: data?.description }}
                       />
                     )}
 
-                    {data.subsections?.map(
+                    {data?.subsections?.map(
                       (
                         subsection: {
                           subtitle:
@@ -433,7 +431,7 @@ export default async function BlogPage({
                       )
                     )}
 
-                    {data.conclusion && (
+                    {data?.conclusion && (
                       <div className="space-y-8">
                         <h2
                           id="conclusion"
@@ -443,12 +441,12 @@ export default async function BlogPage({
                         </h2>
                         <div
                           className="text-base text-secondary font-['Exo'] font-medium blog-content"
-                          dangerouslySetInnerHTML={{ __html: data.conclusion }}
+                          dangerouslySetInnerHTML={{ __html: data?.conclusion }}
                         />
                       </div>
                     )}
 
-                    {data.faqs && data.faqs.length > 0 && (
+                    {data?.faqs && data?.faqs.length > 0 && (
                       <div className="space-y-6">
                         <h2
                           id="faqs"
@@ -456,7 +454,7 @@ export default async function BlogPage({
                         >
                           Frequently Asked Questions
                         </h2>
-                        {data.faqs.map(
+                        {data?.faqs.map(
                           (
                             faq: { question: string; answer: string },
                             index: number
@@ -531,7 +529,7 @@ export default async function BlogPage({
             </div>
           </>
         )}
-        <BlogsSection />
+        <BlogsSection heading="Dicover Our Blogs" />
       </div>
     </Wrapper>
   );
