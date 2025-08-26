@@ -19,7 +19,7 @@ const numbersData = [
         sign:"%"
     },
 ]
-const DubaiEconomy = () => {
+const CreateApps = () => {
     return (
         <div>
             <WorkHero  heading='Create Apps by DC' highlight='presence' text='Dubai Chamber of Digital Economy launched the “Create Apps in Dubai” initiative to position the city as a global hub for app development. The goal was to secure two hundred sign-ups for the App Olympics program, targeting young Emirati coders. Reaching this entrepreneurial community required innovative strategies, as traditional channels were less effective.​​' bottom={false}  />
@@ -29,4 +29,4 @@ const DubaiEconomy = () => {
     )
 }
 
-export default DubaiEconomy
+export default CreateApps

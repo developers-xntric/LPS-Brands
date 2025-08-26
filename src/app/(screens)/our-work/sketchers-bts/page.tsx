@@ -1,16 +1,24 @@
-import WorkHero from '@/components/careers/careers-hero'
-import ImpactSection from '@/components/our-work/impact-section'
-import PortfolioSection from '@/components/our-work/portfolio-section'
-import React from 'react'
+import WorkHero from "@/components/careers/careers-hero";
+import ImpactSection from "@/components/our-work/impact-section";
+import PortfolioSection from "@/components/our-work/portfolio-section";
+import React from "react";
 
-const CoffeePlanet = () => {
-    return (
-        <div>
-            <WorkHero heading='Coffee Planet' highlight='presence' text='UAE’s home-grown, home-brewed specialty coffee brand wanted to change the perception of coffee lovers in the country. Coffee Planet was not just a coffee producer, but a roaster and retailer for leading coffee and hospitality partners locally and internationally. All this in a month, with a shoestring budget.​' image='single' />
-            <ImpactSection />
-            <PortfolioSection />
-        </div>
-    )
-}
+const sketchersBts = () => {
+  return (
+    <div>
+      <WorkHero
+        heading="Skechers- BTS"
+        highlight="presence"
+        text="Skechers aimed to create a video that not only told a compelling story but also showcased the wide range of designs in their Kids Footwear collection for the Back to School season.​​"
+        bottom={false}
+      />
+      <ImpactSection
+        video1="https://player.vimeo.com/video/1011249982?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1#t="
+        para="Our work highlighted Skechers’ comfortable and stylish footwear, positioning it as the perfect choice for the new school year. The campaign effectively captured the brand’s energy, driving awareness and excitement for the latest collection among its target audience. Effectively connecting with both kids and their parents.​"
+      />
+      <PortfolioSection />
+    </div>
+  );
+};
 
-export default CoffeePlanet
+export default sketchersBts;
