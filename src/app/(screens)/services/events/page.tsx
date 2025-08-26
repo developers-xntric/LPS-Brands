@@ -79,11 +79,8 @@ const Events = () => {
             <BuildingBrandsCards
                 heading="Our Process: Built for Impact, Designed for Emotion"
                 para='Events at LPS are not one-off moments—they’re crafted to deliver emotional depth, cultural relevance, and long-term value.'
-                t1='Modular Execution'
                 p1='We begin with brand and audience discovery—uncovering what matters most to your attendees and aligning it with your brand’s goals.'
-                t2='Format-First Thinking'
                 p2="Strategy is mapped into a cohesive experience—from the invite to the post-event conversation—ensuring continuity and clarity at every stage."
-                t3='End-to-End Craftsmanship'
                 p3='We design every element—from scenic design and speaker flow to digital integrations and social storytelling—with precision and creativity.'
             />
             <BrandingStart

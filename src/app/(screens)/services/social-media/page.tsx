@@ -79,11 +79,8 @@ const SocialMedia = () => {
             <BuildingBrandsCards
                 heading="Social Isn’t Just a Channel. It’s Your Brand's Pulse."
                 para='LPS is the social media marketing agency in uae helping you matter whether your business is a legacy brand negotiating reinventions, a government institution supporting a cause, or a startup seeking attention.'
-                t1='Insight-Led Differentiation'
                 p1='We begin with a clear strategy rooted in audience behavior, platform dynamics, and business objectives—customized to your tone, vision, and growth stage.'
-                t2='Future-Ready Identity Systems'
                 p2='We integrate creator partnerships and influencer moments that add voice, visibility, and cultural fluency to your campaigns—amplifying both reach and credibility.'
-                t3='Purposeful Storytelling & Activation'
                 p3='Our team leads community management and social listening—ensuring your brand not only speaks, but listens and responds in real-time to conversations that matter.'
             />
             <BrandingStart

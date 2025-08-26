@@ -79,11 +79,8 @@ const Creative = () => {
             <BuildingBrandsCards
                 heading="Creative Branding Design That Creates Lasting Impact"
                 para='Our approach to creative branding design balances strategy and storytelling, ensuring that every visual speaks with purpose.'
-                t1='Story-Driven, Platform-Ready Content'
                 p1='We start with a deep dive into audience behavior, cultural relevance, and digital patterns—ensuring every idea is born from insight and built to resonate across communities.'
-                t2='End-to-End Activation'
                 p2='Every visual, voice, and format is crafted with contextual precision—whether it’s a cinematic billboard, a TikTok trend, or a luxury print campaign. The story flexes, but the brand stays consistent.'
-                t3='Agile Monitoring & Response'
                 p3='Our campaigns are built with a single, compelling narrative that translates across formats and moments—bridging audiences with cohesion, clarity, and emotional pull.'
             />
             <BrandingStart

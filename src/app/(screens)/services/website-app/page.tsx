@@ -76,11 +76,8 @@ const WebApp = () => {
             <BuildingBrandsCards
                 heading="Our Process: Built for Simplicity, Designed for Scalability"
                 para='Our website and app development process combines discovery, design, and iteration—ensuring we build platforms that are easy to use, easy to scale, and impossible to ignore.'
-                t1='Modular Execution'
                 p1='We begin with user research and experience audits—understanding who your users are, what they need, and how they behave across devices.'
-                t2='Format-First Thinking'
                 p2="Strategy is translated into wireframes and prototypes—mapping out journeys, key actions, and user flows with clarity and intent."
-                t3='End-to-End Craftsmanship'
                 p3='Design is approached modularly—crafting clean UI components, scalable design systems, and brand-forward visual identities.'
             />
             <BrandingStart

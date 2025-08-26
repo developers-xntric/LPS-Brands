@@ -80,11 +80,8 @@ const Influencers = () => {
             <BuildingBrandsCards
                 heading="Our Process: Rooted in Authenticity, Designed for Impact"
                 para='Influencer marketing at LPS is intentional, iterative, and insight-led. We develop partnerships that grow with time, campaigns that create cultural ripple effects, and creators who evolve into brand allies.'
-                t1='Modular Execution'
                 p1='A narrative-led campaign strategy is developed—integrating brand storylines with creator authenticity to produce content that feels organic, not transactional.'
-                t2='Format-First Thinking'
                 p2="Whether it's social-first, filmic, or vertical content, we tailor our craft to suit the medium—maximizing engagement where it matters."
-                t3='End-to-End Craftsmanship'
                 p3='We support content creation through creative direction, visual development, and cross-platform strategy—ensuring every collaboration is high-quality, high-relevance, and high-impact.'
             />
             <BrandingStart
