@@ -25,7 +25,6 @@ const Cards = () => {
     useEffect(() => {
       const getAllBlogs = async () => {
         const res = await axios.get("https://blog.xntric.me/api/v2/blogs");
-        console.log(res.data.blogs);
         setData(res.data.blogs);
       };
       getAllBlogs();
