@@ -1,13 +1,11 @@
 "use client"
 
-import Image from "next/image"
-
 export default function PortfolioSection() {
     return (
-        <section className="py-16 px-4 bg-white">
+       <>
+        {/* <section className="py-16 px-4 bg-white">
             <div className="2xl:max-w-[1740px] w-[90%] mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {/* Samsung 990 Card */}
                     <div className="group cursor-pointer">
                         <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br mb-6">
                             <Image src={"/work/p1.png"} alt="" width={500} height={500} className="w-full object-cover" />
@@ -23,7 +21,6 @@ export default function PortfolioSection() {
                         </div>
                     </div>
 
-                    {/* Jollibee Card */}
                     <div className="group cursor-pointer">
                         <div className="relative overflow-hidden rounded-2xl">
                             <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br mb-6">
@@ -42,6 +39,8 @@ export default function PortfolioSection() {
                     </div>
                 </div>
             </div>
-        </section>
+        </section> */}
+       
+       </>
     )
 }
