@@ -12,14 +12,14 @@ import React from 'react'
 const schemaData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Creative Services",
-    "description": "Trusted Public Relations Agency for Regional & Global Brands",
+    "name": "Production Services",
+    "description": "Video Production Services Built for the Future",
     "provider": {
         "@type": "Organization",
         "name": "LPS Brands",
         "url": "https://lps-me.com"
     },
-    "serviceType": "Creative Services",
+    "serviceType": "Production Services",
     "areaServed": {
         "@type": "Place",
         "name": "Global"
@@ -42,55 +42,53 @@ const CorporateBranding = () => {
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
             />
-            <ServicesHero heading='Creative Services' highlight='Creative Services' bottom={false} />
+            <ServicesHero heading='Production Services' highlight='Production Services' bottom={false} />
             <ProductionEvolutionSection
-                title='Creative Branding Agency That Thinks Beyond Aesthetics'
-                highlight='Branding Agency'
-                heading='Creative Branding Ideas That Spark Emotion'
+                title='Video Production Services Built for the Future'
+                highlight='Production Services'
+                heading='Our Production Process: Built for Impact'
                 text={[
-                    "LPS stands above the noise in a saturated world where businesses scream for attention as a creative branding company motivated by purpose, strategy, and emotional resonance. We create brands that inspire performance, build culture, and move people, not just images. From adaptable design systems to immersive narrative, our creative work links profoundly, regularly, and across all the platforms that count.",
+                    "Searching for professional video production services or “video production services near me”? LPS looks after customers all throughout Dubai, the Middle East, and beyond. We are your go-to partner wherever you go based on local knowledge and worldwide standards.",
 
-                    "Grounded in understanding, meant for impact, and developed for the contemporary world, our creative services reflect Being a creative branding firm in Dubai, we mix local cultural fluency with global design thinking to make sure your brand is remembered, felt, and followed rather than only seen. Whether you’re a disruptor preparing to start or a heritage brand seeking to change, we deliberately assist develop your visual and vocal image."
+                    "Every piece of material at LPS is developed from strategic ideas under creative direction. Whether it’s a long-form documentary or a brief Tik Tok commercial, we strike material that performs by juggling imagination with intent. Looking for trusted video production services in Dubai? Let’s create something powerful together."
                 ]}
-                images={["/services/pe9.webp", "/services/pe10.webp"]}
+                images={["/services/pe11.webp", "/services/pe12.webp"]}
             />
             <Timeline
-                heading='What Sets LPS Apart as a Creative Branding Company'
-                text='From Dubai to London, our work connects worldwide yet anchored in localized reality. Top-tier creative branding agency Dubai customers rely on understands the balance between innovation and purpose, therefore enabling firms to stay daring but grounded.
-                <br/><br/>
-                Whether you want to create a movement, introduce a new product, or improve your identity Let us produce something remarkable.'
+                heading='Why Choose LPS as Your Video Production Company in Dubai?'
+                text='As a leading video production company in Dubai, we combine creative excellence with agile execution. Our team brings together strategists, directors, editors, and animators to create films that are not only visually stunning but also aligned with your brand’s purpose.'
                 timelineData={[{
-                    title: "Audience-First Storytelling",
-                    description: "We start with a deep dive into audience behavior, cultural relevance, and digital patterns—ensuring every idea is born from insight and built to resonate across communities.",
+                    title: "Platform-First Thinking",
+                    description: "We design for where the audience is—from scrollable formats to immersive storytelling—ensuring films & content always meets the moment.",
                 },
                 {
-                    title: "Native-First Creative Thinking",
-                    description: "Every visual, voice, and format is crafted with contextual precision—whether it’s a cinematic billboard, a TikTok trend, or a luxury print campaign. The story flexes, but the brand stays consistent.",
+                    title: "Smart Budgeting, Bold Ideas",
+                    description: "Our production models flex to your financial goals, unlocking standout quality without overspending.",
                 },
                 {
-                    title: "Unified Narrative Architecture",
-                    description: "Our campaigns are built with a single, compelling narrative that translates across formats and moments—bridging audiences with cohesion, clarity, and emotional pull.",
+                    title: "Cross-Format Cohesion",
+                    description: "From short-form to long-form, branded to corporate—we unify content strategies for a consistent brand voice.",
                 },
                 {
-                    title: "Cross-Disciplinary Creative Craft",
-                    description: "From visual artists to motion designers, strategists to experience makers—our creative teams work as one to deliver bold, immersive brand stories without losing sight of performance.",
+                    title: "Creative Meets Capability",
+                    description: "Our teams align from strategy to shoot, ensuring speed, clarity, and campaigns that spark results.",
                 }]}
             />
             <BuildingBrandsCards
-                heading="Creative Branding Design That Creates Lasting Impact"
-                para='Our approach to creative branding design balances strategy and storytelling, ensuring that every visual speaks with purpose.'
-                t1='Story-Driven, Platform-Ready Content'
-                p1='We start with a deep dive into audience behavior, cultural relevance, and digital patterns—ensuring every idea is born from insight and built to resonate across communities.'
-                t2='End-to-End Activation'
-                p2='Every visual, voice, and format is crafted with contextual precision—whether it’s a cinematic billboard, a TikTok trend, or a luxury print campaign. The story flexes, but the brand stays consistent.'
-                t3='Agile Monitoring & Response'
-                p3='Our campaigns are built with a single, compelling narrative that translates across formats and moments—bridging audiences with cohesion, clarity, and emotional pull.'
+                heading="Creative Precision. Strategic Execution."
+                para='Production at LPS is defined by a tight fusion of artistry and intent. We bring together multidisciplinary teams who collaborate across strategy, creative, and craft to shape narratives that spark genuine engagement. It’s this synergy that allows us to bring fresh, meaningful content to life with clarity and creative conviction.'
+                t1='Modular Execution'
+                p1='Our production framework adapts seamlessly to project scale and complexity, delivering consistent quality across formats.'
+                t2='Format-First Thinking'
+                p2="Whether it's social-first, filmic, or vertical content, we tailor our craft to suit the medium—maximizing engagement where it matters."
+                t3='End-to-End Craftsmanship'
+                p3='With expert editing, animation, and post-production capabilities, we ensure every final cut is polished, powerful, and platform-ready.'
             />
             <BrandingStart
-                heading='The Value of Creative Done Right'
-                para='Grounded in understanding, meant for impact, and developed for the contemporary world, our creative services reflect Being a creative branding firm in Dubai, we mix local cultural fluency with global design thinking to make sure your brand is remembered, felt, and followed rather than only seen.'
-                para2='Whether your brand is a disruptor preparing to debut or a heritage brand wanting to change, we deliberately assist in defining your verbal and visual image. We bring concepts for creative branding that go beyond appearances to life—that which is relevant, resonant, and grounded in customer behavior. Being a top creative branding firm, we provide more than just deliverables; we also provide collaboration, viewpoint, and accuracy.'
-                image='/services/o4.webp'
+                heading='The Future of Production Starts Here'
+                para='Live, hybrid, or virtual, our event production services ensure every detail is executed flawlessly. From staging and filming to post-event edits, we make your event unforgettable. Explainer videos, product walkthroughs, or character animations, our animated video production services simplify the complex and captivate your audience.'
+                para2='Our cinematic approach brings a storytelling lens to every project. Whether you need a brand film, documentary, or narrative piece, our film production services bring your vision to life. From script to screen, our media production services encompass every aspect of production, pre, during, and post, for cohesive brand storytelling.'
+                image='/services/o5.webp'
             />
             <Wrapper>
                 <div className='py-16'>
