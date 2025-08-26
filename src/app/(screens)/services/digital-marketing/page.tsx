@@ -33,7 +33,7 @@ const schemaData = {
     }
 }
 
-const GenerativeAI = () => {
+const DigitalMarketing = () => {
     return (
         <div>
             <Script
@@ -77,11 +77,8 @@ const GenerativeAI = () => {
             <BuildingBrandsCards
                 heading="Our Approach: Designed for Impact, Driven by Insight"
                 para='At LPS, digital marketing isn’t a one-and-done task, it’s a living, breathing cycle of discovery, action, and optimization. We don’t believe in set-it-and-forget-it. We believe in refining what works and reinventing what doesn’t.'
-                t1='Modular Execution'
                 p1='We begin by auditing your digital footprint—identifying missed opportunities, audience behaviors, and competitive gaps.'
-                t2='Format-First Thinking'
                 p2="Strategy is developed across organic and paid channels—mapping content, keywords, and campaigns to user intent and business goals."
-                t3='End-to-End Craftsmanship'
                 p3='Execution spans from ad creatives to landing pages, integrating copy, UX, and targeting for seamless user journeys.'
             />
             <BrandingStart
@@ -97,10 +94,10 @@ const GenerativeAI = () => {
                     </p>
                 </div>
             </Wrapper>
-            <DisplayFeatured />
+            <DisplayFeatured text='Our impact speaks through the leaders we’ve shaped. From Fortune 500 executives to disruptive founders, public figures to policy shapers, our leadership branding work has turned personal stories into powerful movements.' />
             <ContactFormSection />
         </div>
     )
 }
 
-export default GenerativeAI;
+export default DigitalMarketing;

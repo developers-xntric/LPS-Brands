@@ -21,8 +21,8 @@ const servicesData = {
         "Short Form Video"
     ],
     "Experiences": [
-        "Digital",
-        "Website & Apps",
+        "Digital Marketing",
+        "Website App",
         "Events",
         "Gaming"
     ]

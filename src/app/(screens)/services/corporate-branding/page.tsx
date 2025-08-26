@@ -91,7 +91,7 @@ const CorporateBranding = () => {
                 para2='Audiences of today appreciate real, flexible, culturally sensitive businesses. At LPS, we create brands that lead not only keep-up-with. We design identities that change with the times, participate actively in communities, and leave an impact beyond the scroll.'
                 image='/services/o1.webp'
             />
-            <DisplayFeatured />
+            <DisplayFeatured text='LPS isn’t just about filming—it’s about creating immersive brand experiences that shape perceptions and drive engagement. We believe that in today’s landscape, content should be built for community resonance, native platform storytelling, and cross-format integration. Our forward-thinking methodology ensures that your content isn’t just seen but truly felt.' />
             <ContactFormSection />
         </div>
     )

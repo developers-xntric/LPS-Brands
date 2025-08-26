@@ -48,7 +48,7 @@ export default function BuildingBrandsCards(props: CardProps) {
               />
             </div>
             <h3 className="text-2xl font-bold mb-4 group-hover:text-[#101820] transition-colors duration-300">
-              {props.t1 ? props.t1 : "Strategic Discovery"}
+              {props.t1 ? props.t1 : ""}
             </h3>
             <p className="text-white font-['Exo'] group-hover:text-gray-800 transition-colors duration-300 leading-relaxed">
               {props.p1 ? props.p1 : "We work closely with you to uncover your leadership DNA—your values, vision, and differentiators. This forms the foundation of your personal narrative and positioning strategy."}
@@ -67,7 +67,7 @@ export default function BuildingBrandsCards(props: CardProps) {
               />
             </div>
             <h3 className="text-2xl font-bold mb-4 group-hover:text-white transition-colors duration-300">
-              {props.t2 ? props.t2 : "Content and Platform Mapping"}
+              {props.t2 ? props.t2 : ""}
             </h3>
             <p className="text-white font-['Exo'] group-hover:text-gray-300 transition-colors duration-300 leading-relaxed">
               {props.p2 ? props.p2 : "We identify the most effective formats and channels to amplify your voice—balancing long-term thought leadership with short-form digital storytelling for omnichannel impact."}
@@ -93,7 +93,7 @@ export default function BuildingBrandsCards(props: CardProps) {
               />
             </div>
             <h3 className="text-2xl font-bold mb-4 group-hover:text-white transition-colors duration-300">
-              {props.t3 ? props.t3 : "Execution with Purpose"}
+              {props.t3 ? props.t3 : ""}
             </h3>
             <p className="text-secondary font-['Exo'] group-hover:text-blue-100 transition-colors duration-300 leading-relaxed">
               {props.p3 ? props.p3 : "From ghostwritten articles to keynote coaching, social median design to PR amplification, every element is curated with precision. We don't just create visibility—we build legacy."}
