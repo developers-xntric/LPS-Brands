@@ -27,7 +27,8 @@ export default function FeaturedWorks() {
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
-              <div
+              <Link
+                href={`${project?.link}`}
                 key={project.id}
                 className={`group cursor-pointer transition-all duration-300 hover:scale-105  ${
                   index === 1 || index === 4
@@ -35,8 +36,7 @@ export default function FeaturedWorks() {
                     : ""
                 }`}
               >
-                <Link
-                  href={project.link}
+                <div
                   className={`relative overflow-hidden rounded-2xl bg-slate-800 ${
                     (index == 1 || index == 4) && "top-14"
                   }`}
@@ -50,8 +50,8 @@ export default function FeaturedWorks() {
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
