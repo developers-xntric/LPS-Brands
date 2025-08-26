@@ -11,16 +11,22 @@ export const lists = [
         para:"We were entrusted as Social Video Partners for Visit Dubai, helping to create a unified brand presence and engaging video content that highlighted Dubai’s unique experiences.",
         link:"/our-work/dubai-economy-and-tourism"
     },
-    {
-        img:"/work/3.webp",
-        head:"Dolby​",
-        para:"As a long-term client, Dolby wanted to explore the potential of in-stream gaming advertisements to boost brand awareness. The challenge was to create a strategic campaign that leveraged gaming platforms effectively.",
-        link:"/our-work/a-unified-brand-presence-for-a-unique-three-chamber-model"
+     {
+        img:"/work/7.webp",
+        head:"Coffee Planet​",
+        para:"As a homegrown specialty coffee brand in the UAE, Coffee Planet wanted to change consumer perceptions and establish itself as the top choice for coffee lovers in the country. The challenge was to reshape brand messaging while maintaining authenticity.",
+        link:"/our-work/"
     },
     {
-        img:"/work/4.webp",
-        head:"Mentos",
-        para:"Mentos sought to create a multinational awareness campaign linking their brand to the FIFA World Cup—without incurring sponsorship costs. The goal was to associate Mentos with the excitement of the global event.",
+        img:"/work/8.webp",
+        head:"Delmonte ​",
+        para:"Del Monte aimed to enhance its product visibility across the MENA region, focusing on generating brand awareness and increasing foot traffic to physical retail stores.",
+        link:"/our-work/a-unified-brand-presence-for-a-unique-three-chamber-model"
+    },
+     {
+        img:"/work/6.webp",
+        head:"Create Apps by DC​",
+        para:"Dubai Chamber of Digital Economy launched the \"Create Apps in Dubai\" initiative to establish itself as a leader in digital innovation. The goal was to create a unified brand presence to position Dubai as a global tech hub.",
         link:"/our-work/a-unified-brand-presence-for-a-unique-three-chamber-model"
     },
     {
@@ -30,21 +36,15 @@ export const lists = [
         link:"/our-work/a-unified-brand-presence-for-a-unique-three-chamber-model"
     },
     {
-        img:"/work/6.webp",
-        head:"Create Apps by DC​",
-        para:"Dubai Chamber of Digital Economy launched the \"Create Apps in Dubai\" initiative to establish itself as a leader in digital innovation. The goal was to create a unified brand presence to position Dubai as a global tech hub.",
+        img:"/work/4.webp",
+        head:"Mentos",
+        para:"Mentos sought to create a multinational awareness campaign linking their brand to the FIFA World Cup—without incurring sponsorship costs. The goal was to associate Mentos with the excitement of the global event.",
         link:"/our-work/a-unified-brand-presence-for-a-unique-three-chamber-model"
     },
     {
-        img:"/work/7.webp",
-        head:"Coffee Planet​",
-        para:"As a homegrown specialty coffee brand in the UAE, Coffee Planet wanted to change consumer perceptions and establish itself as the top choice for coffee lovers in the country. The challenge was to reshape brand messaging while maintaining authenticity.",
-        link:"/our-work/a-unified-brand-presence-for-a-unique-three-chamber-model"
-    },
-    {
-        img:"/work/8.webp",
-        head:"Delmonte ​",
-        para:"Del Monte aimed to enhance its product visibility across the MENA region, focusing on generating brand awareness and increasing foot traffic to physical retail stores.",
+        img:"/work/3.webp",
+        head:"Dolby​",
+        para:"As a long-term client, Dolby wanted to explore the potential of in-stream gaming advertisements to boost brand awareness. The challenge was to create a strategic campaign that leveraged gaming platforms effectively.",
         link:"/our-work/a-unified-brand-presence-for-a-unique-three-chamber-model"
     },
     {

@@ -47,27 +47,23 @@ function AnimatedCounter({ end, duration = 2000, suffix = "" }: CounterProps) {
   )
 }
 
-export default function ImpactSection() {
+export default function ImpactSection({para}:{para?:string}) {
   return (
-    <section className="pb-16 pt-40 px-4 max-w-7xl mx-auto">
+    <section className="pb-16 pt-32 px-4 w-[90%] 2xl:max-w-[1740px] mx-auto">
       <div className="flex flex-col gap-12 items-start">
         {/* Left Content */}
-        <div className="flex gap-4 space-y-8">
+        <div className="flex justify-between   w-full space-y-8">
           {/* Header */}
-          <div className="space-y-4">
-            <p className="text-blue font-bold text-4xl">The Result</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+          <div className="space-y-2">
+            <p className="text-blue font-bold text-3xl">The Result</p>
+            <h2 className="text-4xl md:text-[40px] font-bold text-gray-900 leading-tight">
               We make an impact through our work
             </h2>
           </div>
 
           {/* Description */}
-          <p className="text-secondary font-['Exo'] text-lg leading-relaxed max-w-xl">
-            In collaboration with Dubai Chambers for more than six year, we committed to achieving key objectives that
-            included cultivating a coherent creative and social media strategy, developing compelling content, and
-            enhancing brand awareness. The unification of the entity&apos;s digital experience and identity by seamlessly
-            integrating multifaceted campaigns, events, activations, and built engagement with its various targeted
-            business groups across its three chambers.
+          <p className="text-secondary font-['Exo'] text- leading-relaxed w-1/2">
+           {para || "In collaboration with Dubai Chambers for more than six year, we committed to achieving key objectives that included cultivating a coherent creative and social media strategy, developing compelling content, and enhancing brand awareness. The unification of the entity&apos;s digital experience and identity by seamlessly integrating multifaceted campaigns, events, activations, and built engagement with its various targeted business groups across its three chambers."}
           </p>
 
           {/* Statistics Grid */}
