@@ -33,7 +33,7 @@ const schemaData = {
     }
 }
 
-const GenerativeAI = () => {
+const ShortFormVideo = () => {
     return (
         <div>
             <Script
@@ -79,11 +79,8 @@ const GenerativeAI = () => {
             <BuildingBrandsCards
                 heading="Let’s Make Videos That Stop the Scroll and Spark Conversations"
                 para='The traditional methods of brand communication no longer have the same effectiveness in today’s digital age. Short video storytelling by LPS flips the script, providing brands with an opportunity to convey their message in a way that feels organic and authentic to the platform it’s shared on.'
-                t1='Modular Execution'
                 p1='We start by mapping content strategy to platform behavior—identifying what your audience watches, skips, and shares to inform ideation and tone.'
-                t2='Format-First Thinking'
                 p2="Scripts, formats, and visuals are developed to match trending structures, while staying true to your campaign message and brand tone."
-                t3='End-to-End Craftsmanship'
                 p3='Filming and editing are approached with performance and pace in mind—balancing creative flair with algorithm-friendly structuring.'
             />
             <BrandingStart
@@ -106,10 +103,10 @@ const GenerativeAI = () => {
                     </p>
                 </div>
             </Wrapper>
-            <DisplayFeatured />
+            <DisplayFeatured text='Our impact speaks through the leaders we’ve shaped. From Fortune 500 executives to disruptive founders, public figures to policy shapers, our leadership branding work has turned personal stories into powerful movements.'/>
             <ContactFormSection />
         </div>
     )
 }
 
-export default GenerativeAI;
+export default ShortFormVideo;

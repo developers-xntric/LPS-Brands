@@ -88,7 +88,7 @@ const Production = () => {
                 para2='Our cinematic approach brings a storytelling lens to every project. Whether you need a brand film, documentary, or narrative piece, our film production services bring your vision to life. From script to screen, our media production services encompass every aspect of production, pre, during, and post, for cohesive brand storytelling.'
                 image='/services/o5.webp'
             />
-            <DisplayFeatured />
+            <DisplayFeatured text='LPS isn’t just about filming—it’s about creating immersive brand experiences that shape perceptions and drive engagement. We believe that in today’s landscape, content should be built for community resonance, native platform storytelling, and cross-format integration. Our forward-thinking methodology ensures that your content isn’t just seen but truly felt.'/>
             <ContactFormSection />
         </div>
     )
