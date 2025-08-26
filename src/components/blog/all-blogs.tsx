@@ -58,18 +58,18 @@ const Cards = () => {
     },
   ];
 
-//   useEffect(() => {
-//     setData(dummyBlogs);
-//   }, []);
+  useEffect(() => {
+    setData(dummyBlogs);
+  }, []);
 
-    useEffect(() => {
-      const getAllBlogs = async () => {
-        const res = await axios.get("https://blog.xntric.me/api/v2/blogs");
-        console.log(res.data.blogs);
-        setData(res.data.blogs);
-      };
-      getAllBlogs();
-    }, []);
+    // useEffect(() => {
+    //   const getAllBlogs = async () => {
+    //     const res = await axios.get("https://blog.xntric.me/api/v2/blogs");
+    //     console.log(res.data.blogs);
+    //     setData(res.data.blogs);
+    //   };
+    //   getAllBlogs();
+    // }, []);
 
   const featuredPost = data[0];
   const remainingPosts = data.slice(1, 5);
