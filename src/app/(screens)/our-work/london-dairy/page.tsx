@@ -2,15 +2,31 @@ import WorkHero from '@/components/careers/careers-hero'
 import ImpactSection from '@/components/our-work/impact-section'
 import PortfolioSection from '@/components/our-work/portfolio-section'
 import React from 'react'
-
-const DubaiEconomy = () => {
+const numbersData = [
+    {
+        name:"Streamers",
+        value:55,
+        sign:""
+    },
+    {
+        name:"Views​",
+        value:500,
+        sign:"+"
+    },
+    {
+        name:"Different Games​",
+        value:124,
+        sign:""
+    },
+]
+const LondonDairy = () => {
     return (
         <div>
-            <WorkHero url='/work/dubai-economy.webp' heading='Dubai Economy & Tourism' highlight='presence' text='Dubai Chambers entrusted LPS as its strategic communications partner, recognizing the agency’s deep expertise in corporate communication strategies across the Middle East and its community-focused approach.​' image='single' />
-            <ImpactSection />
+            <WorkHero  heading='London Dairy' highlight='presence' text='London Dairy, a premium ice cream brand, aimed to promote their three new flavors and enhance brand recognition through a targeted gaming campaign. The primary markets for this initiative were the UAE and KSA, with an additional objective to drive UAE traffic to Noon for conversions.​​' bottom={false} />
+            <ImpactSection numbersData={numbersData} video1='https://player.vimeo.com/video/1006207241?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1#t='  para='By collaborating with fifty-five nano and micro game streamers across the UAE and KSA, we successfully engaged the gaming community over a three-month campaign with our in house game streaming adtech streamshreek. Utilizing their live streams on hundred twenty four different games on Twitch, we effectively promoted London Dairy’s new flavors, creating strong brand awareness and connection with a highly engaged audience in the gaming sector.​'/>
             <PortfolioSection />
         </div>
     )
 }
 
-export default DubaiEconomy
+export default LondonDairy
