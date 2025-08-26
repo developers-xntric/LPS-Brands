@@ -33,7 +33,7 @@ const schemaData = {
     }
 }
 
-const CorporateBranding = () => {
+const GenerativeAI = () => {
     return (
         <div>
             <Script
@@ -105,4 +105,4 @@ const CorporateBranding = () => {
     )
 }
 
-export default CorporateBranding;
+export default GenerativeAI;
