@@ -3,6 +3,7 @@ import Wrapper from "../layout/wrapper";
 import { projects } from "@/data/home-work";
 import WorkTabs from "./work-tabs";
 import { Button } from "../common/button";
+import Link from "next/link";
 
 export default function FeaturedWorks() {
   return (
@@ -26,7 +27,8 @@ export default function FeaturedWorks() {
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
-              <div
+              <Link
+                href={`${project?.link}`}
                 key={project.id}
                 className={`group cursor-pointer transition-all duration-300 hover:scale-105  ${
                   index === 1 || index === 4
@@ -49,7 +51,7 @@ export default function FeaturedWorks() {
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
