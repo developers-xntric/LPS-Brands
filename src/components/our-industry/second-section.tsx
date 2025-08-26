@@ -62,10 +62,10 @@ const SecondSection = () => {
   return (
     <div className="py-20 bg-[#101820] overflow-hidden">
       <div className="w-[90%] mx-auto 2xl:max-w-[1740px]">
-        <h3 className='text-white text-[64px] font-["Exo"] font-bold'>
+        <h3 className='text-white text-[45px] 2xl:text-[64px] font-["Exo"] font-bold'>
           A Display of Featured Works
         </h3>
-        <p className='text-[#FFFFFF] font-["Exo"] text-[20px] max-w-[45%] font-light'>
+        <p className='text-[#FFFFFF] font-["Exo"] 2xl:text-[20px] max-w-[45%] font-light'>
           A curated selection of standout developments that reflect our
           commitment to design, innovation, and excellence in Goverment
         </p>
@@ -102,7 +102,7 @@ const SecondSection = () => {
                     {card.title}
                   </h4>
                   <p
-                    className={`text-[22px] leading-normal font-normal max-w-[80%] ${card.textColor} opacity-90`}
+                    className={`font-["Exo"] 2xl:text-[22px] leading-normal font-normal max-w-[80%] ${card.textColor} opacity-90`}
                   >
                     {card.description}
                   </p>
