@@ -1,16 +1,23 @@
-import WorkHero from '@/components/careers/careers-hero'
-import ImpactSection from '@/components/our-work/impact-section'
-import PortfolioSection from '@/components/our-work/portfolio-section'
-import React from 'react'
+import WorkHero from "@/components/careers/careers-hero";
+import ImpactSection from "@/components/our-work/impact-section";
+import PortfolioSection from "@/components/our-work/portfolio-section";
+import React from "react";
+const SkechersHajj = () => {
+  return (
+    <div>
+      <WorkHero
+        heading="Skechers- Hajj Campain"
+        highlight="presence"
+        text="We collaborated with Skechers to create a culturally insightful film specifically for their Hajj campaign. This project aimed to connect deeply with the Arabic audience by focusing on culturally relevant storytelling and visuals.​​"
+        bottom={false}
+      />
+      <ImpactSection
+        para="The film was crafted with cultural insights, from storyline to visual elements, ensuring it resonated deeply with the Arabic audience. This thoughtful approach helped create an emotional connection with the brand, making the campaign particularly impactful.​"
+        video1="https://player.vimeo.com/video/1011248018?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1#t="
+      />
+      <PortfolioSection />
+    </div>
+  );
+};
 
-const DubaiEconomy = () => {
-    return (
-        <div>
-            <WorkHero url='/work/dubai-economy.webp' heading='Dubai Economy & Tourism' highlight='presence' text='Dubai Chambers entrusted LPS as its strategic communications partner, recognizing the agency’s deep expertise in corporate communication strategies across the Middle East and its community-focused approach.​' image='single' />
-            <ImpactSection />
-            <PortfolioSection />
-        </div>
-    )
-}
-
-export default DubaiEconomy
+export default SkechersHajj;

@@ -65,8 +65,8 @@ export default function ImpactSection({
       } px-4 w-[90%] 2xl:max-w-[1740px] mx-auto`}
     >
       {video1 && (
-        <div className="relative -top-20 w-full">
-          <iframe src={video1} frameBorder="0" className="w-[100%] h-[90vh]"></iframe>
+        <div className="relative -top-20">
+          <iframe src={video1}  className="w-[100%] h-[90vh]"></iframe>
         </div>
       )}
       <div className="flex flex-col gap-12 items-start">

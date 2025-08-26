@@ -5,7 +5,7 @@ interface HeadingProps {
     highlight?: string;
     heading?: string;
     text?: string[];
-    images?: string[]
+    images?: [string, string | null]
 }
 export default function ProductionEvolutionSection({ title, highlight, heading, text, images }: HeadingProps) {
 
@@ -66,7 +66,7 @@ export default function ProductionEvolutionSection({ title, highlight, heading, 
                 </div>
 
                 {/* Bottom Section */}
-                <div className="grid lg:grid-cols-2 items-center">
+                {(images && images[1] !== null) && <div className="grid lg:grid-cols-2 items-center">
                     {/* Left - Urban Display Image */}
                     <div className="relative">
                         <div className="bg-white shadow-sm overflow-hidden">
@@ -88,7 +88,7 @@ export default function ProductionEvolutionSection({ title, highlight, heading, 
                             </p>
                         </div>
                     </div>
-                </div>
+                </div>}
             </div>
         </Wrapper>
     )

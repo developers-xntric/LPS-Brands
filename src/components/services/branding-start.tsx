@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Wrapper from "../layout/wrapper";
 
-export default function BrandingStart({ heading, para, para2 }: { heading?: string; para?: string; para2?: string; }) {
+export default function BrandingStart({ heading, para, para2, image }: { heading?: string; para?: string; para2?: string; image?: string }) {
   return (
     <Wrapper>
       <div className=" mx-auto px-6 py-16 space-y-32">
@@ -9,7 +9,7 @@ export default function BrandingStart({ heading, para, para2 }: { heading?: stri
           {/* Main image container */}
           <div className="relative">
             <Image
-              src="/services/branding-start-bg.webp"
+              src={image || "/services/branding-start-bg.webp"}
               alt="Diverse team of professionals collaborating around a table"
               width={1200}
               height={400}

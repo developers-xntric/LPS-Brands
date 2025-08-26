@@ -1,16 +1,46 @@
-import WorkHero from '@/components/careers/careers-hero'
-import ImpactSection from '@/components/our-work/impact-section'
-import PortfolioSection from '@/components/our-work/portfolio-section'
-import React from 'react'
-
+import WorkHero from "@/components/careers/careers-hero";
+import ImpactSection from "@/components/our-work/impact-section";
+import PortfolioSection from "@/components/our-work/portfolio-section";
+import React from "react";
+const numbersData = [
+  {
+    name: "Streamers ​",
+    value: 4,
+    sign: "",
+  },
+  {
+    name: "Full Video Views",
+    value: 51,
+    sign: "K+",
+  },
+  {
+    name: "Link Clicks​",
+    value: 1450,
+    sign: "",
+  },
+  {
+    name: "Click Through Rate​​​",
+    value: 2.81,
+    sign: "%",
+  },
+];
 const Dolby = () => {
-    return (
-        <div>
-            <WorkHero heading='Coffee Planet' highlight='presence' text='UAE’s home-grown, home-brewed specialty coffee brand wanted to change the perception of coffee lovers in the country. Coffee Planet was not just a coffee producer, but a roaster and retailer for leading coffee and hospitality partners locally and internationally. All this in a month, with a shoestring budget.​' image='single' />
-            <ImpactSection />
-            <PortfolioSection />
-        </div>
-    )
-}
+  return (
+    <div>
+      <WorkHero
+        heading="Dolby"
+        highlight="presence"
+        text="Dolby, a long-term client, wanted to explore what gaming in-stream advertising could do for them. They aimed to increase awareness of their advanced audio and visual technologies, Dolby Atmos and Dolby Vision, within Microsoft’s Halo: Infinite.​ The focus was on enhancing the multiplayer gaming experience by showcasing the immersive capabilities of these technologies. To achieve this, Dolby partnered with StreamShreek for a proof-of-concept campaign, with a target of reaching fifty thousand views within a three-week timeframe.​​"
+        bottom={false}
+      />
+      <ImpactSection
+        numbersData={numbersData}
+        para="We collaborated with influencers in the MENA region to boost brand awareness and engagement for Coffee Planet. The campaign, featuring Instagram stories and a reel, significantly increased brand visibility and interaction. ​ It successfully encouraged user-generated content and drove high engagement, with influencer-led dark ads in KSA and UAE further amplifying the campaign’s reach. The most engaging content connected deeply with the audience, showcasing the effectiveness of the strategy in fostering organic and paid engagement.​"
+        video1="https://player.vimeo.com/video/1006207753?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1#t="
+      />
+      <PortfolioSection />
+    </div>
+  );
+};
 
-export default Dolby
+export default Dolby;
