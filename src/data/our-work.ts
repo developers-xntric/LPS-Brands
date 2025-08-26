@@ -57,6 +57,6 @@ export const lists = [
         img:"/work/10.webp",
         head:"Skechers- BTS​​",
         para:"Skechers aimed to create a visually compelling video that not only told a great story but also showcased the brand’s wide range of designs in a captivating way.​",
-        link:"/our-work/skechers-bts"
+        link:"/our-work/sketchers-bts"
     },
 ]
