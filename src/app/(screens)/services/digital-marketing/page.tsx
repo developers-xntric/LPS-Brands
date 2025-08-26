@@ -33,7 +33,7 @@ const schemaData = {
     }
 }
 
-const GenerativeAI = () => {
+const DigitalMarketing = () => {
     return (
         <div>
             <Script
@@ -103,4 +103,4 @@ const GenerativeAI = () => {
     )
 }
 
-export default GenerativeAI;
+export default DigitalMarketing;

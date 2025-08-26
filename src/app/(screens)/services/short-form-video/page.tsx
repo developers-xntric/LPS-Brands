@@ -33,7 +33,7 @@ const schemaData = {
     }
 }
 
-const GenerativeAI = () => {
+const ShortFormVideo = () => {
     return (
         <div>
             <Script
@@ -112,4 +112,4 @@ const GenerativeAI = () => {
     )
 }
 
-export default GenerativeAI;
+export default ShortFormVideo;
