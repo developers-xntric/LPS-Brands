@@ -1,4 +1,5 @@
 import ServicesHero from '@/components/careers/careers-hero';
+import Wrapper from '@/components/layout/wrapper';
 import BrandingStart from '@/components/services/branding-start';
 import BuildingBrandsCards from '@/components/services/building-brands-cards';
 import DisplayFeatured from '@/components/services/display-featured';
@@ -10,14 +11,14 @@ import Script from 'next/script';
 const schemaData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Production Services",
-    "description": "Video Production Services Built for the Future",
+    "name": "Website & App",
+    "description": "Website Design and Development Services",
     "provider": {
         "@type": "Organization",
         "name": "LPS Brands",
         "url": "https://lps-me.com"
     },
-    "serviceType": "Production Services",
+    "serviceType": "Website & App",
     "areaServed": {
         "@type": "Place",
         "name": "Global"
@@ -40,54 +41,63 @@ const WebApp = () => {
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
             />
-            <ServicesHero heading='Production Services' highlight='Production Services' bottom={false} />
+            <ServicesHero heading='Website & App' highlight='Website & App' bottom={false} />
             <ProductionEvolutionSection
-                title='Video Production Services Built for the Future'
-                highlight='Production Services'
-                heading='Our Production Process: Built for Impact'
+                title='Website Design and Development Services'
+                highlight='Design and Development'
+                heading='Full-Spectrum Website & App Solutions'
                 text={[
-                    "Searching for professional video production services or “video production services near me”? LPS looks after customers all throughout Dubai, the Middle East, and beyond. We are your go-to partner wherever you go based on local knowledge and worldwide standards.",
+                    "Your digital platform is more than a brochure, it’s your frontline for interaction, sales, and brand perception. Whether you need website development services in Dubai or app design for global markets, LPS delivers solutions tailored to performance and scale.",
 
-                    "Every piece of material at LPS is developed from strategic ideas under creative direction. Whether it’s a long-form documentary or a brief Tik Tok commercial, we strike material that performs by juggling imagination with intent. Looking for trusted video production services in Dubai? Let’s create something powerful together."
+                    "Whether you’re a startup or a legacy brand, our website development services in Dubai are built to meet the demands of today’s users and tomorrow’s innovations. We combine modern design with backend scalability to ensure your platform evolves with your audience."
                 ]}
-                images={["/services/pe11.webp", "/services/pe12.webp"]}
+                images={["/services/pe20.webp", "/services/pe21.webp"]}
             />
             <Timeline
-                heading='Why Choose LPS as Your Video Production Company in Dubai?'
-                text='As a leading video production company in Dubai, we combine creative excellence with agile execution. Our team brings together strategists, directors, editors, and animators to create films that are not only visually stunning but also aligned with your brand’s purpose.'
+                heading='Why Choose LPS for Website Design Services?'
+                text='Your website or app isn’t just a tool, it’s a living digital product that should evolve with your user base. When done right, website design and development services turn casual users into brand loyalists and passive platforms into active growth engines.'
                 timelineData={[{
-                    title: "Platform-First Thinking",
-                    description: "We design for where the audience is—from scrollable formats to immersive storytelling—ensuring films & content always meets the moment.",
+                    title: "Experience Architecture & User Flow Strategy",
+                    description: "We map how people think, move, and convert—designing seamless experiences that reduce friction and boost interaction across every stage.",
                 },
                 {
-                    title: "Smart Budgeting, Bold Ideas",
-                    description: "Our production models flex to your financial goals, unlocking standout quality without overspending.",
+                    title: "Responsive, Scalable Design Systems",
+                    description: "From desktop to mobile to app, we build modular UI frameworks that are brand-consistent, tech-friendly, and performance-optimized.",
                 },
                 {
-                    title: "Cross-Format Cohesion",
-                    description: "From short-form to long-form, branded to corporate—we unify content strategies for a consistent brand voice.",
+                    title: "Human-Centered UX & UI Design",
+                    description: "We translate brand stories into intuitive interfaces—merging visual storytelling with usability, accessibility, and engagement.",
                 },
                 {
-                    title: "Creative Meets Capability",
-                    description: "Our teams align from strategy to shoot, ensuring speed, clarity, and campaigns that spark results.",
+                    title: "Custom Development & Platform Integration",
+                    description: "Whether it’s WordPress, Shopify, React, or native app builds—we code with scalability and flexibility in mind, integrating the right tech for long-term growth.",
                 }]}
             />
             <BuildingBrandsCards
-                heading="Creative Precision. Strategic Execution."
-                para='Production at LPS is defined by a tight fusion of artistry and intent. We bring together multidisciplinary teams who collaborate across strategy, creative, and craft to shape narratives that spark genuine engagement. It’s this synergy that allows us to bring fresh, meaningful content to life with clarity and creative conviction.'
+                heading="Our Process: Built for Simplicity, Designed for Scalability"
+                para='Our website and app development process combines discovery, design, and iteration—ensuring we build platforms that are easy to use, easy to scale, and impossible to ignore.'
                 t1='Modular Execution'
-                p1='Our production framework adapts seamlessly to project scale and complexity, delivering consistent quality across formats.'
+                p1='We begin with user research and experience audits—understanding who your users are, what they need, and how they behave across devices.'
                 t2='Format-First Thinking'
-                p2="Whether it's social-first, filmic, or vertical content, we tailor our craft to suit the medium—maximizing engagement where it matters."
+                p2="Strategy is translated into wireframes and prototypes—mapping out journeys, key actions, and user flows with clarity and intent."
                 t3='End-to-End Craftsmanship'
-                p3='With expert editing, animation, and post-production capabilities, we ensure every final cut is polished, powerful, and platform-ready.'
+                p3='Design is approached modularly—crafting clean UI components, scalable design systems, and brand-forward visual identities.'
             />
             <BrandingStart
-                heading='The Future of Production Starts Here'
-                para='Live, hybrid, or virtual, our event production services ensure every detail is executed flawlessly. From staging and filming to post-event edits, we make your event unforgettable. Explainer videos, product walkthroughs, or character animations, our animated video production services simplify the complex and captivate your audience.'
-                para2='Our cinematic approach brings a storytelling lens to every project. Whether you need a brand film, documentary, or narrative piece, our film production services bring your vision to life. From script to screen, our media production services encompass every aspect of production, pre, during, and post, for cohesive brand storytelling.'
-                image='/services/o5.webp'
+                heading='The Value of Experience Design Done Right'
+                para='In today’s hyper connected digital world, your website or app is more than just a functional platform, it’s your brand’s first impression, digital storefront, and long-term growth engine. When website design and development are done right, your platform becomes a living, breathing experience that goes beyond aesthetics and clicks.'
+                para2='Good design tells a story. Great design lives your brand values in every interaction. From typography and color to motion and layout, we create digital products that embody your identity and connect emotionally with your audience.'
+                image='/services/o10.webp'
             />
+            <Wrapper>
+                <div className='py-16'>
+                    <h2 className='text-6xl text-center font-bold'>Ready to Launch or Level Up?</h2>
+                    <p className='text-xl max-w-5xl mx-auto font-medium text-center mt-10'>When your digital product is built with the user in mind and the future in focus, you see results, lower bounce rates, longer session times, higher conversion rates, and ultimately, more value for your investment.
+                        <br /><br />
+                        At LPS, we don’t just build websites. We engineer experiences, architect platforms, and craft digital journeys that last beyond the scroll.<br />
+                    </p>
+                </div>
+            </Wrapper>
             <DisplayFeatured />
             <ContactFormSection />
         </div>
