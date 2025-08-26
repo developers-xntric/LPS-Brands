@@ -33,7 +33,7 @@ const schemaData = {
     }
 }
 
-const CorporateBranding = () => {
+const Creative = () => {
     return (
         <div>
             <Script
@@ -108,4 +108,4 @@ const CorporateBranding = () => {
     )
 }
 
-export default CorporateBranding;
+export default Creative;
