@@ -5,14 +5,16 @@ const FourSection = ({
   heading,
   para1,
   para2,
+  bgImage,
 }: {
   heading: string;
   para1: string;
   para2: string;
+  bgImage: string;
 }) => {
   return (
     <div className="my-20 ">
-      <div className="w-[90%] mx-auto 2xl:max-w-[1740px] bg-[url(/our-industry/7.png)] h-screen bg-cover bg-center bg-no-repeat rounded-[30px] flex justify-end items-center">
+      <div className={`w-[90%] mx-auto 2xl:max-w-[1740px]  h-screen bg-cover bg-center bg-no-repeat rounded-[30px] flex justify-end items-center`}   style={{ backgroundImage: `url(${bgImage})` }} >
         {/* Glassmorphism Card */}
         <div className="px-10 py-20  w-[700px] rounded-[25px] bg-white/10 backdrop-blur-md shadow-xl mr-20">
           <h3 className="text-[50px] text-[#FFFFFF] leading-[50px]">

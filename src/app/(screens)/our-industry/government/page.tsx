@@ -43,6 +43,7 @@ const FinancialServices = () => {
                   transform communities, not just provide information."
       />
       <FourSection
+        bgImage="/our-industry/7.png"
         heading=" How we understand the market shift"
         para1=" We examine the changing expectations of a hyperaware, hyperconnected public. 
             From Generation Z voters to retirees, we track digital behaviour patterns among 

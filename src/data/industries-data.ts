@@ -23,7 +23,7 @@ export const Industries = [
     {
         img:"/our-industry/listing-6.webp",
         head:"Retail & e-commerce",
-        link:"/our-industry/government"
+        link:"/our-industry/retail-and-e-commerce"
     },
       {
         img:"/our-industry/listing-1.webp",
@@ -33,7 +33,7 @@ export const Industries = [
     {
         img:"/our-industry/listing-7.webp",
         head:"Travel & Transportation",
-        link:"/our-industry/government"
+        link:"/our-industry/travel-and-transportation"
     },
     {
         img:"/our-industry/listing-8.webp",

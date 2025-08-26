@@ -6,7 +6,7 @@ const FirstSection = ({ firstImg, head1, para1,cardHead1,cardPara1,cardImg1,card
     <div className='-mt-24 mb-32'>
         <div className='w-[90%] mx-auto 2xl:max-w-[1740px]' >
             <div>
-                <Image src={firstImg} alt="Government" width={1000} height={1000} className='w-full' />
+                <Image src={firstImg} alt="Government" width={1000} height={1000} className='w-full h- rounded-[50px]' />
             </div>
             <div className='flex justify-between items-center my-20 '>
                 <h2 className='text-[#101820] text-[55px] font-semibold leading-[55px] max-w-[45%]'>{head1}</h2>
@@ -14,7 +14,7 @@ const FirstSection = ({ firstImg, head1, para1,cardHead1,cardPara1,cardImg1,card
             </div>
             <div className='grid grid-cols-2 justify-between items-center gap-5'>
               <div>
-                <Image src={cardImg1} alt="Government" width={1000} height={1000} className='w-full h-full' />
+                <Image src={cardImg1} alt="Government" width={1000} height={1000} className='w-full h-full rounded-3xl' />
               </div>
               <div className='flex flex-col  justify-end h-full 2xl:p-10 p-5' style={{
                 borderRadius: '30px',
@@ -33,7 +33,7 @@ const FirstSection = ({ firstImg, head1, para1,cardHead1,cardPara1,cardImg1,card
                   <p className='font-["Exo"] text-[12px] xl:text-[18px] text-[#101820]'>{cardPara2}</p>
                 </div>
                 <div>
-                  <Image src={cardImg2} alt="Government" width={1000} height={1000} className='w-full h-full' />
+                  <Image src={cardImg2} alt="Government" width={1000} height={1000} className='w-full h-full rounded-3xl' />
                 </div>
               </div>
         </div>
