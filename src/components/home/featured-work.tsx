@@ -3,6 +3,7 @@ import Wrapper from "../layout/wrapper";
 import { projects } from "@/data/home-work";
 import WorkTabs from "./work-tabs";
 import { Button } from "../common/button";
+import Link from "next/link";
 
 export default function FeaturedWorks() {
   return (
@@ -34,7 +35,8 @@ export default function FeaturedWorks() {
                     : ""
                 }`}
               >
-                <div
+                <Link
+                  href={project.link}
                   className={`relative overflow-hidden rounded-2xl bg-slate-800 ${
                     (index == 1 || index == 4) && "top-14"
                   }`}
@@ -48,7 +50,7 @@ export default function FeaturedWorks() {
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>
