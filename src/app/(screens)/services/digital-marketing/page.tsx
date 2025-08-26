@@ -12,14 +12,14 @@ import React from 'react'
 const schemaData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Short-Form Video",
-    "description": "Let’s Create Content People Actually Want to Watch",
+    "name": "Digital Experiences",
+    "description": "Digital Marketing Services That Deliver Results",
     "provider": {
         "@type": "Organization",
         "name": "LPS Brands",
         "url": "https://lps-me.com"
     },
-    "serviceType": "Short-Form Video",
+    "serviceType": "Digital Experiences",
     "areaServed": {
         "@type": "Place",
         "name": "Global"
@@ -42,67 +42,58 @@ const GenerativeAI = () => {
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
             />
-            <ServicesHero heading='Short-Form Video' highlight='Short-Form Video' bottom={false} />
+            <ServicesHero heading='Digital Experiences' highlight='Digital Experiences' bottom={false} />
             <ProductionEvolutionSection
-                title='Let’s Create Content People Actually Want to Watch'
-                highlight='Want to Watch'
-                heading='Accelerating Brand Engagement'
+                title='Digital Marketing Services That Deliver Results'
+                highlight='Digital Marketing'
+                heading='New Age is our Edge. 360 is our Craft.'
                 text={[
-                    "Short form video creation is more than simply a content format in the digital era of today; it’s a potent instrument for audience engagement, brand amplification, and action driving force. Our area of expertise at LPS is creating platform-optimized, high-impact short form content meant for instant audience connection.",
+                    "In today’s hyper-connected world, digital marketing services are not just a trend—they’re essential. At LPS Brands, we empower businesses with data-driven strategies designed to increase visibility, build trust, and drive measurable growth. Whether you’re a startup or an enterprise, our comprehensive digital marketing solutions ensure your brand stands out in a crowded digital landscape.",
 
-                    "Short form content agencies like LPS have approaches that are grounded on thorough knowledge of digital habits and cultural trends. Our method guarantees that every video we create feels rather than just looks good."
+                    "As a leading digital partner, LPS Brands understands the regional market like no one else. Our digital marketing services in Dubai combine local insights with global best practices to craft campaigns that resonate. From SEO to paid ads, content creation to social media, we help you connect with your audience, wherever they are."
                 ]}
-                images={["/services/pe16.webp", "/services/pe17.webp"]}
+                images={["/services/pe18.webp", "/services/pe19.webp"]}
             />
             <Timeline
-                heading='Why Choose Us for Your Short Form Video Needs?'
-                text='At LPS, we bring creative vision, technical expertise, and a deep understanding of audience behavior to every project. With our short video production company, you can count on our seamless production process.
-                <br /><br />
-                Ready to get started? Whether you want to launch a campaign, scale your content strategy, or build long-term engagement, LPS is here to make your brand shine with TikTok video marketing, short form video ideas, and much more.'
+                heading='Full-Spectrum Digital Marketing Solutions'
+                text='LPS Brands provides digital marketing services in UAE that are adaptive, agile, and aligned with your business goals. Whether you’re targeting local markets or scaling globally, our strategies are designed to grow with your brand.'
                 timelineData={[{
-                    title: "Hook-First Storytelling",
-                    description: "We open strong and land harder—structuring content around compelling hooks, emotional triggers, and audience-specific insights to maximize retention and shareability.",
+                    title: "Insight-Driven Strategy & Planning",
+                    description: "We start with data but think beyond it. From behavioral analytics to competitive audits, we build strategies tailored to your goals, audiences, and performance gaps.",
                 },
                 {
-                    title: "Platform-Native Creativity",
-                    description: "We tailor every frame to the ecosystem it lives in—optimizing for TikTok trends, Instagram pacing, YouTube Shorts rhythm, or LinkedIn storytelling without ever diluting your brand voice.",
+                    title: "Full-Funnel Media Execution",
+                    description: "From search to scroll to sale, we activate SEO, PPC, display, and paid social as a unified force—ensuring every dollar is tracked, optimized, and accountable.",
                 },
                 {
-                    title: "Scroll-Linked Narrative Flow",
-                    description: "Our videos are more than just clips—they’re miniature brand stories. We create cohesion across posts, campaigns, and series to build recall, loyalty, and layered engagement.",
+                    title: "Omnichannel Experience Design",
+                    description: "We integrate content, media, UX, and automation into one digital ecosystem—creating cohesive, high-converting journeys across touchpoints.",
                 },
                 {
-                    title: "Creative x Production Synergy",
-                    description: "Our in-house strategists, editors, creators, and motion artists work as a single creative unit—delivering high-volume, high-quality short-form content at the speed your brand needs.",
+                    title: "Real-Time Optimization & AI Insights",
+                    description: "We use AI-powered tracking, predictive analytics, and performance data to continually refine campaigns—so your digital presence evolves with every interaction.",
                 }]}
             />
             <BuildingBrandsCards
-                heading="Let’s Make Videos That Stop the Scroll and Spark Conversations"
-                para='The traditional methods of brand communication no longer have the same effectiveness in today’s digital age. Short video storytelling by LPS flips the script, providing brands with an opportunity to convey their message in a way that feels organic and authentic to the platform it’s shared on.'
+                heading="Our Approach: Designed for Impact, Driven by Insight"
+                para='At LPS, digital marketing isn’t a one-and-done task, it’s a living, breathing cycle of discovery, action, and optimization. We don’t believe in set-it-and-forget-it. We believe in refining what works and reinventing what doesn’t.'
                 t1='Modular Execution'
-                p1='We start by mapping content strategy to platform behavior—identifying what your audience watches, skips, and shares to inform ideation and tone.'
+                p1='We begin by auditing your digital footprint—identifying missed opportunities, audience behaviors, and competitive gaps.'
                 t2='Format-First Thinking'
-                p2="Scripts, formats, and visuals are developed to match trending structures, while staying true to your campaign message and brand tone."
+                p2="Strategy is developed across organic and paid channels—mapping content, keywords, and campaigns to user intent and business goals."
                 t3='End-to-End Craftsmanship'
-                p3='Filming and editing are approached with performance and pace in mind—balancing creative flair with algorithm-friendly structuring.'
+                p3='Execution spans from ad creatives to landing pages, integrating copy, UX, and targeting for seamless user journeys.'
             />
             <BrandingStart
-                heading='The Value of Short-Form Video Done Right'
-                para='Short form videos have become one of the most effective tools for brands to stay relevant in a fast-moving digital landscape. As social media platforms evolve, users’ attention spans have become shorter, meaning content needs to engage quickly.'
-                para2='Short form videos leverage this by providing high-impact visuals, creative storytelling, and an authentic connection with the audience—all within seconds. This approach not only amplifies your brand’s visibility but also increases the likelihood of driving user action.'
-                image='/services/o8.webp'
+                heading='The Value of Digital Done Right'
+                para='In a world where attention is fleeting and competition is fierce, just being visible isn’t enough. Brands must resonate, across search engines, social feeds, and every digital touchpoint. When executed with strategy and precision, digital marketing goes beyond generating traffic. It builds credibility. It cultivates meaningful engagement. It transforms interest into trust and one-time clicks into long-term loyalty.'
+                para2='At LPS, our digital marketing services are engineered for real business outcomes. Whether it’s capturing high-value search intent, launching targeted campaigns, or fine-tuning your digital infrastructure, we focus on results that matter. Because we don’t just help brands get noticed. We help them make a lasting impression.'
+                image='/services/o9.webp'
             />
             <Wrapper>
                 <div className='py-16'>
-                    <h2 className='text-6xl text-center font-bold'>Let’s Create
-                        What’s Next—One Scroll at a Time</h2>
-                    <p className='text-xl max-w-5xl mx-auto font-medium text-center mt-10'>At LPS, we’re fluent in the speed of culture. Whether you’re building a brand from scratch or scaling content for growth, our short-form video teams are ready to script, shoot, edit, and deliver stories that connect on impact—and travel further.
-
-                        <br /><br />Because in a world that moves fast, the brands that win are the ones that speak in motion. <br /> <br />
-                        Let’s create the content people actually want to watch.
-                        <br />
-                        The kind that makes them stop, feel, and follow.
-
+                    <h2 className='text-6xl text-center font-bold'>Let’s Shape the Future of Digital</h2>
+                    <p className='text-xl max-w-5xl mx-auto font-medium text-center mt-10'>Ready to grow faster, market smarter, and connect deeper? At LPS, we’re more than just a digital marketing provider, we’re your strategic growth partner. Every campaign we craft is rooted in insight, powered by creativity, and designed to feel personal, because today’s digital world demands more than just presence.<br /><br />It demands purpose. Let’s build a digital experience that earns trust, sparks engagement, and keeps people coming back.
                     </p>
                 </div>
             </Wrapper>
