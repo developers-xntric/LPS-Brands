@@ -22,53 +22,14 @@ interface Blog {
 
 const Cards = () => {
   const [data, setData] = useState<Blog[]>([]);
-  const dummyBlogs: Blog[] = [
-    {
-      id: 1,
-      title: "Getting Started with AI in Business",
-      slug: "getting-started-ai-business",
-      imageURL: "/services/pe1.webp",
-      description: "An introduction to how businesses can adopt AI solutions.",
-      metaTitle: "AI in Business - Plenum Tech",
-      metaDescription:
-        "Discover how AI can transform your business operations.",
-      publishedDate: "2025-08-01",
-    },
-    {
-      id: 2,
-      title: "Cloud Migration Strategies for Enterprises ",
-      slug: "cloud-migration-strategies",
-      imageURL: "/services/pe1.webp",
-      description: "Key strategies to ensure smooth migration to the cloud.",
-      metaTitle: "Cloud Migration - Plenum Tech",
-      metaDescription:
-        "Learn the top strategies for successful cloud migration.",
-      publishedDate: "2025-08-10",
-    },
-    {
-      id: 3,
-      title: "ERP Implementation Challenges",
-      slug: "erp-implementation-challenges",
-      imageURL: "/services/pe1.webp",
-      description: "Common challenges faced during ERP implementation.",
-      metaTitle: "ERP Challenges - Plenum Tech",
-      metaDescription: "Understand ERP challenges and how to overcome them.",
-      publishedDate: "2025-08-15",
-    },
-  ];
-
-  useEffect(() => {
-    setData(dummyBlogs);
-  }, []);
-
-    // useEffect(() => {
-    //   const getAllBlogs = async () => {
-    //     const res = await axios.get("https://blog.xntric.me/api/v2/blogs");
-    //     console.log(res.data.blogs);
-    //     setData(res.data.blogs);
-    //   };
-    //   getAllBlogs();
-    // }, []);
+    useEffect(() => {
+      const getAllBlogs = async () => {
+        const res = await axios.get("https://blog.xntric.me/api/v2/blogs");
+        console.log(res.data.blogs);
+        setData(res.data.blogs);
+      };
+      getAllBlogs();
+    }, []);
 
   const featuredPost = data[0];
   const remainingPosts = data.slice(1, 5);
