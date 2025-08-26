@@ -6,6 +6,7 @@ import GlobalPresence from "@/components/home/global-presense";
 import HeroSection from "@/components/home/hero";
 import Industries from "@/components/home/industries";
 import { MeetThePears } from "@/components/home/meet-the-pears";
+import Wrapper from "@/components/layout/wrapper";
 
 export default function Home() {
   return (
@@ -16,9 +17,10 @@ export default function Home() {
       <Industries />
       <MeetThePears />
       <ArticlesCarousel />
-      <BlogsSection />
+      <Wrapper>
+        <BlogsSection isVideos={true} />
+      </Wrapper>
       <FAQSection />
     </div>
   );
 }
-

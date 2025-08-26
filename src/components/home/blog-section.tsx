@@ -1,26 +1,33 @@
-"use client"
-import { blogPosts, instagramVideos } from "@/data/blog-section"
-import { Button } from "../common/button"
-import Wrapper from "../layout/wrapper"
-import BlogCarousel from "./blog-carousel"
-import InstagramVideos from "./instagram-videos"
+"use client";
+import { instagramVideos } from "@/data/blog-section";
+import { Button } from "../common/button";
+import BlogCarousel from "./blog-carousel";
+import InstagramVideos from "./instagram-videos";
 
-export default function BlogsSection() {
-    return (
-        <Wrapper>
-            <div className="py-16 mx-auto bg-[url('/home/blog-bg.png')] rounded-3xl bg-center bg-cover bg-no-repeat">
-                {/* Header */}
-                <div className="flex px-12 items-center justify-between mb-12">
-                    <h1 className="text-4xl font-bold text-white">Blogs</h1>
-                    <Button text=" View All Blogs" />
-                </div>
+export default function BlogsSection({
+  heading,
+  isVideos,
+}: {
+  heading?: string;
+  isVideos?: boolean;
+}) {
+  return (
+    <div>
+      <div className="py-16 mx-auto bg-[url('/home/blog-bg.png')] rounded-3xl bg-center bg-cover bg-no-repeat">
+        {/* Header */}
+        <div className="flex px-12 items-center justify-between mb-12">
+          <h2 className="text-4xl font-bold text-white">
+            {heading ? heading : "Blogs"}
+          </h2>
+          <Button text=" View All Blogs" />
+        </div>
 
-                {/* Blog Carousel */}
-                <BlogCarousel posts={blogPosts} />
+        {/* Blog Carousel */}
+        <BlogCarousel />
 
-                {/* Instagram Videos Section */}
-                <InstagramVideos videos={instagramVideos} />
-            </div>
-        </Wrapper>
-    )
+        {/* Instagram Videos Section */}
+        {isVideos && <InstagramVideos videos={instagramVideos} />}
+      </div>
+    </div>
+  );
 }
