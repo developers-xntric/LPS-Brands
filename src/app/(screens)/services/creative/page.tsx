@@ -33,7 +33,7 @@ const schemaData = {
     }
 }
 
-const CorporateBranding = () => {
+const Creative = () => {
     return (
         <div>
             <Script
@@ -90,6 +90,7 @@ const CorporateBranding = () => {
                 heading='The Value of Creative Done Right'
                 para='Grounded in understanding, meant for impact, and developed for the contemporary world, our creative services reflect Being a creative branding firm in Dubai, we mix local cultural fluency with global design thinking to make sure your brand is remembered, felt, and followed rather than only seen.'
                 para2='Whether your brand is a disruptor preparing to debut or a heritage brand wanting to change, we deliberately assist in defining your verbal and visual image. We bring concepts for creative branding that go beyond appearances to life—that which is relevant, resonant, and grounded in customer behavior. Being a top creative branding firm, we provide more than just deliverables; we also provide collaboration, viewpoint, and accuracy.'
+                image='/services/o4.webp'
             />
             <Wrapper>
                 <div className='py-16'>
@@ -107,4 +108,4 @@ const CorporateBranding = () => {
     )
 }
 
-export default CorporateBranding;
+export default Creative;

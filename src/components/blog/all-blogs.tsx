@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { Calendar } from "lucide-react";
 import Head from "next/head";
@@ -5,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "../common/button";
+import axios from "axios";
 
 interface Blog {
   id: number;
@@ -22,56 +24,36 @@ interface Blog {
 
 const Cards = () => {
   const [data, setData] = useState<Blog[]>([]);
-  const dummyBlogs: Blog[] = [
-    {
-      id: 1,
-      title: "Getting Started with AI in Business",
-      slug: "getting-started-ai-business",
-      imageURL: "/services/pe1.webp",
-      description: "An introduction to how businesses can adopt AI solutions.",
-      metaTitle: "AI in Business - Plenum Tech",
-      metaDescription:
-        "Discover how AI can transform your business operations.",
-      publishedDate: "2025-08-01",
-    },
-    {
-      id: 2,
-      title: "Cloud Migration Strategies for Enterprises ",
-      slug: "cloud-migration-strategies",
-      imageURL: "/services/pe1.webp",
-      description: "Key strategies to ensure smooth migration to the cloud.",
-      metaTitle: "Cloud Migration - Plenum Tech",
-      metaDescription:
-        "Learn the top strategies for successful cloud migration.",
-      publishedDate: "2025-08-10",
-    },
-    {
-      id: 3,
-      title: "ERP Implementation Challenges",
-      slug: "erp-implementation-challenges",
-      imageURL: "/services/pe1.webp",
-      description: "Common challenges faced during ERP implementation.",
-      metaTitle: "ERP Challenges - Plenum Tech",
-      metaDescription: "Understand ERP challenges and how to overcome them.",
-      publishedDate: "2025-08-15",
-    },
-  ];
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 6; // Number of posts per page
 
   useEffect(() => {
-    setData(dummyBlogs);
+    const getAllBlogs = async () => {
+      const res = await axios.get("https://blog.xntric.me/api/v2/blogs");
+      console.log(res.data, "Data");
+      const LPSBLogs = res.data.blogs.filter(
+        (blog: any) => blog.blogCategory.toLowerCase() === "lps"
+      );
+      setData(LPSBLogs);
+    };
+    getAllBlogs();
   }, []);
 
-    // useEffect(() => {
-    //   const getAllBlogs = async () => {
-    //     const res = await axios.get("https://blog.xntric.me/api/v2/blogs");
-    //     console.log(res.data.blogs);
-    //     setData(res.data.blogs);
-    //   };
-    //   getAllBlogs();
-    // }, []);
-
   const featuredPost = data[0];
-  const remainingPosts = data.slice(1, 5);
+  const remainingPosts = data.slice(1);
+  
+  // Calculate pagination details
+  const totalPosts = remainingPosts.length;
+  const totalPages = Math.ceil(totalPosts / postsPerPage);
+  const startIndex = (currentPage - 1) * postsPerPage;
+  const endIndex = startIndex + postsPerPage;
+  const paginatedPosts = remainingPosts.slice(startIndex, endIndex);
+
+  // Handle page change
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" }); // Optional: Scroll to top on page change
+  };
 
   return (
     <>
@@ -79,7 +61,7 @@ const Cards = () => {
         <title>
           {featuredPost?.metaTitle ||
             featuredPost?.title ||
-            "Blog | Plenum Tech"}
+            "Blog | LPS Brands"}
         </title>
         <meta
           name="description"
@@ -95,7 +77,7 @@ const Cards = () => {
         />
       </Head>
 
-      <section className="py-16  2xl:max-w-[1700px] w-[90%] mx-auto space-y-14 flex flex-col">
+      <section className="py-16 2xl:max-w-[1700px] w-[90%] mx-auto space-y-14 flex flex-col">
         {data.length === 0 ? (
           <div className="text-center py-20">
             <h2 className="text-2xl font-bold text-gray-800">
@@ -109,7 +91,7 @@ const Cards = () => {
           <>
             {featuredPost && (
               <div className="mb-12">
-                <Link href={`blog/${featuredPost.slug}`}>
+                <div >
                   <div className="flex flex-col lg:flex-row gap-8 bg-white rounded-2xl overflow-hidden duration-300">
                     <div className="lg:w-1/2">
                       <Image
@@ -127,12 +109,19 @@ const Cards = () => {
                           {featuredPost.publishedDate.slice(0, 10)}
                         </span>
                       </div>
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                      <h2 className="text-2xl lg:text-3xl font-['Exo'] font-bold text-gray-900 mb-4 leading-tight">
                         {featuredPost.title}
                       </h2>
-                      <p className="text-secondary font-['Exo'] text-base leading-relaxed mb-6">
-                        {featuredPost.description}
-                      </p>
+                      <p
+                        className="
+                          text-secondary font-['Exo'] text-base leading-relaxed mb-6
+                          [&_a]:text-[#00FC09] [&_a]:underline [&_a]:font-semibold
+                          hover:[&_a]:text-[#4BFE2C]
+                        "
+                        dangerouslySetInnerHTML={{
+                          __html: featuredPost.description,
+                        }}
+                      />
                       <div className="flex gap-2">
                         {featuredPost.tags?.map((tag, index) => (
                           <span
@@ -155,12 +144,12 @@ const Cards = () => {
                       </Link>
                     </div>
                   </div>
-                </Link>
+                </div>
               </div>
             )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              {remainingPosts.map((card, index) => {
+              {paginatedPosts.map((card, index) => {
                 const imageSchema = {
                   "@context": "https://schema.org",
                   "@type": "ImageObject",
@@ -179,7 +168,7 @@ const Cards = () => {
                 };
 
                 return (
-                  <Link href={`blog/${card.slug}`} key={index}>
+                  <div  key={index}>
                     <div className="bg-white rounded-2xl overflow-hidden duration-300">
                       <Image
                         src={card.imageURL || "/placeholder.svg"}
@@ -192,15 +181,22 @@ const Cards = () => {
                         <div className="flex items-center gap-2 mb-4">
                           <Calendar size={20} />
                           <span className="text-secondary font-['Exo'] text-[14px]">
-                            {featuredPost.publishedDate.slice(0, 10)}
+                            {card.publishedDate.slice(0, 10)}
                           </span>
                         </div>
-                        <h3 className="text-2xl lg:text-3xl  font-bold text-secondary mb-3 leading-tight">
+                        <h3 className="text-2xl lg:text-3xl font-['Exo'] font-bold text-secondary mb-3 leading-tight">
                           {card.title}
                         </h3>
-                        <p className="text-secondary font-['Exo'] text-[15px] 2xl:text-lg  leading-relaxed mb-4 line-clamp-3">
-                          {card.description}
-                        </p>
+                        <p
+                          className="
+                            text-secondary font-['Exo'] text-base leading-relaxed line-clamp-2 mb-6
+                            [&_a]:text-[#00FC09] [&_a]:underline [&_a]:font-semibold
+                            hover:[&_a]:text-[#2054fc]
+                          "
+                          dangerouslySetInnerHTML={{
+                            __html: card.description,
+                          }}
+                        />
                         <div className="flex gap-2">
                           {card.tags?.map((tag, tagIndex) => (
                             <span
@@ -229,10 +225,28 @@ const Cards = () => {
                         __html: JSON.stringify(imageSchema),
                       }}
                     />
-                  </Link>
+                  </div>
                 );
               })}
             </div>
+
+            {totalPages > 1 && (
+              <div className="flex justify-center mt-8 space-x-2">
+                {Array.from({ length: totalPages }, (_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handlePageChange(index + 1)}
+                    className={`w-8 h-8 rounded-full font-['Exo'] text-sm font-medium ${
+                      currentPage === index + 1
+                        ? "bg-[#00FC09] text-secondary"
+                        : "bg-gray-200 text-secondary hover:bg-gray-300"
+                    }`}
+                  >
+                    {index + 1}
+                  </button>
+                ))}
+              </div>
+            )}
           </>
         )}
       </section>
