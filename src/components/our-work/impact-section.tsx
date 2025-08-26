@@ -51,7 +51,7 @@ export default function ImpactSection({
   para,
   numbersData,
   videoUrl,
-  video1
+  video1,
 }: {
   para?: string;
   numbersData?: { name: string; value: number; sign: string }[];
@@ -59,15 +59,16 @@ export default function ImpactSection({
   video1?: string;
 }) {
   return (
-    <section className={`pb-16 ${video1 ? "pt-0":"pt-32"} px-4 w-[90%] 2xl:max-w-[1740px] mx-auto`}>
-        {video1 && (
-          <div className="relative -top-20">
-            <video controls autoPlay muted className="w-full">
-              <source src={video1}  />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        )}
+    <section
+      className={`pb-16 ${
+        video1 ? "pt-0" : "pt-32"
+      } px-4 w-[90%] 2xl:max-w-[1740px] mx-auto`}
+    >
+      {video1 && (
+        <div className="relative -top-20 w-full">
+          <iframe src={video1} frameBorder="0" className="w-[100%] h-[90vh]"></iframe>
+        </div>
+      )}
       <div className="flex flex-col gap-12 items-start">
         {/* Left Content */}
         <div className="flex justify-between   w-full space-y-8">
