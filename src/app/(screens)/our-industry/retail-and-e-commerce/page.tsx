@@ -10,48 +10,35 @@ const FinancialServices = () => {
     <div>
       <CareersHero
         heading="Retail & e-commerce"
-        text="We don’t just sell products — we build brands that live in carts and hearts. At LPS, we make the scroll stop, the clicks count, and the checkouts convert."
+        text="We don’t just sell products we build brands that live in carts and hearts. At LPS, we make the scroll stop, the clicks count, and the checkouts convert."
         highlight="Retail & e-commerce"
         bottom={false}
       />
       <FirstSection
         cardHead1="Industry Specific Challenges"
-        cardPara1="Public skepticism is high — every message is met with scrutiny. Instead of transparency, bureaucratic terminology distances one. Digital speed of today is not matched by legacy systems. We have to talk to many generations with various expectations. Often lacking emotional resonance are policies and social initiatives. Private-sector criteria define public services. No more optional are trust, clarity, and relevance; they are demanded."
-        cardHead2="Evolving Challenges in a Digitally-Driven Market"
-        cardPara2="People interact with content the way they do with brands—fast, mobile-first, emotionally driven. Information overload makes attention more difficult to acquire and more readily lost. Authenticity is crucial in disinfo and distrustful times. Younger generations demand governance motivated by causes rather than just command-based. A civic right, digital accessibility is not a design taste. Public service initiatives have to be inclusive, bilingual, and flexible. Governments require tools for agile, unambiguous, multi-channel communication from crises to elections."
-        cardImg1="/our-industry/2.png"
-        cardImg2="/our-industry/3.png"
-        firstImg="/our-industry/1.png"
+        cardPara1="Retailers and e-commerce brands are racing against short attention spans, rising acquisition costs, and an overwhelming digital noise. Shelf space is now screen space and it’s crowded. Consumers expect speed, authenticity, and convenience all at once. Supply chain volatility, platform dependency, and the need for omnichannel cohesion further complicate the playing field. Brands must now deliver a seamless, sensory experience without ever stepping into a physical store."
+        cardHead2="Evolving Challenges in a Digitally Driven Market"
+        cardPara2="With algorithms changing and user behavior evolving daily, staying ahead means constantly innovating. Cookie-based targeting is fading, making brand loyalty and first-party data crucial. Consumers want more than just products — they crave connection, cause, and community. Real-time responsiveness, dynamic pricing, and tech-integrated customer support are becoming default. Amidst all this, brands must remain human, consistent, and emotionally resonant while scaling fast."
+        cardImg1="/our-industry/retail-2.webp"
+        cardImg2="/our-industry/retail-3.webp"
+        firstImg="/our-industry/retail-1.webp"
         head1="What’s Trending in Government Communication?"
-        para1="Digital transformation is now a necessity, not a luxury.  Citizens expect real-time updates, transparency, and service accessibility. Trust-building, inclusivity, and community-first narratives are driving modern public outreach."
+        para1="Digital transformation is now a necessity, not a luxury.  Citizens expect real-time updates, transparency, and service accessibility. Trust-building, inclusivity, and community-first narratives are driving modern public outreach."
       />
       <SecondSection />
       <ThirdSection
-        img="/our-industry/6.png"
+        img="/our-industry/retail-4.webp"
         heading="How LPS Helps This Industry"
-        para1=" Working with government agencies, LPS helps to reinvent
-                  communication with intent and strength. We humanise messaging
-                  by converting policies into understandable language and
-                  practical application. We create multichannel marketing
-                  inspired, informed, and included. Our strategic narratives
-                  increase public involvement, help to clear uncertainty, and
-                  foster trust."
-        para2="We design accessible, transparent, functional mobile-first
-                  digital experiences. From public health consciousness to
-                  social welfare campaigns - we make sure the message inspires
-                  actual behaviour. Governments using LPS conduct dialogues that
-                  transform communities, not just provide information."
+        para1=" Here at LPS, we combine facts with desire. Our campaigns communicate, excite, and linger rather than just sell. We build simple, scroll-stopping, conversion-optimized internet stores. From Shopify builds to Amazon approaches, we address every aspect of the customer path. Our team engineers create performance marketing that generates traffic that converts and brand that towers in a sea of homogeneity."
+        para2="Product introductions become viral events and daily content becomes brand equity. Whether it's D2C, B2B, or marketplace positioning, our approaches are driven by insights, motivated by creativity, and customised to your objectives. With us, e-commerce becomes an ecosystem of community, content, and conversion and shopping becomes storytelling. From social to email, influencer collaborations to in-app experiences, we guarantee your brand voice is strong, clear, and memorable by consistency across platforms."
       />
       <FourSection
-        bgImage="/our-industry/7.png"
+        bgImage="/our-industry/retail-last.webp"
         heading=" How we understand the market shift"
-        para1=" We examine the changing expectations of a hyperaware, hyperconnected public. 
-            From Generation Z voters to retirees, we track digital behaviour patterns among 
-            different citizen groups. We examine worldwide civic tech, e-governance, and 
-            citizen involvement tools trends."
-        para2="  Monitoring the changes in public attitude, trust, and participation across several 
-            media, we investigate how behavioural science can be in line with policy 
-            communication. We note where people search for information and their expected speed."
+        para1=" We stay plugged into the cultural pulse, platform updates, and shifting shopper psychology.  We don’t just track clicks — we decode intent, emotion, and behavior. We remain tuned into changing consumer psychology, platform upgrades, and the pulse of culture. We decipher purpose, emotion, and behaviour; we do not just count clicks. Our method aggregates consumer sentiment research, global trade knowledge, and real-time trend monitoring."
+        para2="Gen Z spends differently than millennials, values-driven purchases are becoming more common, and user experience is redefining consumer loyalty.
+
+"
       />
     </div>
   );
