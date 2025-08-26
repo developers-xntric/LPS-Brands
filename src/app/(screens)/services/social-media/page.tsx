@@ -92,7 +92,7 @@ const SocialMedia = () => {
                 para2='You get more than simply postings when working with a reputable social media firm in Dubai like LPS; you get a content strategy with purpose, relevance, and outcomes.'
                 image='/services/o2.webp'
             />
-            <DisplayFeatured />
+            <DisplayFeatured text='LPS isn’t just about filming—it’s about creating immersive brand experiences that shape perceptions and drive engagement. We believe that in today’s landscape, content should be built for community resonance, native platform storytelling, and cross-format integration. Our forward-thinking methodology ensures that your content isn’t just seen but truly felt.' />
             <ContactFormSection />
         </div>
     )

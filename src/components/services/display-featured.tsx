@@ -23,7 +23,7 @@ const portfolioItems: PortfolioItem[] = [
 ];
 
 export default function DisplayFeatured({ text }: { text?: string }) {
-  const cardsPerView = 6; 
+  const cardsPerView = 6;
   const totalItems = portfolioItems.length;
   const maxIndex = Math.max(0, totalItems - cardsPerView);
 

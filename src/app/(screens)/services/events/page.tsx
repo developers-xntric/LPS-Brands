@@ -101,7 +101,7 @@ const Events = () => {
                     </p>
                 </div>
             </Wrapper>
-            <DisplayFeatured />
+            <DisplayFeatured text='Our impact speaks through the leaders we’ve shaped. From Fortune 500 executives to disruptive founders, public figures to policy shapers, our leadership branding work has turned personal stories into powerful movements.' />
             <ContactFormSection />
         </div>
     )
