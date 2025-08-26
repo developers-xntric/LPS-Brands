@@ -22,20 +22,19 @@ const portfolioItems: PortfolioItem[] = [
   { id: 8, frontImage: "/services/flip-card-bg.webp" },
 ];
 
-export default function DisplayFeatured() {
-  const cardsPerView = 6; // show 3 cards at a time
+export default function DisplayFeatured({ text }: { text?: string }) {
+  const cardsPerView = 6; 
   const totalItems = portfolioItems.length;
-  const maxIndex = Math.max(0, totalItems - cardsPerView); // last *valid* starting index
+  const maxIndex = Math.max(0, totalItems - cardsPerView);
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Autoplay (loops back to start after the last full view)
- useEffect(() => {
-  const interval = setInterval(() => {
-    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 2)); // Fixed: reset to 0 and increment by 1
-  }, 3000);
-  return () => clearInterval(interval);
-}, [maxIndex]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 2));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [maxIndex]);
 
   return (
     <section className="bg-[#101820] text-white py-16 px-6 lg:px-8 overflow-hidden">
@@ -47,10 +46,7 @@ export default function DisplayFeatured() {
               A Display of Our Work
             </h2>
             <p className="text-white font-medium leading-7 text-md font-['Exo'] max-w-4xl mx-auto">
-              Our impact speaks through the leaders we’ve shaped. From Fortune
-              500 executives to disruptive founders, public figures to policy
-              shapers, our leadership branding work has turned personal stories
-              into powerful movements.
+              {text || "Our impact speaks through the leaders we’ve shaped. From Fortune 500 executives to disruptive founders, public figures to policy shapers, our leadership branding work has turned personal stories into powerful movements."}
             </p>
           </div>
           <Button text="View All Work" />
@@ -61,7 +57,7 @@ export default function DisplayFeatured() {
           <div
             className="flex transition-transform duration-700 ease-in-out"
             style={{
-       
+
               width: `${(totalItems * 70) / cardsPerView}%`,
               transform: `translateX(-${(currentIndex * 100) / cardsPerView}%)`,
             }}
@@ -113,7 +109,7 @@ function FlipCard({ item }: FlipCardProps) {
 
         {/* Back */}
         <div className="absolute top-[-23px] inset-0 w-full h-80 flex items-center rounded-3xl overflow-hidden bg-[#c5c5c5] [backface-visibility:hidden]"
-             style={{ transform: "rotateY(180deg)" }}>
+          style={{ transform: "rotateY(180deg)" }}>
           <div className="p-6 flex flex-col items-center justify-center">
             <h3 className="text-[26px] font-bold text-secondary mb-2">
               Skechers - Hajj Campaign
