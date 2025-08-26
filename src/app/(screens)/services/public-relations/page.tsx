@@ -90,6 +90,7 @@ const CorporateBranding = () => {
                 heading='The Real Impact of Real-Time PR'
                 para='Modern brands are created in scrolls, shares, and tales; they are not created behind closed doors. PR is not optional in a world where a swipe defines the pace. It’s vital. When done well, public relations builds trust rather than just generates headlines.'
                 para2='It increases cultural relevance, shapes leadership, and transforms visibility into ongoing impact. Whether you’re managing a reputation storm, guiding public opinion, or launching the next great app, PR is no longer a department. That is your front line.'
+                image='/services/o3.webp'
             />
             <Wrapper>
                 <div className='py-16'>

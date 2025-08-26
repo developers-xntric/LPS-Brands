@@ -90,6 +90,7 @@ const CorporateBranding = () => {
                 heading='The Power of Social Done Right'
                 para='The job of a social media marketing agency in UAE is about showing up deliberately where it most counts, not about being visible on every platform. Under the direction of appropriate social media marketing solutions, your brand not only exists but also forms culture, fosters confidence, and instantly alters impression. The right social media marketing agency in uae can help you turn your brand into a strong digital voice whether you launch a product, run a campaign, or increase your digital presence.'
                 para2='You get more than simply postings when working with a reputable social media firm in Dubai like LPS; you get a content strategy with purpose, relevance, and outcomes.'
+                image='/services/o2.webp'
             />
             <DisplayFeatured />
             <ContactFormSection />
