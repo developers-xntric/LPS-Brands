@@ -100,7 +100,7 @@ const PublicRelations = () => {
                         Let us create the type of impact that transcends the trend and reverberates louder than any news.</p>
                 </div>
             </Wrapper>
-            <DisplayFeatured />
+            <DisplayFeatured text='LPS isn’t just about filming—it’s about creating immersive brand experiences that shape perceptions and drive engagement. We believe that in today’s landscape, content should be built for community resonance, native platform storytelling, and cross-format integration. Our forward-thinking methodology ensures that your content isn’t just seen but truly felt.' />
             <ContactFormSection />
         </div>
     )

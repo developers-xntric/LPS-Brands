@@ -79,11 +79,8 @@ const GenerativeAI = () => {
             <BuildingBrandsCards
                 heading="Our Process: Built for Precision, Powered by Possibility"
                 para='Generative AI at LPS is guided by insight and engineered for impact. Every solution is designed to be intelligent, intuitive, and integrative—enhancing human potential while future-proofing your operations.'
-                t1='Modular Execution'
                 p1='We begin with brand discovery and workflow mapping—identifying where AI can provide lift, speed, and creativity without compromising consistency.'
-                t2='Format-First Thinking'
                 p2="Our AI strategy aligns with your objectives—whether that’s content scale, faster ideation, or personalization at speed—so the tech stays in service of the story."
-                t3='End-to-End Craftsmanship'
                 p3='We develop, fine-tune, and implement AI tools—from writing assistants to creative generators—embedding your tone, ethics, and user needs throughout.'
             />
             <BrandingStart
@@ -99,7 +96,7 @@ const GenerativeAI = () => {
                     </p>
                 </div>
             </Wrapper>
-            <DisplayFeatured />
+            <DisplayFeatured text='Our impact speaks through the leaders we’ve shaped. From Fortune 500 executives to disruptive founders, public figures to policy shapers, our leadership branding work has turned personal stories into powerful movements.'/>
             <ContactFormSection />
         </div>
     )
