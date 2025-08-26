@@ -55,41 +55,50 @@ const CorporateBranding = () => {
                 images={["/services/pe15.webp", null]}
             />
             <Timeline
-                heading='Why Choose LPS as Your Video Production Company in Dubai?'
-                text='As a leading video production company in Dubai, we combine creative excellence with agile execution. Our team brings together strategists, directors, editors, and animators to create films that are not only visually stunning but also aligned with your brand’s purpose.'
+                heading='Why LPS? Why Gen AI, Why Now?'
+                text='In a world where speed meets narrative, we make sure your brand stays current, flexible, and aggressively futuristic. At LPS, we think the innovators of today are the finest brands of tomorrow. Whether your interest is in Gen AI use cases in marketing or ready to include generative AI into your content ecosystem, we are your friend in creating a smarter, more human digital future.
+                <br/>
+                Ready to explore what Gen AI can do for your brand?'
                 timelineData={[{
-                    title: "Platform-First Thinking",
-                    description: "We design for where the audience is—from scrollable formats to immersive storytelling—ensuring films & content always meets the moment.",
+                    title: "Insight-Led AI Integration",
+                    description: "We start by understanding your workflows, audiences, and goals—so our AI tools align not just with what you do, but how and why you do it.",
                 },
                 {
-                    title: "Smart Budgeting, Bold Ideas",
-                    description: "Our production models flex to your financial goals, unlocking standout quality without overspending.",
+                    title: "Humanised Machine Intelligence",
+                    description: "From smart content and ad copy to chatbot scripts and visual generation, every AI output is refined to carry your tone, values, and context—keeping the brand soul intact.",
                 },
                 {
-                    title: "Cross-Format Cohesion",
-                    description: "From short-form to long-form, branded to corporate—we unify content strategies for a consistent brand voice.",
+                    title: "Omnichannel Deployment",
+                    description: "We deploy Gen AI across platforms—from content generation and campaign automation to customer service, UX, and design—ensuring performance across every touchpoint.",
                 },
                 {
-                    title: "Creative Meets Capability",
-                    description: "Our teams align from strategy to shoot, ensuring speed, clarity, and campaigns that spark results.",
+                    title: "Ethical + Evolving Systems",
+                    description: "Our AI is trained for accuracy, inclusivity, and responsibility—built with continuous learning loops and guided by both data integrity and creative intuition.",
                 }]}
             />
             <BuildingBrandsCards
-                heading="Creative Precision. Strategic Execution."
-                para='Production at LPS is defined by a tight fusion of artistry and intent. We bring together multidisciplinary teams who collaborate across strategy, creative, and craft to shape narratives that spark genuine engagement. It’s this synergy that allows us to bring fresh, meaningful content to life with clarity and creative conviction.'
+                heading="Our Process: Built for Precision, Powered by Possibility"
+                para='Generative AI at LPS is guided by insight and engineered for impact. Every solution is designed to be intelligent, intuitive, and integrative—enhancing human potential while future-proofing your operations.'
                 t1='Modular Execution'
-                p1='Our production framework adapts seamlessly to project scale and complexity, delivering consistent quality across formats.'
+                p1='We begin with brand discovery and workflow mapping—identifying where AI can provide lift, speed, and creativity without compromising consistency.'
                 t2='Format-First Thinking'
-                p2="Whether it's social-first, filmic, or vertical content, we tailor our craft to suit the medium—maximizing engagement where it matters."
+                p2="Our AI strategy aligns with your objectives—whether that’s content scale, faster ideation, or personalization at speed—so the tech stays in service of the story."
                 t3='End-to-End Craftsmanship'
-                p3='With expert editing, animation, and post-production capabilities, we ensure every final cut is polished, powerful, and platform-ready.'
+                p3='We develop, fine-tune, and implement AI tools—from writing assistants to creative generators—embedding your tone, ethics, and user needs throughout.'
             />
             <BrandingStart
-                heading='The Future of Production Starts Here'
-                para='Live, hybrid, or virtual, our event production services ensure every detail is executed flawlessly. From staging and filming to post-event edits, we make your event unforgettable. Explainer videos, product walkthroughs, or character animations, our animated video production services simplify the complex and captivate your audience.'
-                para2='Our cinematic approach brings a storytelling lens to every project. Whether you need a brand film, documentary, or narrative piece, our film production services bring your vision to life. From script to screen, our media production services encompass every aspect of production, pre, during, and post, for cohesive brand storytelling.'
-                image='/services/o5.webp'
+                heading='The Value of Gen AI Done Right'
+                para='We strongly believe that marketing is no longer one-size-fits-all. Our Gen AI marketing systems personalize, predict, and perform, turning raw data into real-time creative strategies. Whether it’s dynamic ad copy, adaptive email flows, or A/B tested scripts, we help your brand speak directly to each segment.'
+                para2='From blogs to banners, captions to campaigns, our generative AI tools help you scale high-performing content across all platforms.'
+                image='/services/o7.webp'
             />
+            <Wrapper>
+                <div className='py-16'>
+                    <h2 className='text-6xl text-center font-bold'>Let’s Talk AI!</h2>
+                    <p className='text-xl max-w-5xl mx-auto font-medium text-center mt-10'>Generative AI is not replacing humans. It’s enhancing them. By embedding intelligence into every layer of your brand operations. Ready to explore what Gen AI can do for your brand?<br /><br />We’re just one click away!
+                    </p>
+                </div>
+            </Wrapper>
             <DisplayFeatured />
             <ContactFormSection />
         </div>
