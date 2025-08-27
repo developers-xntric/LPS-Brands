@@ -49,7 +49,7 @@ export default function BlogCarousel() {
           blogCategory: blog.blogCategory,
         }));
         const filtered = mappedPosts.filter(
-          (p: BlogPost) => p.blogCategory?.toLowerCase() === "plenum"
+          (p: BlogPost) => p.blogCategory?.toLowerCase() === "lps"
         );
         setPosts(filtered);
       } catch (e) {
