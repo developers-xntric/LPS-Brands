@@ -27,11 +27,11 @@ export default function WorkTabs() {
     const [activeTab, setActiveTab] = useState<keyof typeof tabData>("communications")
 
     return (
-        <div className=" mx-auto px-8">
+        <div className="mx-auto px-8">
             {/* Header */}
-            <div className="flex justify-between items-center mb-16">
+            <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-16 items-start gap-10 lg:gap-0">
                 <div className="max-w-3xl">
-                    <h1 className="text-4xl md:text-[56px] font-normal leading-[60px] text-white">
+                    <h1 className="text-2xl md:text-5xl lg:text-[56px] font-normal lg:leading-[60px] text-white">
                         Delivering Solutions
                         <br />
                         with <span className="text-green">Unmatched Expertise</span>
@@ -41,9 +41,9 @@ export default function WorkTabs() {
             </div>
 
             {/* Main Content */}
-            <div className="flex gap-6 items-start font-['Exo']">
+            <div className="flex flex-col lg:flex-row gap-6 items-start font-['Exo']">
                 {/* Left Side - Services */}
-                <div className="space-y-4 w-[60%]">
+                <div className="space-y-4 w-full lg:w-[60%]">
                     {/* Identity Section */}
                     <div
                         className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl p-6 hover:border hover:border-[#00FC09] hover:bg-[#00FC09]/10 ${activeTab === "identity" ? "border border-green bg-[#00FC09]/10" : "border border-transparent bg-[#141E29]"
@@ -91,7 +91,7 @@ export default function WorkTabs() {
                 </div>
 
                 {/* Right Side - Dynamic Content Card */}
-                <div className="lg:sticky lg:top-12 w-[40%]">
+                <div className="lg:sticky lg:top-12 w-full lg:w-[40%]">
                     <Card className="bg-white text-black p-8 rounded-[35px]">
                         <div className="space-y-6">
                             {/* Icon */}
@@ -100,7 +100,7 @@ export default function WorkTabs() {
                             </div>
 
                             {/* Dynamic Title */}
-                            <h2 className="text-5xl font-bold whitespace-pre-line">{tabData[activeTab].title}</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold whitespace-pre-line">{tabData[activeTab].title}</h2>
 
                             {/* Dynamic Services List */}
                             <div className="space-y-2">
