@@ -59,7 +59,7 @@ export default function MobileNavbar() {
                         } h-screen`}
                 >
                     <div className="flex items-center justify-between px-5 pt-5 pb-3 border-b">
-                        <h2 className="text-lg font-semibold">Menu</h2>
+                        <h2 className="text-3xl font-semibold">Menu</h2>
                         <button
                             onClick={() => setOpen(false)}
                             className="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green"
