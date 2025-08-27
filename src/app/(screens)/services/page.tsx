@@ -18,61 +18,61 @@ const Services = () => {
     {
       id: "social",
       title: "Social Media",
-      href: "/services/leadership-branding",
+      href: "/services/social-media",
     },
     {
       id: "pr",
       title: "Public Relations",
-      href: "/services/leadership-branding",
+      href: "/services/public-relations",
     },
   ];
   const CommunicationAccor = [
     {
       id: "leadership",
       title: "Creative ",
-      href: "/services/leadership-branding",
+      href: "/services/creative",
     },
     {
       id: "corporate",
       title: "Production",
-      href: "/services/leadership-branding",
+      href: "/services/production",
     },
     {
       id: "social",
       title: "Influencers",
-      href: "/services/leadership-branding",
+      href: "/services/influencers",
     },
     {
       id: "pr",
       title: "Gen AI",
-      href: "/services/leadership-branding",
+      href: "/services/gen-ai",
     },
     {
       id: "pr",
       title: "Short Form Video",
-      href: "/services/leadership-branding",
+      href: "/services/short-form-video",
     },
   ];
   const ExperiencesAccor = [
     {
       id: "leadership",
       title: "Digital",
-      href: "/services/leadership-branding",
+      href: "/services/digital-marketing",
     },
     {
       id: "corporate",
       title: "Events",
-      href: "/services/leadership-branding",
+      href: "/services/events",
     },
     {
       id: "social",
       title: "Website & Apps",
-      href: "/services/leadership-branding",
+      href: "/services/website-app",
     },
     {
       id: "pr",
       title: "Gaming",
-      href: "/services/leadership-branding",
+      href: "/services/gaming",
     },
   ];
 

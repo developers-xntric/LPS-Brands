@@ -29,13 +29,13 @@ function ServiceListingHero({
             width={500}
             height={1000}
             alt="Careers"
-            className="w-"
+            className="md:w-[500px] w-[250px]"
           />
         </div>
      
-          <div className="flex flex-col items-start gap-4 mt-4 max-w-[65%] 2xl:max-w-[900px] py-10 pb-16">
+          <div className="flex flex-col items-start gap-4 mt-4  xl:max-w-[65%] 2xl:max-w-[900px] py-10 pb-16">
             <h1
-              className="text-xl font-medium font-['Exo'] leading-tight"
+              className="text-[15px] md:text-xl font-medium font-['Exo'] leading-tight"
               
             >{text}</h1>
           </div>
