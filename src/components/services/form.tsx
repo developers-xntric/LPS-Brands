@@ -90,9 +90,9 @@ export default function ContactFormSection() {
                   }
                   inputProps={{ id: "phone", name: "phone", required: true, placeholder: "050 123 4567" }}
                   containerClass="2xl:!w-96"
-                  inputClass="2xl:!w-96 !h-12 !text-base !border !border-black !rounded-lg"
+                  inputClass="2xl:!w-96 !w-[100%] !h-12 !text-base !border !border-black !rounded-lg"
                   buttonClass="!border !border-black !rounded-l-lg"
-                  dropdownClass="!text-base !w-[380px] !py-4"
+                  dropdownClass="!text-base lg:!w-[245px] 2xl:!w-[380px] !w-[280px] !py-4"
                 />
               </div>
             </div>
