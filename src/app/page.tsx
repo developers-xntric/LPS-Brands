@@ -16,8 +16,8 @@ export default function Home() {
       {/* <GlobalPresence /> */}
       {/* <Industries /> */}
       {/* <MeetThePears /> */}
-      {/* 
       <ArticlesCarousel />
+      {/* 
       <Wrapper>
         <BlogsSection isVideos={true} />
       </Wrapper>
