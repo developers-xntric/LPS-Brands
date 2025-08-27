@@ -85,7 +85,7 @@ export default function HoverVideoPill({
           "relative isolate inline-flex items-center gap-2 rounded-full ring-1 transition-all duration-300",
           // Base (collapsed) visual
           "bg-green text-neutral-900 ring-lime-300 shadow-sm",
-          compact ? "h-9 px-3 text-sm" : "lg:h-16 h-9 px-3 md:px-[56px] text-[24px]",
+          compact ? "h-9 px-3 text-sm" : "md:h-12 lg:h-16 h-9 px-3 md:px-[56px] text-[24px]",
           // Expanded visual — turn background/ring transparent so the video layer becomes the focus
           active && "bg-transparent ring-transparent shadow-none"
         )}
@@ -100,17 +100,17 @@ export default function HoverVideoPill({
         <span
           className={cn(
             "flex items-center justify-center rounded-full bg-[#2054FC] left-2 text-white transition-all duration-200 md:absolute",
-            compact ? "h-7 w-7" : "md:h-12 md:w-12 h-6 w-6",
+            compact ? "h-7 w-7" : "md:h-8 md:w-8 lg:h-12 lg:w-12 h-6 w-6",
             active ? "opacity-0 scale-90" : "opacity-100 scale-100"
           )}
           aria-hidden="true"
         >
-          <ArrowRight className={cn(compact ? "h-3.5 w-3.5" : "w-4 md:h-7 h-4 md:w-7")} />
+          <ArrowRight className={cn(compact ? "h-3.5 w-3.5" : "w-4 md:h-5 lg:h-7 h-4 md:w-5 lg:w-7")} />
         </span>
         {/* Label (hidden when expanded) */}
         <span
           className={cn(
-            "font-semibold tracking-wide text-secondary whitespace-nowrap transition-opacity duration-150 font-['Asgard'] relative md:left-5 text-[18px] lg:text-3xl",
+            "font-semibold tracking-wide text-secondary whitespace-nowrap transition-opacity duration-150 font-['Asgard'] relative md:left-5 text-[18px] md:text-2xl lg:text-3xl",
             active ? "opacity-0" : "opacity-100"
           )}
         >

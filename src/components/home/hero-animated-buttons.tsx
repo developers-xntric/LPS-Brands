@@ -28,7 +28,7 @@ const HeroAnimatedButtons = () => {
                                 videoSrc="/home/IdentityAnimation1.webm"
                             />
                         </span>{" "}
-                        <span className="inline-block mt-2 md:mt-0">that work for you.</span>
+                        <span className="inline-block mt-2 md:mt-3 lg:mt-0">that work for you.</span>
                     </div>
                 </h1>
             </div>
