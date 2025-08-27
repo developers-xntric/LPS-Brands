@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-      <FeaturedWorks />
+      {/* <FeaturedWorks />
       <GlobalPresence />
       <Industries />
       <MeetThePears />
@@ -20,7 +20,7 @@ export default function Home() {
       <Wrapper>
         <BlogsSection isVideos={true} />
       </Wrapper>
-      <FAQSection />
+      <FAQSection /> */}
     </div>
   );
 }

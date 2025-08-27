@@ -10,7 +10,7 @@ const HeroSection = () => {
     <div className="bg-[url('/home/Hero.png') bg-center bg-cover ">
       <div className="2xl:max-w-[1800px] mx-auto w-[95%] pb-20">
         {/* Top Left LPS Logo */}
-        <div className="hidden lg:block p-4 ms-6">
+        <div className="p-4 ms-6">
           <LogoLPS />
         </div>
         {/* Center Animated Heading of Pears In a World Of Apples */}
@@ -26,9 +26,9 @@ const HeroSection = () => {
         {/* Bottom Paragraph With Animated Video Button */}
         <HeroAnimatedButtons />
         {/* Animated Text Section (Why Pears) */}
-        <Wrapper>
+        {/* <Wrapper> */}
           {/* WHY PEARS Section */}
-          <div className="mb-8 mt-20 flex justify-between">
+          {/* <div className="mb-8 mt-20 flex justify-between">
             <h1 className="flex flex-col -space-y-6 text-8xl font-bold mb-8 leading-none">
               <span className="gradient-text text-transparent">WHY</span>
               <span className="gradient-text text-transparent">PEARS?</span>
@@ -47,11 +47,11 @@ const HeroSection = () => {
                 with your customers beyond just metrics.
               </p>
             </div>
-          </div>
+          </div> */}
 
           {/* Animated Text Section */}
-          <AnimatedTextSection />
-        </Wrapper>
+          {/* <AnimatedTextSection /> */}
+        {/* </Wrapper> */}
         {/* Featured Work Section */}
       </div>
     </div>
