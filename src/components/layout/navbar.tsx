@@ -82,7 +82,7 @@ export default function DesktopNavbar() {
             </div>
 
             {/* Bottom Navigation Bar */}
-            <nav className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 hidden lg:block">
+            <nav className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 hidden md:block">
                 <div className="bg-white rounded-full shadow-2xl border border-gray-100 w-[760px] px-4 py-2 flex justify-between items-center">
                     <Link
                         href="/"
