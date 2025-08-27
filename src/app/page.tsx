@@ -16,11 +16,11 @@ export default function Home() {
       {/* <GlobalPresence /> */}
       {/* <Industries /> */}
       {/* <MeetThePears /> */}
-      <ArticlesCarousel />
-      {/* 
+      {/* <ArticlesCarousel /> */}
       <Wrapper>
         <BlogsSection isVideos={true} />
       </Wrapper>
+      {/* 
       <FAQSection /> */}
     </div>
   );

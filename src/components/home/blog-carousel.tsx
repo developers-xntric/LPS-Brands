@@ -21,9 +21,16 @@ export default function BlogCarousel() {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
-  const [translateX, setTranslateX] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [dragOffset, setDragOffset] = useState(0);
 
+  // responsive measurements
+  const trackRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [itemsPerView, setItemsPerView] = useState(4);
+  const [itemWidth, setItemWidth] = useState(0);
+  const [gapPx, setGapPx] = useState(20); // Tailwind gap-5 = 20px
+
+  // fetch blogs
   useEffect(() => {
     async function fetchPosts() {
       try {
@@ -32,7 +39,6 @@ export default function BlogCarousel() {
         });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const { blogs } = await res.json();
-        // Map dashboard data to match the expected BlogCarouselProps structure
         const mappedPosts = blogs.map((blog: any) => ({
           id: blog._id || blog.slug,
           title: blog.title,
@@ -42,138 +48,192 @@ export default function BlogCarousel() {
           _id: blog._id,
           blogCategory: blog.blogCategory,
         }));
-        const filteredPosts = mappedPosts.filter(
-          (post: BlogPost) => post.blogCategory.toLowerCase() === "lps"
+        const filtered = mappedPosts.filter(
+          (p: BlogPost) => p.blogCategory?.toLowerCase() === "plenum"
         );
-        setPosts(filteredPosts);
-      } catch (error) {
-        console.error("Failed to fetch blog posts:", error);
+        setPosts(filtered);
+      } catch (e) {
+        console.error("Failed to fetch blog posts:", e);
         setPosts([]);
       }
     }
     fetchPosts();
   }, []);
 
+  // set itemsPerView from breakpoints
   useEffect(() => {
-    if (isAutoPlaying && !isDragging) {
-      const interval = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % Math.max(1, posts.length - 3));
-      }, 4000);
-      return () => clearInterval(interval);
-    }
-  }, [isAutoPlaying, isDragging, posts.length]);
+    const setByWidth = () => {
+      const w = window.innerWidth;
+      // <640: 1, 640–1023: 2, 1024–1279: 3, >=1280: 4
+      if (w < 640) setItemsPerView(1);
+      else if (w < 1024) setItemsPerView(2);
+      else if (w < 1280) setItemsPerView(3);
+      else setItemsPerView(4);
+    };
+    setByWidth();
+    window.addEventListener("resize", setByWidth);
+    return () => window.removeEventListener("resize", setByWidth);
+  }, []);
 
-  const handleMouseDown = (e: React.MouseEvent) => {
+  // measure container width and real gap via ResizeObserver
+  useEffect(() => {
+    const update = () => {
+      const wrapper = wrapperRef.current;
+      const track = trackRef.current;
+      if (!wrapper || !track) return;
+
+      const rect = wrapper.getBoundingClientRect();
+      const styles = getComputedStyle(track);
+      const gap =
+        parseFloat(styles.columnGap || styles.gap || `${gapPx}`) || gapPx;
+
+      // total horizontal gaps visible = (itemsPerView - 1)
+      const totalGaps = Math.max(0, itemsPerView - 1) * gap;
+      const widthForCards = Math.max(0, rect.width - totalGaps);
+      const perCard = itemsPerView > 0 ? widthForCards / itemsPerView : 0;
+
+      setGapPx(gap);
+      setItemWidth(perCard);
+    };
+
+    update();
+
+    const ro = new ResizeObserver(update);
+    if (wrapperRef.current) ro.observe(wrapperRef.current);
+    return () => ro.disconnect();
+  }, [itemsPerView]);
+
+  // autoplay
+  const maxIndex = Math.max(0, posts.length - itemsPerView);
+  useEffect(() => {
+    if (!isAutoPlaying || isDragging || posts.length <= itemsPerView) return;
+
+    const id = setInterval(() => {
+      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    }, 4000);
+    return () => clearInterval(id);
+  }, [isAutoPlaying, isDragging, posts.length, itemsPerView, maxIndex]);
+
+  // translate calculation
+  const step = itemWidth + gapPx;
+  const translateX = -(currentIndex * step) + dragOffset;
+
+  // drag handlers (mouse + touch)
+  const startDrag = (clientX: number) => {
     setIsDragging(true);
-    setStartX(e.clientX);
+    setStartX(clientX);
+    setDragOffset(0);
     setIsAutoPlaying(false);
   };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
+  const moveDrag = (clientX: number) => {
     if (!isDragging) return;
-    const diff = e.clientX - startX;
-    setTranslateX(diff);
+    setDragOffset(clientX - startX);
   };
-
-  const handleMouseUp = () => {
+  const endDrag = () => {
     if (!isDragging) return;
     setIsDragging(false);
 
-    const threshold = 100;
-    if (Math.abs(translateX) > threshold) {
-      if (translateX > 0 && currentIndex > 0) {
-        setCurrentIndex((prev) => prev - 1);
-      } else if (translateX < 0 && currentIndex < posts.length - 4) {
-        setCurrentIndex((prev) => prev + 1);
-      }
+    const threshold = Math.max(60, itemWidth * 0.25); // responsive threshold
+    if (dragOffset > threshold && currentIndex > 0) {
+      setCurrentIndex((p) => p - 1);
+    } else if (dragOffset < -threshold && currentIndex < maxIndex) {
+      setCurrentIndex((p) => p + 1);
     }
 
-    setTranslateX(0);
-    setTimeout(() => setIsAutoPlaying(true), 2000);
+    setDragOffset(0);
+    // small delay so it doesn't immediately jump while user lifts finger
+    setTimeout(() => setIsAutoPlaying(true), 1200);
   };
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setIsDragging(true);
-    setStartX(e.touches[0].clientX);
-    setIsAutoPlaying(false);
-  };
+  const handleMouseDown = (e: React.MouseEvent) => startDrag(e.clientX);
+  const handleMouseMove = (e: React.MouseEvent) => moveDrag(e.clientX);
+  const handleMouseUp = () => endDrag();
+  const handleMouseLeave = () => endDrag();
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging) return;
-    const diff = e.touches[0].clientX - startX;
-    setTranslateX(diff);
-  };
+  const handleTouchStart = (e: React.TouchEvent) =>
+    startDrag(e.touches[0].clientX);
+  const handleTouchMove = (e: React.TouchEvent) =>
+    moveDrag(e.touches[0].clientX);
+  const handleTouchEnd = () => endDrag();
 
-  const handleTouchEnd = () => {
-    handleMouseUp();
-  };
+  // dots navigation (optional)
+  const goTo = (idx: number) =>
+    setCurrentIndex(Math.min(Math.max(idx, 0), maxIndex));
 
   return (
-    <div className="mb-16 overflow-hidden">
+    <div className="mb-16">
       {posts.length > 0 ? (
-        <div
-          ref={containerRef}
-          className="relative cursor-grab active:cursor-grabbing"
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
+        <>
           <div
-            className="flex gap-5 transition-transform duration-500 ease-out relative right-40"
-            style={{
-              transform: `translateX(calc(-${currentIndex * 25}% + ${
-                isDragging ? translateX : 0
-              }px))`,
-            }}
+            ref={wrapperRef}
+            className="relative overflow-hidden cursor-grab active:cursor-grabbing"
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
-            {posts.map((post, index) => {
-              const visibleStart = currentIndex;
-              const visibleEnd = currentIndex + 3;
-              const isInView = index >= visibleStart && index <= visibleEnd;
-              const relativeIndex = index - currentIndex;
-              const isCenter = relativeIndex === 1 || relativeIndex === 2;
-              const scaleClass = isCenter && isInView ? "h-72" : "h-56";
+            <div
+              ref={trackRef}
+              className="flex gap-5 py-2 transition-transform duration-500 ease-out"
+              style={{
+                transform: `translateX(${translateX}px)`,
+                transition: isDragging ? "none" : "transform 0.5s ease-out",
+              }}
+            >
+              {posts.map((post, idx) => {
+                // compute which cards are "center-ish" for a taller look
+                const midStart = Math.floor(itemsPerView / 2) - 1;
+                const midEnd = midStart + 1;
+                const rel = idx - currentIndex;
+                const centerish =
+                  itemsPerView === 1
+                    ? rel === 0
+                    : rel >= midStart && rel <= midEnd;
 
-              return (
-                <div
-                  key={post.id}
-                  className={`flex-shrink-0 w-[28%] px-3 transition-transform duration-500 rounded-2xl  ${
-                    isCenter ? "z-10" : "z-0"
-                  }`}
-                >
-                  <div className="rounded-2xl overflow-hidden">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      className={`w-full ${scaleClass} rounded-2xl object-cover`}
-                      draggable={false}
-                      width={600}
-                      height={600}
-                    />
-                    <span className="text-sm text-green relative px-2 top-4">
-                      Blog
-                    </span>
-                    <h3 className="text-white font-['Exo'] text-xl font-bold mb-3 line-clamp-2 leading-tight px-2 my-6">
-                      {post.title}
-                    </h3>
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="text-white text-sm hover:text-[#2054FC] transition-colors px-2"
-                    >
-                      {post.readMore}
-                    </Link>
+                return (
+                  <div
+                    key={post.id}
+                    className={`flex-shrink-0 px-2 transition-transform duration-500 ${centerish ? "z-10" : "z-0"
+                      }`}
+                    style={{ width: `${itemWidth}px` }}
+                  >
+                    <div className="rounded-2xl overflow-hidden bg-transparent">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        className={`w-full ${centerish ? "h-72" : "h-56"
+                          } rounded-2xl object-cover`}
+                        draggable={false}
+                        width={600}
+                        height={600}
+                      />
+                      <span className="text-sm text-green relative px-2 top-4">
+                        Blog
+                      </span>
+                      <h3 className="text-white font-['Exo'] text-xl font-bold mb-3 line-clamp-2 leading-tight px-2 my-6">
+                        {post.title}
+                      </h3>
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="text-white text-sm hover:text-[#2054FC] transition-colors px-2"
+                      >
+                        {post.readMore}
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </div>
+
+          {/* Pagination dots */}
+          
+        </>
       ) : (
-        <p className="text-xl font-bold text-white text-center  ">No Blogs Found</p>
+        <p className="text-xl font-bold text-white text-center">No Blogs Found</p>
       )}
     </div>
   );
