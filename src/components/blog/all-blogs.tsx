@@ -31,7 +31,7 @@ const Cards = () => {
       const res = await axios.get("https://blog.xntric.me/api/v2/blogs");
       console.log(res.data, "Data");
       const LPSBLogs = res.data.blogs.filter(
-        (blog: any) => blog.blogCategory.toLowerCase() === "plenum"
+        (blog: any) => blog.blogCategory.toLowerCase() === "lps"
       );
       setData(LPSBLogs);
     };
