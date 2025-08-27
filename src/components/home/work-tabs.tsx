@@ -27,7 +27,7 @@ export default function WorkTabs() {
     const [activeTab, setActiveTab] = useState<keyof typeof tabData>("communications")
 
     return (
-        <div className="mx-auto px-8">
+        <div className="mx-auto xl:px-8">
             {/* Header */}
             <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-16 items-start gap-10 lg:gap-0">
                 <div className="max-w-3xl">
@@ -100,12 +100,12 @@ export default function WorkTabs() {
                             </div>
 
                             {/* Dynamic Title */}
-                            <h2 className="text-3xl md:text-5xl font-bold whitespace-pre-line">{tabData[activeTab].title}</h2>
+                            <h2 className="text-3xl md:text-5xl lg:text-4xl xl:text-5xl font-bold whitespace-pre-line">{tabData[activeTab].title}</h2>
 
                             {/* Dynamic Services List */}
                             <div className="space-y-2">
                                 {tabData[activeTab].services.map((service, index) => (
-                                    <div key={index} className="text-black font-normal">
+                                    <div key={index} className="text-black font-normal text-xl">
                                         {service}
                                     </div>
                                 ))}
