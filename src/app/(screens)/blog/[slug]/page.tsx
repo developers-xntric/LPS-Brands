@@ -97,7 +97,7 @@ export default async function BlogPage({
       error = "Blog not found.";
     } else {
       const { blog } = await res.json();
-    
+
       data = blog;
     }
   } catch (err) {
@@ -131,7 +131,6 @@ export default async function BlogPage({
 
   return (
     <Wrapper>
-
       <div className="felx flex-col space-y-10">
         {/* Top Left LPS Logo */}
         <div className="pt-4 pb-10">
@@ -155,7 +154,7 @@ export default async function BlogPage({
                 {data?.title}
               </h1>
               {data?.publishedDate && (
-                <p className="text-secondary text-[15px] font-medium font-['Exo'] flex items-center gap-2">
+                <p className="text-secondary text-base md:text-[15px] font-medium font-['Exo'] flex items-center gap-2">
                   <Calendar size={16} className="mb-[2px]" />
                   {data?.publishedDate.slice(0, 10)}
                 </p>
@@ -289,7 +288,10 @@ export default async function BlogPage({
                       <ul className="toc-list">
                         {tableOfContents.map((item, index) => (
                           <li key={index} className="toc-item">
-                            <Link href={`#${item.id}`} className="toc-link font-['Exo'] 2xl:text-lg">
+                            <Link
+                              href={`#${item.id}`}
+                              className="toc-link font-['Exo'] 2xl:text-lg"
+                            >
                               {item.title}
                             </Link>
                           </li>
@@ -334,7 +336,7 @@ export default async function BlogPage({
                           {subsection.subtitle && (
                             <h2
                               id={`subsection-${index}`}
-                              className="text-[25px] lg:text-[36px] text-secondary font-['Exo'] font-semibold leading-[35px] lg:leading-[35px]"
+                              className="text-[25px] lg:text-[36px] text-secondary font-['Exo'] font-semibold leading-[30px] md:leading-[35px] lg:leading-[35px]"
                             >
                               {subsection.subtitle}
                             </h2>
@@ -460,7 +462,7 @@ export default async function BlogPage({
                             index: number
                           ) => (
                             <div key={index} className="space-y-2">
-                              <h3 className="text-[18px] lg:text-[23px] font-['Exo'] font-semibold leading-[35px] lg:leading-[42px]">
+                              <h3 className="text-[18px] lg:text-[23px] font-['Exo'] font-semibold  md:leading-[35px] lg:leading-[42px]">
                                 {index + 1}. {faq.question}
                               </h3>
                               <div
@@ -475,7 +477,7 @@ export default async function BlogPage({
                   </div>
                 </div>
               </div>
-              <div className="w-full border  px-10 py-6 rounded-3xl my-10">
+              <div className="w-full border px-5 md:px-10 py-6 rounded-3xl my-10">
                 <div className="flex justify-between items-center mb-4">
                   <div className="flex items-center gap-4">
                     <Image
@@ -483,11 +485,23 @@ export default async function BlogPage({
                       alt="Shaikh zubaer Aasim"
                       width={100}
                       height={55}
-                      className="rounded-full bg-center"
+                      className="rounded-full w-[55px] md:w-[100px] bg-center"
                     />
-                    <h4 className="md:text-2xl ">Shaikh Zubaer Aasim</h4>
+                    <div>
+                      <h4 className="md:text-2xl ">Shaikh Zubaer Aasim</h4>
+                      <div className="md:hidden block">
+                        <div className="w-fit h-fit bg-black rounded-[8px] p-1 ps-1">
+                          <Link
+                            target="_blank"
+                            href="https://www.linkedin.com/in/aasimzshaikh"
+                          >
+                            <LinkedinIcon color="white" size={18} />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div>
+                  <div className="hidden md:block">
                     <div className="w-fit h-fit bg-black rounded-[8px] p-1 ps-1">
                       <Link
                         target="_blank"
@@ -529,7 +543,7 @@ export default async function BlogPage({
             </div>
           </>
         )}
-        <BlogsSection heading="Dicover Our Blogs" />
+        {/* <BlogsSection heading="Dicover Our Blogs" /> */}
       </div>
     </Wrapper>
   );

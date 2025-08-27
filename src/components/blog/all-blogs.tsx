@@ -25,14 +25,13 @@ interface Blog {
 const Cards = () => {
   const [data, setData] = useState<Blog[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 6; // Number of posts per page
-
+  const postsPerPage = 6; 
   useEffect(() => {
     const getAllBlogs = async () => {
       const res = await axios.get("https://blog.xntric.me/api/v2/blogs");
       console.log(res.data, "Data");
       const LPSBLogs = res.data.blogs.filter(
-        (blog: any) => blog.blogCategory.toLowerCase() === "lps"
+        (blog: any) => blog.blogCategory.toLowerCase() === "plenum"
       );
       setData(LPSBLogs);
     };
@@ -52,7 +51,7 @@ const Cards = () => {
   // Handle page change
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: "smooth" }); // Optional: Scroll to top on page change
+    window.scrollTo({ top: 0, behavior: "smooth" }); 
   };
 
   return (
@@ -99,22 +98,22 @@ const Cards = () => {
                         width={600}
                         height={400}
                         alt={featuredPost.title}
-                        className="w-full h-64 lg:h-full rounded-2xl object-cover"
+                        className="w-full  lg:h-full rounded-2xl object-cover"
                       />
                     </div>
-                    <div className="lg:w-1/2 p-8 flex flex-col justify-center">
+                    <div className="lg:w-1/2 md:px-8 py-8 flex flex-col justify-center">
                       <div className="flex items-center gap-2 mb-4">
                         <Calendar size={20} />
                         <span className="text-secondary font-['Exo'] text-[14px]">
                           {featuredPost.publishedDate.slice(0, 10)}
                         </span>
                       </div>
-                      <h2 className="text-2xl lg:text-3xl font-['Exo'] font-bold text-gray-900 mb-4 leading-tight">
+                      <h2 className="text-2xl lg:text-3xl font-['Exo'] font-bold text-gray-900 mb-4 leading-tight line-clamp-2">
                         {featuredPost.title}
                       </h2>
                       <p
                         className="
-                          text-secondary font-['Exo'] text-base leading-relaxed mb-6
+                          text-secondary  font-['Exo'] text-sm md:text-base leading-relaxed mb-6
                           [&_a]:text-[#00FC09] [&_a]:underline [&_a]:font-semibold
                           hover:[&_a]:text-[#4BFE2C]
                         "
@@ -175,7 +174,7 @@ const Cards = () => {
                         width={400}
                         height={250}
                         alt={card.title}
-                        className="w-full h-72 2xl:h-96 object-cover rounded-2xl"
+                        className="w-full xl:h-72 2xl:h-96 object-cover rounded-2xl"
                       />
                       <div className="py-6">
                         <div className="flex items-center gap-2 mb-4">
@@ -184,12 +183,12 @@ const Cards = () => {
                             {card.publishedDate.slice(0, 10)}
                           </span>
                         </div>
-                        <h3 className="text-2xl lg:text-3xl font-['Exo'] font-bold text-secondary mb-3 leading-tight">
+                        <h3 className="text-2xl lg:text-3xl font-['Exo'] font-bold text-secondary mb-3 leading-tight line-clamp-2">
                           {card.title}
                         </h3>
                         <p
                           className="
-                            text-secondary font-['Exo'] text-base leading-relaxed line-clamp-2 mb-6
+                            text-secondary font-['Exo'] text-sm md:text-base leading-relaxed line-clamp-2 mb-6
                             [&_a]:text-[#00FC09] [&_a]:underline [&_a]:font-semibold
                             hover:[&_a]:text-[#2054fc]
                           "
@@ -231,12 +230,12 @@ const Cards = () => {
             </div>
 
             {totalPages > 1 && (
-              <div className="flex justify-center mt-8 space-x-2">
-                {Array.from({ length: totalPages }, (_, index) => (
+              <div className="flex flex-wrap  justify-center mt-8 gap-2">
+                {Array.from({ length: totalPages  }, (_, index) => (
                   <button
                     key={index}
                     onClick={() => handlePageChange(index + 1)}
-                    className={`w-8 h-8 rounded-full font-['Exo'] text-sm font-medium ${
+                    className={`md:w-8 md:h-8 w-6 h-6 rounded-full font-['Exo'] text-xs md:text-sm font-medium ${
                       currentPage === index + 1
                         ? "bg-[#00FC09] text-secondary"
                         : "bg-gray-200 text-secondary hover:bg-gray-300"

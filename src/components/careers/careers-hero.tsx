@@ -41,8 +41,8 @@ function CareersHero({
     if (blog) {
       return (
         <>
-          <h1 className="md:text-[65px] text-[40px] font-bold uppercase">Our Blogs</h1>
-          <span className="md:text-[65px] text-[40px] font-bold">
+          <h1 className="md:text-[65px] text-[40px] font-bold uppercase pb-5 md:pb-0">Our Blogs</h1>
+          <span className="md:text-[65px] text-[40px] font-bold ">
             <span className="text-black">— </span>
             <span className="gradient-text">LPS BRANDS</span>
           </span>
@@ -87,7 +87,7 @@ function CareersHero({
         </div>
 
         {/* Heading */}
-        <div className="mt-20 flex flex-col items-start -space-y-8">
+        <div className="mt-20 flex flex-col items-start -space-y-7 md:-space-y-8">
           {renderHeading()}
         </div>
         {text && !bottom && (
