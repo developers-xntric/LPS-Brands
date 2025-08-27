@@ -37,19 +37,19 @@ export default function DisplayFeatured({ text }: { text?: string }) {
   }, [maxIndex]);
 
   return (
-    <section className="bg-[#101820] text-white py-16 px-6 lg:px-8 overflow-hidden">
+    <section className="bg-[#101820] text-white lg:py-16 pt-16 pb-4 lg:px-8 overflow-hidden">
       <div className="2xl:max-w-[1740px] mx-auto w-[93%]">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-12">
-          <div className="lg:max-w-2xl">
-            <h2 className="text-[30px] lg:text-5xl font-bold mb-6">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:mb-12">
+          <div className="lg:max-w-2xl text-center lg:text-start">
+            <h2 className="text-[30px] leading-[32px] lg:text-5xl font-bold mb-6">
               A Display of Our Work
             </h2>
             <p className="text-white font-medium leading-7 mb-10 lg:mb-0 text-md font-['Exo'] max-w-4xl mx-auto">
               {text || "Our impact speaks through the leaders we’ve shaped. From Fortune 500 executives to disruptive founders, public figures to policy shapers, our leadership branding work has turned personal stories into powerful movements."}
             </p>
           </div>
-          <Button text="View All Work" center={false} />
+          <Button text="View All Work" center={true} />
         </div>
 
         {/* Carousel */}
