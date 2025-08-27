@@ -12,10 +12,10 @@ export default function FeaturedWorks() {
         <div className="max-w-[95%] mx-auto mb-40">
           {/* Header */}
           <div className="text-center mb-10 font-['Exo']">
-            <h2 className="text-4xl md:text-6xl font-bold text-white text-green mb-4">
+            <h2 className="text-2xl md:text-4xl lg:text-6xl font-bold text-white text-green mb-4">
               A Display of Featured Works
             </h2>
-            <p className="text-white text-xl font-medium mb-8 max-w-3xl mx-auto">
+            <p className="text-white lg:text-xl font-medium mb-8 max-w-3xl mx-auto">
               Our forward-thinking experts, driven by innovation and technology,
               craft brand storytelling with a deep understanding of platform
               expertise.
@@ -25,7 +25,7 @@ export default function FeaturedWorks() {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
               <Link
                 href={`${project?.link}`}
@@ -38,7 +38,7 @@ export default function FeaturedWorks() {
               >
                 <div
                   className={`relative overflow-hidden rounded-2xl bg-slate-800 ${
-                    (index == 1 || index == 4) && "top-14"
+                    (index == 1 || index == 4) && "lg:top-14"
                   }`}
                 >
                   <div className="aspect-[4/3] relative">

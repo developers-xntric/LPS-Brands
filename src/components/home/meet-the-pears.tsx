@@ -30,7 +30,7 @@ export function MeetThePears() {
     return (
         <Wrapper>
             <div className="flex items-center justify-between mb-4">
-                <h2 className="text-6xl font-normal text-foreground">Meet the Pears</h2>
+                <h2 className="text-2xl md:text-4xl lg:text-6xl font-normal text-foreground">Meet the Pears</h2>
 
                 <div className="flex gap-2">
                     <Button
