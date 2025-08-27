@@ -13,16 +13,16 @@ export default function BrandingStart({ heading, para, para2, image }: { heading
               alt="Diverse team of professionals collaborating around a table"
               width={1200}
               height={400}
-              className="w-full h-[200px] 2xl:h-full object-cover rounded-[70px] 2xl:rounded-[120px]"
+              className="w-full h-[200px] md:h-full object-cover rounded-[70px] 2xl:rounded-[120px]"
             />
 
             {/* Blue speech bubble overlay */}
-            <div className="2xl:absolute hidden bottom-[-70px] left-20 bg-blue text-white px-8 py-6 rounded-full max-w-xl">
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight text-center">
+            <div className="md:block absolute hidden bottom-[-70px] left-20 bg-blue text-white px-8 py-6 rounded-full w-[50%] lg:max-w-xl">
+              <h2 className="text-2xl lg:text-5xl font-bold leading-tight text-center">
                 {heading ? heading : "The Future of Leadership Branding Starts Here"}
               </h2>
             </div>
-            <div className="absolute 2xl:hidden top-40 left-[-16px] bg-blue text-white px-8 py-6 rounded-full w-[95%]">
+            <div className="absolute md:hidden top-40 left-[-16px] bg-blue text-white px-8 py-6 rounded-full w-[95%]">
               <h2 className="text-[26px] leading-[24px] font-bold  text-center">
                 {heading ? heading : "The Future of Leadership Branding Starts Here"}
               </h2>
@@ -31,7 +31,7 @@ export default function BrandingStart({ heading, para, para2, image }: { heading
         </div>
 
         {/* Content section */}
-        <div className="grid md:grid-cols-2 gap-10  leading-relaxed">
+        <div className="grid md:grid-cols-2 gap-10 text-center lg:text-start leading-relaxed">
           <div>
             <p className="text-secondary font-medium leading-7 2xl:text-lg font-['Exo'] max-w-4xl mx-auto">
               {para ? para : "Leadership branding is no more optional in a society where leaders are expected to inspire, influence, and start change. At LPS, we think that in the crowded scene of today, visionary leaders differ mostly in their strong personal leadership brand. We create magnetic identities that platforms promote, communities gather behind, and businesses remember; we do not just create exposure."}
