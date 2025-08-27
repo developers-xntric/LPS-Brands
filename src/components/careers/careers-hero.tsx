@@ -53,7 +53,7 @@ function CareersHero({
     if (highlight && heading.includes(highlight)) {
       const parts = heading.split(new RegExp(`(${highlight})`, "gi"));
       return (
-        <h1 className="2xl:text-[75px] text-[40px] leading-[40px] font-bold uppercase max-w-[70%] 2xl:leading-[80px]">
+        <h1 className="lg:text-[75px] text-[40px] leading-[40px] font-bold uppercase max-w-[70%] 2xl:leading-[80px]">
           {parts.map((part, i) =>
             part.toLowerCase() === highlight.toLowerCase() ? (
               <span key={i} className="gradient-text">
