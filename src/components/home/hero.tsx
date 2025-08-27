@@ -4,6 +4,7 @@ import LogoLPS from "../icons/lps-logo";
 import Image from "next/image";
 import HeroAnimatedButtons from "./hero-animated-buttons";
 import Wrapper from "../layout/wrapper";
+import MobileNavbar from "../layout/mobile-navbar";
 
 const HeroSection = () => {
   return (
@@ -12,6 +13,7 @@ const HeroSection = () => {
         {/* Top Left LPS Logo */}
         <div className="p-4 ms-6">
           <LogoLPS />
+          <MobileNavbar />
         </div>
         {/* Center Animated Heading of Pears In a World Of Apples */}
         <div className="flex justify-center">

@@ -38,7 +38,7 @@ export default function MobileNavbar() {
                 aria-expanded={open}
                 aria-controls="mobile-nav-sheet"
                 onClick={() => setOpen(true)}
-                className="fixed md:hidden bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green shadow-xl flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green"
+                className="fixed md:hidden top-8 right-8 z-50 w-14 h-14 rounded-full bg-green shadow-xl flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green"
             >
                 <span className="sr-only">Open menu</span>
                 <div className="space-y-1.5">
@@ -52,18 +52,13 @@ export default function MobileNavbar() {
             <div className={`fixed inset-0 z-50 md:hidden ${open ? "pointer-events-auto" : "pointer-events-none"}`}>
                 {/* dim background */}
                 <div
-                    onClick={() => setOpen(false)}
-                    className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0"}`}
-                />
-                {/* sheet */}
-                <div
                     id="mobile-nav-sheet"
                     role="dialog"
                     aria-modal="true"
-                    className={`absolute left-0 right-0 bottom-0 bg-white rounded-t-3xl shadow-2xl pb-[env(safe-area-inset-bottom)] transition-transform duration-300 will-change-transform ${open ? "translate-y-0" : "translate-y-full"
-                        }`}
+                    className={`absolute inset-x-0 top-0 bg-white shadow-2xl transition-transform duration-300 will-change-transform ${open ? "translate-y-0" : "-translate-y-full"
+                        } h-screen`}
                 >
-                    <div className="flex items-center justify-between px-5 pt-5 pb-3">
+                    <div className="flex items-center justify-between px-5 pt-5 pb-3 border-b">
                         <h2 className="text-lg font-semibold">Menu</h2>
                         <button
                             onClick={() => setOpen(false)}
@@ -84,7 +79,7 @@ export default function MobileNavbar() {
                                     onClick={() => setOpen(false)}
                                     className="flex items-center justify-between py-3 border-b border-black/10 text-secondary"
                                 >
-                                    <span className="text-[16px]">{item.name}</span>
+                                    <span className="text-2xl">{item.name}</span>
                                     <ArrowUpRight className="w-4 h-4" />
                                 </Link>
                             ))}
@@ -92,7 +87,7 @@ export default function MobileNavbar() {
 
                         {/* Services accordion */}
                         <div className="mt-4">
-                            <h3 className="text-base font-semibold mb-2">Services</h3>
+                            <h3 className="text-2xl font-semibold mb-2">Services</h3>
                             <div className="rounded-2xl border border-black/10 divide-y divide-black/10">
                                 {Object.entries(servicesData).map(([category, items]) => (
                                     <div key={category}>
@@ -101,7 +96,7 @@ export default function MobileNavbar() {
                                             className="w-full flex items-center justify-between py-3 px-4"
                                             aria-expanded={!!openCats[category]}
                                         >
-                                            <span className="text-[15px]">{category}</span>
+                                            <span className="text-xl">{category}</span>
                                             <ChevronDown
                                                 className={`w-4 h-4 transition-transform ${openCats[category] ? "rotate-180" : ""}`}
                                             />
