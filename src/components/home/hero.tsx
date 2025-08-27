@@ -26,32 +26,32 @@ const HeroSection = () => {
         {/* Bottom Paragraph With Animated Video Button */}
         <HeroAnimatedButtons />
         {/* Animated Text Section (Why Pears) */}
-        {/* <Wrapper> */}
+        <Wrapper>
           {/* WHY PEARS Section */}
-          {/* <div className="mb-8 mt-20 flex justify-between">
-            <h1 className="flex flex-col -space-y-6 text-8xl font-bold mb-8 leading-none">
+          <div className="mb-8 mt-20 flex md:flex-row flex-col justify-between">
+            <h1 className="flex gap-3 md:flex-col md:-space-y-6 text-5xl md:text-8xl font-bold mb-8 leading-none">
               <span className="gradient-text text-transparent">WHY</span>
               <span className="gradient-text text-transparent">PEARS?</span>
             </h1>
 
-            <div className="flex flex-col w-[65%] gap-8 text-gray-700">
-              <p className="text-lg font-['Exo'] leading-relaxed">
+            <div className="flex flex-col md:w-[65%] gap-8 text-gray-700">
+              <p className="text-md md:text-lg font-['Exo'] leading-relaxed">
                 We have fused scale and precision to help you redefine your
                 brand equity, enabling you to connect with people and inspire
                 communities beyond conventional marketing. Our full-impact
                 agency is by your side, helping you innovate with purpose.
               </p>
-              <p className="text-lg font-['Exo'] leading-relaxed">
+              <p className="text-md md:text-lg font-['Exo'] leading-relaxed">
                 We have a passion for creative problem-solving that not only
                 delivers results but also sets new benchmarks, resonating deeply
                 with your customers beyond just metrics.
               </p>
             </div>
-          </div> */}
+          </div>
 
           {/* Animated Text Section */}
-          {/* <AnimatedTextSection /> */}
-        {/* </Wrapper> */}
+          <AnimatedTextSection />
+        </Wrapper>
         {/* Featured Work Section */}
       </div>
     </div>
