@@ -30,13 +30,13 @@ const HeroSection = () => {
         {/* Animated Text Section (Why Pears) */}
         <Wrapper>
           {/* WHY PEARS Section */}
-          <div className="mb-8 mt-20 flex md:flex-row flex-col justify-between">
-            <h1 className="flex gap-3 md:flex-col md:-space-y-6 text-5xl md:text-8xl font-bold mb-8 leading-none">
+          <div className="mb-8 mt-20 flex lg:flex-row flex-col justify-between">
+            <h1 className="flex gap-3 lg:flex-col lg:-space-y-6 text-5xl md:text-8xl font-bold mb-8 leading-none">
               <span className="gradient-text text-transparent">WHY</span>
               <span className="gradient-text text-transparent">PEARS?</span>
             </h1>
 
-            <div className="flex flex-col md:w-[65%] gap-8 text-gray-700">
+            <div className="flex flex-col lg:w-[65%] gap-8 text-gray-700">
               <p className="text-md md:text-lg font-['Exo'] leading-relaxed">
                 We have fused scale and precision to help you redefine your
                 brand equity, enabling you to connect with people and inspire
