@@ -14,9 +14,9 @@ export default function Home() {
       {/* <HeroSection /> */}
       {/* <FeaturedWorks /> */}
       {/* <GlobalPresence /> */}
-      <Industries />
+      {/* <Industries /> */}
+      {/* <MeetThePears /> */}
       {/* 
-      <MeetThePears />
       <ArticlesCarousel />
       <Wrapper>
         <BlogsSection isVideos={true} />
