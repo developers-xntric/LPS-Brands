@@ -30,8 +30,8 @@ function CareersHero({
     if (!heading) {
       return (
         <>
-          <h1 className="text-[65px] font-bold">CAREERS WITH</h1>
-          <span className="text-[65px] font-bold">
+          <h1 className="md:text-[65px] text-[40px] font-bold">CAREERS WITH</h1>
+          <span className="md:text-[65px] text-[40px] font-bold">
             <span className="text-black">— </span>
             <span className="gradient-text">LPS BRANDS</span>
           </span>
@@ -41,8 +41,8 @@ function CareersHero({
     if (blog) {
       return (
         <>
-          <h1 className="text-[65px] font-bold uppercase">Our Blogs</h1>
-          <span className="text-[65px] font-bold">
+          <h1 className="md:text-[65px] text-[40px] font-bold uppercase">Our Blogs</h1>
+          <span className="md:text-[65px] text-[40px] font-bold">
             <span className="text-black">— </span>
             <span className="gradient-text">LPS BRANDS</span>
           </span>
@@ -91,9 +91,9 @@ function CareersHero({
           {renderHeading()}
         </div>
         {text && !bottom && (
-          <div className="flex flex-col items-start gap-4 mt-4 2xl:max-w-[35%] w-[60%] py-10">
+          <div className="flex flex-col items-start gap-4 mt-4 2xl:max-w-[35%] md:w-[60%] py-10">
             <p
-              className="text-xl font-medium font-['Exo'] leading-tight"
+              className="text-base md:text-xl font-medium font-['Exo'] leading-tight"
               dangerouslySetInnerHTML={{ __html: text }}
             ></p>
           </div>
