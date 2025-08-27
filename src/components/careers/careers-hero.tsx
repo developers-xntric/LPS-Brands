@@ -30,8 +30,8 @@ function CareersHero({
     if (!heading) {
       return (
         <>
-          <h1 className="text-[65px] font-bold">CAREERS WITH</h1>
-          <span className="text-[65px] font-bold">
+          <h1 className="md:text-[65px] text-[40px] font-bold">CAREERS WITH</h1>
+          <span className="md:text-[65px] text-[40px] font-bold">
             <span className="text-black">— </span>
             <span className="gradient-text">LPS BRANDS</span>
           </span>
@@ -41,8 +41,8 @@ function CareersHero({
     if (blog) {
       return (
         <>
-          <h1 className="text-[65px] font-bold uppercase">Our Blogs</h1>
-          <span className="text-[65px] font-bold">
+          <h1 className="md:text-[65px] text-[40px] font-bold uppercase pb-5 md:pb-0">Our Blogs</h1>
+          <span className="md:text-[65px] text-[40px] font-bold ">
             <span className="text-black">— </span>
             <span className="gradient-text">LPS BRANDS</span>
           </span>
@@ -53,7 +53,7 @@ function CareersHero({
     if (highlight && heading.includes(highlight)) {
       const parts = heading.split(new RegExp(`(${highlight})`, "gi"));
       return (
-        <h1 className="2xl:text-[75px] text-[40px] leading-[40px] font-bold uppercase max-w-[70%] 2xl:leading-[80px]">
+        <h1 className="lg:text-[75px] text-[40px] leading-[40px] font-bold uppercase max-w-[70%] 2xl:leading-[80px]">
           {parts.map((part, i) =>
             part.toLowerCase() === highlight.toLowerCase() ? (
               <span key={i} className="gradient-text">
@@ -87,13 +87,13 @@ function CareersHero({
         </div>
 
         {/* Heading */}
-        <div className="mt-20 flex flex-col items-start -space-y-8">
+        <div className="mt-20 flex flex-col items-start -space-y-7 md:-space-y-8">
           {renderHeading()}
         </div>
         {text && !bottom && (
-          <div className="flex flex-col items-start gap-4 mt-4 2xl:max-w-[35%]  lg:w-[60%] py-10">
+          <div className="flex flex-col items-start gap-4 mt-4 2xl:max-w-[35%] md:w-[60%] py-10">
             <p
-              className="lg:text-xl font-medium font-['Exo'] leading-tight"
+              className="text-base md:text-xl font-medium font-['Exo'] leading-tight"
               dangerouslySetInnerHTML={{ __html: text }}
             ></p>
           </div>
