@@ -106,12 +106,11 @@ const WebApp = () => {
             future in focus, you see results, lower bounce rates, longer session
             times, higher conversion rates, and ultimately, more value for your
             investment.
-            <br />
-            <br />
+          </p>
+          <p className="lg:text-xl max-w-5xl mx-auto font-medium text-center 2xl:mt-10 mt-5">
             At LPS, we don’t just build websites. We engineer experiences,
             architect platforms, and craft digital journeys that last beyond the
             scroll.
-            <br />
           </p>
         </div>
       </Wrapper>
