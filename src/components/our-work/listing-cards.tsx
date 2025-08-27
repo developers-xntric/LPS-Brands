@@ -21,7 +21,7 @@ const ListingCards = () => {
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-[500px] object-cover"
+                    className="w-full h-[200px] md:h-[500px] object-cover"
                   />
                 </div>
 
