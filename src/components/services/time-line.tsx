@@ -125,7 +125,7 @@ export default function Timeline({
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Side - We deliver this through */}
             <div className="flex flex-col items-center lg:items-start">
-              <h2 className="text-[30px] leading-[30px] lg:leading-[60px] md:text-6xl text-black mb-6 font-['Asgard'] font-normal">
+              <h2 className="text-[34px] leading-[34px] text-center lg:text-start lg:leading-[60px] md:text-6xl text-black mb-6 font-['Asgard'] font-normal">
                 We <span className="text-blue">deliver</span>
                 <br />
                 this through
@@ -137,6 +137,7 @@ export default function Timeline({
                   alt="Timeline"
                   width={290}
                   height={700}
+                  className="lg:w-[290px] 2xl:h-[500px] w-[250px] h-full "
                 />
               </div>
             </div>
