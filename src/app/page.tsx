@@ -12,10 +12,10 @@ export default function Home() {
   return (
     <div>
       {/* <HeroSection /> */}
-      <FeaturedWorks />
-      {/* 
-      <GlobalPresence />
+      {/* <FeaturedWorks /> */}
+      {/* <GlobalPresence /> */}
       <Industries />
+      {/* 
       <MeetThePears />
       <ArticlesCarousel />
       <Wrapper>

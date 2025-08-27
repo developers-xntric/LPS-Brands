@@ -66,7 +66,7 @@ const Industries = () => {
         <h2 className="text-[60px] 2xl:max-w-[40%] max-w-[55%] leading-[60px]">
           Empowering Growth Across Diverse Industries
         </h2>
-        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-5 mt-20 mb-10">
+        <div className="columns-1 sm:columns-2 lg:columns-5 gap-5 mt-20 mb-10">
           {industries.map((industry, index) => (
             <div
               key={index}
