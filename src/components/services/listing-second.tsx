@@ -26,9 +26,9 @@ function ListingSecond() {
   }, []);
 
   return (
-    <div className="2xl:max-w-[1700px] mx-auto  w-[90%] py-16 space-y-20">
+    <div className="2xl:max-w-[1700px] mx-auto  w-[90%] md:pb-16 pb-6 py-16 space-y-10 md:space-y-20">
       <div>
-        <h2 className="text-[50px] font-['Asgard'] font font-bold leading-[50px] ">
+        <h2 className="text-[30px] md:text-[50px] font-['Asgard'] font font-bold leading-[35px] md:leading-[50px] ">
           New-age is Our Edge, <span className="font-['Exo']">360</span> is Our
           Craft.
         </h2>
@@ -37,7 +37,7 @@ function ListingSecond() {
       {/* Stats */}
       <div
         ref={statsRef}
-        className="grid grid-cols-2 md:grid-cols-4 place-items-center md:place-items-start  gap-4 md:gap-8 font-['Exo']"
+        className="grid grid-cols-2 md:grid-cols-4 md:place-items-start  gap-4 md:gap-8 font-['Exo']"
       >
         <div className="stat  pb-2">
           <h2 className="text-[38px] md:text-[48px] xl:text-[70px] font-bold font-['Exo'] text-blue">
