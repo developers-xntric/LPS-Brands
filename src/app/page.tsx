@@ -11,8 +11,9 @@ import Wrapper from "@/components/layout/wrapper";
 export default function Home() {
   return (
     <div>
-      <HeroSection />
-      {/* <FeaturedWorks />
+      {/* <HeroSection /> */}
+      <FeaturedWorks />
+      {/* 
       <GlobalPresence />
       <Industries />
       <MeetThePears />
