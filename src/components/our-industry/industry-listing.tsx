@@ -21,7 +21,7 @@ const IndustryListing = () => {
                     alt=""
                     width={1000}
                     height={1000}
-                    className="w-full h-[500px] object-cover"
+                    className="w-full h-[250px] lg:h-[500px] object-cover"
                   />
                 </div>
 

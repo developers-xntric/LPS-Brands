@@ -3,15 +3,15 @@ import { Button } from "../common/button";
 
 export default function ContactEmails() {
     return (
-        <section className="py-16 md:py-24">
+        <section className="pb-10 md:py-24">
             <div className="2xl:max-w-[1700px] mx-auto w-[90%]">
-                <h2 className="max-w-4xl text-3xl md:text-5xl lg:text-6xl font-normal leading-tight">
+                <h2 className="max-w-4xl text-[30px] leading-[30px] md:text-5xl lg:text-6xl font-normal md:leading-tight">
                     Reach out to us via email to explore{" "}
                     <span className="text-[#00FC09]">business</span> collaborations or{" "}
                     <span className="text-[#00FC09]">career</span> opportunities!
                 </h2>
 
-                <div className="mt-12 flex justify-end gap-40 px-40">
+                <div className="mt-12 flex lg:flex-row flex-col justify-end lg:gap-40 gap-10 lg:px-40">
                     {/* Business / Partnerships */}
                     <div>
                         <a
@@ -38,7 +38,7 @@ export default function ContactEmails() {
                         </p>
 
                         <div className="mt-4">
-                            <Button text="View open positions" topT={true} bg="bg-black" />
+                            <Button text="View open positions" topT={true} bg="bg-black" center={false} />
                         </div>
                     </div>
                 </div>

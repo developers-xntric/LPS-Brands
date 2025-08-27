@@ -115,7 +115,7 @@ function ContactHero() {
 
                     {/* Right: Form card */}
                     <div className="w-full">
-                        <div className="rounded-2xl bg-white/80 backdrop-blur border border-black/10 shadow-xl p-6 md:p-8">
+                        <div className="rounded-2xl bg-white/80 backdrop-blur border border-black/10 shadow-xl p-3 md:p-8">
                             {/* Form heading required on the form */}
                             <h2 className="text-2xl md:text-3xl font-extrabold leading-tight uppercase max-w-md">
                                 <span>Let us know about your </span>

@@ -91,9 +91,9 @@ function CareersHero({
           {renderHeading()}
         </div>
         {text && !bottom && (
-          <div className="flex flex-col items-start gap-4 mt-4 2xl:max-w-[35%] w-[60%] py-10">
+          <div className="flex flex-col items-start gap-4 mt-4 2xl:max-w-[35%]  lg:w-[60%] py-10">
             <p
-              className="text-xl font-medium font-['Exo'] leading-tight"
+              className="lg:text-xl font-medium font-['Exo'] leading-tight"
               dangerouslySetInnerHTML={{ __html: text }}
             ></p>
           </div>
