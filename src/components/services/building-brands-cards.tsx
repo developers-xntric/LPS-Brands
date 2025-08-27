@@ -16,13 +16,13 @@ interface CardProps {
 export default function BuildingBrandsCards(props: CardProps) {
   return (
     <Wrapper >
-      <div className="py-16 px-4 max-w-7xl mx-auto">
+      <div className="py-16 2xl:px-4 max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl text-secondary mb-6  font-['Asgard']">
+          <h2 className="text-[30px] leading-[30px] lg:leading-[48px] md:text-5xl text-secondary mb-6  font-['Asgard']">
             {props.heading ? props.heading : "Building Brands Behind Iconic Leaders"}
           </h2>
-          <p className="text-secondary font-medium leading-7 text-xl font-['Exo'] max-w-4xl mx-auto">
+          <p className="text-secondary font-medium leading-7 2xl:text-xl font-['Exo'] 2xl:max-w-4xl mx-auto">
             {props.para ? props.para : "At LPS, leadership branding is seen as a transforming trip with both deliberate and flexible nature. It starts with intense self-discovery and develops into deliberate impact on many other platforms. Every step originates in strategic design thinking, empathy, and insight."}
           </p>
         </div>

@@ -42,14 +42,14 @@ export default function DisplayFeatured({ text }: { text?: string }) {
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-12">
           <div className="lg:max-w-2xl">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="text-[30px] lg:text-5xl font-bold mb-6">
               A Display of Our Work
             </h2>
-            <p className="text-white font-medium leading-7 text-md font-['Exo'] max-w-4xl mx-auto">
+            <p className="text-white font-medium leading-7 mb-10 lg:mb-0 text-md font-['Exo'] max-w-4xl mx-auto">
               {text || "Our impact speaks through the leaders we’ve shaped. From Fortune 500 executives to disruptive founders, public figures to policy shapers, our leadership branding work has turned personal stories into powerful movements."}
             </p>
           </div>
-          <Button text="View All Work" />
+          <Button text="View All Work" center={false} />
         </div>
 
         {/* Carousel */}
@@ -59,7 +59,7 @@ export default function DisplayFeatured({ text }: { text?: string }) {
             style={{
 
               width: `${(totalItems * 70) / cardsPerView}%`,
-              transform: `translateX(-${(currentIndex * 100) / cardsPerView}%)`,
+              transform: `translateX(-${(currentIndex *   100) / cardsPerView}%)`,
             }}
           >
             {portfolioItems.map((item) => (

@@ -36,13 +36,13 @@ export default function ContactFormSection() {
       <div className="flex 2xl:justify-center">
         <div className="py-16">
           <div className="mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground leading-tight max-w-5xl">
+            <h2 className="text-[30px] leading-[34px] md:text-6xl font-bold text-foreground 2xl:leading-tight 2xl:max-w-5xl">
               Have Questions or Ready to Start Your Project? Get in Touch with Us Today!
             </h2>
           </div>
 
           <form onSubmit={handleSubmit} className="mx-auto">
-            <div className="flex gap-6 mb-8 font-['Exo']">
+            <div className="flex lg:flex-row flex-col gap-6 mb-8 font-['Exo']">
               {/* Full Name */}
               <div className="space-y-2">
                 <label htmlFor="fullName" className="text-lg font-bold text-foreground">
@@ -55,7 +55,7 @@ export default function ContactFormSection() {
                   placeholder="Full Name"
                   value={formData.fullName}
                   onChange={handleInputChange}
-                  className="h-12 text-base border-black rounded-lg w-96"
+                  className="h-12 text-base border-black rounded-lg 2xl:w-96"
                   required
                 />
               </div>
@@ -72,7 +72,7 @@ export default function ContactFormSection() {
                   placeholder="Email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="h-12 text-base border-black rounded-lg w-96"
+                  className="h-12 text-base border-black rounded-lg 2xl:w-96"
                   required
                 />
               </div>
@@ -89,8 +89,8 @@ export default function ContactFormSection() {
                     setFormData((prev) => ({ ...prev, phone: formattedValue }))
                   }
                   inputProps={{ id: "phone", name: "phone", required: true, placeholder: "050 123 4567" }}
-                  containerClass="!w-96"
-                  inputClass="!w-96 !h-12 !text-base !border !border-black !rounded-lg"
+                  containerClass="2xl:!w-96"
+                  inputClass="2xl:!w-96 !h-12 !text-base !border !border-black !rounded-lg"
                   buttonClass="!border !border-black !rounded-l-lg"
                   dropdownClass="!text-base !w-[380px] !py-4"
                 />

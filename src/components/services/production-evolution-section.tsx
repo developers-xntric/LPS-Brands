@@ -26,13 +26,13 @@ export default function ProductionEvolutionSection({ title, highlight, heading, 
             <div className="mx-auto py-16">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6 font-['Exo'] max-w-5xl mx-auto">
+                    <h2 className="text-[34px] leading-[34px] md:leading-[48px] md:text-5xl font-bold text-secondary mb-6 font-['Exo'] max-w-5xl mx-auto">
                         {getHighlightedText(
                             title || "Let Modern Leadership Branding Shape Your Identity as a Leader",
                             highlight || "Leadership Branding"
                         )}
                     </h2>
-                    <div className="inline-block bg-blue mt-4 text-white py-6 w-[970px] rounded-xl font-semibold text-5xl rotate-[2.2deg] font-sans hover:bg-[#00FC09] transition-all duration-300" style={{
+                    <div className="inline-block bg-blue mt-4 text-white py-6 2xl:w-[970px] px-5 rounded-xl font-semibold leading-[30px] 2xl:text-5xl text-[30px] rotate-[2.2deg] font-sans hover:bg-[#00FC09] transition-all duration-300" style={{
                         alignContent: "center",
                         boxShadow: "5px 10px #000000"
                     }}>
@@ -41,18 +41,18 @@ export default function ProductionEvolutionSection({ title, highlight, heading, 
                 </div>
 
                 {/* Main Content Grid */}
-                <div className="grid lg:grid-cols-2 items-start">
+                <div className="lg:grid flex flex-col-reverse lg:grid-cols-2 items-start">
                     {/* Left Column - Text with Green Circle */}
                     <div className="relative">
-                        <div className="relative z-10 p-8 rounded-lg shadow-sm top-14">
-                            <p className="text-secondary leading-7 font-medium text-lg font-['Exo']">
+                        <div className="relative z-10 2xl:p-8 rounded-lg shadow-sm 2xl:top-14">
+                            <p className="text-secondary leading-7 font-medium 2xl:text-lg font-['Exo']">
                                 {(text && text[0]) ? text[0] : "Leadership branding is the cornerstone of how you’re seen, appreciated, and followed in the competitive environment of today, not simply a slogan. Whether your role is changemaker, entrepreneur, or executive, your own leadership brand determines your effect. Establishing a leadership brand requires establishing your beliefs, approach of communication, and special presence you provide to every room."}
                             </p>
                         </div>
                     </div>
 
                     {/* Right Column - Jewelry Image */}
-                    <div className="relative">
+                    <div className="relative mb-10 lg:mb-0">
                         <div className="rounded-lg shadow-sm overflow-hidden">
                             <Image
                                 src={(images && images[0]) ? images[0] : "/services/pe1.webp"}

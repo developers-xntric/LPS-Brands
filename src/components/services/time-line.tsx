@@ -110,14 +110,14 @@ export default function Timeline({
 
   return (
     <Wrapper>
-      <div className=" bg-white py-16 px-4">
+      <div className=" bg-white 2xl:py-16 pb-5 2xl:px-4">
         <div className="mx-auto">
           {/* Header Section */}
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl text-secondary mb-6 max-w-3xl mx-auto font-['Asgard']">
+            <h2 className="text-[30px] leading-[30px] md:leading-[48px] md:text-5xl text-secondary mb-6 max-w-3xl mx-auto font-['Asgard']">
               {heading ? heading : "How We Help You Build Your Leadership Brand"}
             </h2>
-            <p className="text-secondary font-medium leading-7 text-lg font-['Exo'] max-w-4xl mx-auto" dangerouslySetInnerHTML={{ __html: text }}>
+            <p className="text-secondary font-medium leading-7 2xl:text-lg font-['Exo'] 2xl:max-w-4xl mx-auto" dangerouslySetInnerHTML={{ __html: text }}>
             </p>
           </div>
 
@@ -125,7 +125,7 @@ export default function Timeline({
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Side - We deliver this through */}
             <div className="flex flex-col items-center lg:items-start">
-              <h2 className="text-4xl md:text-6xl text-black mb-6 font-['Asgard'] font-normal">
+              <h2 className="text-[30px] leading-[30px] lg:leading-[60px] md:text-6xl text-black mb-6 font-['Asgard'] font-normal">
                 We <span className="text-blue">deliver</span>
                 <br />
                 this through
@@ -142,8 +142,8 @@ export default function Timeline({
             </div>
 
             {/* Right Side - Timeline Items */}
-            <div ref={timelineRef} className="relative right-10">
-              <div className="absolute left-7 top-8 bottom-8 xl:bottom-20 w-0.5 bg-gray-200">
+            <div ref={timelineRef} className="relative 2xl:right-10">
+              <div className="absolute 2xl:left-7 left-5 top-8 bottom-40 md:bottom-14 lg:bottom-20 xl:bottom-24 w-0.5 bg-gray-200">
                 <div
                   ref={lineRef}
                   className="w-full bg-[#101852] origin-top"
@@ -161,14 +161,14 @@ export default function Timeline({
                     }}
                     className="flex items-start gap-6 relative"
                   >
-                    <div className="timeline-circle flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center relative z-10 shadow-lg">
+                    <div className="timeline-circle flex-shrink-0 2xl:w-14 2xl:h-14 w-10 h-10 rounded-full flex items-center justify-center relative z-10 shadow-lg">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="17" viewBox="0 0 17 12" fill="none"><path d="M0 11.0974L5.80488 0.0974121H16.4784L7.86468 11.0974H0Z" fill="#10181E"></path></svg>
                     </div>
                     <div className="timeline-content flex-1">
-                      <h3 className="text-[34px] font-bold text-black mb-3 underline decoration-2 underline-offset-4">
+                      <h3 className="2xl:text-[34px] text-[24px]  font-bold text-black mb-3 underline decoration-2 underline-offset-4">
                         {item.title}
                       </h3>
-                      <p className="text-secondary font-medium leading-7 text-xl font-['Exo'] max-w-4xl mx-auto">
+                      <p className="text-secondary font-medium 2xl:leading-7 2xl:text-xl  font-['Exo'] max-w-4xl mx-auto">
                         {item.description}
                       </p>
                     </div>
