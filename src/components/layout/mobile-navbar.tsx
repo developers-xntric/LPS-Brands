@@ -38,7 +38,7 @@ export default function MobileNavbar() {
                 aria-expanded={open}
                 aria-controls="mobile-nav-sheet"
                 onClick={() => setOpen(true)}
-                className="fixed md:hidden top-8 right-8 z-50 w-14 h-14 rounded-full bg-green shadow-xl flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green"
+                className="md:hidden z-50 w-14 h-14 rounded-full bg-green shadow-xl flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green"
             >
                 <span className="sr-only">Open menu</span>
                 <div className="space-y-1.5">
