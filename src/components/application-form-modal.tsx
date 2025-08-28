@@ -93,8 +93,8 @@ export default function ApplicationFormModal({ isOpen, onClose, jobTitle }: Appl
                     {/* Header */}
                     <div className="lg:w-1/2">
                         <div className="flex justify-between items-start mb-6">
-                            <h2 className="text-4xl font-bold text-gray-900">Application Form</h2>
-                            <button onClick={onClose} className="text-black hover:text-black transition-colors absolute right-10 top-5">
+                            <h2 className="text-2xl lg:text-4xl font-bold text-gray-900">Application Form</h2>
+                            <button onClick={onClose} className="text-black hover:text-black transition-colors absolute right-4 lg:right-10 top-5">
                                 <X size={24} />
                             </button>
                         </div>
@@ -169,7 +169,7 @@ export default function ApplicationFormModal({ isOpen, onClose, jobTitle }: Appl
                                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                                 placeholder="Paste your link here"
                             />
-                            <p className="text-sm text-red-500 mt-1">
+                            <p className="text-xs lg:text-sm text-red-500 mt-1">
                                 *Applying for a creative role? Share your portfolio link, if not, just skip your LinkedIn.
                             </p>
                         </div>
