@@ -134,7 +134,7 @@ export default async function BlogPage({
     <Wrapper>
       <div className="felx flex-col space-y-10">
         {/* Top Left LPS Logo */}
-        <div className="flex justify-between items-center p-4 mx-6">
+        <div className="flex justify-between items-center p-4 ">
           <LogoLPS />
           <MobileNavbar />
         </div>
