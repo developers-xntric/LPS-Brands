@@ -8,7 +8,7 @@ export const Button = ({
     bg = "bg-white",
     topT = false,
     onClick
-}: { text: string, center?: boolean, bg?: string, topT?: boolean; onClick: () => void }) => {
+}: { text: string, center?: boolean, bg?: string, topT?: boolean; onClick?: () => void }) => {
     return (
         <div className={`flex items-center ${center ? 'justify-center' : ''} group`}>
             <B className="bg-green text-black h-[50px] px-6 rounded-full text-lg flex items-center font-normal transition-all duration-300 hover:bg-[#2054FC] hover:text-white" onClick={onClick}>
