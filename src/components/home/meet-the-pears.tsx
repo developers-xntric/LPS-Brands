@@ -1,12 +1,11 @@
 "use client"
 
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { cn } from "@/lib/utils"
-import Wrapper from "../layout/wrapper"
 import { teamMembers } from "@/data/meet-the-pears"
+import { cn } from "@/lib/utils"
 import Image from "next/image"
+import { useState } from "react"
+import Wrapper from "../layout/wrapper"
 
 export function MeetThePears() {
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -43,7 +42,7 @@ export function MeetThePears() {
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <path d="M4.16663 10H15.8333M4.16663 10L9.16663 15M4.16663 10L9.16663 5" stroke="#0050FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                    </Button>
+                    </Button>+
                     <Button
                         variant="outline"
                         size="icon"
