@@ -6,6 +6,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Wrapper from "../layout/wrapper"
 import { articles } from "@/data/article-slider"
+import Link from "next/link"
 
 export function ArticlesCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -154,7 +155,7 @@ export function ArticlesCarousel() {
                                 // Make each card exactly fill the viewport fraction
                                 style={{ width: `${100 / itemsPerView}%` }}
                             >
-                                <div className="flex flex-col gap-4 relative overflow-hidden rounded-2xl h-full">
+                                <Link href={article.link || ""} className="flex flex-col gap-4 relative overflow-hidden rounded-2xl h-full">
                                     <Image
                                         src={article.image || "/placeholder.svg"}
                                         alt={article.title}
@@ -170,7 +171,7 @@ export function ArticlesCarousel() {
                                     <Button className="bg-[#00FF00] hover:bg-[#2054FC] text-black hover:text-white font-medium text-lg w-32 h-12 rounded-full transition-colors duration-200">
                                         See more
                                     </Button>
-                                </div>
+                                </Link>
                             </div>
                         ))}
                     </div>

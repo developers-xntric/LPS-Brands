@@ -21,7 +21,7 @@ export default function FeaturedWorks() {
               expertise.
             </p>
 
-            <Button text="View All Work" />
+            <Button text="View All Work" link="/our-work" />
           </div>
 
           {/* Projects Grid */}

@@ -113,7 +113,7 @@ const Industries = () => {
             </div>
           ))}
         </div>
-        <Button text="Connect with an expert" center={false} bg="bg-black" />
+        <Button text="Connect with an expert" link="/our-industry" center={false} bg="bg-black" />
       </div>
     </div>
   );
