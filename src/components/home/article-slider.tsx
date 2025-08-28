@@ -177,7 +177,7 @@ export function ArticlesCarousel() {
                 </div>
 
                 {/* Pagination dots */}
-                <div className="flex justify-center gap-2 mt-8 mb-20">
+                <div className="flex justify-center gap-2 mt-8 lg:mb-20">
                     {Array.from({ length: maxIndex + 1 }, (_, index) => (
                         <button
                             key={index}
