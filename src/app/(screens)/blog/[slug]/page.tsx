@@ -14,6 +14,7 @@ import {
 } from "react";
 import LogoLPS from "@/components/icons/lps-logo";
 import Wrapper from "@/components/layout/wrapper";
+import MobileNavbar from "@/components/layout/mobile-navbar";
 
 export async function generateMetadata({
   params,
@@ -133,8 +134,9 @@ export default async function BlogPage({
     <Wrapper>
       <div className="felx flex-col space-y-10">
         {/* Top Left LPS Logo */}
-        <div className="pt-4 pb-10">
+        <div className="flex justify-between items-center p-4 mx-6">
           <LogoLPS />
+          <MobileNavbar />
         </div>
         {/* FEATURED IMAGE  */}
         <Image

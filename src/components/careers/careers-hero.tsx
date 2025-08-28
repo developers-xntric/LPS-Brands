@@ -2,6 +2,7 @@ import React from "react";
 import LogoLPS from "../icons/lps-logo";
 import { Button } from "../common/button";
 import CareersImageGrid from "./career-image-grid";
+import MobileNavbar from "../layout/mobile-navbar";
 
 interface ServiceInnerProps {
   heading?: string;
@@ -82,8 +83,9 @@ function CareersHero({
         }`}
       >
         {/* Top Left LPS Logo */}
-        <div className="pt-4">
+       <div className="flex justify-between items-center p-4 mx-6">
           <LogoLPS />
+          <MobileNavbar />
         </div>
 
         {/* Heading */}
