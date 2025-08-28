@@ -60,12 +60,12 @@ export default function ImpactSection({
 }) {
   return (
     <section
-      className={`pb-16 ${
+      className={`lg:pb-16 pb-8 ${
         video1 ? "pt-0" : "pt-32"
       } lg:px-4 w-[90%] 2xl:max-w-[1740px] mx-auto`}
     >
       {video1 && (
-        <div className="relative -top-20">
+        <div className="relative -top-10 lg:-top-20">
           <iframe src={video1}  className="w-[100%] lg:h-[90vh]"></iframe>
         </div>
       )}
@@ -88,7 +88,7 @@ export default function ImpactSection({
 
           {/* Statistics Grid */}
         </div>
-        <div className="w-full md:flex grid grid-cols-2 justify-between">
+        <div className="w-full lg:flex grid grid-cols-2 justify-between">
           {numbersData &&
             numbersData.map((item, index) => {
               return (
