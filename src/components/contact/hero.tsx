@@ -77,7 +77,7 @@ function ContactHero() {
 
         try {
             // Send POST request to the backend with FormData
-            const response = await fetch('http://localhost:8000/lps-contact', {
+            const response = await fetch('https://blog.xntric.me/lps-contact', {
                 method: 'POST',
                 body: formData,
             });

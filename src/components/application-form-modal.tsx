@@ -64,7 +64,7 @@ export default function ApplicationFormModal({ isOpen, onClose, jobTitle }: Appl
         formDataToSend.append("resume", resumeFile);
 
         try {
-            const response = await fetch("http://localhost:8000/lps-send-email", {
+            const response = await fetch("https://blog.xntric.me/lps-send-email", {
                 method: "POST",
                 body: formDataToSend,
             });
