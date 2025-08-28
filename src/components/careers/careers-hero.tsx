@@ -83,7 +83,7 @@ function CareersHero({
         }`}
       >
         {/* Top Left LPS Logo */}
-       <div className="flex justify-between items-center p-4 mx-6">
+       <div className="flex justify-between items-center p-4 ">
           <LogoLPS />
           <MobileNavbar />
         </div>
@@ -110,10 +110,10 @@ function CareersHero({
             </p>
             {button && (
               <div className={` ${!text && "px-3 md:px-0"}`}>
-                <p className={`text-lg font-['Exo'] leading-relaxed mb-4 md:mb-0`}>
+                <p className={`text-lg font-['Exo'] leading-relaxed mb-4 md:mb-4`}>
                   Then you’re home!
                 </p>
-                <Button text="Join Our Team" bg="bg-black" />
+                <Button link="/contact-us" text="Join Our Team" bg="bg-black" />
               </div>
             )}
           </div>

@@ -68,7 +68,7 @@ export default function CareersSection() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center pt-36 md:pt-60 2xl:pt-[350px] ">
+      <div className="flex flex-col items-center justify-center pt-36 md:pt-40 2xl:pt-[220px]">
         <div className="2xl:max-w-[1700px] mx-auto w-[90%] md:w-[95%] flex flex-col space-y-12">
           <div className="text-left ">
             <h2 className="text-[30px] md:text-[50px] font-['Asgard'] font-semibold ">Join our team</h2>
