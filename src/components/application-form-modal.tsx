@@ -88,13 +88,13 @@ export default function ApplicationFormModal({ isOpen, onClose, jobTitle }: Appl
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4 font-['Exo']">
-            <div className="bg-white rounded-2xl max-w-7xl w-full max-h-[90vh] overflow-y-auto py-4">
+            <div className="bg-white rounded-2xl max-w-7xl w-full max-h-[90vh] overflow-y-auto py-4 relative">
                 <div className="p-6 flex flex-col lg:flex-row gap-12">
                     {/* Header */}
                     <div className="lg:w-1/2">
                         <div className="flex justify-between items-start mb-6">
                             <h2 className="text-4xl font-bold text-gray-900">Application Form</h2>
-                            <button onClick={onClose} className="text-gray-400 hover:text-gray-600 transition-colors">
+                            <button onClick={onClose} className="text-black hover:text-black transition-colors absolute right-10 top-5">
                                 <X size={24} />
                             </button>
                         </div>
