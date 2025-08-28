@@ -82,8 +82,8 @@ export default function Footer() {
     },
   ];
   return (
-    <footer className="bg-[#101820] text-white pb-10 pt-16 lg:pt-28 mx-auto w-[95%] 2xl:max-w-[1740px] mt-10 rounded-t-[60px] px-3 lg:px-0">
-      <div className="max-w-[93%] mx-auto">
+    <footer className="bg-[#101820] text-white pb-10 pt-16 lg:pt-28 mx-auto lg:w-[95%] 2xl:max-w-[1740px] mt-10 lg:rounded-t-[60px] px-8 lg:px-0">
+      <div className="lg:max-w-[93%] mx-auto">
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start mb-12 gap-8">
           {/* Left Side - Logo and Description */}
@@ -102,7 +102,7 @@ export default function Footer() {
             {/* Connect with Expert Input */}
             <div className="relative lg:w-[60%] 2xl:w-[75%] group  ">
               <Link href={"/contact"}>
-                <button className="lg:w-full text-start text-sm xl:text-xl bg-[#282F36] group-hover:bg-[#636262] transition-all duration-500 border text-white placeholder-[#FFFFFF] items-center gap-6 px-6 py-4 rounded-full lg:pr-14 flex justify-between">
+                <button className="w-full text-start text-sm mb-6 lg:mb-0 xl:text-xl bg-[#282F36] group-hover:bg-[#636262] transition-all duration-500 border text-white placeholder-[#FFFFFF] items-center gap-6 px-6 py-4 rounded-full lg:pr-14 flex justify-between">
                   Connect with an expert
                   <div className="lg:hidden w-8 h-8 flex justify-center items-center bg-white rounded-full">
                     <ArrowRight color="black" className="w-4 h-4" />
@@ -169,7 +169,7 @@ export default function Footer() {
           </div>
         </div>
         {/* Office Locations */}
-        <div className="grid grid-cols-1 md:grid-cols-2 border-t border-b border-[#FFFFFF14] py-12 lg:grid-cols-5 2xl:gap-16 gap-10 mb-12 mt-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 border-t border-b border-[#FFFFFF14] py-12 lg:grid-cols-5 2xl:gap-16 gap-8 lg:gap-10 mb-12 mt-2">
           {offices.map((office, index) => (
             <div
               key={index}
@@ -182,16 +182,16 @@ export default function Footer() {
                 height={40}
                 className="mb-4 3xl:h-[90px] 3xl:w-[70px] h-[70px] w-[50px]"
               />
-              <h4 className={`font-semibold text-[20px] mb-3`}>
+              <h4 className={`font-semibold tracking-wide text-2xl lg:text-[20px] mb-3`}>
                 {office.country}
               </h4>
               <div
-                className={`text-[13px] 2xl:text-[14px]  ${index === 2 ? "2xl:w-[90%] w-[100%]" : "w-[90%]"
+                className={`text-[14px] lg:text-[13px] 2xl:text-[14px]  ${index === 2 ? "2xl:w-[90%] w-[100%]" : "w-[90%]"
                   } font-['Exo'] text-[#FFFFFFB2]  space-y-1 mb-3`}
               >
                 <p>{office.address}</p>
               </div>
-              <a href={`tel:${office.phone}`} className="text-lg font-['Exo']">
+              <a href={`tel:${office.phone}`} className="text-sm lg:text-lg font-['Exo']">
                 {office.phone}
               </a>
             </div>
