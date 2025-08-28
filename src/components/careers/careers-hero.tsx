@@ -67,13 +67,13 @@ function CareersHero({
       );
     }
 
-    return <h1 className="text-[80px] font-bold">{heading}</h1>;
+    return <h1 className="lg:text-[80px] text-[40px] leading-[40px] lg:leading-[80px] font-bold">{heading}</h1>;
   };
 
   return (
     <div
       className={`bg-[url('/home/Hero.png')] bg-center bg-cover ${
-        bottom ? "" : "pb-32"
+        bottom ? "" : "lg:pb-32 pb-10"
       }`}
     >
       <div
