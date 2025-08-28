@@ -49,7 +49,7 @@ export default function FAQPage() {
     }
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="bg-white">
             <div className="max-w-4xl mx-auto px-6 py-16">
                 {/* Header */}
                 <div className="text-center mb-16">
@@ -70,7 +70,7 @@ export default function FAQPage() {
                                 onClick={() => toggleItem(index)}
                                 className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
                             >
-                                <h3 className="text-xl font-semibold text-gray-900 pr-4">{faq.question}</h3>
+                                <h3 className="lg:text-xl font-semibold text-gray-900 pr-4">{faq.question}</h3>
                                 <ChevronDown
                                     className={`w-5 h-5 text-black transition-transform duration-200 flex-shrink-0 ${openItems.includes(index) ? "rotate-180" : ""
                                         }`}
@@ -83,7 +83,7 @@ export default function FAQPage() {
                             >
                                 <div className="px-6 pb-5">
                                     <div className="border-t border-gray-100 pt-4">
-                                        <p className="text-gray-700 leading-tight font-['Exo']">{faq.answer}</p>
+                                        <p className="text-gray-700 leading-tight font-['Exo'] text-xs md:text-[15px]">{faq.answer}</p>
                                     </div>
                                 </div>
                             </div>
