@@ -53,7 +53,7 @@ export default function FAQPage() {
             <div className="max-w-4xl mx-auto px-6 py-16">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h1>
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
                     <p className="text-lg font-['Exo'] text-gray-600 max-w-2xl mx-auto">
                         Find answers to common questions about our services, process, and how we can help your business grow.
                     </p>
