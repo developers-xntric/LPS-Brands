@@ -113,7 +113,7 @@ function CareersHero({
                 <p className={`text-lg font-['Exo'] leading-relaxed mb-4 md:mb-4`}>
                   Then you’re home!
                 </p>
-                <Button text="Join Our Team" bg="bg-black" />
+                <Button link="/contact-us" text="Join Our Team" bg="bg-black" />
               </div>
             )}
           </div>
