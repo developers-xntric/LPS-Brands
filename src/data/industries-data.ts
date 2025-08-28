@@ -3,22 +3,22 @@ export const Industries = [
     {
         img:"/our-industry/listing-2.webp",
         head:"Financial Services",
-        link:"/our-industry/government"
+        link:"/our-industry/financial-services"
     },
     {
         img:"/our-industry/listing-3.webp",
         head:"Healthcare",
-        link:"/our-industry/government"
+        link:"/our-industry/healthcare"
     },
     {
         img:"/our-industry/listing-5.webp",
         head:"Beauty and Fashion",
-        link:"/our-industry/government"
+        link:"/our-industry/beauty-and-fashion"
     },
     {
         img:"/our-industry/listing-4.webp",
         head:"Entertainment & Leisure",
-        link:"/our-industry/government"
+        link:"/our-industry/entertainment-and-leisure"
     },
     {
         img:"/our-industry/listing-6.webp",
@@ -38,17 +38,17 @@ export const Industries = [
     {
         img:"/our-industry/listing-8.webp",
         head:"FMCG",
-        link:"/our-industry/government"
+        link:"/our-industry/FMCG"
     },
     {
         img:"/our-industry/listing-10.webp",
         head:"Food & Beverage",
-        link:"/our-industry/government"
+        link:"/our-industry/food-and-beverage"
     },
     {
         img:"/our-industry/listing-9.webp",
         head:"Real Estate",
-        link:"/our-industry/government"
+        link:"/our-industry/real-estate"
     },
     
 ]
