@@ -129,7 +129,7 @@ export function ArticlesCarousel() {
 
     return (
         <Wrapper>
-            <div className="my-12">
+            <div className="mt-8 mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">Our Articles</h2>
 
                 <div className="relative overflow-hidden">
