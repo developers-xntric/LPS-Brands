@@ -81,17 +81,17 @@ const GlobalPresence = () => {
                                     defaultSrc="/home/Egypt.webp"
                                     hoverSrc="/home/cairo.webp"
                                     alt="Cities"
-                                    width={100}
-                                    height={150}
-                                    className="inline-block"
+                                    width={80}
+                                    height={100}
+                                    className="inline-block w-[90px]"
                                 />
                                 <HoverImage
                                     defaultSrc="/home/UK.webp"
                                     hoverSrc="/home/adlz.webp"
                                     alt="Cities"
-                                    width={270}
+                                    width={240}
                                     height={150}
-                                    className="inline-block"
+                                    className="inline-block w-[180px]"
                                 />
                             </div>
                             <div className="flex flex-col">
@@ -102,7 +102,7 @@ const GlobalPresence = () => {
                                         alt="Cities"
                                         width={120}
                                         height={250}
-                                        className="inline-block "
+                                        className="inline-block w-[100px]"
                                     />
                                     <HoverImage
                                         defaultSrc="/home/Saudi.webp"
@@ -110,21 +110,21 @@ const GlobalPresence = () => {
                                         alt="Cities"
                                         width={250}
                                         height={200}
-                                        className="inline-block "
+                                        className="inline-block w-[170px]"
                                     />
                                 </div>
                                 <HoverImage
                                     defaultSrc="/home/Canada.webp"
                                     hoverSrc="/home/toronto.webp"
                                     alt="Cities"
-                                    width={340}
+                                    width={300}
                                     height={250}
-                                    className="inline-block"
+                                    className="inline-block w-full"
                                 />
                             </div>
                         </div>
                     </div>
-                    {/* <YearsAwwards /> */}
+                    <YearsAwwards />
                 </div>
 
                 <div className="xl:w-[30%]">
