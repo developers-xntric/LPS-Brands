@@ -82,7 +82,7 @@ export default function Footer() {
     },
   ];
   return (
-    <footer className="bg-[#101820] text-white pb-10 pt-28 mx-auto w-[95%] 2xl:max-w-[1740px] mt-10 rounded-t-[60px]">
+    <footer className="bg-[#101820] text-white pb-10 pt-16 lg:pt-28 mx-auto w-[95%] 2xl:max-w-[1740px] mt-10 rounded-t-[60px] px-3 lg:px-0">
       <div className="max-w-[93%] mx-auto">
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start mb-12 gap-8">
@@ -100,34 +100,36 @@ export default function Footer() {
             </p>
 
             {/* Connect with Expert Input */}
-            <div className="relative w-[60%] 2xl:w-[75%] group  ">
+            <div className="relative lg:w-[60%] 2xl:w-[75%] group  ">
               <Link href={"/contact"}>
-                <button className="w-full text-start 2xl:text-xl bg-[#282F36] group-hover:bg-[#636262] transition-all duration-500 border text-white placeholder-[#FFFFFF] px-6 py-4 rounded-full pr-14">
+                <button className="lg:w-full text-start text-sm xl:text-xl bg-[#282F36] group-hover:bg-[#636262] transition-all duration-500 border text-white placeholder-[#FFFFFF] items-center gap-6 px-6 py-4 rounded-full lg:pr-14 flex justify-between">
                   Connect with an expert
+                  <div className="lg:hidden w-8 h-8 flex justify-center items-center bg-white rounded-full">
+                    <ArrowRight color="black" className="w-4 h-4" />
+                  </div>
                 </button>
                 <Button
                   size="sm"
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white text-slate-800 hover:bg-gray-100 rounded-full w-10 h-10 p-0"
+                  className="hidden lg:block absolute right-3 top-1/2 transform -translate-y-1/2 bg-white text-slate-800 hover:bg-gray-100 rounded-full w-10 h-10 p-0"
                 >
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 mx-auto" />
                 </Button>
               </Link>
             </div>
           </div>
 
           {/* Right Side - Services */}
-          <div className="w-[30%]">
+          <div className="w-full lg:w-[30%]">
             <h3 className="text-[22px] font-semibold mb-6">SERVICES</h3>
             <div className="">
               {services.map((service) => (
-                <div key={service.name} className=" ">
+                <div key={service.name}>
                   <button
                     onClick={() => toggleDropdown(service.name)}
-                    className={`group flex items-center justify-between w-full text-left py-2 transition-colors ${
-                      openDropdowns[service.name]
-                        ? "text-[#00FC09]"
-                        : "text-gray-300 hover:text-[#00FC09]"
-                    }`}
+                    className={`group flex items-center justify-between w-full text-left py-2 transition-colors ${openDropdowns[service.name]
+                      ? "text-[#00FC09]"
+                      : "text-gray-300 hover:text-[#00FC09]"
+                      }`}
                   >
                     <span className="font-medium text-[20px] border-b  border-[#FFFFFF14] pb-2 w-full transition-colors duration-500 group-hover:border-[#00FC09] text-white">
                       {service.name}
@@ -141,11 +143,10 @@ export default function Footer() {
                   {openDropdowns[service.name] &&
                     service.subServices.length > 0 && (
                       <div
-                        className={`overflow-hidden transition-all duration-700 ease-in-out pt-3 ${
-                          openDropdowns[service.name]
-                            ? "max-h-96 opacity-100"
-                            : "max-h-0 opacity-0"
-                        }`}
+                        className={`overflow-hidden transition-all duration-700 ease-in-out pt-3 ${openDropdowns[service.name]
+                          ? "max-h-96 opacity-100"
+                          : "max-h-0 opacity-0"
+                          }`}
                       >
                         <div className="pb-4 space-y-5">
                           {service.subServices.map((subService) => (
@@ -185,9 +186,8 @@ export default function Footer() {
                 {office.country}
               </h4>
               <div
-                className={`text-[13px] 2xl:text-[14px]  ${
-                  index === 2 ? "2xl:w-[90%] w-[100%]" : "w-[90%]"
-                } font-['Exo'] text-[#FFFFFFB2]  space-y-1 mb-3`}
+                className={`text-[13px] 2xl:text-[14px]  ${index === 2 ? "2xl:w-[90%] w-[100%]" : "w-[90%]"
+                  } font-['Exo'] text-[#FFFFFFB2]  space-y-1 mb-3`}
               >
                 <p>{office.address}</p>
               </div>
