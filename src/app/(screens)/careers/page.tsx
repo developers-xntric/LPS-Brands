@@ -1,9 +1,21 @@
+"use client"
 import CareersHero from "@/components/careers/careers-hero";
 import CareersSecond from "@/components/careers/careers-second";
 import { CareersThird } from "@/components/careers/careers-third";
 import { Button } from "@/components/common/button";
+import JobForm from "@/components/job-form";
+import { useState } from "react";
 
 function Careers() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div>
       <CareersHero button={true} careers={true} />
@@ -17,8 +29,9 @@ function Careers() {
           Didn’t find a role that <br /> clicks? <br /> Let us know what suits
           you <br /> best!
         </h2>
-        <Button text="Submit Your Resume" bg="bg-black" />
+        <Button text="Submit Your Resume" bg="bg-black" onClick={openModal} />
       </div>
+      <JobForm isOpen={isModalOpen} onClose={closeModal} jobTitle="Your Job Title Here" />
     </div>
   );
 }
