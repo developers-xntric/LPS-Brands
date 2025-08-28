@@ -3,7 +3,7 @@
 import { Clock3, MapPin } from "lucide-react"
 import { useState } from "react"
 import JobDetailsModal from "./job-details-modal"
-import ApplicationFormModal from "./application-form-modal"
+import ApplicationFormModal from "@/components/application-form-modal"
 
 export default function CareersSection() {
   const [selectedJob, setSelectedJob] = useState<any>(null)
