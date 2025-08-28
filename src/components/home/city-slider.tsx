@@ -12,7 +12,7 @@ function YearsAwwards() {
 
     useEffect(() => {
         const handleResize = () => {
-            setDuration(window.innerWidth < 768 ? 0 : 10);
+            setDuration(window.innerWidth < 768 ? 10 : 10);
         };
 
         handleResize();
