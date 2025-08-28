@@ -10,17 +10,17 @@ const GlobalPresence = () => {
     return (
         <Wrapper>
             <div className="flex flex-col xl:flex-row gap-10 xl:justify-between py-16 relative">
-                <div className="relative h-[630px] lg:h-[760px] xl:w-[65%] bg-[url('/home/bg-grad.png')] bg-cover bg-center rounded-[50px]">
+                <div className="relative md:h-[630px] lg:h-[760px] xl:w-[65%] bg-[url('/home/bg-grad.png')] bg-cover bg-center rounded-3xl md:rounded-[50px]">
                     <HoverImage
                         defaultSrc="/home/zig-zag.png"
                         hoverSrc="/home/zig-zag.png"
                         alt=""
                         width={170}
                         height={200}
-                        className="absolute top-12 -right-14"
+                        className="hidden md:block absolute top-12 -right-14"
                     />
 
-                    <div className="relative w-[85%] mx-auto h-[65%] mt-20 flex gap-10">
+                    <div className="relative w-[85%] mx-auto h-[65%] mt-20 flex gap-10 md:flex-row flex-col">
                         <div className="w-[170px] space-y-4 relative left-[7.4%]">
                             <h2 className="text-5xl">Global Presence</h2>
                             <p className="text-lg leading-6 font-medium">
@@ -28,7 +28,7 @@ const GlobalPresence = () => {
                             </p>
                         </div>
 
-                        <div className="w-[100%] left-[40%] lg:left-[33%] absolute inset-0 mt-10 lg:mt-0">
+                        <div className="md:block hidden w-[100%] left-[40%] lg:left-[33%] md:absolute inset-0 mt-10 lg:mt-0">
                             <div>
                                 <HoverImage
                                     defaultSrc="/home/Egypt.webp"
@@ -44,17 +44,17 @@ const GlobalPresence = () => {
                                     alt="Cities"
                                     width={220}
                                     height={250}
-                                    className="inline-block w-[175px] lg:w-[235px] relative top-[26px] lg:top-[50px]"
+                                    className="inline-block md:w-[175px] lg:w-[235px] md:relative top-[26px] lg:top-[50px]"
                                 />
                             </div>
-                            <div className="relative right-[23.5%] xl:right-[26%] 2xl:right-[19.75%]">
+                            <div className="md:relative right-[23.5%] xl:right-[26%] 2xl:right-[19.75%]">
                                 <HoverImage
                                     defaultSrc="/home/Saudi.webp"
                                     hoverSrc="/home/riyadh.webp"
                                     alt="Cities"
                                     width={190}
                                     height={200}
-                                    className="inline-block w-[142px] lg:w-[190px] relative bottom-[50px] lg:bottom-[75px] 2xl:bottom-[75px]"
+                                    className="inline-block w-[142px] lg:w-[190px] md:relative bottom-[50px] lg:bottom-[75px] 2xl:bottom-[75px]"
                                 />
                                 <HoverImage
                                     defaultSrc="/home/UAE.webp"
@@ -70,12 +70,61 @@ const GlobalPresence = () => {
                                     alt="Cities"
                                     width={185}
                                     height={200}
-                                    className="inline-block relative bottom-10 lg:bottom-[66px] w-[160px] lg:w-[210px]"
+                                    className="inline-block md:relative bottom-10 lg:bottom-[66px] w-[160px] lg:w-[210px]"
+                                />
+                            </div>
+                        </div>
+
+                        <div className="md:hidden w-[100%]">
+                            <div className="flex">
+                                <HoverImage
+                                    defaultSrc="/home/Egypt.webp"
+                                    hoverSrc="/home/cairo.webp"
+                                    alt="Cities"
+                                    width={100}
+                                    height={150}
+                                    className="inline-block"
+                                />
+                                <HoverImage
+                                    defaultSrc="/home/UK.webp"
+                                    hoverSrc="/home/adlz.webp"
+                                    alt="Cities"
+                                    width={270}
+                                    height={150}
+                                    className="inline-block"
+                                />
+                            </div>
+                            <div className="flex flex-col">
+                                <div className="flex">
+                                    <HoverImage
+                                        defaultSrc="/home/UAE.webp"
+                                        hoverSrc="/home/dubai.webp"
+                                        alt="Cities"
+                                        width={120}
+                                        height={250}
+                                        className="inline-block "
+                                    />
+                                    <HoverImage
+                                        defaultSrc="/home/Saudi.webp"
+                                        hoverSrc="/home/riyadh.webp"
+                                        alt="Cities"
+                                        width={250}
+                                        height={200}
+                                        className="inline-block "
+                                    />
+                                </div>
+                                <HoverImage
+                                    defaultSrc="/home/Canada.webp"
+                                    hoverSrc="/home/toronto.webp"
+                                    alt="Cities"
+                                    width={340}
+                                    height={250}
+                                    className="inline-block"
                                 />
                             </div>
                         </div>
                     </div>
-                    <YearsAwwards />
+                    {/* <YearsAwwards /> */}
                 </div>
 
                 <div className="xl:w-[30%]">
