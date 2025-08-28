@@ -26,8 +26,8 @@ export default function JobDetailsModal({ isOpen, onClose, onJoinTeam, job }: Jo
                     {/* Header */}
                     <div className="flex justify-between items-start mb-6">
                         <div>
-                            <p className="text-sm text-gray-600 mb-1">Job Title</p>
-                            <h2 className="text-2xl font-bold text-gray-900">{job.title}</h2>
+                            <p className="text-lg text-gray-600 mb-1">Job Title</p>
+                            <h2 className="text-4xl font-bold text-gray-900">{job.title}</h2>
                         </div>
                         <button onClick={onClose} className="text-gray-400 hover:text-gray-600 transition-colors">
                             <X size={24} />
@@ -36,8 +36,8 @@ export default function JobDetailsModal({ isOpen, onClose, onJoinTeam, job }: Jo
 
                     {/* Role Overview */}
                     <div className="mb-6">
-                        <h3 className="text-lg font-semibold mb-3">Role Overview:</h3>
-                        <p className="text-gray-700 leading-relaxed">
+                        <h3 className="text-xl font-semibold mb-3">Role Overview:</h3>
+                        <p className="text-gray-700 leading-7 text-lg">
                             We are seeking an integrated Art Director with client facing experience, campaign leadership and
                             experience in social/digital engagements. The ideal candidate will be Arabic first and have a proven track
                             record of creating visually compelling content and campaigns that engage and captivate audiences across
@@ -47,8 +47,8 @@ export default function JobDetailsModal({ isOpen, onClose, onJoinTeam, job }: Jo
 
                     {/* Required Skills & Experience */}
                     <div className="mb-6">
-                        <h3 className="text-lg font-semibold mb-3">Required Skills & Experience:</h3>
-                        <ul className="space-y-2 text-gray-700">
+                        <h3 className="text-xl font-semibold mb-3">Required Skills & Experience:</h3>
+                        <ul className="space-y-2 text-gray-700 text-lg">
                             <li>• Bachelor's degree in Graphic design, Visual Arts, Marketing, or a related field.</li>
                             <li>• 7+ years of experience in a creative role, with a focus on digital and social media.</li>
                             <li>
@@ -81,8 +81,8 @@ export default function JobDetailsModal({ isOpen, onClose, onJoinTeam, job }: Jo
 
                     {/* Key Responsibilities */}
                     <div className="mb-6">
-                        <h3 className="text-lg font-semibold mb-3">Key Responsibilities:</h3>
-                        <ul className="space-y-2 text-gray-700">
+                        <h3 className="text-xl font-semibold mb-3">Key Responsibilities:</h3>
+                        <ul className="space-y-2 text-gray-700 text-lg">
                             <li>
                                 • Develop and execute creative concepts for creative, social media and digital campaigns, ensuring
                                 alignment with brand strategy and objectives.
@@ -126,15 +126,15 @@ export default function JobDetailsModal({ isOpen, onClose, onJoinTeam, job }: Jo
 
                     {/* Why Join Us */}
                     <div className="mb-8">
-                        <h3 className="text-lg font-semibold mb-3">Why Join Us:</h3>
-                        <ul className="space-y-2 text-gray-700">
+                        <h3 className="text-xl font-semibold mb-3">Why Join Us:</h3>
+                        <ul className="space-y-2 text-gray-700 text-lg">
                             <li>• Be part of a leading digital agency with a reputation for creativity and innovation.</li>
                             <li>• Work with a diverse and talented team of professionals.</li>
                             <li>• Opportunities for professional growth and development.</li>
                             <li>• Competitive salary and benefits package.</li>
                             <li>• A collaborative and inclusive work environment.</li>
                         </ul>
-                        <p className="mt-4 text-sm text-gray-600">
+                        <p className="mt-4 text-gray-600 text-lg">
                             LPS Brands is an equal opportunity employer. We celebrate diversity and are committed to creating an
                             inclusive environment for all employees.
                         </p>
@@ -142,7 +142,7 @@ export default function JobDetailsModal({ isOpen, onClose, onJoinTeam, job }: Jo
 
                     {/* Join Our Team Button */}
                     <div className="flex justify-start">
-                        <Button text="Join Our Team" bg="bg-black" />
+                        <Button onClick={onJoinTeam} text="Join Our Team" bg="bg-black" />
                     </div>
                 </div>
             </div>
