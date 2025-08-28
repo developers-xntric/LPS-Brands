@@ -29,7 +29,7 @@ export function MeetThePears() {
 
     return (
         <Wrapper>
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-between mb-4 lg:mt-20">
                 <h2 className="text-[28px] md:text-4xl lg:text-6xl font-normal text-foreground">Meet the Pears</h2>
 
                 <div className="flex gap-2">
@@ -40,7 +40,9 @@ export function MeetThePears() {
                         disabled={currentIndex === 0}
                         className="rounded-full lg:w-12 lg:h-12 w-8 h-8 border-2 bg-transparent border-blue"
                     >
-                        <ChevronLeft className="h-5 w-5 text-blue" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4.16663 10H15.8333M4.16663 10L9.16663 15M4.16663 10L9.16663 5" stroke="#0050FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
                     </Button>
                     <Button
                         variant="outline"
@@ -49,7 +51,9 @@ export function MeetThePears() {
                         disabled={currentIndex >= maxIndex}
                         className="rounded-full lg:w-12 lg:h-12 w-8 h-8 border-2 bg-transparent border-blue"
                     >
-                        <ChevronRight className="h-5 w-5 text-blue" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M15.8334 10H4.16671M15.8334 10L10.8334 15M15.8334 10L10.8334 5" stroke="#0050FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
                     </Button>
                 </div>
             </div>

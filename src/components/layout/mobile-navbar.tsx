@@ -15,6 +15,10 @@ export default function MobileNavbar() {
     const [open, setOpen] = useState(false);
     const [openCats, setOpenCats] = useState<Record<string, boolean>>({});
 
+    const hideMenuOnScroll = () => {
+        if (open) setOpen(false); // Hide the menu when the user scrolls
+    };
+
     useEffect(() => {
         const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
         if (open) document.addEventListener("keydown", onKey);
@@ -24,8 +28,16 @@ export default function MobileNavbar() {
     useEffect(() => {
         // lock body scroll when sheet is open
         document.body.style.overflow = open ? "hidden" : "";
+        // Add scroll event listener to hide menu on scroll
+        if (open) {
+            window.addEventListener("scroll", hideMenuOnScroll);
+        } else {
+            window.removeEventListener("scroll", hideMenuOnScroll);
+        }
+
         return () => {
             document.body.style.overflow = "";
+            window.removeEventListener("scroll", hideMenuOnScroll);
         };
     }, [open]);
 
@@ -38,28 +50,27 @@ export default function MobileNavbar() {
                 aria-expanded={open}
                 aria-controls="mobile-nav-sheet"
                 onClick={() => setOpen(true)}
-                className="md:hidden z-50 w-14 h-14 rounded-full bg-green shadow-xl flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green"
+                className="md:hidden z-50 w-10 h-10 rounded-full bg-green shadow-xl flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green"
             >
                 <span className="sr-only">Open menu</span>
-                <div className="space-y-1.5">
-                    <span className="block w-7 h-[2px] bg-black" />
-                    <span className="block w-7 h-[2px] bg-black" />
-                    <span className="block w-7 h-[2px] bg-black" />
+                <div className="space-y-1">
+                    <span className="block w-4 h-[2px] bg-black" />
+                    <span className="block w-4 h-[2px] bg-black" />
+                    <span className="block w-4 h-[2px] bg-black" />
                 </div>
             </button>
 
             {/* Overlay + Bottom Sheet */}
-            <div className={`fixed inset-0 z-50 md:hidden ${open ? "pointer-events-auto" : "pointer-events-none"}`}>
+            <div className={`fixed inset-0 z-50 md:hidden ${open ? "pointer-events-auto block" : "pointer-events-none hidden"}`}>
                 {/* dim background */}
                 <div
                     id="mobile-nav-sheet"
                     role="dialog"
                     aria-modal="true"
-                    className={`absolute inset-x-0 top-0 bg-white shadow-2xl transition-transform duration-300 will-change-transform ${open ? "translate-y-0" : "-translate-y-full"
-                        } h-screen`}
+                    className={`absolute inset-x-0 top-0 bg-white shadow-2xl transition-all duration-500 will-change-transform ${open ? "translate-y-0" : "translate-y-full"}`}
                 >
                     <div className="flex items-center justify-between px-5 pt-5 pb-3 border-b">
-                        <h2 className="text-3xl font-semibold">Menu</h2>
+                        <h2 className="text-2xl font-semibold">Menu</h2>
                         <button
                             onClick={() => setOpen(false)}
                             className="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green"
@@ -77,9 +88,9 @@ export default function MobileNavbar() {
                                     key={item.name}
                                     href={item.link}
                                     onClick={() => setOpen(false)}
-                                    className="flex items-center justify-between py-3 border-b border-black/10 text-secondary"
+                                    className="flex items-center justify-between pb-2 pt-1 border-b border-black/10 text-secondary"
                                 >
-                                    <span className="text-2xl">{item.name}</span>
+                                    <span className="text-lg">{item.name}</span>
                                     <ArrowUpRight className="w-4 h-4" />
                                 </Link>
                             ))}
@@ -87,7 +98,7 @@ export default function MobileNavbar() {
 
                         {/* Services accordion */}
                         <div className="mt-4">
-                            <h3 className="text-2xl font-semibold mb-2">Services</h3>
+                            <h3 className="text-lg font-semibold mb-2">Services</h3>
                             <div className="rounded-2xl border border-black/10 divide-y divide-black/10">
                                 {Object.entries(servicesData).map(([category, items]) => (
                                     <div key={category}>
@@ -96,15 +107,14 @@ export default function MobileNavbar() {
                                             className="w-full flex items-center justify-between py-3 px-4"
                                             aria-expanded={!!openCats[category]}
                                         >
-                                            <span className="text-xl">{category}</span>
+                                            <span className="text-md">{category}</span>
                                             <ChevronDown
                                                 className={`w-4 h-4 transition-transform ${openCats[category] ? "rotate-180" : ""}`}
                                             />
                                         </button>
 
                                         <div
-                                            className={`overflow-hidden transition-[max-height] duration-300 ${openCats[category] ? "max-h-96" : "max-h-0"
-                                                }`}
+                                            className={`overflow-x-hidden transition-[max-height] duration-300 ${openCats[category] ? "max-h-96" : "max-h-0"}`}
                                         >
                                             <ul className="px-6 pb-3 space-y-2">
                                                 {items.map((item) => (
@@ -114,7 +124,7 @@ export default function MobileNavbar() {
                                                             onClick={() => setOpen(false)}
                                                             className="flex items-center justify-between py-1.5"
                                                         >
-                                                            <span className="text-[15px]">{item}</span>
+                                                            <span className="text-sm">{item}</span>
                                                             <ArrowUpRight className="w-4 h-4" />
                                                         </Link>
                                                     </li>
