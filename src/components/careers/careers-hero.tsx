@@ -75,7 +75,7 @@ function CareersHero({
       className={`bg-[url('/home/Hero.png')] bg-center bg-cover ${
         bottom ? "" : "lg:pb-32 pb-10"
       }`}
-    >``
+    >
       <div
         className={`2xl:max-w-[1700px] mx-auto ${
           careers ? "w-[95%]" : " w-[90%]"
