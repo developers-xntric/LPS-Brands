@@ -30,7 +30,7 @@ export function MeetThePears() {
     return (
         <Wrapper>
             <div className="flex items-center justify-between mb-4">
-                <h2 className="text-2xl md:text-4xl lg:text-6xl font-normal text-foreground">Meet the Pears</h2>
+                <h2 className="text-[28px] md:text-4xl lg:text-6xl font-normal text-foreground">Meet the Pears</h2>
 
                 <div className="flex gap-2">
                     <Button
@@ -38,7 +38,7 @@ export function MeetThePears() {
                         size="icon"
                         onClick={handlePrevious}
                         disabled={currentIndex === 0}
-                        className="rounded-full w-12 h-12 border-2 bg-transparent border-blue"
+                        className="rounded-full lg:w-12 lg:h-12 w-8 h-8 border-2 bg-transparent border-blue"
                     >
                         <ChevronLeft className="h-5 w-5 text-blue" />
                     </Button>
@@ -47,7 +47,7 @@ export function MeetThePears() {
                         size="icon"
                         onClick={handleNext}
                         disabled={currentIndex >= maxIndex}
-                        className="rounded-full w-12 h-12 border-2 bg-transparent border-blue"
+                        className="rounded-full lg:w-12 lg:h-12 w-8 h-8 border-2 bg-transparent border-blue"
                     >
                         <ChevronRight className="h-5 w-5 text-blue" />
                     </Button>
