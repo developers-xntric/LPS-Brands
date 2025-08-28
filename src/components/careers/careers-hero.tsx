@@ -30,8 +30,8 @@ function CareersHero({
     if (!heading) {
       return (
         <>
-          <h1 className="md:text-[65px] text-[40px] font-bold mb-3 md:mb-0">CAREERS WITH</h1>
-          <span className="md:text-[65px] text-[40px] font-bold">
+          <h1 className="md:text-[65px] text-[40px] font-bold mb-3 md:mb-0 px-3 md:px-0">CAREERS WITH</h1>
+          <span className="md:text-[65px] text-[40px] font-bold px-3 md:px-0">
             <span className="text-black">— </span>
             <span className="gradient-text">LPS BRANDS</span>
           </span>
@@ -93,7 +93,7 @@ function CareersHero({
         {text && !bottom && (
           <div className="flex flex-col items-start gap-4 mt-4 2xl:max-w-[35%] md:w-[60%] py-4 lg:py-10">
             <p
-              className="text-base md:text-xl font-medium font-['Exo'] leading-tight"
+              className="text-base md:text-xl font-medium font-['Exo'] leading-tight "
               dangerouslySetInnerHTML={{ __html: text }}
             ></p>
           </div>
@@ -101,18 +101,18 @@ function CareersHero({
         {/* Bottom Section */}
         {bottom && (
           <div className="flex flex-col items-start gap-4 mt-4 lg:w-[40%] 2xl:max-w-[65%]">
-            <p className="lg:text-xl font-normal font-['Exo'] leading-relaxed">
+            <p className={`lg:text-xl font-normal font-['Exo'] leading-relaxed  ${!text && "px-3 md:px-0"}`}>
               {text
                 ? text
                 : "Looking for a career that’s all about making shaping, and celebrating the extraordinary?"}
             </p>
             {button && (
-              <>
-                <p className="text-lg font-['Exo'] leading-relaxed">
+              <div className={` ${!text && "px-3 md:px-0"}`}>
+                <p className={`text-lg font-['Exo'] leading-relaxed mb-4 md:mb-0`}>
                   Then you’re home!
                 </p>
                 <Button text="Join Our Team" bg="bg-black" />
-              </>
+              </div>
             )}
           </div>
         )}
