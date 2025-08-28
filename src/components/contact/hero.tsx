@@ -52,14 +52,45 @@ function ContactHero() {
         setForm((f) => ({ ...f, brief: file }));
     };
 
-    const onSubmit = (e: React.FormEvent) => {
+    const onSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // You can replace this with your API call
-        console.log({
-            selections: { identity, communication, experiences },
-            form,
-        });
-        alert("Submitted! (Check console for payload)");
+
+        // Create a new FormData object to send both the form data and the file
+        const formData = new FormData();
+
+        // Append the selections (identity, communication, experiences) and form fields to FormData
+        formData.append('fullName', form.fullName);
+        formData.append('email', form.email);
+        formData.append('phone', form.phone);
+        formData.append('company', form.company);
+        formData.append('details', form.details);
+
+        // Append the file
+        if (form.brief) {
+            formData.append('file', form.brief);
+        }
+
+        // Add selected options (identity, communication, experiences) to FormData
+        formData.append('identity', identity.join(', '));
+        formData.append('communication', communication.join(', '));
+        formData.append('experiences', experiences.join(', '));
+
+        try {
+            // Send POST request to the backend with FormData
+            const response = await fetch('http://localhost:8000/lps-contact', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (response.ok) {
+                alert("Submitted! Check your email.");
+            } else {
+                alert("Failed to submit the form.");
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            alert("An error occurred while submitting.");
+        }
     };
 
     // tiny pill checkbox component
