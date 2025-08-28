@@ -100,9 +100,9 @@ export default function Footer() {
             </p>
 
             {/* Connect with Expert Input */}
-            <div className="relative lg:w-[60%] 2xl:w-[75%] group  ">
+            <div className="relative lg:w-[60%] 2xl:w-[75%] group ">
               <Link href={"/contact"}>
-                <button className="w-full text-start text-sm mb-6 lg:mb-0 xl:text-xl bg-[#282F36] group-hover:bg-[#636262] transition-all duration-500 border text-white placeholder-[#FFFFFF] items-center gap-6 px-6 py-4 rounded-full lg:pr-14 flex justify-between">
+                <button className="w-full lg:w-[300px] text-start text-sm mb-6 lg:mb-0 xl:text-xl bg-[#282F36] group-hover:bg-[#636262] transition-all duration-500 border text-white placeholder-[#FFFFFF] items-center gap-6 px-6 py-4 rounded-full lg:pr-14 flex justify-between">
                   Connect with an expert
                   <div className="lg:hidden w-8 h-8 flex justify-center items-center bg-white rounded-full">
                     <ArrowRight color="black" className="w-4 h-4" />
@@ -110,7 +110,7 @@ export default function Footer() {
                 </button>
                 <Button
                   size="sm"
-                  className="hidden lg:block absolute right-3 top-1/2 transform -translate-y-1/2 bg-white text-slate-800 hover:bg-gray-100 rounded-full w-10 h-10 p-0"
+                  className="hidden lg:block absolute -right-3 top-1/2 transform -translate-y-1/2 bg-white text-slate-800 hover:bg-gray-100 rounded-full w-10 h-10 p-0"
                 >
                   <ArrowRight className="w-4 h-4 mx-auto" />
                 </Button>
