@@ -101,7 +101,7 @@ export default function Footer() {
 
             {/* Connect with Expert Input */}
             <div className="relative lg:w-[60%] 2xl:w-[75%] group ">
-              <Link href={"/contact"}>
+              <Link href={"/contact-us"}>
                 <button className="w-full lg:w-[300px] text-start text-sm mb-6 lg:mb-0 xl:text-xl bg-[#282F36] group-hover:bg-[#636262] transition-all duration-500 border text-white placeholder-[#FFFFFF] items-center gap-6 px-6 py-4 rounded-full lg:pr-14 flex justify-between">
                   Connect with an expert
                   <div className="lg:hidden w-8 h-8 flex justify-center items-center bg-white rounded-full">
