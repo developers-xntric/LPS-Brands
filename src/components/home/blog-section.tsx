@@ -19,7 +19,7 @@ export default function BlogsSection({
           <h2 className="text-4xl font-bold text-white">
             {heading ? heading : "Blogs"}
           </h2>
-          <Button text=" View All Blogs" />
+          <Button text="View All Blogs" />
         </div>
 
         {/* Blog Carousel */}
