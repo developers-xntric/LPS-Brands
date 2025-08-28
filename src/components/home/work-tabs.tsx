@@ -31,7 +31,7 @@ export default function WorkTabs() {
             {/* Header */}
             <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-16 items-start gap-10 lg:gap-0">
                 <div className="max-w-3xl">
-                    <h1 className="text-2xl md:text-5xl lg:text-[56px] font-normal lg:leading-[60px] text-white">
+                    <h1 className="text-2xl md:text-5xl xl:text-[56px] font-normal lg:leading-[60px] text-white">
                         Delivering Solutions
                         <br />
                         with <span className="text-green">Unmatched Expertise</span>
@@ -100,7 +100,7 @@ export default function WorkTabs() {
                             </div>
 
                             {/* Dynamic Title */}
-                            <h2 className="text-3xl md:text-5xl lg:text-4xl xl:text-5xl font-bold whitespace-pre-line">{tabData[activeTab].title}</h2>
+                            <h2 className="text-2xl md:text-5xl lg:text-4xl xl:text-5xl font-bold whitespace-pre-line">{tabData[activeTab].title}</h2>
 
                             {/* Dynamic Services List */}
                             <div className="space-y-2">
@@ -112,7 +112,7 @@ export default function WorkTabs() {
                             </div>
 
                             {/* Connect Toggle */}
-                            <div className="flex justify-end pt-4">
+                            <div className="flex justify-center lg:justify-end pt-4">
                                 <ShadCnButton className="rounded-3xl text-md flex justify-between hover:bg-[#00FC09] hover:text-black" size={"lg"}>
                                     <span className="relative top-[1px]">Connect with an expert</span>
                                     <div className="w-9 h-9 rounded-full bg-white flex justify-center items-center"><ArrowRight color="black" /></div>

@@ -17,9 +17,9 @@ export default function Home() {
       <Industries />
       <MeetThePears />
       <ArticlesCarousel />
-      <Wrapper>
+      {/* <Wrapper>
         <BlogsSection isVideos={true} />
-      </Wrapper>
+      </Wrapper> */}
       <FAQSection />
     </div>
   );
