@@ -53,7 +53,7 @@ function CareersHero({
     if (highlight && heading.includes(highlight)) {
       const parts = heading.split(new RegExp(`(${highlight})`, "gi"));
       return (
-        <h1 className="lg:text-[75px] text-[40px] leading-[40px] lg:leading-[70px] xl:leading-[40px] font-bold uppercase lg:max-w-[70%] 2xl:leading-[80px]">
+        <h1 className="lg:text-[75px] text-[40px] leading-[40px] lg:leading-[70px] font-bold uppercase lg:max-w-[70%] 2xl:leading-[80px]">
           {parts.map((part, i) =>
             part.toLowerCase() === highlight.toLowerCase() ? (
               <span key={i} className="gradient-text">
@@ -67,15 +67,15 @@ function CareersHero({
       );
     }
 
-    return <h1 className="text-[80px] font-bold">{heading}</h1>;
+    return <h1 className="lg:text-[80px] text-[40px] leading-[40px] lg:leading-[80px] font-bold">{heading}</h1>;
   };
 
   return (
     <div
       className={`bg-[url('/home/Hero.png')] bg-center bg-cover ${
-        bottom ? "" : "pb-32"
+        bottom ? "" : "lg:pb-32 pb-10"
       }`}
-    >
+    >``
       <div
         className={`2xl:max-w-[1700px] mx-auto ${
           careers ? "w-[95%]" : " w-[90%]"
@@ -91,7 +91,7 @@ function CareersHero({
           {renderHeading()}
         </div>
         {text && !bottom && (
-          <div className="flex flex-col items-start gap-4 mt-4 2xl:max-w-[35%] md:w-[60%] py-10">
+          <div className="flex flex-col items-start gap-4 mt-4 2xl:max-w-[35%] md:w-[60%] py-4 lg:py-10">
             <p
               className="text-base md:text-xl font-medium font-['Exo'] leading-tight"
               dangerouslySetInnerHTML={{ __html: text }}

@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image"
 import Wrapper from "../layout/wrapper"
+import IconsSection from "./demo"
 
 const brands = [
     { name: "Crocs", logo: "/about/1.webp", popupImage: "/about/11.webp" },
@@ -20,13 +21,13 @@ const brands = [
 export function ClientsSection() {
     return (
         <Wrapper>
-            <section className="py-16">
-                <h2 className="text-4xl md:text-6xl font-bold text-black mb-10 md:mb-16">
+            <section className="lg:py-16 pt-8">
+                <h2 className="text-4xl md:text-6xl font-bold text-black md:mb-16">
                     Our Clients
                 </h2>
 
                 {/* allow previews to overflow outside the grid cells */}
-                <div className="relative grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 overflow-visible">
+                <div className="lg:relative hidden lg:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 overflow-visible">
                     {brands.map((b, i) => (
                         <div
                             key={`${b.name}-${i}`}
@@ -61,6 +62,9 @@ export function ClientsSection() {
                             </div>
                         </div>
                     ))}
+                </div>
+                <div className="lg:hidden block">
+                     <IconsSection/>
                 </div>
             </section>
         </Wrapper>

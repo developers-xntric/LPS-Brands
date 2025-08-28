@@ -15,6 +15,7 @@ const AboutUs = () => {
             <AboutLPS />
             <MeetThePears />
             <ClientsSection />
+           
         </div>
     )
 }
