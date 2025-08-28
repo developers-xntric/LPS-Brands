@@ -62,33 +62,33 @@ export default function ImpactSection({
     <section
       className={`pb-16 ${
         video1 ? "pt-0" : "pt-32"
-      } px-4 w-[90%] 2xl:max-w-[1740px] mx-auto`}
+      } lg:px-4 w-[90%] 2xl:max-w-[1740px] mx-auto`}
     >
       {video1 && (
         <div className="relative -top-20">
-          <iframe src={video1}  className="w-[100%] h-[90vh]"></iframe>
+          <iframe src={video1}  className="w-[100%] lg:h-[90vh]"></iframe>
         </div>
       )}
       <div className="flex flex-col gap-12 items-start">
         {/* Left Content */}
-        <div className="flex justify-between   w-full space-y-8">
+        <div className="flex justify-between lg:flex-row flex-col  w-full space-y-6 lg:space-y-8">
           {/* Header */}
           <div className="space-y-2">
-            <p className="text-blue font-bold text-3xl">The Result</p>
-            <h2 className="text-4xl md:text-[40px] font-bold text-gray-900 leading-tight">
+            <p className="text-blue font-bold text-[26px] lg:text-3xl">The Result</p>
+            <h2 className="text-[36px] leading-[36px] md:text-[40px] font-bold text-gray-900 md:leading-tight">
               We make an impact through our work
             </h2>
           </div>
 
           {/* Description */}
-          <p className="text-secondary font-['Exo'] text- leading-relaxed w-1/2">
+          <p className="text-secondary font-['Exo'] text- leading-relaxed lg:w-1/2">
             {para ||
               "In collaboration with Dubai Chambers for more than six year, we committed to achieving key objectives that included cultivating a coherent creative and social media strategy, developing compelling content, and enhancing brand awareness. The unification of the entity&apos;s digital experience and identity by seamlessly integrating multifaceted campaigns, events, activations, and built engagement with its various targeted business groups across its three chambers."}
           </p>
 
           {/* Statistics Grid */}
         </div>
-        <div className="w-full flex justify-between">
+        <div className="w-full md:flex grid grid-cols-2 justify-between">
           {numbersData &&
             numbersData.map((item, index) => {
               return (
@@ -100,7 +100,7 @@ export default function ImpactSection({
                       suffix={item.sign}
                     />
                   </div>
-                  <p className="text-secondary font-normal text-lg uppercase">
+                  <p className="text-secondary font-normal lg:text-lg uppercase">
                     {item.name}
                   </p>
                 </div>
