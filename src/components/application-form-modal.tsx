@@ -2,8 +2,9 @@
 
 import type React from "react"
 
-import { X, Upload } from "lucide-react"
+import { X, Upload, ArrowRight } from "lucide-react"
 import { useState } from "react"
+import { Button } from "./ui/button"
 
 interface ApplicationFormModalProps {
     isOpen: boolean
@@ -29,32 +30,34 @@ export default function ApplicationFormModal({ isOpen, onClose, jobTitle }: Appl
     }
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-                <div className="p-6">
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4 font-['Exo']">
+            <div className="bg-white rounded-2xl max-w-7xl w-full max-h-[90vh] overflow-y-auto py-4">
+                <div className="p-6 flex gap-12">
                     {/* Header */}
-                    <div className="flex justify-between items-start mb-6">
-                        <h2 className="text-2xl font-bold text-gray-900">Application Form</h2>
-                        <button onClick={onClose} className="text-gray-400 hover:text-gray-600 transition-colors">
-                            <X size={24} />
-                        </button>
-                    </div>
+                    <div className="w-1/2">
+                        <div className="flex justify-between items-start mb-6">
+                            <h2 className="text-4xl font-bold text-gray-900">Application Form</h2>
+                            {/* <button onClick={onClose} className="text-gray-400 hover:text-gray-600 transition-colors">
+                                <X size={24} />
+                            </button> */}
+                        </div>
 
-                    {/* Position */}
-                    <div className="mb-6">
-                        <h3 className="text-lg font-semibold mb-2">Position:</h3>
-                        <p className="text-xl font-semibold text-gray-800">{jobTitle}</p>
-                    </div>
+                        {/* Position */}
+                        <div className="mb-6">
+                            <h3 className="text-xl font-semibold mb-2">Position:</h3>
+                            <p className="text-lg font-semibold text-gray-800">{jobTitle}</p>
+                        </div>
 
-                    {/* Role Overview */}
-                    <div className="mb-6">
-                        <h3 className="text-lg font-semibold mb-2">Role Overview:</h3>
-                        <p className="text-gray-700 leading-relaxed">
-                            We are seeking an integrated Art Director with client facing experience, campaign leadership and
-                            experience in social/digital engagements. The ideal candidate will be Arabic first and have a proven track
-                            record of creating visually compelling content and campaigns that engage and captivate audiences across
-                            various digital platforms.
-                        </p>
+                        {/* Role Overview */}
+                        <div className="mb-6">
+                            <h3 className="text-lg font-semibold mb-2">Role Overview:</h3>
+                            <p className="text-gray-700 leading-relaxed">
+                                We are seeking an integrated Art Director with client facing experience, campaign leadership and
+                                experience in social/digital engagements. The ideal candidate will be Arabic first and have a proven track
+                                record of creating visually compelling content and campaigns that engage and captivate audiences across
+                                various digital platforms.
+                            </p>
+                        </div>
                     </div>
 
                     {/* Application Form */}
@@ -128,12 +131,20 @@ export default function ApplicationFormModal({ isOpen, onClose, jobTitle }: Appl
                         </div>
 
                         {/* Submit Button */}
-                        <button
-                            type="submit"
-                            className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-semibold transition-colors w-full flex items-center justify-center gap-2"
-                        >
-                            Send Inquiry →
-                        </button>
+                        <div className={`flex items-center group`}>
+                            <Button className="bg-green text-black h-[50px] px-6 rounded-full text-lg flex items-center font-normal transition-all duration-300 hover:bg-[#2054FC] hover:text-white">
+                                <span className={`relative`}>Send Inquiry</span>
+                            </Button>
+
+                            {/* Arrow Circle */}
+                            <div
+                                className={`w-[50px] h-[50px] rounded-full flex justify-center items-center cursor-pointer transition-all duration-500 delay-150 transform group-hover:-translate-x-3 bg-black`}
+                            >
+                                <ArrowRight
+                                    className={`h-6 w-6 font-bold text-white`}
+                                />
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
