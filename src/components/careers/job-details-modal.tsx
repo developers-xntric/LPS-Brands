@@ -1,6 +1,7 @@
 "use client"
 
 import { X } from "lucide-react"
+import { Button } from "../common/button"
 
 interface JobDetailsModalProps {
     isOpen: boolean
@@ -19,8 +20,8 @@ export default function JobDetailsModal({ isOpen, onClose, onJoinTeam, job }: Jo
     if (!isOpen) return null
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4 font-['Exo']">
+            <div className="bg-white rounded-2xl max-w-7xl w-full max-h-[90vh] overflow-y-auto">
                 <div className="p-6">
                     {/* Header */}
                     <div className="flex justify-between items-start mb-6">
@@ -140,12 +141,9 @@ export default function JobDetailsModal({ isOpen, onClose, onJoinTeam, job }: Jo
                     </div>
 
                     {/* Join Our Team Button */}
-                    <button
-                        onClick={onJoinTeam}
-                        className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-semibold transition-colors w-full"
-                    >
-                        Join Our Team →
-                    </button>
+                    <div className="flex justify-start">
+                        <Button text="Join Our Team" bg="bg-black" />
+                    </div>
                 </div>
             </div>
         </div>
