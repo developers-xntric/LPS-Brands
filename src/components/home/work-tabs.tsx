@@ -56,7 +56,7 @@ export default function WorkTabs() {
                         >
                             <span className="text-md relative top-[1px] font-normal">Identity</span>
                         </div>
-                        <p className="text-white leading-relaxed">{tabData.identity.description}</p>
+                        <p className="text-white text-sm md:text-md leading-relaxed">{tabData.identity.description}</p>
                     </div>
 
                     {/* Communication Campaigns Section */}
@@ -71,7 +71,7 @@ export default function WorkTabs() {
                         >
                             <span className="text-md relative top-[1px] font-normal">Communications</span>
                         </div>
-                        <p className="text-white leading-relaxed">{tabData.communications.description}</p>
+                        <p className="text-white text-sm md:text-md leading-relaxed">{tabData.communications.description}</p>
                     </div>
 
                     {/* Experiences Section */}
@@ -86,7 +86,7 @@ export default function WorkTabs() {
                         >
                             <span className="text-md relative top-[1px] font-normal">Experiences</span>
                         </div>
-                        <p className="text-white leading-relaxed">{tabData.experiences.description}</p>
+                        <p className="text-white text-sm md:text-md leading-relaxed">{tabData.experiences.description}</p>
                     </div>
                 </div>
 
