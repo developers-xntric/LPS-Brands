@@ -10,7 +10,7 @@ const GlobalPresence = () => {
     return (
         <Wrapper>
             <div className="flex flex-col xl:flex-row gap-10 xl:justify-between py-16 relative">
-                <div className="relative md:h-[630px] lg:h-[760px] xl:w-[65%] bg-[url('/home/bg-grad.png')] bg-cover bg-center rounded-3xl md:rounded-[50px]">
+                <div className="relative h-[870px] md:h-[630px] lg:h-[760px] xl:w-[65%] bg-[url('/home/bg-grad.png')] bg-cover bg-center rounded-3xl md:rounded-[50px]">
                     <HoverImage
                         defaultSrc="/home/zig-zag.png"
                         hoverSrc="/home/zig-zag.png"
