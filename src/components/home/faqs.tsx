@@ -49,7 +49,7 @@ export default function FAQPage() {
     }
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="bg-white">
             <div className="max-w-4xl mx-auto px-6 py-16">
                 {/* Header */}
                 <div className="text-center mb-16">
