@@ -18,7 +18,7 @@ export default function InstagramVideos({ videos }: InstagramVideosProps) {
                         onClick={() => handleVideoClick(video)}
                     >
                         <div className="relative">
-                            <Image src={video.thumbnail} alt={video.title} className="w-full min-h-[350px] object-cover" width={600} height={600} />
+                            <Image src={video.thumbnail} alt={video.title} className="w-full min-h-[350px] md:h-[350px] object-cover" width={600} height={600} />
                             <div className="absolute inset-0 flex items-center justify-center object-cover transition-opacity duration-300">
                                 {index !== 2 && <svg style={{
                                     color: "rgba(255,255,255,1)"

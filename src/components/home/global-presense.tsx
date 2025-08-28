@@ -17,7 +17,7 @@ const GlobalPresence = () => {
                         alt=""
                         width={170}
                         height={200}
-                        className="hidden md:block absolute top-12 -right-14"
+                        className="hidden lg:block absolute top-12 -right-14"
                     />
 
                     <div className="relative w-[85%] mx-auto h-[65%] mt-20 flex gap-10 md:flex-row flex-col">
@@ -119,7 +119,7 @@ const GlobalPresence = () => {
                                     alt="Cities"
                                     width={300}
                                     height={250}
-                                    className="inline-block w-full"
+                                    className="inline-block w-[270px]"
                                 />
                             </div>
                         </div>
@@ -128,7 +128,7 @@ const GlobalPresence = () => {
                 </div>
 
                 <div className="xl:w-[30%]">
-                    <h2 className='text-center text-5xl font-["Exo"] font-[700]'>Awards</h2>
+                    <h2 className='text-center mb-6 text-5xl font-["Exo"] font-[700]'>Awards</h2>
                     <div className="space-y-3">
                         {globalPresenceAwards.map((item, i) => (
                             <div key={i} className="flex gap-5 items-center">
