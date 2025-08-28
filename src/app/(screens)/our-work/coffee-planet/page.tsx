@@ -1,7 +1,5 @@
 import WorkHero from '@/components/careers/careers-hero'
 import ImpactSection from '@/components/our-work/impact-section'
-import PortfolioSection from '@/components/our-work/portfolio-section'
-import React from 'react'
 const numbersData = [
     {
         name:"Brand Films​",

@@ -156,10 +156,6 @@ export default function BlogCarousel() {
     moveDrag(e.touches[0].clientX);
   const handleTouchEnd = () => endDrag();
 
-  // dots navigation (optional)
-  const goTo = (idx: number) =>
-    setCurrentIndex(Math.min(Math.max(idx, 0), maxIndex));
-
   return (
     <div className="mb-16">
       {posts.length > 0 ? (

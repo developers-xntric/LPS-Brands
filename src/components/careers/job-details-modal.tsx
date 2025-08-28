@@ -49,7 +49,7 @@ export default function JobDetailsModal({ isOpen, onClose, onJoinTeam, job }: Jo
                     <div className="mb-6">
                         <h3 className="text-xl font-semibold mb-3">Required Skills & Experience:</h3>
                         <ul className="space-y-2 text-gray-700 text-lg">
-                            <li>• Bachelor's degree in Graphic design, Visual Arts, Marketing, or a related field.</li>
+                            <li>• Bachelor&apos;s degree in Graphic design, Visual Arts, Marketing, or a related field.</li>
                             <li>• 7+ years of experience in a creative role, with a focus on digital and social media.</li>
                             <li>
                                 • Strong portfolio showcasing innovative digital campaigns, video content (TikTok, Reels), animation and
@@ -75,7 +75,7 @@ export default function JobDetailsModal({ isOpen, onClose, onJoinTeam, job }: Jo
                             <li>
                                 • Experience presenting creative ideas to clients, with strong interpersonal and client facing skills.
                             </li>
-                            <li>• Candidates with a "hands-on media spend maximum of 5M" immediate availability preferred.</li>
+                            <li>• Candidates with a &quot;hands-on media spend maximum of 5M&quot; immediate availability preferred.</li>
                         </ul>
                     </div>
 

@@ -1,20 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import LogoLPS from "@/components/icons/lps-logo";
+import MobileNavbar from "@/components/layout/mobile-navbar";
+import Wrapper from "@/components/layout/wrapper";
 import { Calendar, LinkedinIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-import BlogsSection from "@/components/home/blog-section";
 import {
-  ReactElement,
+  AwaitedReactNode,
   JSXElementConstructor,
+  Key,
+  ReactElement,
   ReactNode,
   ReactPortal,
-  AwaitedReactNode,
-  Key,
 } from "react";
-import LogoLPS from "@/components/icons/lps-logo";
-import Wrapper from "@/components/layout/wrapper";
-import MobileNavbar from "@/components/layout/mobile-navbar";
 
 export async function generateMetadata({
   params,
