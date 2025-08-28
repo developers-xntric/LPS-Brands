@@ -4,9 +4,9 @@ export default function ThirdSection({img,heading,para1,para2}:{img:string,headi
   return (
     <div className="my-20">
       <div className="w-[90%] mx-auto 2xl:max-w-[1740px]">
-        <div className="flex justify-between items-center gap-12 ">
+        <div className="flex lg:flex-row flex-col justify-between items-center gap-12 ">
           {/* Image Column */}
-          <div className="relative w-1/2">
+          <div className="relative lg:w-1/2">
             <Image
               src={img}
               alt="How LPS Helps This Industry"
@@ -17,11 +17,11 @@ export default function ThirdSection({img,heading,para1,para2}:{img:string,headi
             />
           </div>
           {/* Content Column */}
-          <div className="space-y-6 w-1/2">
-            <h2 className="2xl:text-[55px] text-[38px] font-semibold 2xl:max-w-[80%] text-[#101820] leading-[55px] mb-10">
+          <div className="space-y-6 lg:w-1/2">
+            <h2 className="2xl:text-[55px] text-[28px] md:text-[38px] font-semibold 2xl:max-w-[80%] text-[#101820] md:leading-[40px] leading-[32px] xl:leading-[55px] mb-10">
               {heading}
             </h2>
-            <div className=" max-w-[85%]  relative">
+            <div className=" md:max-w-[85%]  relative">
               <div className="border-l border-[#000000] w-full h-[100%] absolute"></div>
               <div className=" w-2 h-2 bg-[#00FE0B] rounded-full absolute top-1  left-4"></div>
               <div className="ml-10">

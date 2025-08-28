@@ -3,8 +3,8 @@ import React from "react";
 
 function CareersImageGrid({ image,url }: { image: "single" | "grid", url?: string }) {
   return (
-    <div className="2xl:max-w-[1700px] w-[100%] mx-auto relative 2xl:top-72 top-52">
-      {image === "grid" ? <div className="grid grid-cols-3 gap-4 ">
+    <div className="2xl:max-w-[1700px] w-[90%] md:w-[100%] mx-auto relative 2xl:top-72 top-24 md:top-52">
+      {image === "grid" ? <div className="grid md:grid-cols-3 gap-4 ">
         <div className="relative">
           <Image
             src={"/careers/careers-3.webp"}

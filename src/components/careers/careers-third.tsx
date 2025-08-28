@@ -50,7 +50,7 @@ export function CareersThird() {
           {imagePaths.map((src, index) => (
             <div
               key={index}
-              className="relative flex-shrink-0 w-[300px] 2xl:w-[350px] rounded-[30px] overflow-hidden"
+              className="relative flex-shrink-0 w-[170px] md:w-fit xl:w-[300px] 2xl:w-[350px] rounded-[20px] md:rounded-[30px] overflow-hidden"
             >
               <Image
                 src={src}

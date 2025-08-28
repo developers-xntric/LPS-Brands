@@ -30,7 +30,7 @@ function CareersHero({
     if (!heading) {
       return (
         <>
-          <h1 className="md:text-[65px] text-[40px] font-bold">CAREERS WITH</h1>
+          <h1 className="md:text-[65px] text-[40px] font-bold mb-3 md:mb-0">CAREERS WITH</h1>
           <span className="md:text-[65px] text-[40px] font-bold">
             <span className="text-black">— </span>
             <span className="gradient-text">LPS BRANDS</span>
