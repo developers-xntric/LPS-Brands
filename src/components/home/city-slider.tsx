@@ -31,7 +31,7 @@ function YearsAwwards() {
         });
     }, []);
     return (
-        <div id="YearsAwwards" className="relative gap-12 2xl:gap-16 font-['Futuru'] flex flex-col justify-between items-center overflow-hidden text-white pt-28 lg:pt-0 lg:py-20">
+        <div id="YearsAwwards" className="relative gap-12 2xl:gap-16 font-['Futuru'] flex flex-col justify-between items-center overflow-hidden text-white pt-28 lg:py-20">
             <div className="flex flex-col items-center justify-center gap-20">
                 {/* Scrolling Awards */}
                 <div className=" overflow-hidden w-full">
