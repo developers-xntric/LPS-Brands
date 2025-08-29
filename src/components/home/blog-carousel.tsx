@@ -97,11 +97,7 @@ export default function BlogCarousel() {
       const widthForCards = Math.max(0, rect.width - totalGaps);
       const perCard = itemsPerView > 0 ? widthForCards / itemsPerView : 0;
 
-      console.log("Resize update:", {
-        rectWidth: rect.width,
-        gap,
-        itemWidth: perCard,
-      });
+     
       setGapPx(gap);
       setItemWidth(perCard);
     };
