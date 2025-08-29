@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import LogoLPS from "../icons/lps-logo";
 import { Button } from "../common/button";
+import ContactEmails from "./contact-emails";
 
 const IDENTITY_OPTIONS = [
     "Leadership Branding",
@@ -123,26 +124,9 @@ function ContactHero() {
                 </div>
 
                 {/* Main two-column layout */}
-                <div className="mt-10 lg:mt-16 grid lg:grid-cols-2 gap-10 items-start">
+                <div className="mt-10 lg:mt-16 flex flex-col-reverse lg:grid lg:grid-cols-2 gap-10">
                     {/* Left: existing heading + copy */}
-                    <div>
-                        <div className="mt-10 flex flex-col uppercase items-start -space-y-8">
-                            <h1 className="text-[52px] md:text-[80px] font-bold flex flex-col leading-none">
-                                <span>Let’s work</span>
-                                <span className="gradient-text">— together.</span>
-                            </h1>
-                        </div>
-                        <div className="max-w-xl py-8">
-                            <p className="text-lg font-medium font-['Exo'] leading-tight">
-                                Hey there! 👋 Could you take a moment to fill out this quick
-                                form? It’s super short, promise!
-                                <br />
-                                <br />
-                                Not a fan of forms? No worries, we’re just a message away on{" "}
-                                <strong>Instagram</strong> and <strong>TikTok!</strong>
-                            </p>
-                        </div>
-                    </div>
+                    <ContactEmails />
 
                     {/* Right: Form card */}
                     <div className="w-full">
