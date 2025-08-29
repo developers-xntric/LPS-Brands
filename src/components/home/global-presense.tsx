@@ -129,19 +129,19 @@ const GlobalPresence = () => {
 
                 <div className="xl:w-[30%]">
                     <h2 className='text-center mb-6 text-5xl font-["Exo"] font-[700]'>Awards</h2>
-                    <div className="space-y-3">
+                    <div className="space-y-10 md:space-y-3">
                         {globalPresenceAwards.map((item, i) => (
-                            <div key={i} className="flex gap-5 items-center">
-                                <div className="md:min-w-[30%] xl:min-w-[39%]">
+                            <div key={i} className="flex md:flex-row flex-col gap-5 items-center">
+                                <div className="md:min-w-[30%] xl:min-w-[39%] ">
                                     <Image
                                         src={item.image}
                                         alt="Awards"
                                         width={200}
                                         height={200}
-                                        className="w-full h-full"
+                                        className="w-32 md:w-full h-full"
                                     />
                                 </div>
-                                <div className='space-y-1 font-["Exo"]'>
+                                <div className='space-y-1 md:text-left text-center font-["Exo"]'>
                                     <h3 className="text-2xl">{item.heading}</h3>
                                     <p className="text-sm font-medium leading-4">{item.text}</p>
                                 </div>
