@@ -20,6 +20,7 @@ interface Blog {
   publishedDate: string;
   uploadDate?: string;
   tags?: string[];
+  bannerImageURL?: string;
 }
 
 const Cards = () => {
@@ -53,7 +54,7 @@ const Cards = () => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
+  console.log(featuredPost)
   return (
     <>
       <Head>
@@ -94,7 +95,7 @@ const Cards = () => {
                   <div className="flex flex-col lg:flex-row gap-8 bg-white rounded-2xl overflow-hidden duration-300">
                     <div className="lg:w-1/2">
                       <Image
-                        src={featuredPost.imageURL || "/placeholder.svg"}
+                        src={featuredPost.bannerImageURL || "/placeholder.svg"}
                         width={600}
                         height={400}
                         alt={featuredPost.title}
