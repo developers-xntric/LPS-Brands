@@ -1,6 +1,7 @@
 import React from "react";
 import LogoLPS from "../icons/lps-logo";
 import Image from "next/image";
+import MobileNavbar from "../layout/mobile-navbar";
 
 interface ServiceInnerProps {
   heading?: string;
@@ -18,8 +19,9 @@ function ServiceListingHero({
   return (
     <div className={`bg-[url('/home/Hero.png')] bg-center bg-cover `}>
       <div className={`2xl:max-w-[1700px] mx-auto  w-[90%]`}>
-        <div className="pt-4">
+         <div className="flex justify-between items-center p-4 mx-2">
           <LogoLPS />
+          <MobileNavbar />
         </div>
 
         {/* Heading */}

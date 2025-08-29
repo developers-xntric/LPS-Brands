@@ -37,12 +37,12 @@ export default function DesktopNavbar() {
                                 <div className="space-y-3">
                                     {items.map((item, itemIndex) => (
                                         <Link
-                                            key={item}
-                                            href={`/services/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                                            key={item.title}
+                                            href={`/services/${item.href}`}
                                             className="flex items-center text-secondary gap-2 hover:text-gray-900 transition-all duration-200 group py-1 nav-hover"
                                             style={{ animationDelay: `${(categoryIndex * items.length + itemIndex) * 50}ms` }}
                                         >
-                                            <span className="font-normal tracking-wide text-[16px]">{item}</span>
+                                            <span className="font-normal tracking-wide text-[16px]">{item.title}</span>
                                             <ArrowUpRight className="w-4 h-4 text-green group-hover:opacity-100 transition-all duration-200 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                                         </Link>
                                     ))}
