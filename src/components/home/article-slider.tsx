@@ -155,11 +155,11 @@ export function ArticlesCarousel() {
                                 // Make each card exactly fill the viewport fraction
                                 style={{ width: `${100 / itemsPerView}%` }}
                             >
-                                <Link href={article.link || ""} className="flex flex-col gap-4 relative overflow-hidden rounded-2xl h-full">
+                                <Link href={article.link || ""} className="flex flex-col gap-4  relative overflow-hidden rounded-2xl h-full">
                                     <Image
                                         src={article.image || "/placeholder.svg"}
                                         alt={article.title}
-                                        className="w-full h-72 object-cover transition-transform duration-300 hover:scale-105"
+                                        className="w-full h-72 object-cover rounded-2xl transition-transform duration-300 hover:scale-105"
                                         draggable={false}
                                         width={1000}
                                         height={1000}
