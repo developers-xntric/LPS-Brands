@@ -26,7 +26,7 @@ export default function BlogCarousel() {
   // responsive measurements
   const trackRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const [itemsPerView, setItemsPerView] = useState(4);
+  const [itemsPerView, setItemsPerView] = useState(3.5);
   const [itemWidth, setItemWidth] = useState(0);
   const [gapPx, setGapPx] = useState(20); // Tailwind gap-5 = 20px
 
@@ -64,11 +64,11 @@ export default function BlogCarousel() {
   useEffect(() => {
     const setByWidth = () => {
       const w = window.innerWidth;
-      // <640: 1, 640–1023: 2, 1024–1279: 3, >=1280: 4
+      // <640: 1, 640–1023: 2, 1024–1279: 3, >=1280: 3.5
       if (w < 640) setItemsPerView(1);
       else if (w < 1024) setItemsPerView(2);
       else if (w < 1280) setItemsPerView(3);
-      else setItemsPerView(4);
+      else setItemsPerView(3.5);
     };
     setByWidth();
     window.addEventListener("resize", setByWidth);
@@ -77,10 +77,15 @@ export default function BlogCarousel() {
 
   // measure container width and real gap via ResizeObserver
   useEffect(() => {
+    let timeoutId: NodeJS.Timeout | null = null;
     const update = () => {
       const wrapper = wrapperRef.current;
       const track = trackRef.current;
-      if (!wrapper || !track) return;
+      if (!wrapper || !track) {
+        // Retry after a short delay if refs are not ready
+        timeoutId = setTimeout(update, 100);
+        return;
+      }
 
       const rect = wrapper.getBoundingClientRect();
       const styles = getComputedStyle(track);
@@ -92,19 +97,37 @@ export default function BlogCarousel() {
       const widthForCards = Math.max(0, rect.width - totalGaps);
       const perCard = itemsPerView > 0 ? widthForCards / itemsPerView : 0;
 
+      console.log("Resize update:", {
+        rectWidth: rect.width,
+        gap,
+        itemWidth: perCard,
+      });
       setGapPx(gap);
       setItemWidth(perCard);
     };
 
+    // Run immediately to ensure initial render
     update();
 
-    const ro = new ResizeObserver(update);
+    // Debounce ResizeObserver to prevent excessive updates
+    let debounceTimeout: NodeJS.Timeout | null = null;
+    const debouncedUpdate = () => {
+      if (debounceTimeout) clearTimeout(debounceTimeout);
+      debounceTimeout = setTimeout(update, 50);
+    };
+
+    const ro = new ResizeObserver(debouncedUpdate);
     if (wrapperRef.current) ro.observe(wrapperRef.current);
-    return () => ro.disconnect();
-  }, [itemsPerView]);
+
+    return () => {
+      ro.disconnect();
+      if (timeoutId) clearTimeout(timeoutId);
+      if (debounceTimeout) clearTimeout(debounceTimeout);
+    };
+  }, [itemsPerView, gapPx]);
 
   // autoplay
-  const maxIndex = Math.max(0, posts.length - itemsPerView);
+  const maxIndex = Math.max(0, Math.ceil(posts.length - itemsPerView));
   useEffect(() => {
     if (!isAutoPlaying || isDragging || posts.length <= itemsPerView) return;
 
@@ -114,9 +137,30 @@ export default function BlogCarousel() {
     return () => clearInterval(id);
   }, [isAutoPlaying, isDragging, posts.length, itemsPerView, maxIndex]);
 
-  // translate calculation
+  // translate calculation to center the midpoint of two cards
   const step = itemWidth + gapPx;
-  const translateX = -(currentIndex * step) + dragOffset;
+  const centerOffset =
+    itemsPerView === 3.5
+      ? (wrapperRef.current?.getBoundingClientRect().width || 0) / 2 -
+        (itemWidth + gapPx / 2)
+      : itemsPerView === 2
+      ? (wrapperRef.current?.getBoundingClientRect().width || 0) / 2 -
+        (itemWidth + gapPx / 2)
+      : 0;
+  // choose an extra offset depending on itemsPerView (breakpoints)
+  let extraOffset = 0;
+  if (itemsPerView === 3.5) {
+    extraOffset = -500; // large screens
+  } else if (itemsPerView === 3) {
+    extraOffset = -150; // medium desktops
+  } else if (itemsPerView === 2) {
+    extraOffset = -50; // tablets
+  } else {
+    extraOffset = 0; // mobile
+  }
+
+  const translateX =
+    -(currentIndex * step) + dragOffset + centerOffset + extraOffset;
 
   // drag handlers (mouse + touch)
   const startDrag = (clientX: number) => {
@@ -180,28 +224,34 @@ export default function BlogCarousel() {
               }}
             >
               {posts.map((post, idx) => {
-                // compute which cards are "center-ish" for a taller look
-                const midStart = Math.floor(itemsPerView / 2) - 1;
-                const midEnd = midStart + 1;
+                // compute which cards are centered for scaling
                 const rel = idx - currentIndex;
                 const centerish =
-                  itemsPerView === 1
-                    ? rel === 0
-                    : rel >= midStart && rel <= midEnd;
+                  itemsPerView === 3.5
+                    ? rel === 1 || rel === 2 // Two middle cards for 3.5 items
+                    : itemsPerView === 2
+                    ? rel === 0 || rel === 1 // Both cards for 2 items
+                    : itemsPerView === 1
+                    ? rel === 0 // Single card for mobile
+                    : rel === 1; // Middle card for 3 items
 
                 return (
                   <div
                     key={post.id}
-                    className={`flex-shrink-0 px-2 transition-transform duration-500 ${centerish ? "z-10" : "z-0"
-                      }`}
+                    className={`flex-shrink-0 px-5 md:px-2 transition-all duration-500 ${
+                      centerish ? "z-10 scale-105" : "z-0 scale-100"
+                    }`}
                     style={{ width: `${itemWidth}px` }}
                   >
                     <div className="rounded-2xl overflow-hidden bg-transparent">
                       <Image
                         src={post.image}
                         alt={post.title}
-                        className={`w-full ${centerish ? "h-72" : "h-56"
-                          } rounded-2xl object-cover`}
+                        className={`w-full md:w-full ${
+                          centerish
+                            ? "h-[200px] md:h-[250px] 2xl:h-[400px]"
+                            : "h-56 2xl:h-[350px]"
+                        } rounded-2xl object-cover`}
                         draggable={false}
                         width={600}
                         height={600}
@@ -209,12 +259,12 @@ export default function BlogCarousel() {
                       <span className="text-sm text-green relative px-2 top-4">
                         Blog
                       </span>
-                      <h3 className="text-white font-['Exo'] text-xl font-bold mb-3 line-clamp-2 leading-tight px-2 my-6">
+                      <h3 className="text-white font-['Exo'] text-xl 2xl:text-[23px] font-bold mb-3 line-clamp-2 leading-tight px-2 my-6">
                         {post.title}
                       </h3>
                       <Link
                         href={`/blog/${post.slug}`}
-                        className="text-white text-sm hover:text-[#2054FC] transition-colors px-2"
+                        className="text-white text-sm 2xl:text-lg hover:text-[#2054FC] transition-colors px-2"
                       >
                         {post.readMore}
                       </Link>
@@ -224,12 +274,12 @@ export default function BlogCarousel() {
               })}
             </div>
           </div>
-
           {/* Pagination dots */}
-          
         </>
       ) : (
-        <p className="text-xl font-bold text-white text-center">No Blogs Found</p>
+        <p className="text-xl font-bold text-white text-center">
+          No Blogs Found
+        </p>
       )}
     </div>
   );
