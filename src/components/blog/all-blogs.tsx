@@ -25,7 +25,7 @@ interface Blog {
 const Cards = () => {
   const [data, setData] = useState<Blog[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 6; 
+  const postsPerPage = 6;
   useEffect(() => {
     const getAllBlogs = async () => {
       const res = await axios.get("https://blog.xntric.me/api/v2/blogs");
@@ -40,7 +40,7 @@ const Cards = () => {
 
   const featuredPost = data[0];
   const remainingPosts = data.slice(1);
-  
+
   // Calculate pagination details
   const totalPosts = remainingPosts.length;
   const totalPages = Math.ceil(totalPosts / postsPerPage);
@@ -51,7 +51,7 @@ const Cards = () => {
   // Handle page change
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: "smooth" }); 
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -90,7 +90,7 @@ const Cards = () => {
           <>
             {featuredPost && (
               <div className="mb-12">
-                <div >
+                <div>
                   <div className="flex flex-col lg:flex-row gap-8 bg-white rounded-2xl overflow-hidden duration-300">
                     <div className="lg:w-1/2">
                       <Image
@@ -139,7 +139,12 @@ const Cards = () => {
                         href={`blog/${featuredPost.slug}`}
                         className="w-fit flex items-start"
                       >
-                        <Button text="Read More" bg="bg-black"></Button>
+                        <Button
+                          text="Read More"
+                          bg="bg-black"
+                          center={false}
+                          link={`blog/${featuredPost.slug}`}
+                        ></Button>
                       </Link>
                     </div>
                   </div>
@@ -167,7 +172,7 @@ const Cards = () => {
                 };
 
                 return (
-                  <div  key={index}>
+                  <div key={index}>
                     <div className="bg-white rounded-2xl overflow-hidden duration-300">
                       <Image
                         src={card.imageURL || "/placeholder.svg"}
@@ -214,7 +219,11 @@ const Cards = () => {
                           href={`blog/${card.slug}`}
                           className="w-fit flex items-start"
                         >
-                          <Button text="Read More" bg="bg-black"></Button>
+                          <Button
+                            text="Read More"
+                            bg="bg-black"
+                            link={`blog/${card.slug}`}
+                          ></Button>
                         </Link>
                       </div>
                     </div>
@@ -231,7 +240,7 @@ const Cards = () => {
 
             {totalPages > 1 && (
               <div className="flex flex-wrap  justify-center mt-8 gap-2">
-                {Array.from({ length: totalPages  }, (_, index) => (
+                {Array.from({ length: totalPages }, (_, index) => (
                   <button
                     key={index}
                     onClick={() => handlePageChange(index + 1)}
