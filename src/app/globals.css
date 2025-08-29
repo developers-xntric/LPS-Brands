@@ -240,7 +240,6 @@ body {
 .gradient-text {
   font-family: 'Asgard';
   font-style: normal;
-  text-transform: uppercase;
   background: linear-gradient(106deg, #3FD848 2.19%, #0045FF 80.03%, #212B3F 96.89%);
   background-clip: text;
   -webkit-background-clip: text;

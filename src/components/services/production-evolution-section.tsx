@@ -41,14 +41,14 @@ export default function ProductionEvolutionSection({ title, highlight, heading, 
                 </div>
 
                 {/* Main Content Grid */}
-                <div className="lg:grid flex flex-col-reverse lg:grid-cols-2  items-start">
+                <div className="lg:grid flex flex-col-reverse lg:grid-cols-2 ">
                     {/* Left Column - Text with Green Circle */}
-                    <div className="relative">
-                        <div className="relative z-10 2xl:p-8 rounded-lg  2xl:top-14">
+                    <div className="relative flex items-center">
+                        <div className="relative z-10 2xl:p-8 rounded-lg">
                             <p className="text-secondary leading-7 font-medium text-center lg:text-start 2xl:text-lg font-['Exo']">
                                 {(text && text[0]) ? text[0] : "Leadership branding is the cornerstone of how you’re seen, appreciated, and followed in the competitive environment of today, not simply a slogan. Whether your role is changemaker, entrepreneur, or executive, your own leadership brand determines your effect. Establishing a leadership brand requires establishing your beliefs, approach of communication, and special presence you provide to every room."}
                             </p>
-                        </div>
+                        </div>  
                     </div>
 
                     {/* Right Column - Jewelry Image */}
@@ -57,7 +57,7 @@ export default function ProductionEvolutionSection({ title, highlight, heading, 
                             <Image
                                 src={(images && images[0]) ? images[0] : "/services/pe1.webp"}
                                 alt="Luxury jewelry packaging display"
-                                width={600}
+                                width={2000}
                                 height={400}
                                 className="w-full h-auto object-cover"
                             />
@@ -73,7 +73,7 @@ export default function ProductionEvolutionSection({ title, highlight, heading, 
                             <Image
                                 src={(images && images[1]) ? images[1] : "/services/pe2.webp"}
                                 alt="Digital display in urban setting"
-                                width={500}
+                                width={2000}
                                 height={300}
                                 className="w-full h-auto object-cover"
                             />

@@ -31,10 +31,10 @@ function CareersHero({
     if (!heading) {
       return (
         <>
-          <h1 className="md:text-[65px] text-[40px] font-bold mb-3 md:mb-0 px-3 md:px-0">CAREERS WITH</h1>
+          <h1 className="md:text-[65px] text-[40px] font-bold mb-3 md:mb-0 px-3 md:px-0 uppercase">Careers with</h1>
           <span className="md:text-[65px] text-[40px] font-bold px-3 md:px-0">
             <span className="text-black">— </span>
-            <span className="gradient-text">LPS BRANDS</span>
+            <span className="gradient-text uppercase">LPS Brands</span>
           </span>
         </>
       );
@@ -42,10 +42,10 @@ function CareersHero({
     if (blog) {
       return (
         <>
-          <h1 className="md:text-[65px] text-[40px] font-bold uppercase pb-5 md:pb-0">Our Blogs</h1>
+          <h1 className="md:text-[65px] text-[40px] font-bold  pb-5 md:pb-0">Our Blogs</h1>
           <span className="md:text-[65px] text-[40px] font-bold ">
             <span className="text-black">— </span>
-            <span className="gradient-text">LPS BRANDS</span>
+            <span className="gradient-text uppercase">LPS Brands</span>
           </span>
         </>
       );
@@ -54,7 +54,7 @@ function CareersHero({
     if (highlight && heading.includes(highlight)) {
       const parts = heading.split(new RegExp(`(${highlight})`, "gi"));
       return (
-        <h1 className="lg:text-[75px] text-[40px] leading-[40px] lg:leading-[70px] font-bold uppercase lg:max-w-[70%] 2xl:leading-[80px]">
+        <h1 className="lg:text-[75px] text-[40px] leading-[40px] lg:leading-[70px] font-bold  lg:max-w-[70%] 2xl:leading-[80px]">
           {parts.map((part, i) =>
             part.toLowerCase() === highlight.toLowerCase() ? (
               <span key={i} className="gradient-text">

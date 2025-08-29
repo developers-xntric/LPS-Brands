@@ -32,7 +32,7 @@ function CareersImageGrid({ image,url }: { image: "single" | "grid", url?: strin
             className="rounded-tl-[70px]"
           />
         </div>
-      </div> : <div className="relative bottom-36 lg:bottom-28 2xl:bottom-48">
+      </div> : <div className="relative bottom-8 lg:bottom-10 xl:bottom-8 2xl:bottom-20">
         <Image
           src={url || "/work/i1.webp"}
           width={1000}
