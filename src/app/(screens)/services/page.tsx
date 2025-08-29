@@ -30,17 +30,17 @@ const Services = () => {
     {
       id: "leadership",
       title: "Creative ",
-      href: "/services/creative",
+      href: "/services/our-creative-services",
     },
     {
       id: "corporate",
       title: "Production",
-      href: "/services/production",
+      href: "/services/production-services",
     },
     {
       id: "social",
       title: "Influencers",
-      href: "/services/influencers",
+      href: "/services/influencers-marketing",
     },
     {
       id: "pr",
@@ -62,7 +62,7 @@ const Services = () => {
     {
       id: "corporate",
       title: "Events",
-      href: "/services/events",
+      href: "/services/event-management",
     },
     {
       id: "social",

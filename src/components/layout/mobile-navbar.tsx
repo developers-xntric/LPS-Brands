@@ -118,13 +118,13 @@ export default function MobileNavbar() {
                                         >
                                             <ul className="px-6 pb-3 space-y-2">
                                                 {items.map((item) => (
-                                                    <li key={item}>
+                                                    <li key={item.title}>
                                                         <Link
-                                                            href={`/services/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                                                            href={`/services/${item.href}`}
                                                             onClick={() => setOpen(false)}
                                                             className="flex items-center justify-between py-1.5"
                                                         >
-                                                            <span className="text-sm">{item}</span>
+                                                            <span className="text-sm">{item.title}</span>
                                                             <ArrowUpRight className="w-4 h-4" />
                                                         </Link>
                                                     </li>
