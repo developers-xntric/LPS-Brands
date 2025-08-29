@@ -8,7 +8,7 @@ import MobileNavbar from "../layout/mobile-navbar";
 
 const HeroSection = () => {
   return (
-    <div className="bg-[url('/home/Hero.png') bg-center bg-cover ">
+    <div id="test" className="bg-[url('/home/Hero.png') bg-center bg-cover ">
       <div className="2xl:max-w-[1800px] mx-auto w-[95%] pb-10 lg:pb-20">
         {/* Top Left LPS Logo */}
         <div className="flex justify-between items-center p-4 mx-2">
@@ -30,7 +30,7 @@ const HeroSection = () => {
         {/* Animated Text Section (Why Pears) */}
         <Wrapper>
           {/* WHY PEARS Section */}
-          <div className="mb-8 mt-20 flex lg:flex-row flex-col justify-between">
+          <div className="mb-8 mt-32 md:mt-24 flex lg:flex-row flex-col justify-between">
             <h1 className="flex gap-3 lg:flex-col lg:-space-y-6 text-5xl md:text-8xl font-bold mb-8 leading-none">
               <span className="gradient-text text-transparent">WHY</span>
               <span className="gradient-text text-transparent">PEARS?</span>

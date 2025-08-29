@@ -5,7 +5,7 @@ import React from 'react'
 const Industry = () => {
   return (
     <div>
-       <CareersHero heading='Our Industries' text='We collaborate with organizations across various industries, delivering agency solutions that cut through the clutter and go beyond conventional marketing strategies.' highlight='Industries' bottom={false} />
+       <CareersHero id='test-ourwork' heading='Our Industries' text='We collaborate with organizations across various industries, delivering agency solutions that cut through the clutter and go beyond conventional marketing strategies.' highlight='Industries' bottom={false} />
       <IndustryListing/>
     </div>
   )

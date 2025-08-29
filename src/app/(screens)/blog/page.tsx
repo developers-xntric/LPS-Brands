@@ -5,7 +5,7 @@ import React from "react";
 function Blog() {
   return (
     <div>
-      <BlogHero heading="Our Blogs" blog={true} bottom={false} />
+      <BlogHero id="test-ourwork" heading="Our Blogs" blog={true} bottom={false} />
       <AllBlogs />
     </div>
   );

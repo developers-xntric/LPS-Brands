@@ -14,6 +14,7 @@ interface ServiceInnerProps {
   careers?: boolean;
   url?: string;
   blog?: boolean;
+  id?: string
 }
 
 function CareersHero({
@@ -26,6 +27,7 @@ function CareersHero({
   careers = false,
   blog = false,
   url,
+  id
 }: ServiceInnerProps) {
   const renderHeading = () => {
     if (!heading) {
@@ -73,7 +75,8 @@ function CareersHero({
 
   return (
     <div
-      className={`bg-[url('/home/Hero.png')] bg-center bg-cover ${
+      id={`${id ? id : "test-all"}`}
+      className={`bg-[url('/home/Hero.png') bg-center bg-cover ${
         bottom ? "" : "lg:pb-32 pb-10"
       }`}
     >

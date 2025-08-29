@@ -132,6 +132,110 @@ body {
   border-color: #2054FC;
 }
 
+#test-ourwork:after { 
+  position: absolute;
+  content: '';
+  z-index: -1;
+  height: 65%;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(35deg, #AEDE95, #FFF, #A4D6DE);
+  background-size: 200% 200%;
+  background-position: 0% 100%;
+  animation-name: test_hover;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  border-radius:0px 0px 20px 20px;
+}
+
+@media (max-width: 740px) {
+  #test-ourwork:after { 
+    height: 65%;
+    bottom: 90%;
+  }
+}
+
+@media (max-width: 1920px) {
+  #test-ourwork:after { 
+    height: 50%;
+    bottom: 90%;
+  }
+}
+@media (max-width: 1440px) {
+  #test-ourwork:after { 
+    height: 65%;
+    bottom: 90%;
+  }
+}
+
+#test-all:after { 
+  position: absolute;
+  content: '';
+  z-index: -1;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(35deg, #AEDE95, #FFF, #A4D6DE);
+  background-size: 200% 200%;
+  background-position: 0% 100%;
+  animation-name: test_hover;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  border-radius:0px 0px 20px 20px;
+}
+
+
+#test:after { 
+  position: absolute;
+  content: '';
+  z-index: -1;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(35deg, #AEDE95, #FFF, #A4D6DE);
+  background-size: 200% 200%;
+  background-position: 0% 100%;
+  animation-name: test_hover;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  border-radius:0px 0px 20px 20px;
+}
+@keyframes test_hover {
+  from {
+    background-position: 0% 100%;
+  }
+  to {
+    background-position: 100% 0%;
+  }
+}
+
+
+@media (max-width: 1920px) {
+  #test:after { 
+    height: 770px;
+    bottom: 50%;
+  }
+}
+ @media (max-width: 740px) {
+  #test:after { 
+    height: 83%;
+    bottom: 90%;
+  }
+}
+
+
 /* flip */
 .perspective-1000 {
   perspective: 1000px;

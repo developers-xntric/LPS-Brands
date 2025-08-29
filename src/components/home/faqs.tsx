@@ -5,39 +5,39 @@ import { ChevronDown } from "lucide-react"
 
 const faqs = [
     {
-        question: "What services do you offer?",
+        question: "Why is LPS considered the best digital marketing agency in UAE?",
         answer:
-            "We offer a comprehensive range of digital services including web development, mobile app development, UI/UX design, digital marketing, SEO optimization, and custom software solutions tailored to your business needs.",
+            "LPS stands out for its data-driven strategies, creative execution, and 360° impact approach being the best digital marketing agency in UAE, helping brands grow through tailored digital solutions in the UAE and beyond.",
     },
     {
-        question: "How long does a typical project take?",
+        question: "What services does LPS offer?",
         answer:
-            "Project timelines vary depending on complexity and scope. A simple website typically takes 2-4 weeks, while complex web applications can take 8-16 weeks. We provide detailed timelines during our initial consultation.",
+            "We offer a full suite of services including digital marketing, branding, public relations, illustration, content creation, process optimization, and strategic consulting.",
     },
     {
-        question: "Do you provide ongoing support and maintenance?",
+        question: "Does LPS handle both local and international brands?",
         answer:
-            "Yes, we offer comprehensive support and maintenance packages. This includes regular updates, security monitoring, performance optimization, and technical support to ensure your digital assets continue to perform optimally.",
+            "Yes, LPS works with a wide range of clients, local startups to global enterprises, delivering strategies that align with regional markets and global ambitions.",
     },
     {
-        question: "What is your development process?",
+        question: "How does LPS approach brand storytelling?",
         answer:
-            "Our development process follows agile methodology with clear phases: Discovery & Planning, Design & Prototyping, Development & Testing, Launch & Deployment, and Ongoing Support. We maintain transparent communication throughout each phase.",
+            "We use a proven brand story framework that crafts emotionally resonant narratives, ensuring your brand connects deeply with your audience in just 30 seconds.",
     },
     {
-        question: "Can you work with our existing systems?",
+        question: "Can I consult LPS for PR strategy only?",
         answer:
-            "We specialize in integrating with existing systems and can work with various platforms, APIs, and databases. We'll assess your current infrastructure and recommend the best integration approach.",
+            "Absolutely. Our PR team specializes in creating proactive and crisis-ready strategies that enhance your brand’s visibility, credibility, and long-term reputation.",
     },
     {
-        question: "What are your pricing models?",
+        question: "What industries does LPS specialize in?",
         answer:
-            "We offer flexible pricing models including fixed-price projects, hourly rates, and retainer agreements. Pricing depends on project scope, complexity, and timeline. We provide detailed quotes after understanding your specific requirements.",
+            "LPS has worked across various industries including retail, tech, healthcare, real estate, fashion, and lifestyle, delivering personalized strategies for each sector.",
     },
     {
-        question: "Do you offer training for our team?",
+        question: "How can I get started with LPS?",
         answer:
-            "Yes, we provide comprehensive training sessions for your team on how to use and manage the solutions we develop. This includes documentation, video tutorials, and hands-on training sessions to ensure smooth adoption.",
+            "You can reach out via our Contact Us page or visit our office to book a discovery session where we understand your goals and tailor a plan accordingly.",
     },
 ]
 

@@ -77,7 +77,7 @@ const Cards = () => {
         />
       </Head>
 
-      <section className="py-16 2xl:max-w-[1700px] w-[90%] mx-auto space-y-14 flex flex-col">
+      <section className="py-16 pt-28 2xl:max-w-[1700px] w-[90%] mx-auto space-y-14 flex flex-col">
         {data.length === 0 ? (
           <div className="text-center py-20">
             <h2 className="text-2xl font-bold text-gray-800">
@@ -92,7 +92,7 @@ const Cards = () => {
             {featuredPost && (
               <div className="mb-12">
                 <div>
-                  <div className="flex flex-col lg:flex-row gap-8 bg-white rounded-2xl overflow-hidden duration-300">
+                  <div className="flex flex-col lg:flex-row gap-8  rounded-2xl overflow-hidden duration-300">
                     <div className="lg:w-1/2">
                       <Image
                         src={featuredPost.bannerImageURL || "/placeholder.svg"}
