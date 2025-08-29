@@ -175,7 +175,7 @@ const Cards = () => {
                   <div key={index}>
                     <div className="bg-white rounded-2xl overflow-hidden duration-300">
                       <Image
-                        src={card.imageURL || "/placeholder.svg"}
+                        src={`https://lps-me.com/${card.imageURL} || "/placeholder.svg"`}
                         width={400}
                         height={250}
                         alt={card.title}
