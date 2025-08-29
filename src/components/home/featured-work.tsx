@@ -21,7 +21,9 @@ export default function FeaturedWorks() {
               expertise.
             </p>
 
-            <Button text="View All Work" link="/our-work" />
+            <div className="flex items-center justify-center w-full">
+              <Button center={false} text="View All Work" link="/our-work" />
+            </div>
           </div>
 
           {/* Projects Grid */}
