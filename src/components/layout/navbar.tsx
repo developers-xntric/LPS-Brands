@@ -21,7 +21,7 @@ export default function DesktopNavbar() {
                 onMouseLeave={() => setShowServicesDropdown(false)}
             >
                 <div
-                    className="bg-white shadow-2xl border border-gray-100 py-12 px-16 w-[760px]"
+                    className="bg-white shadow-2xl border border-gray-100 py-12 px-16 w-[760px] 2xl:w-[900px]"
                     style={{ borderRadius: "20px 20px 0 0" }}
                 >
                     <div className="grid grid-cols-3 gap-12 relative">
@@ -83,7 +83,7 @@ export default function DesktopNavbar() {
 
             {/* Bottom Navigation Bar */}
             <nav className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 hidden md:block">
-                <div className="bg-white rounded-full shadow-2xl border border-gray-100 w-[760px] px-4 py-2 flex justify-between items-center">
+                <div className="bg-white rounded-full shadow-2xl border border-gray-100 w-[760px] 2xl:w-[900px] px-4 py-2 flex justify-between items-center">
                     <Link
                         href="/"
                         className="text-secondary hover:text-white hover:bg-black transition-colors duration-200 font-semibold px-4 py-2 text-[16px] rounded-full font-['Exo']"

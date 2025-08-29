@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import BlogsSection from "@/components/home/blog-section";
 import LogoLPS from "@/components/icons/lps-logo";
 import MobileNavbar from "@/components/layout/mobile-navbar";
 import Wrapper from "@/components/layout/wrapper";
@@ -544,7 +545,7 @@ export default async function BlogPage({
             </div>
           </>
         )}
-        {/* <BlogsSection heading="Dicover Our Blogs" /> */}
+        <BlogsSection heading="Dicover Our Blogs" />
       </div>
     </Wrapper>
   );

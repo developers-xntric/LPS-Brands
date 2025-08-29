@@ -159,7 +159,7 @@ export function ArticlesCarousel() {
                                     <Image
                                         src={article.image || "/placeholder.svg"}
                                         alt={article.title}
-                                        className="w-full h-72 object-cover rounded-2xl transition-transform duration-300 hover:scale-105"
+                                        className="w-full h-72 2xl:h-[350px] object-cover rounded-2xl transition-transform duration-300 hover:scale-105"
                                         draggable={false}
                                         width={1000}
                                         height={1000}
