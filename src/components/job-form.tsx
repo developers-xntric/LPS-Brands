@@ -90,7 +90,7 @@ export default function JobForm({ isOpen, onClose, jobTitle }: ApplicationFormMo
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4 font-['Exo']">
-            <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto py-4 relative">
+            <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-scroll no-scrollbar py-4 relative">
                 <div className="p-6">
                     {/* Header */}
                     <div className="flex justify-between items-start mb-6">
@@ -103,8 +103,8 @@ export default function JobForm({ isOpen, onClose, jobTitle }: ApplicationFormMo
                     {/* Application Form */}
                     <form onSubmit={handleSubmit} className="space-y-6">
                         {/* Full Name */}
-                        <div className="flex justify-between gap-5">
-                            <div className="w-1/2">
+                        <div className="flex lg:flex-row flex-col justify-between gap-5">
+                            <div className="lg:w-1/2">
                                 <label className="block text-sm font-medium text-gray-700 mb-2">Full Name*</label>
                                 <input
                                     type="text"
@@ -117,7 +117,7 @@ export default function JobForm({ isOpen, onClose, jobTitle }: ApplicationFormMo
                             </div>
 
                             {/* Email */}
-                            <div className="w-1/2">
+                            <div className="lg:w-1/2">
                                 <label className="block text-sm font-medium text-gray-700 mb-2">Email*</label>
                                 <input
                                     type="email"
@@ -131,8 +131,8 @@ export default function JobForm({ isOpen, onClose, jobTitle }: ApplicationFormMo
                         </div>
 
                         {/* Phone */}
-                        <div className="flex justify-between gap-5">
-                            <div className="w-1/2">
+                        <div className="flex lg:flex-row flex-col justify-between gap-5">
+                            <div className="lg:w-1/2">
                                 <label className="block text-sm font-medium text-gray-700 mb-2">Phone*</label>
                                 <input
                                     type="tel"
@@ -145,7 +145,7 @@ export default function JobForm({ isOpen, onClose, jobTitle }: ApplicationFormMo
                             </div>
 
                             {/* Position */}
-                            <div className="w-1/2">
+                            <div className="lg:w-1/2">
                                 <label className="block text-sm font-medium text-gray-700 mb-2">Position*</label>
                                 <input
                                     type="text"
