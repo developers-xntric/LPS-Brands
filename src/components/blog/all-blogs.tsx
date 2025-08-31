@@ -79,7 +79,7 @@ const Cards = () => {
 
       <section className="py-16 pt-28 2xl:max-w-[1700px] w-[90%] mx-auto space-y-14 flex flex-col">
         {data.length === 0 ? (
-          <div className="text-center py-20">
+          <div className="text-center py-20 2xl:pt-32">
             <h2 className="text-2xl font-bold text-gray-800">
               Blogs Not Found
             </h2>
