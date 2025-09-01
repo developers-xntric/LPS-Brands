@@ -13,7 +13,7 @@ export default function BlogsSection({
 }) {
   return (
     <div>
-      <div className="py-16 mx-auto bg-[url('/home/blog-bg.png')] rounded-3xl bg-center bg-cover bg-no-repeat">
+      <div className={`${heading !== "Blogs" ? "md:pb-16 pb-1 py-16": "py-16"}  mx-auto bg-[url('/home/blog-bg.png')] rounded-3xl bg-center bg-cover bg-no-repeat`}>
         {/* Header */}
         <div className="flex flex-col gap-4 md:flex-row px-4 md:px-12 md:items-center md:justify-between mb-12">
           <h2 className="text-4xl font-bold text-white">
