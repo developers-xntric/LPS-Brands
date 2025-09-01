@@ -5,6 +5,16 @@ import SecondSection from "@/components/our-industry/second-section";
 import ThirdSection from "@/components/our-industry/third-section";
 import React from "react";
 
+
+export const metadata = {
+  title: "Travel & Transportation - LPS Brands",
+  description:
+    "At LPS, we partner with travel and transportation brands to create experiences that move people, literally and emotionally. From airlines and ride-hailing to tourism boards and logistics giants, we craft brand narratives, digital journeys, and campaign strategies that resonate in a hyper-connected, ever-mobile world. Understanding the Market Trends Travel and transport is no longer just",
+  alternates: {
+    canonical: "https://lps-me.com/travel-and-transportation",
+  },
+};
+
 const FinancialServices = () => {
   return (
     <div>

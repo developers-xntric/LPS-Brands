@@ -261,7 +261,6 @@ body {
 
 
 #test-all:after { 
-#test-all:after {
   position: absolute;
   content: '';
   z-index: -1;
@@ -302,6 +301,8 @@ body {
   border-radius: 0px 0px 20px 20px;
 }
 
+
+
 @keyframes test_hover {
   from {
     background-position: 0% 100%;
@@ -322,7 +323,7 @@ body {
 
 @media (max-width: 740px) {
   #test:after {
-    height: 185%;
+    height: 200%;
     bottom: 90%;
   }
 }

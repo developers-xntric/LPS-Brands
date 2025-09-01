@@ -11,7 +11,7 @@ export const metadata = {
   description:
     "We don’t just sell products — we build brands that live in carts and hearts. At LPS, we make the scroll stop, the clicks count, and the checkouts convert. What’s Trending in Retail & E-Commerce? Social commerce is booming, micro-influencers are driving niche loyalty, and personalization is the new storefront. From AR try-ons to same-day ",
   alternates: {
-    canonical: "https://lps-me.com/real-estate",
+    canonical: "https://lps-me.com/retail-and-e-commerce",
   },
 };
 
