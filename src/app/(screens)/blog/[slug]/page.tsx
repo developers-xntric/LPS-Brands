@@ -8,7 +8,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import { Twitter, Facebook, Linkedin } from "lucide-react";
-import parse from "html-react-parser";
 
 import {
   AwaitedReactNode,
@@ -85,7 +84,7 @@ const schemaData = {
 
 const socialLinks = [
   { Icon: Facebook, link: "https://www.facebook.com/lpsbrands" },
-  { Icon: Twitter, link: "" },
+  { Icon: Twitter, link: "#" },
   { Icon: Linkedin, link: "https://www.linkedin.com/company/lps-brands/" },
 ];
 
@@ -400,7 +399,7 @@ export default async function BlogPage({
                                   <div
                                     className="blog-content"
                                     dangerouslySetInnerHTML={{
-                                      __html: list.listTitle,
+                                      __html: list.listTitle as string,
                                     }}
                                   />
                                 </h3>
