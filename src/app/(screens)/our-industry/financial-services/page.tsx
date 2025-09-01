@@ -5,6 +5,17 @@ import SecondSection from "@/components/our-industry/second-section";
 import ThirdSection from "@/components/our-industry/third-section";
 import React from "react";
 
+
+export const metadata = {
+  title: "Financial Services - LPS Brands",
+  description:
+    "We build brands and beliefs. At LPS, we help financial institutions earn trust, spark action, and stay ahead of disruption. What are the trends of financial services industry. Fintech is on fire — from digital wallets to decentralized banking. Consumers are demanding speed, simplicity, and transparency in every transaction. Financial literacy, ESG investing, and personalization",
+  alternates: {
+    canonical: "https://lps-me.com/financial-services",
+  },
+};
+
+
 const FinancialServices = () => {
   return (
     <div>

@@ -173,7 +173,134 @@ body {
   }
 }
 
-#test-all:after {
+#test-contact:after { 
+  position: absolute;
+  content: '';
+  z-index: -1;
+  height: 90%;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(35deg, #AEDE95, #FFF, #A4D6DE);
+  background-size: 200% 200%;
+  background-position: 0% 100%;
+  animation-name: test_hover;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  border-radius:0px 0px 20px 20px;
+}
+
+@media (max-width: 1440px) {
+  #test-contact:after { 
+    height: 120%;
+  }
+}
+
+
+@media (max-width: 1300px) {
+  #test-contact:after { 
+    height: 150%;
+  }
+}
+
+@media (max-width: 770px) {
+  #test-contact:after { 
+    height: 250%;
+  }
+}
+
+@media (max-width: 375px) {
+  #test-contact:after { 
+    height: 270%;
+  }
+}
+
+
+
+#test-about:after { 
+  position: absolute;
+  content: '';
+  z-index: -1;
+  height: 90%;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(35deg, #AEDE95, #FFF, #A4D6DE);
+  background-size: 200% 200%;
+  background-position: 0% 100%;
+  animation-name: test_hover;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  border-radius:0px 0px 20px 20px;
+}
+
+@media (max-width: 1440px) {
+  #test-about:after { 
+    height: 87%;
+  }
+}
+
+@media (max-width: 1300px) {
+  #test-about:after { 
+    height: 110%;
+  }
+}
+
+@media (max-width: 770px) {
+  #test-about:after { 
+    height: 98%;
+  }
+}
+
+#test-industries:after { 
+  position: absolute;
+  content: '';
+  z-index: -1;
+  height: 70%;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(35deg, #AEDE95, #FFF, #A4D6DE);
+  background-size: 200% 200%;
+  background-position: 0% 100%;
+  animation-name: test_hover;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  border-radius: 0px 0px 20px 20px;
+}
+
+
+@media (max-width: 1440px) {
+  #test-industries:after { 
+    height: 87%;
+  }
+}
+
+@media (max-width: 1300px) {
+  #test-industries:after { 
+    height: 110%;
+  }
+}
+
+@media (max-width: 770px) {
+  #test-industries:after { 
+    height: 75%;
+  }
+}
+
+
+
+
+#test-all:after { 
   position: absolute;
   content: '';
   z-index: -1;
@@ -213,6 +340,8 @@ body {
   animation-direction: alternate;
   border-radius: 0px 0px 20px 20px;
 }
+
+
 
 @keyframes test_hover {
   from {

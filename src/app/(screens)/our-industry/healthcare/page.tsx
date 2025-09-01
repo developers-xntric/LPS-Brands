@@ -5,6 +5,17 @@ import SecondSection from "@/components/our-industry/second-section";
 import ThirdSection from "@/components/our-industry/third-section";
 import React from "react";
 
+
+export const metadata = {
+  title: "Healthcare - LPS Brands",
+  description:
+    "We don’t just communicate care, we work our way to build trust at every touchpoint.  At LPS, we help healthcare brands become more human, more helpful, and more heard. What are the trends of Healthcare industry. We strongly believe that in the upcoming era, preventive care is in. Digital diagnostics are booming at a lightning.",
+  alternates: {
+    canonical: "https://lps-me.com/healthcare",
+  },
+};
+
+
 const HealthCare = () => {
   return (
     <div>

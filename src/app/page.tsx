@@ -9,31 +9,40 @@ import { MeetThePears } from "@/components/home/meet-the-pears";
 import Wrapper from "@/components/layout/wrapper";
 import Script from "next/script";
 
-export default function Home() {
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Website & App",
-    description: "Website Design and Development Services",
-    provider: {
-      "@type": "Organization",
-      name: "LPS Brands",
-      url: "https://lps-me.com",
-    },
-    serviceType: "Website & App",
-    areaServed: {
-      "@type": "Place",
-      name: "Global",
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount: "53",
-      bestRating: "7",
-      worstRating: "1",
-    },
-  };
+export const metadata = {
+  title: "LPS is a New-Age 360° Full-Impact Marketing Agency",
+  description:
+    "LPS is a New-Age 360° full-impact marketing agency, building identities, communications & digital experiences for modern brands with measurable impact.",
+  alternates: {
+    canonical: "https://lps-me.com/",
+  },
+};
 
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Website & App",
+  description: "Website Design and Development Services",
+  provider: {
+    "@type": "Organization",
+    name: "LPS Brands",
+    url: "https://lps-me.com",
+  },
+  serviceType: "Website & App",
+  areaServed: {
+    "@type": "Place",
+    name: "Global",
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.8",
+    reviewCount: "53",
+    bestRating: "7",
+    worstRating: "1",
+  },
+};
+
+export default function Home() {
   return (
     <div>
       <Script

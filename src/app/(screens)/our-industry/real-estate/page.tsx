@@ -5,6 +5,17 @@ import SecondSection from "@/components/our-industry/second-section";
 import ThirdSection from "@/components/our-industry/third-section";
 import React from "react";
 
+
+export const metadata = {
+  title: "Real Estate - LPS Brands",
+  description:
+    "Innovative solutions tailored to elevate modern living and redefine property experiences across every development. What are the trends of Real Estate industry. Real estate in Dubai is rapidly evolving with smart technologies, AI-driven analytics, and digital platforms transforming property management and investment. The shift toward sustainable, tech-enabled developments is redefining urban living and investor experiences.",
+  alternates: {
+    canonical: "https://lps-me.com/real-estate",
+  },
+};
+
+
 const RealState = () => {
   return (
     <div>

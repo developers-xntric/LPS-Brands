@@ -71,8 +71,8 @@ export default function CareersSection() {
       <div className="flex flex-col items-center justify-center pt-36 md:pt-40 2xl:pt-[220px]">
         <div className="2xl:max-w-[1700px] mx-auto w-[90%] md:w-[95%] flex flex-col space-y-12">
           <div className="text-left ">
-            <h2 className="text-[30px] md:text-[50px] font-['Asgard'] font-semibold ">Join our team</h2>
-            <p className="text-lg font-['Exo'] leading-relaxed max-w-xl">
+            <h2 className="text-[30px] md:text-[55px] font-['Asgard'] font-semibold ">Join our team</h2>
+            <p className="text-[19px] font-['Exo'] leading-relaxed font-medium max-w-xl">
               Our philosophy is simple hire a team of diverse, passionate individuals and foster a culture that empowers
               you to do your best work.
             </p>
@@ -85,7 +85,7 @@ export default function CareersSection() {
                 <div className="flex items-center justify-center bg-[#132d29] w-fit rounded-[20px] px-2 py-1">
                   <span className="text-green text-xs xl:text-lg font-semibold px-2 py-1 rounded">{job.category}</span>
                 </div>
-                <h2 className="text-[29px] md:text-[30px] xl:text-[40px] leading-[30px] md:leading-[50px] font-bold mt-5 md:mt-10">
+                <h2 className="text-[29px] md:text-[30px] xl:text-[35px] leading-[30px] md:leading-[50px] font-bold mt-5 md:mt-3">
                   {job.title}
                 </h2>
                 <p className="2xl:text-2xl text-[13px] md:text-base font-['Exo'] leading-relaxed py-3 text-white">
@@ -112,8 +112,8 @@ export default function CareersSection() {
           </div>
 
           <div className="text-left ">
-            <h2 className="text-[30px] md:text-[50px] font-['Asgard'] font-semibold ">Life at LPS Brands</h2>
-            <p className="text-[15px] md:text-lg font-['Exo'] leading-relaxed max-w-xl">
+            <h2 className="text-[30px] md:text-[55px] font-['Asgard'] font-semibold ">Life at LPS Brands</h2>
+            <p className="text-[15px] md:text-lg font-['Exo'] leading-relaxed font-medium max-w-xl">
               At LPS Brands, we believe in building a workplace where innovation, creativity, and collaboration thrive.
               Our team is made up of diverse, passionate individuals, and we are committed to providing a supportive
               environment that allows you to grow and excel.

@@ -4,7 +4,7 @@ import Wrapper from "../layout/wrapper";
 export function AboutLPS() {
     return (
         <Wrapper>
-            <div className="pb-16 lg:px-4">
+            <div className="pb-1 lg:px-4">
                 <div className="w-full lg:px-10 px-4 rounded-3xl" style={{ backgroundColor: "#101820" }}>
                     <div className="grid grid-cols-1 lg:grid-cols-3">
                         {/* Column 1 - From Social-First to 360 Impact Builders */}
