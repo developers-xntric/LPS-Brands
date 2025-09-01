@@ -60,19 +60,17 @@ export default function WorkTabs() {
         <div className="space-y-4 w-full lg:w-[60%]">
           {/* Identity Section */}
           <div
-            className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl p-6 hover:border hover:border-[#00FC09] hover:bg-[#00FC09]/10 ${
-              activeTab === "identity"
-                ? "border border-green bg-[#00FC09]/10"
-                : "border border-transparent bg-[#141E29]"
-            } lg:block`}
+            className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl p-6 hover:border hover:border-[#00FC09] hover:bg-[#00FC09]/10 ${activeTab === "identity"
+              ? "border border-green bg-[#00FC09]/10"
+              : "border border-transparent bg-[#141E29]"
+              } lg:block`}
             onClick={() => setActiveTab("identity")}
           >
             <div
-              className={`inline-block px-8 py-2 rounded-full ${
-                activeTab === "identity"
-                  ? "bg-white text-secondary"
-                  : "bg-white text-secondary"
-              }`}
+              className={`inline-block px-8 py-2 rounded-full ${activeTab === "identity"
+                ? "bg-white text-secondary"
+                : "bg-white text-secondary"
+                }`}
             >
               <span className="text-md relative top-[1px] font-normal">
                 Identity
@@ -83,9 +81,8 @@ export default function WorkTabs() {
             </p>
           </div>
           <div
-            className={`lg:hidden ${
-              activeTab === "identity" ? "block" : "hidden"
-            }`}
+            className={`lg:hidden ${activeTab === "identity" ? "block" : "hidden"
+              }`}
           >
             <Card className="bg-white text-black p-8 rounded-[35px]">
               <div className="space-y-6">
@@ -130,19 +127,17 @@ export default function WorkTabs() {
 
           {/* Communication Campaigns Section */}
           <div
-            className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl hover:border hover:border-[#00FC09] hover:bg-[#00FC09]/10 p-6 ${
-              activeTab === "communications"
-                ? "border border-green bg-[#00FC09]/10"
-                : "border border-transparent bg-[#141E29]"
-            } lg:block`}
+            className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl hover:border hover:border-[#00FC09] hover:bg-[#00FC09]/10 p-6 ${activeTab === "communications"
+              ? "border border-green bg-[#00FC09]/10"
+              : "border border-transparent bg-[#141E29]"
+              } lg:block`}
             onClick={() => setActiveTab("communications")}
           >
             <div
-              className={`inline-block px-8 py-2 rounded-full ${
-                activeTab === "communications"
-                  ? "bg-white text-secondary"
-                  : "bg-white text-secondary"
-              }`}
+              className={`inline-block px-8 py-2 rounded-full ${activeTab === "communications"
+                ? "bg-white text-secondary"
+                : "bg-white text-secondary"
+                }`}
             >
               <span className="text-md relative top-[1px] font-normal">
                 Communications
@@ -153,9 +148,8 @@ export default function WorkTabs() {
             </p>
           </div>
           <div
-            className={`lg:hidden ${
-              activeTab === "communications" ? "block" : "hidden"
-            }`}
+            className={`lg:hidden ${activeTab === "communications" ? "block" : "hidden"
+              }`}
           >
             <Card className="bg-white text-black p-8 rounded-[35px]">
               <div className="space-y-6">
@@ -200,19 +194,17 @@ export default function WorkTabs() {
 
           {/* Experiences Section */}
           <div
-            className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl p-6 hover:border hover:border-[#00FC09] hover:bg-[#00FC09]/10 ${
-              activeTab === "experiences"
-                ? "border border-green bg-[#00FC09]/10"
-                : "border border-transparent bg-[#141E29]"
-            } lg:block`}
+            className={`space-y-4 cursor-pointer transition-all duration-300 rounded-2xl p-6 hover:border hover:border-[#00FC09] hover:bg-[#00FC09]/10 ${activeTab === "experiences"
+              ? "border border-green bg-[#00FC09]/10"
+              : "border border-transparent bg-[#141E29]"
+              } lg:block`}
             onClick={() => setActiveTab("experiences")}
           >
             <div
-              className={`inline-block px-8 py-2 rounded-full ${
-                activeTab === "experiences"
-                  ? "bg-white text-secondary"
-                  : "bg-white text-secondary"
-              }`}
+              className={`inline-block px-8 py-2 rounded-full ${activeTab === "experiences"
+                ? "bg-white text-secondary"
+                : "bg-white text-secondary"
+                }`}
             >
               <span className="text-md relative top-[1px] font-normal">
                 Experiences
@@ -223,9 +215,8 @@ export default function WorkTabs() {
             </p>
           </div>
           <div
-            className={`lg:hidden ${
-              activeTab === "experiences" ? "block" : "hidden"
-            }`}
+            className={`lg:hidden ${activeTab === "experiences" ? "block" : "hidden"
+              }`}
           >
             <Card className="bg-white text-black p-8 rounded-[35px]">
               <div className="space-y-6">
@@ -250,18 +241,18 @@ export default function WorkTabs() {
 
                 {/* Connect Toggle */}
                 <div className="flex justify-center pt-4">
-                  <Link href="/contact-us">
-                    <ShadCnButton
-                      className="rounded-3xl text-md flex justify-between hover:bg-[#00FC09] hover:text-black"
-                      size={"lg"}
-                    >
-                      <span className="relative top-[1px]">
-                        Connect with an expert
-                      </span>
-                      <div className="w-9 h-9 rounded-full bg-white flex justify-center items-center">
-                        <ArrowRight color="black" />
-                      </div>
-                    </ShadCnButton>
+                  <Link href="/contact-us" passHref>
+                    <div className="group inline-block">
+                      <ShadCnButton
+                        size="lg"
+                        className="rounded-3xl text-md flex items-center gap-2 px-6 py-4 transition-all duration-300 hover:bg-[#00FC09] hover:text-black"
+                      >
+                        <span className="relative top-[1px]">Connect with an expert</span>
+                        <div className="w-9 h-9 rounded-full bg-white flex justify-center items-center transform transition-transform duration-300 group-hover:translate-x-2">
+                          <ArrowRight className="text-black" />
+                        </div>
+                      </ShadCnButton>
+                    </div>
                   </Link>
                 </div>
               </div>
