@@ -287,7 +287,7 @@ export default function WorkTabs() {
               <div className="flex justify-center lg:justify-end pt-4">
                 <Link href="/contact-us">
                   <ShadCnButton
-                    className="group rounded-3xl text-md flex justify-between hover:bg-[#00FC09] hover:text-black"
+                    className="group rounded-3xl text-md flex justify-between hover:bg-[#00FC09] hover:text-white"
                     size={"lg"}
                   >
                     <span className="relative top-[1px]">
