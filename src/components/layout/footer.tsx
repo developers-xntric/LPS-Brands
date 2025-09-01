@@ -173,17 +173,17 @@ export default function Footer() {
           {offices.map((office, index) => (
             <div
               key={index}
-              className="flex gap-5 items-center md:flex-col md:items-start justify-start "
+              className="flex gap-8 items-center md:flex-col md:items-start justify-start "
             >
               <Image
                 alt="icon"
                 src={office.icon}
                 width={40}
                 height={40}
-                className={`mb-4 ${index === 1 && "relative right-1"} w-[45px] 3xl:h-[90px] 3xl:w-[70px] md:h-[70px] md:w-[50px]`}
+                className={`mb-4 ${index === 1 && "relative right-1"} w-[45px] h-[105px] 3xl:h-[90px] 3xl:w-[70px] md:h-[70px] md:w-[50px]`}
               />
-              <div>
-                <h4 className={`font-semibold tracking-wide text-2xl lg:text-[18px] mb-3`}>
+              <div className="-space-y-1">
+                <h4 className={`font-semibold tracking-wide text-[18px] mb-3`}>
                   {office.country}
                 </h4>
                 <div
