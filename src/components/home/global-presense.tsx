@@ -83,7 +83,7 @@ const GlobalPresence = () => {
                                     alt="Cities"
                                     width={80}
                                     height={100}
-                                    className="inline-block w-[90px]"
+                                    className="inline-block w-[120px]"
                                 />
                                 <HoverImage
                                     defaultSrc="/home/UK.webp"
@@ -91,7 +91,7 @@ const GlobalPresence = () => {
                                     alt="Cities"
                                     width={240}
                                     height={150}
-                                    className="inline-block w-[180px]"
+                                    className="inline-block w-[220px]"
                                 />
                             </div>
                             <div className="flex flex-col">
@@ -102,7 +102,7 @@ const GlobalPresence = () => {
                                         alt="Cities"
                                         width={120}
                                         height={250}
-                                        className="inline-block w-[100px]"
+                                        className="inline-block w-[130px]"
                                     />
                                     <HoverImage
                                         defaultSrc="/home/Saudi.webp"
@@ -110,7 +110,7 @@ const GlobalPresence = () => {
                                         alt="Cities"
                                         width={250}
                                         height={200}
-                                        className="inline-block w-[170px]"
+                                        className="inline-block w-[200px]"
                                     />
                                 </div>
                                 <HoverImage
@@ -119,12 +119,14 @@ const GlobalPresence = () => {
                                     alt="Cities"
                                     width={300}
                                     height={250}
-                                    className="inline-block w-[270px]"
+                                    className="inline-block w-[340px]"
                                 />
                             </div>
                         </div>
                     </div>
-                    <YearsAwwards />
+                    <div className="mt-10 md:mt-0">
+                        <YearsAwwards />
+                    </div>
                 </div>
 
                 <div className="xl:w-[30%]">
