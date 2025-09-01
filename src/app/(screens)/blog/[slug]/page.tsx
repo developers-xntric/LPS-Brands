@@ -7,6 +7,9 @@ import { Calendar, LinkedinIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
+import { Twitter, Facebook, Linkedin } from "lucide-react";
+import parse from "html-react-parser";
+
 import {
   AwaitedReactNode,
   JSXElementConstructor,
@@ -80,6 +83,12 @@ const schemaData = {
   },
 };
 
+const socialLinks = [
+  { Icon: Facebook, link: "https://www.facebook.com/lpsbrands" },
+  { Icon: Twitter, link: "" },
+  { Icon: Linkedin, link: "https://www.linkedin.com/company/lps-brands/" },
+];
+
 export default async function BlogPage({
   params,
 }: {
@@ -148,10 +157,10 @@ export default async function BlogPage({
         />
         <div>
           <div className="">
-            <div className="lg:max-w-[72%] 2xl:max-w-[60%] py-10 space-y-4">
+            <div className="lg:max-w-[100%] 2xl:max-w-[100%] w-full py-10 pt-0 space-y-4">
               <h1
                 id="main-title"
-                className="text-secondary font-['Exo'] leading-[34px] lg:leading-[56px] text-[30px] lg:text-[46px] font-semibold"
+                className="text-secondary font-['Exo'] leading-[34px] lg:leading-[46px] text-[30px] lg:text-[34px] font-semibold"
               >
                 {data?.title}
               </h1>
@@ -167,6 +176,18 @@ export default async function BlogPage({
                     {data?.category}
                   </p>
                 )}
+              </div>
+              <div className="flex items-center gap-6 pt-6">
+                {socialLinks.map(({ Icon, link }, index) => (
+                  <Link
+                    key={index}
+                    href={link}
+                    target="_blank"
+                    className="bg-[#101820] rounded-full w-8 h-8 flex items-center justify-center  text-white "
+                  >
+                    <Icon className="w-4 h-4 text-white" />
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
@@ -292,7 +313,7 @@ export default async function BlogPage({
                           <li key={index} className="toc-item">
                             <Link
                               href={`#${item.id}`}
-                              className="toc-link font-['Exo'] 2xl:text-lg"
+                              className="toc-link font-['Exo'] text-sm 2xl:text-lg"
                             >
                               {item.title}
                             </Link>
@@ -304,7 +325,7 @@ export default async function BlogPage({
                 )}
 
                 <div className="lg:w-[70%]">
-                  <div className="md:px-6 pb-2 md:pb-12 py-12 space-y-12">
+                  <div className="md:px-6 pb-2 md:pb-12 py-12 md:pt-12 pt-2 space-y-8">
                     {data?.description && (
                       <div
                         className="text-[15px] lg:text-[18px] text-secondary font-['Exo'] font-medium blog-content"
@@ -334,11 +355,11 @@ export default async function BlogPage({
                         },
                         index: Key | null | undefined
                       ) => (
-                        <div key={index} className="space-y-8">
+                        <div key={index} className="space-y-3">
                           {subsection.subtitle && (
                             <h2
                               id={`subsection-${index}`}
-                              className="text-[25px] lg:text-[36px] text-secondary font-['Exo'] font-semibold leading-[30px] md:leading-[35px] lg:leading-[35px]"
+                              className="text-[20px] lg:text-[26px] text-secondary font-['Exo'] font-semibold leading-[30px] md:leading-[35px] lg:leading-[35px]"
                             >
                               {subsection.subtitle}
                             </h2>
@@ -375,16 +396,21 @@ export default async function BlogPage({
                               listIndex: Key | null | undefined
                             ) => (
                               <div key={listIndex}>
-                                <h3 className="text-xl lg:text-2xl font-bold mb-2">
-                                  {list.listTitle}
+                                <h3 className="text-xl lg:text-[20px] font-bold mb-2">
+                                  <div
+                                    className="blog-content"
+                                    dangerouslySetInnerHTML={{
+                                      __html: list.listTitle,
+                                    }}
+                                  />
                                 </h3>
                                 {list.listDescription && (
                                   <div
-                                    className="text-base  text-secondary font-['Exo'] font-medium mb-4 blog-content"
+                                    className="blog-content mt-2"
                                     dangerouslySetInnerHTML={{
                                       __html: list.listDescription,
                                     }}
-                                  />
+                                  ></div>
                                 )}
                                 {list.items?.length > 0 && (
                                   <ul className="list-disc pl-5 space-y-1">
@@ -412,16 +438,21 @@ export default async function BlogPage({
                                       ) => (
                                         <li
                                           key={itemIndex}
-                                          className="text-[15px]  text-secondary font-['Exo'] font-medium leading-[35px] lg:leading-[29px]"
+                                          className="text-[15px]  text-secondary font-['Exo'] font-medium leading-[26px] lg:leading-[29px]"
                                         >
-                                          {item.title}
-                                          {item.description && (
+                                          <div
+                                            className="blog-content"
+                                            dangerouslySetInnerHTML={{
+                                              __html: item.title as string,
+                                            }}
+                                          />
+                                          {list.listDescription && (
                                             <div
-                                              className="text-base text-secondary font-['Exo'] font-medium mt-4 blog-content"
+                                              className="blog-content mt-2"
                                               dangerouslySetInnerHTML={{
                                                 __html: item.description,
                                               }}
-                                            />
+                                            ></div>
                                           )}
                                         </li>
                                       )
@@ -436,10 +467,10 @@ export default async function BlogPage({
                     )}
 
                     {data?.conclusion && (
-                      <div className="space-y-8">
+                      <div className="space-y-3">
                         <h2
                           id="conclusion"
-                          className="text-[25px] lg:text-[36px] font-semibold font-['Exo'] leading-[35px] lg:leading-[42px]"
+                          className="text-[25px] lg:text-[26px] font-semibold font-['Exo'] leading-[35px] lg:leading-[42px]"
                         >
                           Conclusion
                         </h2>
@@ -451,10 +482,10 @@ export default async function BlogPage({
                     )}
 
                     {data?.faqs && data?.faqs.length > 0 && (
-                      <div className="space-y-6">
+                      <div className="space-y-3">
                         <h2
                           id="faqs"
-                          className="text-[20px] lg:text-[30px] font-['Exo'] font-semibold mb-2 leading-[35px] lg:leading-[42px]"
+                          className="text-[18px] lg:text-[26px] font-['Exo'] font-semibold mb-2 leading-[35px] lg:leading-[42px]"
                         >
                           Frequently Asked Questions
                         </h2>
@@ -464,7 +495,7 @@ export default async function BlogPage({
                             index: number
                           ) => (
                             <div key={index} className="space-y-2">
-                              <h3 className="text-[18px] lg:text-[23px] font-['Exo'] font-semibold  md:leading-[35px] lg:leading-[42px]">
+                              <h3 className="text-[18px] lg:text-[19px] font-['Exo'] font-semibold  md:leading-[35px] lg:leading-[42px]">
                                 {index + 1}. {faq.question}
                               </h3>
                               <div
@@ -479,9 +510,9 @@ export default async function BlogPage({
                   </div>
                 </div>
               </div>
-              <div className="w-full border px-5 md:px-10 py-6 rounded-3xl my-10">
+              <div className="w-full border px-2 md:px-10 py-6 rounded-3xl my-10">
                 <div className="flex justify-between items-center mb-4">
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-start  gap-4">
                     <Image
                       src="/asim.webp"
                       alt="Shaikh zubaer Aasim"
@@ -490,56 +521,52 @@ export default async function BlogPage({
                       className="rounded-full w-[55px] md:w-[100px] bg-center"
                     />
                     <div>
-                      <h4 className="md:text-2xl ">Shaikh Zubaer Aasim</h4>
-                      <div className="md:hidden block">
-                        <div className="w-fit h-fit bg-black rounded-[8px] p-1 ps-1">
-                          <Link
-                            target="_blank"
-                            href="https://www.linkedin.com/in/aasimzshaikh"
-                          >
-                            <LinkedinIcon color="white" size={18} />
-                          </Link>
+                      <div className="flex items-center justify-between">
+                        <h4 className="md:text-2xl font-bold ">
+                          Shaikh Zubaer Aasim
+                        </h4>
+                        <div className="block">
+                          <div className="w-fit h-fit bg-black rounded-[8px] p-1 ps-1">
+                            <Link
+                              target="_blank"
+                              href="https://www.linkedin.com/in/aasimzshaikh"
+                            >
+                              <LinkedinIcon color="white" size={24} />
+                            </Link>
+                          </div>
                         </div>
+                      </div>
+                      <div className="space-y-3 mt-6">
+                        <p className="text-justify text-secondary font-['Exo'] text-[13px] md:text-base">
+                          With over two decades of driving marketing
+                          transformation across the GCC, Aasim brings a rare
+                          blend of brand leadership, digital innovation, and
+                          business foresight. He has demonstrated a unique
+                          ability to align with evolving customer and market
+                          demands whilst predicting and leading best practice in
+                          digital and customer experiences.
+                        </p>
+                        <p className="text-justify text-secondary font-['Exo'] text-[13px] md:text-base">
+                          His journey spans across building multi-million-dirham
+                          portfolios, launching modern marketing campaigns,
+                          building AI enablled Tech platforms and leading
+                          award-winning teams across both client and agency
+                          environments. His appointment to the MMA Board of
+                          Director reinforces a larger belief: Modern marketing
+                          demands more than strategy it demands ideas that are
+                          unafraid to build what’s next.
+                        </p>
+                        <p className="text-justify text-secondary font-['Exo'] text-[13px] md:text-base">
+                          His appointment to the MMA Board of Director
+                          reinforces a larger belief:
+                        </p>
+                        <p className="text-justify text-secondary font-['Exo'] text-[13px] md:text-base">
+                          Modern marketing demands more than strategy it demands
+                          ideas that are unafraid to build what’s next.
+                        </p>
                       </div>
                     </div>
                   </div>
-                  <div className="hidden md:block">
-                    <div className="w-fit h-fit bg-black rounded-[8px] p-1 ps-1">
-                      <Link
-                        target="_blank"
-                        href="https://www.linkedin.com/in/aasimzshaikh"
-                      >
-                        <LinkedinIcon color="white" size={24} />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <p className="text-justify text-secondary font-['Exo'] text-sm md:text-base">
-                    With over two decades of driving marketing transformation
-                    across the GCC, Aasim brings a rare blend of brand
-                    leadership, digital innovation, and business foresight. He
-                    has demonstrated a unique ability to align with evolving
-                    customer and market demands whilst predicting and leading
-                    best practice in digital and customer experiences.
-                  </p>
-                  <p className="text-justify text-secondary font-['Exo'] text-sm md:text-base">
-                    His journey spans across building multi-million-dirham
-                    portfolios, launching modern marketing campaigns, building
-                    AI enablled Tech platforms and leading award-winning teams
-                    across both client and agency environments. His appointment
-                    to the MMA Board of Director reinforces a larger belief:
-                    Modern marketing demands more than strategy it demands ideas
-                    that are unafraid to build what’s next.
-                  </p>
-                  <p className="text-justify text-secondary font-['Exo'] text-sm md:text-base">
-                    His appointment to the MMA Board of Director reinforces a
-                    larger belief:
-                  </p>
-                  <p className="text-justify text-secondary font-['Exo'] text-sm md:text-base">
-                    Modern marketing demands more than strategy it demands ideas
-                    that are unafraid to build what’s next.
-                  </p>
                 </div>
               </div>
             </div>
