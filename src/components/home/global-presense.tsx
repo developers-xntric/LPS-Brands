@@ -10,7 +10,7 @@ const GlobalPresence = () => {
     return (
         <Wrapper>
             <div className="flex flex-col xl:flex-row gap-10 xl:justify-between py-16 relative">
-                <div className="relative h-[870px] md:h-[630px] lg:h-[760px] xl:w-[65%] bg-[url('/home/bg-grad.png')] bg-cover bg-center rounded-3xl md:rounded-[50px]">
+                <div className="relative h-[760px] md:h-[630px] lg:h-[760px] xl:w-[65%] bg-[url('/home/bg-grad.png')] bg-cover bg-center rounded-3xl md:rounded-[50px]">
                     <HoverImage
                         defaultSrc="/home/zig-zag.png"
                         hoverSrc="/home/zig-zag.png"
@@ -20,10 +20,10 @@ const GlobalPresence = () => {
                         className="hidden lg:block absolute top-12 -right-14"
                     />
 
-                    <div className="relative w-[85%] mx-auto h-[65%] mt-20 flex gap-10 md:flex-row flex-col">
-                        <div className="w-[170px] space-y-4 relative left-[7.4%]">
-                            <h2 className="text-5xl">Global Presence</h2>
-                            <p className="text-lg leading-6 font-medium">
+                    <div className="relative w-[85%] mx-auto h-[65%] mt-4 lg:mt-20 flex gap-6 lg:gap-10 md:flex-row flex-col">
+                        <div className="lg:w-[170px] space-y-2 lg:space-y-4 relative left-[7.4%]">
+                            <h2 className="text-4xl lg:text-5xl lg:text-left text-center relative right-6">Global Presence</h2>
+                            <p className="text-md lg:text-lg leading-6 font-medium max-w-[170px] mx-auto lg:text-left text-center relative right-6">
                                 We proudly serve clients across multiple regions
                             </p>
                         </div>
@@ -110,7 +110,7 @@ const GlobalPresence = () => {
                                         alt="Cities"
                                         width={250}
                                         height={200}
-                                        className="inline-block w-[200px]"
+                                        className="inline-block w-[210px]"
                                     />
                                 </div>
                                 <HoverImage
