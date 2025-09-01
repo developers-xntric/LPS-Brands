@@ -12,7 +12,7 @@ export default function FeaturedWorks() {
         <div className="max-w-[95%] mx-auto mb-20 xl:mb-40">
           {/* Header */}
           <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-4xl xl:text-[54px] font-normal text-white text-green mb-4">
+            <h2 className="text-5xl md:text-4xl xl:text-[54px] font-normal text-white text-green mb-4">
               A Display of Featured Work
             </h2>
             <p className="text-white lg:text-xl font-medium mb-8 max-w-3xl mx-auto">
@@ -21,7 +21,7 @@ export default function FeaturedWorks() {
               expertise.
             </p>
 
-            <div className="flex items-center justify-center w-full">
+            <div className="hidden md:flex items-center justify-center w-full">
               <Button center={false} text="View All Work" link="/our-work" />
             </div>
           </div>
