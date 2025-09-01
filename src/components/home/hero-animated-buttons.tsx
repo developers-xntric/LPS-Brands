@@ -5,11 +5,11 @@ const HeroAnimatedButtons = () => {
     return (
         <section className="container mx-auto text-center md:px-4 mt-3">
             <div className="mx-auto md:max-w-6xl max-w-[80%]">
-                <h1 className="text-2xl md:text-[40px] font-medium  text-neutral-900 tracking-wide">
-                    <span className="inline">We are a full impact agency</span>{" "}
+                <h1 className="text-3xl md:text-[40px] font-bold md:font-medium  text-neutral-900 tracking-wide">
+                    <span className="block md:inline px-10 mb-4 leading-7">We are a full impact agency</span>{" "}
                     <span className="inline-block align-middle">
                         <HoverVideoPill
-                            label="identity"
+                            label="Identity"
                             videoSrc="/home/Communications1.webm"
                             className="mr-2 "
                         />
@@ -17,14 +17,14 @@ const HeroAnimatedButtons = () => {
                     <div className='mt-3'>
                         <span className="inline-block align-middle">
                             <HoverVideoPill
-                                label="communications"
+                                label="Communications"
                                 videoSrc="/home/exper-1.webm"
                                 className="mr-2"
                             />
-                        </span><span className='hidden md:inline-block'>{"and "}</span>
+                        </span>
                         <span className="inline-block align-middle mt-3 md:mt-0">
                             <HoverVideoPill
-                                label="experiences"
+                                label="Experiences"
                                 videoSrc="/home/IdentityAnimation1.webm"
                             />
                         </span>{" "}

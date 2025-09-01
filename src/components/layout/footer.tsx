@@ -82,7 +82,7 @@ export default function Footer() {
     },
   ];
   return (
-    <footer className="bg-[#101820] text-white pb-10 pt-16 lg:pt-28 mx-auto w-[95%] 2xl:max-w-[1740px] mt-10 rounded-t-[30px] lg:rounded-t-[60px] px-8 lg:px-0">
+    <footer className="bg-[#101820] text-white pb-10 pt-16 lg:pt-28 mx-auto w-[95%] 2xl:max-w-[1740px] mt-10 rounded-t-[45px] lg:rounded-t-[60px] px-8 lg:px-0">
       <div className="lg:max-w-[93%] mx-auto lg:pb-20">
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start mb-12 gap-8">
@@ -173,27 +173,29 @@ export default function Footer() {
           {offices.map((office, index) => (
             <div
               key={index}
-              className="flex flex-col items-start justify-start "
+              className="flex gap-8 items-center md:flex-col md:items-start justify-start "
             >
               <Image
                 alt="icon"
                 src={office.icon}
                 width={40}
                 height={40}
-                className="mb-4 3xl:h-[90px] 3xl:w-[70px] h-[70px] w-[50px]"
+                className={`mb-4 ${index === 1 && "relative right-1"} w-[45px] h-[105px] 3xl:h-[90px] 3xl:w-[70px] md:h-[70px] md:w-[50px]`}
               />
-              <h4 className={`font-semibold tracking-wide text-2xl lg:text-[18px] mb-3`}>
-                {office.country}
-              </h4>
-              <div
-                className={`text-[14px] lg:text-[13px] 2xl:text-[14px]  ${index === 2 ? "2xl:w-[90%] w-[100%]" : "w-[90%]"
-                  } font-['Exo'] text-[#FFFFFFB2]  space-y-1 mb-3`}
-              >
-                <p>{office.address}</p>
+              <div className="-space-y-1">
+                <h4 className={`font-semibold tracking-wide text-[18px] mb-3`}>
+                  {office.country}
+                </h4>
+                <div
+                  className={`text-[14px] lg:text-[13px] 2xl:text-[14px]  ${index === 2 ? "2xl:w-[90%] w-[100%]" : "w-[90%]"
+                    } font-['Exo'] text-[#FFFFFFB2]  space-y-1 mb-3`}
+                >
+                  <p>{office.address}</p>
+                </div>
+                <a href={`tel:${office.phone}`} className="text-sm lg:text-lg font-['Exo']">
+                  {office.phone}
+                </a>
               </div>
-              <a href={`tel:${office.phone}`} className="text-sm lg:text-lg font-['Exo']">
-                {office.phone}
-              </a>
             </div>
           ))}
         </div>

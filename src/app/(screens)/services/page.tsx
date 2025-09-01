@@ -3,6 +3,15 @@ import ServiceListingHero from "@/components/services/service-listing-hero";
 import { ServiceAccordian } from "@/components/services/services-accordian";
 import React from "react";
 
+export const metadata = {
+  title: "360° Branding &amp; Digital Services - LPS Brands",
+  description:
+    "Discover 360° branding, digital services, and immersive experiences powered by new-age media, AI, and storytelling.",
+  alternates: {
+    canonical: "https://lps-me.com/services/",
+  },
+};
+
 const Services = () => {
   const IdentityAccor = [
     {

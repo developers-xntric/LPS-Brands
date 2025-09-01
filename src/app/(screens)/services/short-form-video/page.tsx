@@ -9,6 +9,16 @@ import Timeline from "@/components/services/time-line";
 import Script from "next/script";
 import React from "react";
 
+export const metadata = {
+    title: "Short Form Videos for Bold Brand Stories",
+    description:
+        "Short Form Videos for Bold Brand StoriesBoost your brand with short form video production that grabs attention and drives results. Explore our creative and strategic video solutions at LPS.",
+    alternates: {
+        canonical: "https://lps-me.com/services/short-form-video/",
+    },
+};
+
+
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "Service",
