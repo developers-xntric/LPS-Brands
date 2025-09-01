@@ -124,7 +124,7 @@ const SecondSection = () => {
           <div className="flex gap-4 mt-4 md:mt-0">
             <button
               onClick={prevSlide}
-              className={`bg-white w-11 h-11 md:w-16 md:h-16 text-black flex items-center justify-center rounded-full opacity-70 hover:opacity-100 transition-opacity ${
+              className={`bg-white w-11 h-11 md:w-12 md:h-12 text-black flex items-center justify-center rounded-full opacity-70 hover:opacity-100 transition-opacity ${
                 currentIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
               }`}
               disabled={currentIndex === 0}
@@ -133,7 +133,7 @@ const SecondSection = () => {
             </button>
             <button
               onClick={nextSlide}
-              className={`bg-white text-black w-11 h-11 md:w-16 md:h-16 flex items-center justify-center rounded-full opacity-70 hover:opacity-100 transition-opacity ${
+              className={`bg-white text-black w-11 h-11 md:w-12 md:h-12 flex items-center justify-center rounded-full opacity-70 hover:opacity-100 transition-opacity ${
                 currentIndex === maxIndex ? "opacity-50 cursor-not-allowed" : ""
               }`}
               disabled={currentIndex === maxIndex}

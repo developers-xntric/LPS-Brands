@@ -5,6 +5,15 @@ import SecondSection from "@/components/our-industry/second-section";
 import ThirdSection from "@/components/our-industry/third-section";
 import React from "react";
 
+export const metadata = {
+  title: "Government - LPS Brands",
+  description:
+    "We communicate policy and craft public trust.  At LPS, we help government institutions connect with citizens, modernize engagement, and inspire collective progress. What’s Trending in Government Communication? Digital transformation is now a necessity, not a luxury.  Citizens expect real-time updates, transparency, and service accessibility. Trust-building, inclusivity, and community-first narratives are driving modern public outreach.",
+  alternates: {
+    canonical: "https://lps-me.com/government",
+  },
+};
+
 const FinancialServices = () => {
   return (
     <div>

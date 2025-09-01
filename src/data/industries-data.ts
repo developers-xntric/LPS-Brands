@@ -38,7 +38,7 @@ export const Industries = [
     {
         img:"/our-industry/listing-8.webp",
         head:"FMCG",
-        link:"/our-industry/FMCG"
+        link:"/our-industry/fmcg"
     },
     {
         img:"/our-industry/listing-10.webp",

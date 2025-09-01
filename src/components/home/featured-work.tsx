@@ -8,11 +8,11 @@ import Link from "next/link";
 export default function FeaturedWorks() {
   return (
     <Wrapper>
-      <section className="bg-[#101820] rounded-3xl lg:rounded-[60px] py-20 px-4 sm:px-6 lg:px-8 ">
+      <section className="bg-[#101820] rounded-[60px] lg:rounded-[60px] py-20 px-4 sm:px-6 lg:px-8 ">
         <div className="max-w-[95%] mx-auto mb-20 xl:mb-40">
           {/* Header */}
           <div className="text-center mb-10">
-            <h2 className="text-5xl md:text-4xl xl:text-[54px] font-normal text-white text-green mb-4">
+            <h2 className="text-[40px] leading-9 md:text-4xl xl:text-[54px] font-[600] text-white text-green mb-4">
               A Display of Featured Work
             </h2>
             <p className="text-white lg:text-xl font-medium mb-8 max-w-3xl mx-auto">

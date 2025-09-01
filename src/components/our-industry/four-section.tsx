@@ -21,7 +21,7 @@ const FourSection = ({
         style={{ backgroundImage: `url(${bgImage})` }}
       >
         {/* Glassmorphism Card */}
-        <div className="px-5 md:px-10 py-10 md:py-14 2xl:py-20 w-[280px] md:w-[550px] 2xl:w-[700px] rounded-[25px] bg-black/15 backdrop-blur-2xl shadow-xl mx-auto md:mr-20">
+        <div className="px-5 md:px-10 py-10 md:py-14 2xl:py-20 w-[280px] md:w-[550px] 2xl:w-[700px] rounded-[25px] bg-black/15 backdrop-blur-2xl shadow-xl mx-auto md:mr-10">
           <h3 className="text-[25px] md:text-[40px] 2xl:text-[50px] text-[#FFFFFF] leading-[30px] md:leading-[40px] 2xl:leading-[50px]">
             {heading}
           </h3>
