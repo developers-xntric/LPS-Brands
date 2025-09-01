@@ -173,7 +173,7 @@ export default function Footer() {
           {offices.map((office, index) => (
             <div
               key={index}
-              className="flex gap-8 items-center md:flex-col md:items-start justify-start "
+              className="flex gap-4 md:gap-8 items-center md:flex-col md:items-start justify-start "
             >
               <Image
                 alt="icon"

@@ -136,7 +136,7 @@ body {
   position: absolute;
   content: '';
   z-index: -1;
-  height: 65%;
+  height: 440px;
   left: 0;
   right: 0;
   top: 0;
@@ -154,12 +154,11 @@ body {
 
 @media (max-width: 740px) {
   #test-ourwork:after {
-    height: 65%;
-    bottom: 90%;
+    height: 380px;
   }
 }
 
-@media (max-width: 1920px) {
+/* @media (max-width: 1920px) {
   #test-ourwork:after {
     height: 50%;
     bottom: 90%;
@@ -171,13 +170,13 @@ body {
     height: 65%;
     bottom: 90%;
   }
-}
+} */
 
 #test-contact:after { 
   position: absolute;
   content: '';
   z-index: -1;
-  height: 90%;
+  height: 800px;
   left: 0;
   right: 0;
   top: 0;
@@ -193,7 +192,7 @@ body {
   border-radius:0px 0px 20px 20px;
 }
 
-@media (max-width: 1440px) {
+/* @media (max-width: 1440px) {
   #test-contact:after { 
     height: 120%;
   }
@@ -210,11 +209,16 @@ body {
   #test-contact:after { 
     height: 250%;
   }
-}
+} */
 
-@media (max-width: 375px) {
+@media (max-width: 1440px) {
   #test-contact:after { 
-    height: 270%;
+    height: 900px;
+  }
+}
+@media (max-width: 770px) {
+  #test-contact:after { 
+    height: 1550px;
   }
 }
 
@@ -386,7 +390,34 @@ body {
   position: absolute;
   content: '';
   z-index: -1;
-  height: 100%;
+  height: 740px;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(35deg, #AEDE95, #FFF, #A4D6DE);
+  background-size: 200% 200%;
+  background-position: 0% 100%;
+  animation-name: test_hover;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  border-radius: 0px 0px 20px 20px;
+}
+
+@media (max-width: 740px) {
+  #test-all:after {
+    height: 630px;
+  }
+}
+
+
+#test-careers:after {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  height: 780px;
   left: 0;
   right: 0;
   top: 0;
@@ -403,11 +434,18 @@ body {
 }
 
 
+@media (max-width: 740px) {
+  #test-careers:after {
+    height: 500px;
+  }
+}
+
+
 #test:after {
   position: absolute;
   content: '';
   z-index: -1;
-  height: 100%;
+  height: 1250px;
   left: 0;
   right: 0;
   top: 0;
@@ -435,18 +473,17 @@ body {
   }
 }
 
-
+/* 
 @media (max-width: 1920px) {
   #test:after {
     height: 1300px;
     bottom: 50%;
   }
-}
+} */
 
 @media (max-width: 740px) {
   #test:after {
-    height: 200%;
-    bottom: 90%;
+    height: 2200px;
   }
 }
 

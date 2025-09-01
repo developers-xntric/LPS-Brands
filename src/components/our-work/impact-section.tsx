@@ -65,7 +65,7 @@ export default function ImpactSection({
       } w-[90%] 2xl:max-w-[1740px] mx-auto`}
     >
       {video1 && (
-        <div className="relative top-10 md:-top-10 lg:-top-20">
+        <div className="relative top-0 md:-top-10 lg:-top-20">
           <iframe src={video1}  className="w-[100%] lg:h-[90vh]"></iframe>
         </div>
       )}
