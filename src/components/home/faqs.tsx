@@ -82,8 +82,8 @@ export default function FAQPage() {
                                     }`}
                             >
                                 <div className="px-6 pb-5">
-                                    <div className="border-t border-gray-100 pt-4">
-                                        <p className="text-gray-700 leading-tight font-['Exo'] text-xs md:text-[15px]">{faq.answer}</p>
+                                    <div className="border-t border-gray-100">
+                                        <p className="text-gray-700 leading-tight font-['Exo'] text-[14px] md:text-[15px]">{faq.answer}</p>
                                     </div>
                                 </div>
                             </div>

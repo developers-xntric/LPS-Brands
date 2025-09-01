@@ -12,7 +12,6 @@ export function MeetThePears() {
     const [hoveredCard, setHoveredCard] = useState<string | null>(null)
     const [isMobile, setIsMobile] = useState(false)
 
-    // --- layout numbers (match your CSS widths/gaps) ---
     const cardWidth = 290 // w-[290px]
     const gap = 16       // gap-4
     const visibleCards = 5
@@ -29,7 +28,6 @@ export function MeetThePears() {
         return () => window.removeEventListener("resize", check)
     }, [])
 
-    // --- DRAG / SWIPE state ---
     const [isDragging, setIsDragging] = useState(false)
     const [startX, setStartX] = useState(0)
     const [dragOffset, setDragOffset] = useState(0)
@@ -87,8 +85,8 @@ export function MeetThePears() {
 
     return (
         <Wrapper>
-            <div className="flex items-center justify-between mb-6 lg:mt-12">
-                <h2 className="text-[28px] md:text-4xl lg:text-6xl font-[400] text-foreground">
+            <div className="flex items-center justify-between lg:mb-6 lg:mt-12">
+                <h2 className="text-4xl lg:text-6xl font-[400] text-foreground">
                     Meet the Pears
                 </h2>
 
