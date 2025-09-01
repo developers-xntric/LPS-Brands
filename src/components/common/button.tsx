@@ -10,6 +10,7 @@ export const Button = ({
   topT = false,
   onClick,
   link,
+  className
 }: {
   text: string;
   center?: boolean;
@@ -17,6 +18,7 @@ export const Button = ({
   topT?: boolean;
   onClick?: () => void;
   link?: string;
+  className?: string;
 }) => {
   return (
     <div className={`flex items-center ${center ? "justify-center" : ""}`}>
@@ -25,7 +27,7 @@ export const Button = ({
           className={`flex items-center  group`}
         >
           <B
-            className="bg-green text-black h-[50px] px-6 rounded-full text-lg flex items-center font-normal transition-all duration-300 hover:bg-[#2054FC] hover:text-white"
+            className={`bg-green text-black h-[50px] px-6 rounded-full text-lg flex items-center font-normal transition-all duration-300 hover:bg-[#2054FC] hover:text-white ${className}`}
             onClick={onClick}
           >
             <span className={`relative ${!topT && "top-[2px]"}`}>{text}</span>
@@ -37,9 +39,8 @@ export const Button = ({
               transition-all duration-500 delay-150 transform group-hover:-translate-x-3`}
           >
             <ArrowRight
-              className={`h-6 w-6 font-bold ${
-                bg === "bg-black" ? "text-white" : "text-black"
-              }`}
+              className={`h-6 w-6 font-bold ${bg === "bg-black" ? "text-white" : "text-black"
+                }`}
             />
           </div>
         </div>

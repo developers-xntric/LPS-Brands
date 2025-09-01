@@ -51,7 +51,7 @@ export default function WorkTabs() {
             with <span className="text-green">Unmatched Expertise</span>
           </h1>
         </div>
-        <Button text="View All Services" link="/services" />
+        <Button text="View All Services" link="/services" className="hover:text-black" />
       </div>
 
       {/* Main Content */}
