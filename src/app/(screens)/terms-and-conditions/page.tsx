@@ -1,10 +1,20 @@
 import CareersHero from '@/components/careers/careers-hero'
 import React from 'react'
 
+
+export const metadata = {
+  title: "Terms and Conditions | LPS",
+  description:
+    "Read the Terms and Conditions for LPS, outlining the rules, guidelines, and legal obligations governing our services and website usage",
+  alternates: {
+    canonical: "https://lps-me.com/terms-and-conditions",
+  },
+};
+
 const TermsConditions = () => {
   return (
     <div>
-      <CareersHero heading='Terms and Conditions' text='' highlight='Conditions' bottom={false} />
+      <CareersHero id='test-privacy' heading='Terms and Conditions' text='' highlight='Conditions' bottom={false} />
       <div className='2xl:max-w-[1740px] w-[90%] mx-auto my-20 font-["Exo"]'>
         <p className='text-[16px]'>
           Last Updated: 14th January 2025
