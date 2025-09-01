@@ -5,6 +5,15 @@ import SecondSection from "@/components/our-industry/second-section";
 import ThirdSection from "@/components/our-industry/third-section";
 import React from "react";
 
+export const metadata = {
+  title: "Food & Beverage - LPS Brands",
+  description:
+    "We define how food and beverage brands show up in the world. From packaging that captures attention to strategies that drive shelf dominance, we transform every product into a brand experience worth remembering. Deep Consumer Understanding of Food and Beverage Industry We start with insight. We understand the ever-changing preferences of today’s consumers—from health-conscious choices ",
+  alternates: {
+    canonical: "https://lps-me.com/food-and-beverage",
+  },
+};
+
 const FoodAndBeverage = () => {
   return (
     <div>

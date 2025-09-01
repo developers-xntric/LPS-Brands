@@ -5,6 +5,19 @@ import SecondSection from "@/components/our-industry/second-section";
 import ThirdSection from "@/components/our-industry/third-section";
 import React from "react";
 
+
+
+export const metadata = {
+  title: "FMCG - LPS Brands",
+    description:
+    "The world of FMCG moves fast and so do we. At LPS, we partner with brands that live in the aisles, on the screens, and in the daily choices of millions. We understand that in this saturated market, it’s not just about visibility, it’s about velocity, value, and voice. Emerging Trends in FMCG Today’s consumers ",
+  alternates: {
+    canonical: "https://lps-me.com/fmcg",
+  },
+};
+
+
+
 const FMGC = () => {
   return (
     <div>
