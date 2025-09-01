@@ -14,8 +14,8 @@ export const metadata = {
 const PrivacyPolicy = () => {
   return (
     <div>
-      <CareersHero id='test-ourwork' heading='Privacy Policy' text='' highlight='Policy' bottom={false} />
-      <div className='2xl:max-w-[1740px] w-[90%] mx-auto my-20 mt-44 font-["Exo"]'>
+      <CareersHero id='test-privacy' heading='Privacy Policy' text='' highlight='Policy' bottom={false} />
+      <div className='2xl:max-w-[1740px] w-[90%] mx-auto my-20  font-["Exo"]'>
         <p className='text-[16px]'> 
           Last updated: June 24, 2025
           <br /><br />
