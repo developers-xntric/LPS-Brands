@@ -89,7 +89,7 @@ const Industries = () => {
               />
               {/* Content */}
               <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="text-white font-semibold text-2xl  text-center relative top-[40px]  transition-transform duration-300 group-hover:translate-y-[-50px]">
+                <h3 className="text-white font-semibold text-2xl  text-center relative top-[40px]  transition-transform duration-300 lg:group-hover:translate-y-[-50px] -translate-y-[50px]">
                   {industry.name}
                 </h3>
 
@@ -98,13 +98,13 @@ const Industries = () => {
                   className={`transition-all justify-center w-full flex duration-300 ${
                     hoveredCard === index
                       ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-[30px]"
+                      : "lg:opacity-0 lg:translate-y-[30px]"
                   }`}
                 >
                   <Link href={`/our-industry/${industry.link}`}>
                     <B
                       variant="secondary"
-                      className="group bg-[#FFFFFF1A] backdrop-blur-sm w-full lg:w-[280px] justify-between text-white border-white/30 hover:bg-white/30 rounded-full  py-5  flex items-center gap-2 transition-transform duration-300 ease-in-out hover:scale-105"
+                      className="group bg-[#FFFFFF1A] backdrop-blur-sm w-[250px] lg:w-[280px] justify-between text-white border-white/30 hover:bg-white/30 rounded-full  py-5  flex items-center gap-2 transition-transform duration-300 ease-in-out hover:scale-105"
                     >
                       <span className="text-white text-lg">Explore More</span>
                       <div className="w-6 h-6 bg-[#00FC09] transform transition-transform duration-300 ease-in-out group-hover:translate-x-[15 px] rounded-full flex items-center justify-center overflow-hidden">
