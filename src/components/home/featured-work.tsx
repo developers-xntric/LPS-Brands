@@ -11,9 +11,9 @@ export default function FeaturedWorks() {
       <section className="bg-[#101820] rounded-3xl lg:rounded-[60px] py-20 px-4 sm:px-6 lg:px-8 ">
         <div className="max-w-[95%] mx-auto mb-20 xl:mb-40">
           {/* Header */}
-          <div className="text-center mb-10 font-['Exo']">
-            <h2 className="text-2xl md:text-4xl xl:text-6xl font-bold text-white text-green mb-4">
-              A Display of Featured Works
+          <div className="text-center mb-10">
+            <h2 className="text-5xl md:text-4xl xl:text-[54px] font-normal text-white text-green mb-4">
+              A Display of Featured Work
             </h2>
             <p className="text-white lg:text-xl font-medium mb-8 max-w-3xl mx-auto">
               Our forward-thinking experts, driven by innovation and technology,
@@ -21,7 +21,7 @@ export default function FeaturedWorks() {
               expertise.
             </p>
 
-            <div className="flex items-center justify-center w-full">
+            <div className="hidden md:flex items-center justify-center w-full">
               <Button center={false} text="View All Work" link="/our-work" />
             </div>
           </div>

@@ -48,19 +48,20 @@ export default function AnimatedTextSection() {
 
   return (
     <div className="flex flex-col md:flex-row md:items-center md:gap-10 text-4xl font-bold">
-      <span className="text-blue text-6xl md:text-[80px] tracking-tight">We</span>
+      <span className="hidden md:inline-block text-blue text-6xl md:text-[80px] tracking-tight">We</span>
 
-      <div className="relative overflow-hidden space-y-1 h-[3.5rem] w-full  inline-block align-middle leading-tight text-lg md:text-4xl">
+      <span className="md:hidden text-blue text-4xl tracking-tight text-center">We are unique but relevant <br />We innovate in a world of flux <br /> We do not solve the brand but for its communities <br />We blend right brain storytelling with left brain execution <br /> We are not a specialist agency but a collective of specialists</span>
+
+      <div className="hidden relative overflow-hidden space-y-1 h-[3.5rem] w-full md:inline-block align-middle leading-tight text-lg md:text-4xl">
         {/* current phrase */}
         <div
           key={currentPhraseIndex}
-          className={`absolute left-0 px-4 py-2 bg-green text-blue transition-transform duration-700 ease-in-out ${
-            isAnimating
-              ? direction === "up"
-                ? "-translate-y-full"
-                : "translate-y-full"
-              : "translate-y-0"
-          }`}
+          className={`absolute left-0 px-4 py-2 bg-green text-blue transition-transform duration-700 ease-in-out ${isAnimating
+            ? direction === "up"
+              ? "-translate-y-full"
+              : "translate-y-full"
+            : "translate-y-0"
+            }`}
         >
           {phrases[currentPhraseIndex]}
         </div>
@@ -68,13 +69,12 @@ export default function AnimatedTextSection() {
         {/* next phrase */}
         <div
           key={nextPhraseIndex}
-          className={`absolute left-0 px-4 py-2 bg-green text-blue transition-transform duration-700 ease-in-out ${
-            isAnimating
-              ? "translate-y-0"
-              : direction === "up"
+          className={`absolute left-0 px-4 py-2 bg-green text-blue transition-transform duration-700 ease-in-out ${isAnimating
+            ? "translate-y-0"
+            : direction === "up"
               ? "translate-y-full"
               : "-translate-y-full"
-          }`}
+            }`}
         >
           {phrases[nextPhraseIndex]}
         </div>

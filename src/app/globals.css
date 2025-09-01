@@ -132,7 +132,7 @@ body {
   border-color: #2054FC;
 }
 
-#test-ourwork:after { 
+#test-ourwork:after {
   position: absolute;
   content: '';
   z-index: -1;
@@ -149,24 +149,25 @@ body {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-direction: alternate;
-  border-radius:0px 0px 20px 20px;
+  border-radius: 0px 0px 20px 20px;
 }
 
 @media (max-width: 740px) {
-  #test-ourwork:after { 
+  #test-ourwork:after {
     height: 65%;
     bottom: 90%;
   }
 }
 
 @media (max-width: 1920px) {
-  #test-ourwork:after { 
+  #test-ourwork:after {
     height: 50%;
     bottom: 90%;
   }
 }
+
 @media (max-width: 1440px) {
-  #test-ourwork:after { 
+  #test-ourwork:after {
     height: 65%;
     bottom: 90%;
   }
@@ -260,6 +261,7 @@ body {
 
 
 #test-all:after { 
+#test-all:after {
   position: absolute;
   content: '';
   z-index: -1;
@@ -276,11 +278,11 @@ body {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-direction: alternate;
-  border-radius:0px 0px 20px 20px;
+  border-radius: 0px 0px 20px 20px;
 }
 
 
-#test:after { 
+#test:after {
   position: absolute;
   content: '';
   z-index: -1;
@@ -297,12 +299,14 @@ body {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-direction: alternate;
-  border-radius:0px 0px 20px 20px;
+  border-radius: 0px 0px 20px 20px;
 }
+
 @keyframes test_hover {
   from {
     background-position: 0% 100%;
   }
+
   to {
     background-position: 100% 0%;
   }
@@ -310,14 +314,15 @@ body {
 
 
 @media (max-width: 1920px) {
-  #test:after { 
-    height: 770px;
+  #test:after {
+    height: 1300px;
     bottom: 50%;
   }
 }
- @media (max-width: 740px) {
-  #test:after { 
-    height: 83%;
+
+@media (max-width: 740px) {
+  #test:after {
+    height: 185%;
     bottom: 90%;
   }
 }
@@ -431,11 +436,15 @@ body {
 
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
+    display: none;
+    /* Chrome, Safari */
   }
+
   .no-scrollbar {
-    -ms-overflow-style: none;  /* IE & Edge */
-    scrollbar-width: none;     /* Firefox */
+    -ms-overflow-style: none;
+    /* IE & Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
 }
 

@@ -8,7 +8,7 @@ import MobileNavbar from "../layout/mobile-navbar";
 
 const HeroSection = () => {
   return (
-    <div id="test" className="bg-[url('/home/Hero.png') bg-center bg-cover ">
+    <div id="test" className="bg-[url('/home/Hero.png') bg-center bg-cover">
       <div className="2xl:max-w-[1800px] mx-auto w-[95%] pb-10 lg:pb-20">
         {/* Top Left LPS Logo */}
         <div className="flex justify-between items-center p-4 mx-2">
@@ -20,8 +20,8 @@ const HeroSection = () => {
           <Image
             src={"/home/hero-gif.gif"}
             alt="Hero"
-            width={800}
-            height={620}
+            width={1000}
+            height={1000}
             unoptimized
           />
         </div>
@@ -54,7 +54,6 @@ const HeroSection = () => {
           {/* Animated Text Section */}
           <AnimatedTextSection />
         </Wrapper>
-        {/* Featured Work Section */}
       </div>
     </div>
   );

@@ -63,9 +63,10 @@ const Industries = () => {
   return (
     <div className="mb-16 lg:mb-0 lg:my-20">
       <div className="2xl:max-w-[1740px] w-[90%] md:w-[90%] mx-auto">
-        <h2 className="text-4xl lg:text-[60px] 2xl:max-w-[40%] lg:max-w-[55%] lg:leading-[60px]">
+        <h2 className="text-4xl lg:text-5xl xl:text-[60px] 2xl:max-w-[40%] lg:max-w-[55%] lg:leading-[60px]">
           Empowering Growth Across Diverse Industries
         </h2>
+        <p className="text-sm mt-4">We drive success in multiple industries, including:</p>
         <div className="columns-1 sm:columns-2 lg:columns-5 gap-5 mt-10 md:mt-20 mb-10">
           {industries.map((industry, index) => (
             <div

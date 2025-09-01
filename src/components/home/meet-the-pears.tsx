@@ -4,12 +4,13 @@ import { Button } from "@/components/ui/button"
 import { teamMembers } from "@/data/meet-the-pears"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Wrapper from "../layout/wrapper"
 
 export function MeetThePears() {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [hoveredCard, setHoveredCard] = useState<string | null>(null)
+    const [isMobile, setIsMobile] = useState(false)  // New state to check for mobile
 
     const visibleCards = 5
     const maxIndex = Math.max(0, teamMembers.length - visibleCards)
@@ -22,39 +23,62 @@ export function MeetThePears() {
         setCurrentIndex((prev) => Math.min(maxIndex, prev + 1))
     }
 
+    // Update mobile screen state
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 1024) // Assuming mobile if screen width is less than 1024px
+        }
+
+        checkMobile()
+        window.addEventListener("resize", checkMobile)
+        return () => window.removeEventListener("resize", checkMobile)
+    }, [])
+
     const cardWidth = 256 // w-64 = 256px
     const gap = 16 // gap-4 = 16px
     const translateX = -(currentIndex * (cardWidth + gap))
 
+    // Autoplay functionality
+    useEffect(() => {
+        const autoplay = setInterval(() => {
+            setCurrentIndex((prev) => Math.min(maxIndex, prev + 1))
+        }, 3000) // Change slides every 3 seconds
+
+        return () => clearInterval(autoplay) // Clean up interval on component unmount
+    }, [maxIndex])
+
     return (
         <Wrapper>
-            <div className="flex items-center justify-between mb-4 lg:mt-20">
-                <h2 className="text-[28px] md:text-4xl lg:text-6xl font-normal text-foreground">Meet the Pears</h2>
+            <div className="flex items-center justify-between mb-6 lg:mt-12">
+                <h2 className="text-[28px] md:text-4xl lg:text-6xl font-[400] text-foreground">Meet the Pears</h2>
 
-                <div className="flex gap-2">
-                    <Button
-                        variant="outline"
-                        size="icon"
-                        onClick={handlePrevious}
-                        disabled={currentIndex === 0}
-                        className="rounded-full lg:w-12 lg:h-12 w-8 h-8 border-2 bg-transparent border-blue"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M4.16663 10H15.8333M4.16663 10L9.16663 15M4.16663 10L9.16663 5" stroke="#0050FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </Button>
-                    <Button
-                        variant="outline"
-                        size="icon"
-                        onClick={handleNext}
-                        disabled={currentIndex >= maxIndex}
-                        className="rounded-full lg:w-12 lg:h-12 w-8 h-8 border-2 bg-transparent border-blue"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M15.8334 10H4.16671M15.8334 10L10.8334 15M15.8334 10L10.8334 5" stroke="#0050FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </Button>
-                </div>
+                {/* Only show navigation buttons on large screens */}
+                {!isMobile && (
+                    <div className="flex gap-2">
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            onClick={handlePrevious}
+                            disabled={currentIndex === 0}
+                            className="rounded-full lg:w-12 lg:h-12 w-8 h-8 border-2 bg-transparent border-blue"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M4.16663 10H15.8333M4.16663 10L9.16663 15M4.16663 10L9.16663 5" stroke="#0050FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </Button>
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            onClick={handleNext}
+                            disabled={currentIndex >= maxIndex}
+                            className="rounded-full lg:w-12 lg:h-12 w-8 h-8 border-2 bg-transparent border-blue"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M15.8334 10H4.16671M15.8334 10L10.8334 15M15.8334 10L10.8334 5" stroke="#0050FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </Button>
+                    </div>
+                )}
             </div>
 
             <div className="overflow-x-hidden py-10">

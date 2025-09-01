@@ -82,8 +82,8 @@ export default function Footer() {
     },
   ];
   return (
-    <footer className="bg-[#101820] text-white pb-10 pt-16 lg:pt-28 mx-auto lg:w-[95%] 2xl:max-w-[1740px] mt-10 lg:rounded-t-[60px] px-8 lg:px-0">
-      <div className="lg:max-w-[93%] mx-auto">
+    <footer className="bg-[#101820] text-white pb-10 pt-16 lg:pt-28 mx-auto w-[95%] 2xl:max-w-[1740px] mt-10 rounded-t-[30px] lg:rounded-t-[60px] px-8 lg:px-0">
+      <div className="lg:max-w-[93%] mx-auto lg:pb-20">
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start mb-12 gap-8">
           {/* Left Side - Logo and Description */}
@@ -182,7 +182,7 @@ export default function Footer() {
                 height={40}
                 className="mb-4 3xl:h-[90px] 3xl:w-[70px] h-[70px] w-[50px]"
               />
-              <h4 className={`font-semibold tracking-wide text-2xl lg:text-[20px] mb-3`}>
+              <h4 className={`font-semibold tracking-wide text-2xl lg:text-[18px] mb-3`}>
                 {office.country}
               </h4>
               <div
