@@ -262,7 +262,7 @@ body {
   position: absolute;
   content: '';
   z-index: -1;
-  height: 70%;
+  height: 50%;
   left: 0;
   right: 0;
   top: 0;
@@ -278,10 +278,15 @@ body {
   border-radius: 0px 0px 20px 20px;
 }
 
+@media (max-width: 1800px) {
+  #test-industries:after { 
+    height: 70%;
+  }
+}
 
 @media (max-width: 1440px) {
   #test-industries:after { 
-    height: 87%;
+    height: 72%;
   }
 }
 
@@ -293,7 +298,7 @@ body {
 
 @media (max-width: 770px) {
   #test-industries:after { 
-    height: 75%;
+    height: 60%;
   }
 }
 
