@@ -24,6 +24,16 @@ const numbersData = [
     sign: "MN",
   },
 ];
+
+export const metadata = {
+  title: "Treva - LPS Brands",
+  description:
+    "Reach out to LPS, your all-in-one marketing agency for creative, strategic, and impactful solutions for your your brand presence and growth.",
+  alternates: {
+    canonical: "https://lps-me.com/our-work/treva",
+  },
+};
+
 const Treva = () => {
   return (
     <div>
@@ -35,7 +45,11 @@ celebrating their economical awareness at the time of purchase – with a rap so
         image="single"
         url="/work/11.jpg"
       />
-      <ImpactSection videoUrl="/work/v2.webm" numbersData={numbersData} para="Treva successfully reached out to the community of home economists, in a manner that was entertaining and relevant – a true ode to the homemakers and their knowledge of all things." />
+      <ImpactSection
+        videoUrl="/work/v2.webm"
+        numbersData={numbersData}
+        para="Treva successfully reached out to the community of home economists, in a manner that was entertaining and relevant – a true ode to the homemakers and their knowledge of all things."
+      />
       <PortfolioSection />
     </div>
   );

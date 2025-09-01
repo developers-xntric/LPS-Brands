@@ -3,10 +3,21 @@ import ImpactSection from "@/components/our-work/impact-section";
 import PortfolioSection from "@/components/our-work/portfolio-section";
 import React from "react";
 
+export const metadata = {
+  title: "Treva - LPS Brands",
+  description:
+    "Reach out to LPS, your all-in-one marketing agency for creative, strategic, and impactful solutions for your your brand presence and growth.",
+  alternates: {
+    canonical: "https://lps-me.com/our-work/sketchers-bts",
+  },
+};
+
 const sketchersBts = () => {
   return (
     <div>
       <WorkHero
+        isOurWork={true}
+        ourworkText="Brief"
         heading="Skechers- BTS"
         highlight="presence"
         text="Skechers aimed to create a video that not only told a compelling story but also showcased the wide range of designs in their Kids Footwear collection for the Back to School season.​​"

@@ -10,7 +10,7 @@ export const metadata = {
   description:
     "We define how food and beverage brands show up in the world. From packaging that captures attention to strategies that drive shelf dominance, we transform every product into a brand experience worth remembering. Deep Consumer Understanding of Food and Beverage Industry We start with insight. We understand the ever-changing preferences of today’s consumers—from health-conscious choices ",
   alternates: {
-    canonical: "https://lps-me.com/food-and-beverage",
+    canonical: "https://lps-me.com/our-industry/food-and-beverage",
   },
 };
 

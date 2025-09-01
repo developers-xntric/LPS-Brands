@@ -11,7 +11,7 @@ export const metadata = {
   description:
     "We don’t just communicate care, we work our way to build trust at every touchpoint.  At LPS, we help healthcare brands become more human, more helpful, and more heard. What are the trends of Healthcare industry. We strongly believe that in the upcoming era, preventive care is in. Digital diagnostics are booming at a lightning.",
   alternates: {
-    canonical: "https://lps-me.com/healthcare",
+    canonical: "https://lps-me.com/our-industry/healthcare",
   },
 };
 

@@ -24,6 +24,16 @@ const numbersData = [
     sign: "%",
   },
 ];
+
+export const metadata = {
+  title: "Jollibee - LPS Brands",
+  description:
+    "Fried chicken favorite Jollibee introduced its first-ever beef product—the Jolliburger, a cheesy, meaty treat designed to satisfy taste buds. The brand sought to create a compelling campaign to drive awareness and excitement for this launch.",
+  alternates: {
+    canonical: "https://lps-me.com/our-work/jollibee",
+  },
+};
+
 const Jollibee = () => {
   return (
     <div>

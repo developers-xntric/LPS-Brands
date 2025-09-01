@@ -2,10 +2,22 @@ import WorkHero from "@/components/careers/careers-hero";
 import ImpactSection from "@/components/our-work/impact-section";
 import PortfolioSection from "@/components/our-work/portfolio-section";
 import React from "react";
+
+export const metadata = {
+  title: "Skechers- Hajj Campain - LPS Brands",
+  description:
+    "We collaborated with Skechers to create a culturally insightful film specifically for their Hajj campaign. This project aimed to connect deeply with the Arabic audience by focusing on culturally relevant storytelling and visuals.",
+  alternates: {
+    canonical: "https://lps-me.com/our-work/skechers-hajj-campaign",
+  },
+};
+
 const SkechersHajj = () => {
   return (
     <div>
       <WorkHero
+        isOurWork={true}
+        ourworkText="The Big Idea:​"
         heading="Skechers- Hajj Campain"
         highlight="presence"
         text="We collaborated with Skechers to create a culturally insightful film specifically for their Hajj campaign. This project aimed to connect deeply with the Arabic audience by focusing on culturally relevant storytelling and visuals.​​"
