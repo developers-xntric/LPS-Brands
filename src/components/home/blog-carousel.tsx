@@ -260,7 +260,7 @@ export default function BlogCarousel() {
                       </h3>
                       <Link
                         href={`/blog/${post.slug}`}
-                        className="text-white text-sm 2xl:text-lg hover:text-[#2054FC] transition-colors px-2"
+                        className="text-white underline text-sm 2xl:text-lg hover:text-[#2054FC] transition-colors px-2"
                       >
                         {post.readMore}
                       </Link>
