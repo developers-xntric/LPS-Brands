@@ -10,7 +10,7 @@ export const metadata = {
   description:
     "We don’t just create buzz, we build worlds audiences want to live in.  At LPS, we turn passive viewers into active communities, and casual clicks into cult followings. What’s Trending in Entertainment & Leisure? From binge culture to bite-sized content, entertainment is evolving faster than ever.  The rise of immersive experiences, fan-led content, and gamified",
   alternates: {
-    canonical: "https://lps-me.com/entertainment-and-leisure",
+    canonical: "https://lps-me.com/our-industry/entertainment-and-leisure",
   },
 };
 

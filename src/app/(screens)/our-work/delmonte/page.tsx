@@ -29,10 +29,24 @@ const numbersData = [
     sign: "+",
   },
 ];
+
+export const metadata = {
+  title: "Delmonte ​ - LPS Brands",
+  description:
+    "Del Monte aimed to enhance its product visibility across the MENA region, focusing on generating brand awareness and increasing foot traffic to physical retail stores.",
+  alternates: {
+    canonical: "https://lps-me.com/our-work/delmonte",
+  },
+};
+
+
+
 const Delmonte = () => {
   return (
     <div>
       <WorkHero
+        isOurWork={true}
+        ourworkText="The Brief:​"
         heading="Delmonte"
         highlight="presence"
         text="Del Monte wanted their product highlighted across the MENA market with an aim generate awareness and drive traffic to physical stores for the Honey Glow Pineapple activation in the region. We had to think of a way we could ​​"

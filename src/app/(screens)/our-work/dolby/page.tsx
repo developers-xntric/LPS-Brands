@@ -24,10 +24,22 @@ const numbersData = [
     sign: "%",
   },
 ];
+
+export const metadata = {
+  title: "Dolby​ - LPS Brands",
+  description:
+    "As a long-term client, Dolby wanted to explore the potential of in-stream gaming advertisements to boost brand awareness. The challenge was to create a strategic campaign that leveraged gaming platforms effectively.",
+  alternates: {
+    canonical: "https://lps-me.com/our-work/dolby",
+  },
+};
+
 const Dolby = () => {
   return (
     <div>
       <WorkHero
+        isOurWork={true}
+        ourworkText="The Curve Ball:"
         heading="Dolby"
         highlight="presence"
         text="Dolby, a long-term client, wanted to explore what gaming in-stream advertising could do for them. They aimed to increase awareness of their advanced audio and visual technologies, Dolby Atmos and Dolby Vision, within Microsoft’s Halo: Infinite.​ The focus was on enhancing the multiplayer gaming experience by showcasing the immersive capabilities of these technologies. To achieve this, Dolby partnered with StreamShreek for a proof-of-concept campaign, with a target of reaching fifty thousand views within a three-week timeframe.​​"

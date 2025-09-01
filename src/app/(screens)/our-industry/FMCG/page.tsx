@@ -12,7 +12,7 @@ export const metadata = {
     description:
     "The world of FMCG moves fast and so do we. At LPS, we partner with brands that live in the aisles, on the screens, and in the daily choices of millions. We understand that in this saturated market, it’s not just about visibility, it’s about velocity, value, and voice. Emerging Trends in FMCG Today’s consumers ",
   alternates: {
-    canonical: "https://lps-me.com/fmcg",
+    canonical: "https://lps-me.com/our-industry/fmcg",
   },
 };
 

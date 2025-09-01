@@ -10,7 +10,7 @@ export const metadata = {
   description:
     "We communicate policy and craft public trust.  At LPS, we help government institutions connect with citizens, modernize engagement, and inspire collective progress. What’s Trending in Government Communication? Digital transformation is now a necessity, not a luxury.  Citizens expect real-time updates, transparency, and service accessibility. Trust-building, inclusivity, and community-first narratives are driving modern public outreach.",
   alternates: {
-    canonical: "https://lps-me.com/government",
+    canonical: "https://lps-me.com/our-industry/government",
   },
 };
 
