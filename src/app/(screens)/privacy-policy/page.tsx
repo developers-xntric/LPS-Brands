@@ -1,11 +1,21 @@
 import CareersHero from '@/components/careers/careers-hero'
 import React from 'react'
 
+
+export const metadata = {
+  title: "Privacy Policy - LPS",
+  description:
+    "Review LPS's Privacy Policy to understand how we collect, use, and protect your personal information. Your privacy is our priority.",
+  alternates: {
+    canonical: "https://lps-me.com/privacy-policy",
+  },
+};
+
 const PrivacyPolicy = () => {
   return (
     <div>
-      <CareersHero heading='Privacy Policy' text='' highlight='Policy' bottom={false} />
-      <div className='2xl:max-w-[1740px] w-[90%] mx-auto my-20 font-["Exo"]'>
+      <CareersHero id='test-ourwork' heading='Privacy Policy' text='' highlight='Policy' bottom={false} />
+      <div className='2xl:max-w-[1740px] w-[90%] mx-auto my-20 mt-44 font-["Exo"]'>
         <p className='text-[16px]'> 
           Last updated: June 24, 2025
           <br /><br />
