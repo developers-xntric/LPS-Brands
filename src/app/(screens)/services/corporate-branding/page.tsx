@@ -8,6 +8,15 @@ import Timeline from '@/components/services/time-line';
 import Script from 'next/script';
 import React from 'react'
 
+export const metadata = {
+    title: "Corporate Branding That Builds Impactful Identities",
+    description:
+        "Discover purpose-led corporate branding services that connect, adapt, and inspire. Build a future-ready brand with LPS.",
+    alternates: {
+        canonical: "https://lps-me.com/services/corporate-branding/",
+    },
+};
+
 const schemaData = {
     "@context": "https://schema.org",
     "@type": "Service",

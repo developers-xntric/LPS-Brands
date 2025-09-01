@@ -8,6 +8,16 @@ import ProductionEvolutionSection from "@/components/services/production-evoluti
 import Timeline from "@/components/services/time-line";
 import Script from "next/script";
 
+export const metadata = {
+    title: "Gaming Experiences &amp; Activations | LPS",
+    description:
+        "Create immersive gaming experiences with LPS. From esports tournaments to gamified brand activations, we bring brands to life inside the gaming world.",
+    alternates: {
+        canonical: "https://lps-me.com/services/gaming-experiences/",
+    },
+};
+
+
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "Service",

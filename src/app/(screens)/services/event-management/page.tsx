@@ -8,6 +8,15 @@ import ProductionEvolutionSection from "@/components/services/production-evoluti
 import Timeline from "@/components/services/time-line";
 import Script from "next/script";
 
+export const metadata = {
+    title: "Event Management Dubai | Full-Service Event Solutions | LPS",
+    description:
+        "LPS offers event management in Dubai. From concept to execution, we create unforgettable experiences for live, hybrid, and digital events.",
+    alternates: {
+        canonical: "https://lps-me.com/services/event-management/",
+    },
+};
+
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "Service",
