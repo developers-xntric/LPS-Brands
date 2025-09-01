@@ -22,6 +22,7 @@ const FMGC = () => {
   return (
     <div>
       <CareersHero
+             id='test-industry-inner'
         heading="FMCG"
         text="The world of FMCG moves fast and so do we. At LPS, we partner with brands that live in the aisles, on the screens, and in the daily choices of millions. We understand that in this saturated market, it’s not just about visibility, it’s about velocity, value, and voice."
         highlight="FMCG"

@@ -51,6 +51,7 @@ const Events = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <ServicesHero
+      id='test-privacy'
         heading="Event Management"
         highlight="Event Management"
         bottom={false}

@@ -52,6 +52,7 @@ const Gaming = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <ServicesHero
+      id='test-privacy'
         heading="Gaming Experiences"
         highlight="Gaming Experiences"
         bottom={false}

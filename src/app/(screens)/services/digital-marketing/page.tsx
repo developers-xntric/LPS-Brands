@@ -10,12 +10,12 @@ import Script from "next/script";
 import React from "react";
 
 export const metadata = {
-    title: "Top Digital Marketing Services in Dubai | LPS",
-    description:
-        "Boost your brand visibility with cutting-edge digital marketing strategies tailored for real impact.",
-    alternates: {
-        canonical: "https://lps-me.com/services/digital-marketing/",
-    },
+  title: "Top Digital Marketing Services in Dubai | LPS",
+  description:
+    "Boost your brand visibility with cutting-edge digital marketing strategies tailored for real impact.",
+  alternates: {
+    canonical: "https://lps-me.com/services/digital-marketing/",
+  },
 };
 
 const schemaData = {
@@ -52,6 +52,7 @@ const DigitalMarketing = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <ServicesHero
+        id="test-privacy"
         heading="Digital Experiences"
         highlight="Digital Experiences"
         bottom={false}

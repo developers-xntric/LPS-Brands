@@ -50,7 +50,7 @@ const SocialMedia = () => {
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
             />
-            <ServicesHero heading='Social Media' highlight='Social Media' bottom={false} />
+            <ServicesHero id='test-privacy' heading='Social Media' highlight='Social Media' bottom={false} />
             <ProductionEvolutionSection
                 title='Social Media Marketing Agency In UAE You Can Trust'
                 highlight='Social Media'

@@ -50,7 +50,7 @@ const CorporateBranding = () => {
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
             />
-            <ServicesHero heading='Corporate Branding' highlight='Corporate Branding' bottom={false} />
+            <ServicesHero id='test-privacy' heading='Corporate Branding' highlight='Corporate Branding' bottom={false} />
             <ProductionEvolutionSection
                 title='Purpose-Driven Corporate Branding That Builds More Than Identity'
                 highlight='Corporate Branding'

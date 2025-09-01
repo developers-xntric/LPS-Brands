@@ -20,6 +20,7 @@ const RealState = () => {
   return (
     <div>
       <CareersHero
+             id='test-industry-inner'
         heading="Real Estate"
         text="Innovative solutions tailored to elevate modern living and redefine property experiences across every development."
         highlight="Real Estate"

@@ -50,7 +50,7 @@ const LeadershipBranding = () => {
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
             />
-            <ServicesHero heading='Leadership Branding' highlight='Leadership Branding' bottom={false} />
+            <ServicesHero id='test-privacy' heading='Leadership Branding' highlight='Leadership Branding' bottom={false} />
             <ProductionEvolutionSection text={[
                 "Leadership branding is the cornerstone of how you’re seen, appreciated, and followed in the competitive environment of today, not simply a slogan. Whether your role is changemaker, entrepreneur, or executive, your own leadership brand determines your effect. Establishing a leadership brand requires establishing your beliefs, approach of communication, and special presence you provide to every room.",
 

@@ -52,6 +52,7 @@ const GenerativeAI = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <ServicesHero
+      id='test-privacy'
         heading="Gen AI Solutions"
         highlight="Gen AI Solutions"
         bottom={false}

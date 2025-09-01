@@ -18,6 +18,7 @@ const EntertainmentLeisure = () => {
   return (
     <div>
       <CareersHero
+        id='test-industry-inner'
         heading="Entertainment & Leisure"
         text="We don’t just create buzz, we build worlds audiences want to live in.  At LPS, we turn passive viewers into active communities, and casual clicks into cult followings."
         highlight="Entertainment & Leisure"
