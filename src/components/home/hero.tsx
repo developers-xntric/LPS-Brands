@@ -16,11 +16,11 @@ const HeroSection = () => {
           <MobileNavbar />
         </div>
         {/* Center Animated Heading of Pears In a World Of Apples */}
-        <div className="flex justify-center">
+        <div className="flex justify-center relative lg:bottom-10">
           <Image
             src={"/home/hero-gif.gif"}
             alt="Hero"
-            width={1000}
+            width={900}
             height={1000}
             unoptimized
           />
