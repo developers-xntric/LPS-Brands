@@ -54,7 +54,6 @@ const HeroSection = () => {
           {/* Animated Text Section */}
           <AnimatedTextSection />
         </Wrapper>
-        {/* Featured Work Section */}
       </div>
     </div>
   );

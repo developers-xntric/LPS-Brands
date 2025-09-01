@@ -230,7 +230,7 @@ body {
 }
  @media (max-width: 740px) {
   #test:after { 
-    height: 175%;
+    height: 185%;
     bottom: 90%;
   }
 }
