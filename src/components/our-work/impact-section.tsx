@@ -88,7 +88,7 @@ export default function ImpactSection({
 
           {/* Statistics Grid */}
         </div>
-        <div className="w-full lg:flex grid grid-cols-2 justify-between">
+        <div className=" grid-rows-2 grid grid-cols-2 lg:place-self-end lg:gap-7 lg:w-1/2">
           {numbersData &&
             numbersData.map((item, index) => {
               return (
