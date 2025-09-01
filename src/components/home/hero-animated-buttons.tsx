@@ -9,7 +9,7 @@ const HeroAnimatedButtons = () => {
                     <span className="inline">We are a full impact agency</span>{" "}
                     <span className="inline-block align-middle">
                         <HoverVideoPill
-                            label="identity"
+                            label="Identity"
                             videoSrc="/home/Communications1.webm"
                             className="mr-2 "
                         />
@@ -17,14 +17,14 @@ const HeroAnimatedButtons = () => {
                     <div className='mt-3'>
                         <span className="inline-block align-middle">
                             <HoverVideoPill
-                                label="communications"
+                                label="Communications"
                                 videoSrc="/home/exper-1.webm"
                                 className="mr-2"
                             />
-                        </span><span className='hidden md:inline-block'>{"and "}</span>
+                        </span>
                         <span className="inline-block align-middle mt-3 md:mt-0">
                             <HoverVideoPill
-                                label="experiences"
+                                label="Experiences"
                                 videoSrc="/home/IdentityAnimation1.webm"
                             />
                         </span>{" "}
