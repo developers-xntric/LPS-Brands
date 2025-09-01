@@ -11,16 +11,21 @@ export const teamMembers: TeamMember[] = [
         hoverImage: "/team/th1.webp",
     },
     {
+        id: "28",
+        defaultImage: "/team/t28.webp",
+        hoverImage: "/team/th28.webp",
+    },
+    {
         id: "2",
         defaultImage: "/team/t2.webp",
         hoverImage: "/team/th2.webp",
     },
     // Servesh Removed
-    // {
-    //     id: "3",
-    //     defaultImage: "/team/t3.webp",
-    //     hoverImage: "/team/th3.webp",
-    // },
+    {
+        id: "3",
+        defaultImage: "/team/t3.webp",
+        hoverImage: "/team/th3.webp",
+    },
     {
         id: "4",
         defaultImage: "/team/t4.webp",
