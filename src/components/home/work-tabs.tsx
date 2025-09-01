@@ -287,14 +287,14 @@ export default function WorkTabs() {
               <div className="flex justify-center lg:justify-end pt-4">
                 <Link href="/contact-us">
                   <ShadCnButton
-                    className="rounded-3xl text-md flex justify-between hover:bg-[#00FC09] hover:text-black"
+                    className="group rounded-3xl text-md flex justify-between hover:bg-[#00FC09] hover:text-black"
                     size={"lg"}
                   >
                     <span className="relative top-[1px]">
                       Connect with an expert
                     </span>
-                    <div className="w-9 h-9 rounded-full bg-white flex justify-center items-center">
-                      <ArrowRight color="black" />
+                    <div className="w-9 h-9 rounded-full bg-white flex justify-center items-center group-hover:translate-x-2 transition-transform duration-300 ease-out">
+                      <ArrowRight className="transition-transform duration-300 ease-out" color="black" />
                     </div>
                   </ShadCnButton>
                 </Link>
