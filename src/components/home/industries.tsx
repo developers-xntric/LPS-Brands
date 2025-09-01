@@ -62,7 +62,7 @@ const Industries = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   return (
     <div className="mb-16 lg:mb-0 lg:my-20">
-      <div className="2xl:max-w-[1740px] w-[90%] md:w-[95%] mx-auto">
+      <div className="2xl:max-w-[1740px] w-[90%] md:w-[90%] mx-auto">
         <h2 className="text-4xl lg:text-5xl xl:text-[60px] 2xl:max-w-[40%] lg:max-w-[55%] lg:leading-[60px]">
           Empowering Growth Across Diverse Industries
         </h2>
