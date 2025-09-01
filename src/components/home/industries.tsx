@@ -89,7 +89,7 @@ const Industries = () => {
               />
               {/* Content */}
               <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="text-white font-semibold text-2xl  text-center relative top-[40px]  transition-transform duration-300 lg:group-hover:translate-y-[-50px] -translate-y-[50px]">
+                <h3 className="text-white font-semibold text-lg leading-[18px] xl:leading-[26px] xl:text-2xl  text-center relative top-[40px]  transition-transform duration-300 lg:group-hover:translate-y-[-50px] -translate-y-[50px] lg:-translate-y-0">
                   {industry.name}
                 </h3>
 
