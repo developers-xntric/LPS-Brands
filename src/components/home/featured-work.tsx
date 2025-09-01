@@ -12,7 +12,7 @@ export default function FeaturedWorks() {
         <div className="max-w-[95%] mx-auto mb-20 xl:mb-40">
           {/* Header */}
           <div className="text-center mb-10">
-            <h2 className="text-5xl md:text-4xl xl:text-[54px] font-normal text-white text-green mb-4">
+            <h2 className="text-5xl md:text-4xl xl:text-[54px] font-[600] text-white text-green mb-4">
               A Display of Featured Work
             </h2>
             <p className="text-white lg:text-xl font-medium mb-8 max-w-3xl mx-auto">

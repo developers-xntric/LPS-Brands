@@ -67,7 +67,7 @@ export default function WorkTabs() {
             onClick={() => setActiveTab("identity")}
           >
             <div
-              className={`inline-block px-8 py-2 rounded-full ${activeTab === "identity"
+              className={`inline-block px-8 py-2 rounded-full font-light ${activeTab === "identity"
                 ? "bg-white text-secondary"
                 : "bg-white text-secondary"
                 }`}
@@ -134,7 +134,7 @@ export default function WorkTabs() {
             onClick={() => setActiveTab("communications")}
           >
             <div
-              className={`inline-block px-8 py-2 rounded-full ${activeTab === "communications"
+              className={`inline-block px-8 py-2 rounded-full font-light ${activeTab === "communications"
                 ? "bg-white text-secondary"
                 : "bg-white text-secondary"
                 }`}
@@ -201,7 +201,7 @@ export default function WorkTabs() {
             onClick={() => setActiveTab("experiences")}
           >
             <div
-              className={`inline-block px-8 py-2 rounded-full ${activeTab === "experiences"
+              className={`inline-block px-8 py-2 rounded-full font-light ${activeTab === "experiences"
                 ? "bg-white text-secondary"
                 : "bg-white text-secondary"
                 }`}
@@ -277,7 +277,7 @@ export default function WorkTabs() {
               {/* Dynamic Services List */}
               <div className="space-y-2">
                 {tabData[activeTab].services.map((service, index) => (
-                  <div key={index} className="text-black font-normal text-xl">
+                  <div key={index} className="text-black font-medium text-lg">
                     {service}
                   </div>
                 ))}
