@@ -30,7 +30,7 @@ const HeroSection = () => {
         {/* Animated Text Section (Why Pears) */}
         <Wrapper>
           {/* WHY PEARS Section */}
-          <div className="mb-8 mt-32 md:mt-24 flex lg:flex-row flex-col justify-between">
+          <div className="mb-8 mt-24 md:mt-24 flex lg:flex-row flex-col justify-between">
             <h1 className="flex gap-3 lg:flex-col lg:-space-y-6 text-5xl md:text-8xl font-bold mb-2 md:mb-8 leading-none">
               <span className="gradient-text text-transparent">WHY</span>
               <span className="gradient-text text-transparent">PEARS?</span>

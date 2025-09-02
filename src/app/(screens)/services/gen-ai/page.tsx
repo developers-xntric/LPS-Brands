@@ -9,6 +9,15 @@ import Timeline from "@/components/services/time-line";
 import Script from "next/script";
 import React from "react";
 
+export const metadata = {
+    title: "Gen AI Services | Strategic Generative AI Solutions by LPS",
+    description:
+        "Unlock future-ready solutions with LPS Gen AI. From content creation to marketing automation, we power growth with generative AI that thinks like your brand.",
+    alternates: {
+        canonical: "https://lps-me.com/services/gen-ai/",
+    },
+};
+
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -43,6 +52,7 @@ const GenerativeAI = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <ServicesHero
+      id='test-privacy'
         heading="Gen AI Solutions"
         highlight="Gen AI Solutions"
         bottom={false}

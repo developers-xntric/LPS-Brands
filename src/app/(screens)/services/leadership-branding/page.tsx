@@ -8,6 +8,15 @@ import Timeline from '@/components/services/time-line';
 import Script from 'next/script';
 import React from 'react'
 
+export const metadata = {
+    title: "Avail Out Top Notch Leadership Branding Services | LPS",
+    description:
+        "Build your leadership branding with LPS, a top personal branding agency in Dubai offering executive branding &amp; personal branding services.",
+    alternates: {
+        canonical: "https://lps-me.com/services/leadership-branding/",
+    },
+};
+
 const schemaData = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -41,12 +50,12 @@ const LeadershipBranding = () => {
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
             />
-            <ServicesHero heading='Leadership Branding' highlight='Leadership Branding' bottom={false} />
-            <ProductionEvolutionSection  text={[
-                    "Leadership branding is the cornerstone of how you’re seen, appreciated, and followed in the competitive environment of today, not simply a slogan. Whether your role is changemaker, entrepreneur, or executive, your own leadership brand determines your effect. Establishing a leadership brand requires establishing your beliefs, approach of communication, and special presence you provide to every room.",
+            <ServicesHero id='test-privacy' heading='Leadership Branding' highlight='Leadership Branding' bottom={false} />
+            <ProductionEvolutionSection text={[
+                "Leadership branding is the cornerstone of how you’re seen, appreciated, and followed in the competitive environment of today, not simply a slogan. Whether your role is changemaker, entrepreneur, or executive, your own leadership brand determines your effect. Establishing a leadership brand requires establishing your beliefs, approach of communication, and special presence you provide to every room.",
 
-                    "This goes beyond just leadership. In a society where authority is acquired by authenticity, cultural design for impact, relevance, and influence follows. A leadership brand is the junction between your view of yourself and your professional identity. It’s about regularly and honestly presenting your leadership style, beliefs, strengths, and purpose."
-                ]}
+                "This goes beyond just leadership. In a society where authority is acquired by authenticity, cultural design for impact, relevance, and influence follows. A leadership brand is the junction between your view of yourself and your professional identity. It’s about regularly and honestly presenting your leadership style, beliefs, strengths, and purpose."
+            ]}
                 images={["/services/pe1.webp", "/services/pe2.webp"]} />
             <Timeline
                 timelineData={

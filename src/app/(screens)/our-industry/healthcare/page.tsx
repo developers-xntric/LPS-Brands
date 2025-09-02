@@ -20,6 +20,7 @@ const HealthCare = () => {
   return (
     <div>
       <CareersHero
+             id='test-industry-inner'
         heading="Healthcare"
         text="We don’t just communicate care, we work our way to build trust at every touchpoint.  At LPS, we help healthcare brands become more human, more helpful, and more heard."
         highlight="Healthcare"

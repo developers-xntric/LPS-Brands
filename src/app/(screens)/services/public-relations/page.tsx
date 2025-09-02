@@ -9,6 +9,15 @@ import Timeline from "@/components/services/time-line";
 import Script from "next/script";
 import React from "react";
 
+export const metadata = {
+  title: "Award-Winning PR Agency in Dubai, UAE | LPS",
+  description:
+    "LPS is an award-winning PR agency in Dubai, UAE offering strategic public relations and digital media solutions that drive visibility.",
+  alternates: {
+    canonical: "https://lps-me.com/services/public-relations/",
+  },
+};
+
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -43,6 +52,7 @@ const PublicRelations = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <ServicesHero
+        id="test-privacy"
         heading="Public Relations"
         highlight="Public Relations"
         bottom={false}

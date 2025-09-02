@@ -15,7 +15,7 @@ export const metadata = {
 function Careers() {
   return (
     <div>
-      <CareersHero id="test" button={true} careers={true} />
+      <CareersHero id="test-careers" button={true} careers={true} />
 
       <CareersSecond />
       <div className="overflow-x-hidden">

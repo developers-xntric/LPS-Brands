@@ -8,6 +8,15 @@ import Timeline from '@/components/services/time-line';
 import Script from 'next/script';
 import React from 'react'
 
+export const metadata = {
+    title: "Dubai&#039;s Top Social Media Marketing Services For You | LPS",
+    description:
+        "Discover cutting-edge social media marketing services with LPS. A leading social media agency in Dubai crafting platform-ready, audience-led digital impact.",
+    alternates: {
+        canonical: "https://lps-me.com/services/social-media/",
+    },
+};
+
 const schemaData = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -41,7 +50,7 @@ const SocialMedia = () => {
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
             />
-            <ServicesHero heading='Social Media' highlight='Social Media' bottom={false} />
+            <ServicesHero id='test-privacy' heading='Social Media' highlight='Social Media' bottom={false} />
             <ProductionEvolutionSection
                 title='Social Media Marketing Agency In UAE You Can Trust'
                 highlight='Social Media'

@@ -8,6 +8,15 @@ import ProductionEvolutionSection from "@/components/services/production-evoluti
 import Timeline from "@/components/services/time-line";
 import Script from "next/script";
 
+export const metadata = {
+    title: "Website Design and Development Services in Dubai, UAE | LPS",
+    description:
+        "Craft powerful websites &amp; apps. We offer website design and development services that drive performance, scalability &amp; user engagement.",
+    alternates: {
+        canonical: "https://lps-me.com/services/website-app/",
+    },
+};
+
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -42,6 +51,7 @@ const WebApp = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <ServicesHero
+      id='test-privacy'
         heading="Website & App"
         highlight="Website & App"
         bottom={false}

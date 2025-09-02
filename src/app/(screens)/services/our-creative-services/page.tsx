@@ -9,6 +9,15 @@ import Timeline from "@/components/services/time-line";
 import Script from "next/script";
 import React from "react";
 
+export const metadata = {
+  title: "Creative Branding Agency | LPS Creative Services",
+  description:
+    "LPS is a creative branding agency in Dubai offering impactful brand design, storytelling, and campaigns built on cultural insight and performance-driven craft.",
+  alternates: {
+    canonical: "https://lps-me.com/services/our-creative-services/",
+  },
+};
+
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -43,6 +52,7 @@ const Creative = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <ServicesHero
+      id='test-privacy'
         heading="Creative Services"
         highlight="Creative Services"
         bottom={false}

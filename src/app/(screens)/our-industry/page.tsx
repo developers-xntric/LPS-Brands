@@ -15,7 +15,7 @@ const Industry = () => {
   return (
     <div>
       <CareersHero
-        id="test-ourwork"
+        id="test-industries"
         heading="Our Industries"
         text="We collaborate with organizations across various industries, delivering agency solutions that cut through the clutter and go beyond conventional marketing strategies."
         highlight="Industries"

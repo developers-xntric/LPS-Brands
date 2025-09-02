@@ -5,7 +5,6 @@ import SecondSection from "@/components/our-industry/second-section";
 import ThirdSection from "@/components/our-industry/third-section";
 import React from "react";
 
-
 export const metadata = {
   title: "Travel & Transportation - LPS Brands",
   description:
@@ -19,7 +18,7 @@ const FinancialServices = () => {
   return (
     <div>
       <CareersHero
-      id="test-industries"
+        id="test-industry-inner"
         heading="Travel & Transportation"
         text="At LPS, we partner with travel and transportation brands to create experiences that move people, literally and emotionally. From airlines and ride-hailing to tourism boards and logistics giants, we craft brand narratives, digital journeys, and campaign strategies that resonate in a hyper-connected, ever-mobile world."
         highlight="Travel & Transportation"
@@ -33,7 +32,6 @@ const FinancialServices = () => {
         cardImg1="/our-industry/travel-card1.webp"
         cardImg2="/our-industry/travel-card2.webp"
         firstImg="/our-industry/travel-1.webp"
-
         head1="Understanding the Market Trends"
         para1="DTravel and transport is no longer just about getting from A to B. The modern traveler seeks sustainability, personalization, and tech-driven ease. Meanwhile, logistical brands are under pressure to deliver faster, greener, and smarter. We track evolving consumer behaviors, tech disruptions, and global travel trends. Using data, cultural insights, and real-time listening to keep your brand on the front foot."
       />

@@ -19,6 +19,7 @@ const EntertainmentLeisure = () => {
   return (
     <div>
       <CareersHero
+             id='test-industry-inner'
         heading="Beauty and Fashion"
         text="We don’t just sell styles, we shape standards. At LPS, we turn beauty into movement, and fashion into identity."
         highlight="Beauty and Fashion"

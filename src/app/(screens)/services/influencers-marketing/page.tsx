@@ -9,6 +9,15 @@ import Timeline from "@/components/services/time-line";
 import Script from "next/script";
 import React from "react";
 
+export const metadata = {
+  title: "Top Influencer Marketing Agency in Dubai | LPS",
+  description:
+    "LPS is a leading influencer marketing agency in Dubai. We build authentic creator partnerships that drive impact, build trust, and grow your brand.",
+  alternates: {
+    canonical: "https://lps-me.com/services/influencer-marketing/",
+  },
+};
+
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -44,6 +53,7 @@ const Influencers = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <ServicesHero
+      id='test-privacy'
         heading="Influencer Marketing"
         highlight="Influencer Marketing"
         bottom={false}
