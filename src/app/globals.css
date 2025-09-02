@@ -28,7 +28,7 @@
 
 @font-face {
   font-family: "Asgard";
-  src: url("/fonts/asgard/AsgardTrial-Regular.ttf") format("truetype");
+  src: url("/fonts/asgard/AsgardTrial-Regular.woff") format("woff");
   font-weight: 500;
   font-style: medium;
   font-display: swap;
@@ -36,7 +36,7 @@
 
 @font-face {
   font-family: "Asgard";
-  src: url("/fonts/asgard/AsgardTrial-Bold.ttf") format("truetype");
+  src: url("/fonts/asgard/AsgardTrial-Bold.woff") format("woff");
   font-weight: 700;
   font-style: bold;
   font-display: swap;
@@ -172,7 +172,7 @@ body {
   }
 } */
 
-#test-contact:after { 
+#test-contact:after {
   position: absolute;
   content: '';
   z-index: -1;
@@ -189,7 +189,7 @@ body {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-direction: alternate;
-  border-radius:0px 0px 20px 20px;
+  border-radius: 0px 0px 20px 20px;
 }
 
 /* @media (max-width: 1440px) {
@@ -212,19 +212,18 @@ body {
 } */
 
 @media (max-width: 1440px) {
-  #test-contact:after { 
+  #test-contact:after {
     height: 900px;
   }
 }
+
 @media (max-width: 770px) {
-  #test-contact:after { 
+  #test-contact:after {
     height: 1550px;
   }
 }
 
-
-
-#test-about:after { 
+#test-about:after {
   position: absolute;
   content: '';
   z-index: -1;
@@ -241,7 +240,7 @@ body {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-direction: alternate;
-  border-radius:0px 0px 20px 20px;
+  border-radius: 0px 0px 20px 20px;
 }
 
 /* @media (max-width: 1440px) {
@@ -257,7 +256,7 @@ body {
 } */
 
 
-#test-industry-inner:after { 
+#test-industry-inner:after {
   position: absolute;
   content: '';
   z-index: -1;
@@ -278,13 +277,13 @@ body {
 }
 
 @media (max-width: 768px) {
-  #test-industry-inner:after { 
-    height:500px;
+  #test-industry-inner:after {
+    height: 500px;
   }
-} 
+}
 
 
-#test-service-list:after { 
+#test-service-list:after {
   position: absolute;
   content: '';
   z-index: -1;
@@ -304,7 +303,7 @@ body {
   border-radius: 0px 0px 20px 20px;
 }
 
-#test-industries:after { 
+#test-industries:after {
   position: absolute;
   content: '';
   z-index: -1;
@@ -343,13 +342,13 @@ body {
 } */
 
 @media (max-width: 770px) {
-  #test-industries:after { 
+  #test-industries:after {
     height: 430px;
   }
 }
 
 
-#test-privacy:after { 
+#test-privacy:after {
   position: absolute;
   content: '';
   z-index: -1;
@@ -370,23 +369,24 @@ body {
 }
 
 @media (max-width: 1920px) {
-  #test-privacy:after { 
+  #test-privacy:after {
     height: 40%;
   }
 }
+
 @media (max-width: 1440px) {
-  #test-privacy:after { 
+  #test-privacy:after {
     height: 50%;
   }
 }
 
 @media (max-width: 780px) {
-  #test-privacy:after { 
+  #test-privacy:after {
     height: 43%;
   }
 }
 
-#test-all:after { 
+#test-all:after {
   position: absolute;
   content: '';
   z-index: -1;
