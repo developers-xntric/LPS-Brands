@@ -197,7 +197,7 @@ export default async function BlogPage({
             <div className="lg:max-w-[100%] 2xl:max-w-[100%] w-full py-10  pt-0 pb-10 md:pb-5 space-y-4">
               <h1
                 id="main-title"
-                className="text-secondary font-['Exo'] leading-[34px] lg:leading-[46px] text-[30px] lg:text-[34px] font-semibold"
+                className="text-secondary font-['Asgard'] font-semibold leading-[34px] lg:leading-[46px] text-[30px] lg:text-[34px] "
               >
                 {data?.title}
               </h1>
@@ -345,13 +345,13 @@ export default async function BlogPage({
                 {tableOfContents.length > 0 && (
                   <div className="lg:w-[30%] lg:sticky lg:top-10 lg:self-start mt-">
                     <div className="table-of-contents">
-                      <h3 className="text-center ">Table of Content</h3>
+                      <h3 className="text-center font-['Asgard'] ">Table of Contents</h3>
                       <ul className="toc-list">
                         {tableOfContents.map((item, index) => (
                           <li key={index} className="toc-item">
                             <Link
                               href={`#${item.id}`}
-                              className="toc-link font-['Exo'] text-sm 2xl:text-lg"
+                              className="toc-link font-['Asgard'] font-medium text-[15px] 2xl:text-lg"
                             >
                               {item.title}
                             </Link>
@@ -397,7 +397,7 @@ export default async function BlogPage({
                           {subsection.subtitle && (
                             <h2
                               id={`subsection-${index}`}
-                              className="text-[20px] lg:text-[26px] text-secondary font-['Exo'] font-semibold leading-[30px] md:leading-[35px] lg:leading-[35px]"
+                              className="text-[20px] lg:text-[26px] text-secondary font-['Asgard'] font-semibold leading-[30px] md:leading-[35px] lg:leading-[35px]"
                             >
                               {subsection.subtitle}
                             </h2>
@@ -508,7 +508,7 @@ export default async function BlogPage({
                       <div className="space-y-3">
                         <h2
                           id="faqs"
-                          className="text-[18px] lg:text-[26px] font-['Exo'] font-semibold mb-2 leading-[35px] lg:leading-[42px]"
+                          className="text-[18px] lg:text-[26px] font-['Asgard'] font-semibold mb-2 leading-[35px] lg:leading-[42px]"
                         >
                           Frequently Asked Questions
                         </h2>
@@ -518,7 +518,7 @@ export default async function BlogPage({
                             index: number
                           ) => (
                             <div key={index} className="space-y-2">
-                              <h3 className="text-[18px] lg:text-[19px] font-['Exo'] font-semibold  md:leading-[35px] lg:leading-[42px]">
+                              <h3 className="text-[18px] lg:text-[19px] font-['Asgard'] font-semibold  md:leading-[35px] lg:leading-[42px]">
                                 {index + 1}. {faq.question}
                               </h3>
                               <div
@@ -535,7 +535,7 @@ export default async function BlogPage({
                       <div className="space-y-3">
                         <h2
                           id="conclusion"
-                          className="text-[25px] lg:text-[26px] font-semibold font-['Exo'] leading-[35px] lg:leading-[42px]"
+                          className="text-[25px] lg:text-[26px] font-semibold leading-[35px] lg:leading-[42px]"
                         >
                           Conclusion
                         </h2>

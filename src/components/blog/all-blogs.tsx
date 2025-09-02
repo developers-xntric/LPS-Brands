@@ -109,7 +109,7 @@ const Cards = () => {
                           {featuredPost.publishedDate.slice(0, 10)}
                         </span>
                       </div>
-                      <h2 className="text-2xl lg:text-3xl font-['Exo'] font-bold text-gray-900 mb-4 leading-tight line-clamp-2">
+                      <h2 className="text-2xl lg:text-3xl font-['Asgard'] font-bold text-gray-900 mb-4 leading-tight line-clamp-2">
                         {featuredPost.title}
                       </h2>
                       <p
@@ -189,7 +189,7 @@ const Cards = () => {
                             {card.publishedDate.slice(0, 10)}
                           </span>
                         </div>
-                        <h3 className="text-2xl lg:text-3xl font-['Exo'] font-bold text-secondary mb-3 leading-tight line-clamp-2">
+                        <h3 className="text-2xl lg:text-3xl font-['Asgard'] font-bold text-secondary mb-3 leading-tight line-clamp-2">
                           {card.title}
                         </h3>
                         <p

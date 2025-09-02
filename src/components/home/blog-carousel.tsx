@@ -255,7 +255,7 @@ export default function BlogCarousel() {
                       <span className="text-sm text-green relative px-2 top-4">
                         Blog
                       </span>
-                      <h3 className="text-white font-['Exo'] text-xl 2xl:text-[23px] font-bold mb-3 line-clamp-2 leading-tight px-2 my-6">
+                      <h3 className="text-white font-['Asgard'] text-xl 2xl:text-[23px] font-bold mb-3 line-clamp-2 leading-tight px-2 my-6">
                         {post.title}
                       </h3>
                       <Link
