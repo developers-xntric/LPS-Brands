@@ -504,20 +504,6 @@ export default async function BlogPage({
                       )
                     )}
 
-                    {data?.conclusion && (
-                      <div className="space-y-3">
-                        <h2
-                          id="conclusion"
-                          className="text-[25px] lg:text-[26px] font-semibold font-['Exo'] leading-[35px] lg:leading-[42px]"
-                        >
-                          Conclusion
-                        </h2>
-                        <div
-                          className="text-base text-secondary font-['Exo'] font-medium blog-content"
-                          dangerouslySetInnerHTML={{ __html: data?.conclusion }}
-                        />
-                      </div>
-                    )}
 
                     {data?.faqs && data?.faqs.length > 0 && (
                       <div className="space-y-3">
@@ -543,6 +529,22 @@ export default async function BlogPage({
                             </div>
                           )
                         )}
+                      </div>
+                    )}
+
+                    
+                    {data?.conclusion && (
+                      <div className="space-y-3">
+                        <h2
+                          id="conclusion"
+                          className="text-[25px] lg:text-[26px] font-semibold font-['Exo'] leading-[35px] lg:leading-[42px]"
+                        >
+                          Conclusion
+                        </h2>
+                        <div
+                          className="text-base text-secondary font-['Exo'] font-medium blog-content"
+                          dangerouslySetInnerHTML={{ __html: data?.conclusion }}
+                        />
                       </div>
                     )}
                   </div>
