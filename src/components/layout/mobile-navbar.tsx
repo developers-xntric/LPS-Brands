@@ -97,9 +97,9 @@ export default function MobileNavbar() {
                         </div>
 
                         {/* Services accordion */}
-                        <div className="mt-4">
+                        <div className="mt-4 ">
                             <h3 className="text-lg font-semibold mb-2">Services</h3>
-                            <div className="rounded-2xl border border-black/10 divide-y divide-black/10">
+                            <div className="rounded-2xl border border-black/10 divide-y h-auto relative overflow-y-auto divide-black/10">
                                 {Object.entries(servicesData).map(([category, items]) => (
                                     <div key={category}>
                                         <button
