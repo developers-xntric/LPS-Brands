@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable */
 import BlogsSection from "@/components/home/blog-section";
 import LogoLPS from "@/components/icons/lps-logo";
 import MobileNavbar from "@/components/layout/mobile-navbar";
