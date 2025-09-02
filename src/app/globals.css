@@ -382,7 +382,7 @@ body {
 
 @media (max-width: 780px) {
   #test-privacy:after { 
-    height: 43%;
+    height: 300px;
   }
 }
 
