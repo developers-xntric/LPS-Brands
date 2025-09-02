@@ -19,10 +19,22 @@ const numbersData = [
     sign: "%",
   },
 ];
+
+export const metadata = {
+  title: "Mentos - LPS Brands",
+  description:
+    "Mentos sought to create a multinational awareness campaign linking their brand to the FIFA World Cup—without incurring sponsorship costs. The goal was to associate Mentos with the excitement of the global event.",
+  alternates: {
+    canonical: "https://lps-me.com/our-work/mentos",
+  },
+};
+
 const DubaiEconomy = () => {
   return (
     <div>
       <WorkHero
+        isOurWork={true}
+        ourworkText="The Curve Ball:"
         heading="Mentos"
         highlight="presence"
         text="Mentos aimed to create a multinational awareness ad campaign that would associate their brand with the FIFA World Cup without incurring the high costs of official sponsorship fees. The goal given to us was to strategically position Mentos alongside the excitement of the World Cup, leveraging creative marketing tactics to achieve strong brand association without direct sponsorship.​"

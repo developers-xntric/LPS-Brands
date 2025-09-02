@@ -11,7 +11,7 @@ export const metadata = {
   description:
     "We build brands and beliefs. At LPS, we help financial institutions earn trust, spark action, and stay ahead of disruption. What are the trends of financial services industry. Fintech is on fire — from digital wallets to decentralized banking. Consumers are demanding speed, simplicity, and transparency in every transaction. Financial literacy, ESG investing, and personalization",
   alternates: {
-    canonical: "https://lps-me.com/financial-services",
+    canonical: "https://lps-me.com/our-industry/financial-services",
   },
 };
 

@@ -24,10 +24,21 @@ const numbersData = [
         sign:"+"
     },
 ]
+
+export const metadata = {
+  title: "Coffee Planet - LPS Brands",
+  description:
+    "As a homegrown specialty coffee brand in the UAE, Coffee Planet wanted to change consumer perceptions and establish itself as the top choice for coffee lovers in the country. The challenge was to reshape brand messaging while maintaining authenticity.",
+  alternates: {
+    canonical: "https://lps-me.com/our-work/coffee-planet",
+  },
+};
+
+
 const UnifiedBrand = () => {
     return (
         <div>
-            <WorkHero heading='A unified brand presence for a unique three-chamber model'highlight='presence' text='Dubai Chambers entrusted LPS as its strategic communications partner, recognizing the agency’s deep expertise in corporate communication strategies across the Middle East and its community-focused approach.​' image='single' />
+            <WorkHero heading='A unified brand presence for a unique three-chamber model' text='Dubai Chambers entrusted LPS as its strategic communications partner, recognizing the agency’s deep expertise in corporate communication strategies across the Middle East and its community-focused approach.​' image='single' />
             <ImpactSection videoUrl='/work/v1.webm' numbersData={numbersData} />
             <PortfolioSection />
         </div>

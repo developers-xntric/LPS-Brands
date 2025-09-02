@@ -11,7 +11,7 @@ export const metadata = {
     description:
     "We don’t just sell styles, we shape standards. At LPS, we turn beauty into movement, and fashion into identity. What’s Trending in Beauty & Fashion? Inclusivity is the new luxury. Authenticity outshines perfection. From skinimalism to slow the industry is shifting from hype to heart. Brands that empower, educate, and evolve with their audience",
   alternates: {
-    canonical: "https://lps-me.com/beauty-and-fashion",
+    canonical: "https://lps-me.com/our-industry/beauty-and-fashion",
   },
 };
 

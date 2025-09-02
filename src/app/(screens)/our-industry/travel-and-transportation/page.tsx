@@ -11,7 +11,7 @@ export const metadata = {
   description:
     "At LPS, we partner with travel and transportation brands to create experiences that move people, literally and emotionally. From airlines and ride-hailing to tourism boards and logistics giants, we craft brand narratives, digital journeys, and campaign strategies that resonate in a hyper-connected, ever-mobile world. Understanding the Market Trends Travel and transport is no longer just",
   alternates: {
-    canonical: "https://lps-me.com/travel-and-transportation",
+    canonical: "https://lps-me.com/our-industry/travel-and-transportation",
   },
 };
 

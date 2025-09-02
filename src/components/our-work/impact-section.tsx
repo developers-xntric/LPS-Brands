@@ -62,10 +62,10 @@ export default function ImpactSection({
     <section
       className={`lg:pb-16 pb-8 ${
         video1 ? "pt-0" : "pt-32"
-      } lg:px-4 w-[90%] 2xl:max-w-[1740px] mx-auto`}
+      } w-[90%] 2xl:max-w-[1740px] mx-auto`}
     >
       {video1 && (
-        <div className="relative -top-10 lg:-top-20">
+        <div className="relative top-10 md:-top-10 lg:-top-20">
           <iframe src={video1}  className="w-[100%] lg:h-[90vh]"></iframe>
         </div>
       )}
@@ -92,7 +92,7 @@ export default function ImpactSection({
           {numbersData &&
             numbersData.map((item, index) => {
               return (
-                <div key={index} className="space-y-2">
+                <div key={index} className="space-y-1 md:space-y-2">
                   <div className="flex items-baseline gap-1">
                     <AnimatedCounter
                       end={item.value}
@@ -100,7 +100,7 @@ export default function ImpactSection({
                       suffix={item.sign}
                     />
                   </div>
-                  <p className="text-secondary font-normal lg:text-lg uppercase">
+                  <p className="text-secondary font-medium lg:text-lg uppercase">
                     {item.name}
                   </p>
                 </div>
@@ -118,7 +118,6 @@ export default function ImpactSection({
               className="w-full h-auto object-cover"
               autoPlay
               loop
-              muted
               playsInline
               controls
             />
