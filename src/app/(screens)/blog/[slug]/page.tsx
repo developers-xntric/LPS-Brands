@@ -84,7 +84,7 @@ const schemaData = {
 const socialLinks = [
   {
     link: "https://www.facebook.com/lpsbrands",
-    Icon: (props: React.SVGProps<SVGSVGElement>) => (
+    Icon: () => (
       <svg
         width={"20px"}
         height={"20px"}
@@ -98,7 +98,7 @@ const socialLinks = [
   },
   {
     link: "#",
-    Icon: (props: React.SVGProps<SVGSVGElement>) => (
+    Icon: () => (
       <svg
         width={"20px"}
         height={"20px"}
@@ -112,7 +112,7 @@ const socialLinks = [
   },
   {
     link: "https://www.linkedin.com/company/lps-brands/",
-    Icon: (props: React.SVGProps<SVGSVGElement>) => (
+    Icon: () => (
       <svg
         width={"20px"}
         height={"20px"}
@@ -223,7 +223,7 @@ export default async function BlogPage({
                     rel={index === 1 ? undefined : "noopener noreferrer"} // best practice for external links
                     className="rounded-full w-8 h-8 flex items-center justify-center text-white"
                   >
-                    <Icon className="w-4 h-4 text-white" />
+                    <Icon/>
                   </Link>
                 ))}
               </div>
