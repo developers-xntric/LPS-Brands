@@ -61,7 +61,7 @@ const industries = [
 const Industries = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   return (
-    <div className="mb-16 lg:mb-0 lg:my-20">
+    <div className="mb-16 lg:mb-20">
       <div className="2xl:max-w-[1740px] w-[90%] md:w-[90%] mx-auto">
         <h2 className="text-4xl lg:text-5xl xl:text-[60px] 2xl:max-w-[40%] lg:max-w-[55%] lg:leading-[60px]">
           Empowering Growth Across Diverse Industries
@@ -95,16 +95,16 @@ const Industries = () => {
 
                 {/* Hover Button */}
                 <div
-                  className={`transition-all justify-center w-full flex duration-300 ${
+                  className={`transition-alljustify-center flex duration-300 ${
                     hoveredCard === index
                       ? "opacity-100 translate-y-0"
                       : "lg:opacity-0 lg:translate-y-[30px]"
                   }`}
                 >
-                  <Link href={`/our-industry/${industry.link}`}>
+                  <Link href={`/our-industry/${industry.link}`} className="w-full">
                     <B
                       variant="secondary"
-                      className="group bg-[#FFFFFF1A] backdrop-blur-sm w-[250px] lg:w-[280px] justify-between text-white border-white/30 hover:bg-white/30 rounded-full  py-5  flex items-center gap-2 transition-transform duration-300 ease-in-out hover:scale-105"
+                      className="group bg-[#FFFFFF1A] backdrop-blur-sm w-full justify-between text-white border-white/30 hover:bg-white/30 rounded-full  py-5  flex items-center gap-2 transition-transform duration-300 ease-in-out hover:scale-105"
                     >
                       <span className="text-white text-lg">Explore More</span>
                       <div className="w-6 h-6 bg-[#00FC09] transform transition-transform duration-300 ease-in-out group-hover:translate-x-[15 px] rounded-full flex items-center justify-center overflow-hidden">

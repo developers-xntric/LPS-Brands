@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://lps-me.com
+
+# Sitemaps
+Sitemap: https://lps-me.com/sitemap.xml
