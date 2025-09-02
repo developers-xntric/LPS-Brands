@@ -36,7 +36,7 @@ export default function ContactFormSection() {
       <div className="flex 2xl:justify-center">
         <div className="py-16">
           <div className="mb-12">
-            <h2 className="text-[30px] leading-[34px] md:text-6xl font-bold text-foreground 2xl:leading-tight 2xl:max-w-5xl">
+            <h2 className="text-[30px] leading-[34px] md:text-6xl font-semibold text-foreground 2xl:leading-tight 2xl:max-w-5xl">
               Have Questions or Ready to Start Your Project? Get in Touch with Us Today!
             </h2>
           </div>

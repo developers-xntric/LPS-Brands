@@ -7,7 +7,6 @@ import { Calendar, LinkedinIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-import { Twitter, Facebook, Linkedin } from "lucide-react";
 
 import {
   AwaitedReactNode,
@@ -83,9 +82,48 @@ const schemaData = {
 };
 
 const socialLinks = [
-  { Icon: Facebook, link: "https://www.facebook.com/lpsbrands" },
-  { Icon: Twitter, link: "#" },
-  { Icon: Linkedin, link: "https://www.linkedin.com/company/lps-brands/" },
+  {
+    link: "https://www.facebook.com/lpsbrands",
+    Icon: (props: React.SVGProps<SVGSVGElement>) => (
+      <svg
+        width={"20px"}
+        height={"20px"}
+        className="e-font-icon-svg e-fab-facebook"
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
+      </svg>
+    ),
+  },
+  {
+    link: "#",
+    Icon: (props: React.SVGProps<SVGSVGElement>) => (
+      <svg
+        width={"20px"}
+        height={"20px"}
+        className="e-font-icon-svg e-fab-twitter"
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+      </svg>
+    ),
+  },
+  {
+    link: "https://www.linkedin.com/company/lps-brands/",
+    Icon: (props: React.SVGProps<SVGSVGElement>) => (
+      <svg
+        width={"20px"}
+        height={"20px"}
+        className="e-font-icon-svg e-fab-linkedin"
+        viewBox="0 0 448 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path>
+      </svg>
+    ),
+  },
 ];
 
 export default async function BlogPage({
@@ -156,7 +194,7 @@ export default async function BlogPage({
         />
         <div>
           <div className="">
-            <div className="lg:max-w-[100%] 2xl:max-w-[100%] w-full py-10 pt-0 space-y-4">
+            <div className="lg:max-w-[100%] 2xl:max-w-[100%] w-full py-10  pt-0 pb-10 md:pb-5 space-y-4">
               <h1
                 id="main-title"
                 className="text-secondary font-['Exo'] leading-[34px] lg:leading-[46px] text-[30px] lg:text-[34px] font-semibold"
@@ -181,8 +219,9 @@ export default async function BlogPage({
                   <Link
                     key={index}
                     href={link}
-                    target="_blank"
-                    className="bg-[#101820] rounded-full w-8 h-8 flex items-center justify-center  text-white "
+                    target={index === 1 ? "_self" : "_blank"}
+                    rel={index === 1 ? undefined : "noopener noreferrer"} // best practice for external links
+                    className="rounded-full w-8 h-8 flex items-center justify-center text-white"
                   >
                     <Icon className="w-4 h-4 text-white" />
                   </Link>
@@ -304,9 +343,9 @@ export default async function BlogPage({
             <div className="">
               <div className="flex flex-col lg:flex-row gap-8">
                 {tableOfContents.length > 0 && (
-                  <div className="lg:w-[30%] lg:sticky lg:top-20 lg:self-start mt-10">
+                  <div className="lg:w-[30%] lg:sticky lg:top-10 lg:self-start mt-">
                     <div className="table-of-contents">
-                      <h3>Table of Content</h3>
+                      <h3 className="text-center ">Table of Content</h3>
                       <ul className="toc-list">
                         {tableOfContents.map((item, index) => (
                           <li key={index} className="toc-item">
@@ -324,7 +363,7 @@ export default async function BlogPage({
                 )}
 
                 <div className="lg:w-[70%]">
-                  <div className="md:px-6 pb-2 md:pb-12 py-12 md:pt-12 pt-2 space-y-8">
+                  <div className="md:px-6 pb-2 md:pb-12 py-12 md:pt-5 pt-2 space-y-8">
                     {data?.description && (
                       <div
                         className="text-[15px] lg:text-[18px] text-secondary font-['Exo'] font-medium blog-content"
@@ -405,7 +444,7 @@ export default async function BlogPage({
                                 </h3>
                                 {list.listDescription && (
                                   <div
-                                    className="blog-content mt-2"
+                                    className="blog-content font-['Exo'] font-medium mt-2"
                                     dangerouslySetInnerHTML={{
                                       __html: list.listDescription,
                                     }}
@@ -447,7 +486,7 @@ export default async function BlogPage({
                                           />
                                           {list.listDescription && (
                                             <div
-                                              className="blog-content mt-2"
+                                              className="blog-content font-['Exo'] mt-2"
                                               dangerouslySetInnerHTML={{
                                                 __html: item.description,
                                               }}
@@ -463,21 +502,6 @@ export default async function BlogPage({
                           )}
                         </div>
                       )
-                    )}
-
-                    {data?.conclusion && (
-                      <div className="space-y-3">
-                        <h2
-                          id="conclusion"
-                          className="text-[25px] lg:text-[26px] font-semibold font-['Exo'] leading-[35px] lg:leading-[42px]"
-                        >
-                          Conclusion
-                        </h2>
-                        <div
-                          className="text-base text-secondary font-['Exo'] font-medium blog-content"
-                          dangerouslySetInnerHTML={{ __html: data?.conclusion }}
-                        />
-                      </div>
                     )}
 
                     {data?.faqs && data?.faqs.length > 0 && (
@@ -504,6 +528,21 @@ export default async function BlogPage({
                             </div>
                           )
                         )}
+                      </div>
+                    )}
+
+                    {data?.conclusion && (
+                      <div className="space-y-3">
+                        <h2
+                          id="conclusion"
+                          className="text-[25px] lg:text-[26px] font-semibold font-['Exo'] leading-[35px] lg:leading-[42px]"
+                        >
+                          Conclusion
+                        </h2>
+                        <div
+                          className="text-base text-secondary font-['Exo'] font-medium blog-content"
+                          dangerouslySetInnerHTML={{ __html: data?.conclusion }}
+                        />
                       </div>
                     )}
                   </div>
