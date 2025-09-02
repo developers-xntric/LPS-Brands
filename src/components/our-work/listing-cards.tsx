@@ -5,7 +5,7 @@ import React from "react";
 
 const ListingCards = () => {
   return (
-    <section className="py-16 pt-0">
+    <section className="py-16 pt-6">
       <div className="2xl:max-w-[1740px] w-[90%] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {lists.map((item, index) => {
