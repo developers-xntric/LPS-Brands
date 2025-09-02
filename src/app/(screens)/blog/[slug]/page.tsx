@@ -7,7 +7,6 @@ import { Calendar, LinkedinIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-import { Twitter, Facebook, Linkedin } from "lucide-react";
 
 import {
   AwaitedReactNode,
@@ -220,8 +219,9 @@ export default async function BlogPage({
                   <Link
                     key={index}
                     href={link}
-                    target="_blank"
-                    className=" rounded-full w-8 h-8 flex items-center justify-center text-white"
+                    target={index === 1 ? "_self" : "_blank"}
+                    rel={index === 1 ? undefined : "noopener noreferrer"} // best practice for external links
+                    className="rounded-full w-8 h-8 flex items-center justify-center text-white"
                   >
                     <Icon className="w-4 h-4 text-white" />
                   </Link>
@@ -444,7 +444,7 @@ export default async function BlogPage({
                                 </h3>
                                 {list.listDescription && (
                                   <div
-                                    className="blog-content mt-2"
+                                    className="blog-content font-['Exo'] font-medium mt-2"
                                     dangerouslySetInnerHTML={{
                                       __html: list.listDescription,
                                     }}
@@ -486,7 +486,7 @@ export default async function BlogPage({
                                           />
                                           {list.listDescription && (
                                             <div
-                                              className="blog-content mt-2"
+                                              className="blog-content font-['Exo'] mt-2"
                                               dangerouslySetInnerHTML={{
                                                 __html: item.description,
                                               }}
@@ -503,7 +503,6 @@ export default async function BlogPage({
                         </div>
                       )
                     )}
-
 
                     {data?.faqs && data?.faqs.length > 0 && (
                       <div className="space-y-3">
@@ -532,7 +531,6 @@ export default async function BlogPage({
                       </div>
                     )}
 
-                    
                     {data?.conclusion && (
                       <div className="space-y-3">
                         <h2
