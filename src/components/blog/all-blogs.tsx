@@ -92,8 +92,8 @@ const Cards = () => {
             {featuredPost && (
               <div className="mb-12">
                 <div>
-                  <div className="flex flex-col lg:flex-row gap-8  rounded-2xl overflow-hidden duration-300">
-                    <div className="lg:w-1/2">
+                  <div className="flex flex-col lg:flex-row gap-2  rounded-2xl overflow-hidden duration-300">
+                    <div className="lg:w-[75%]">
                       <Image
                         src={featuredPost.bannerImageURL || "/placeholder.svg"}
                         width={600}
