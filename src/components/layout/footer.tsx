@@ -102,7 +102,7 @@ export default function Footer() {
             {/* Connect with Expert Input */}
             <div className="relative lg:w-[60%] 2xl:w-[75%] group ">
               <Link href={"/contact-us"}>
-                <button className="w-full lg:w-[300px] text-start text-sm mb-6 lg:mb-0 xl:text-xl bg-[#282F36] group-hover:bg-[#636262] transition-all duration-500 border text-white placeholder-[#FFFFFF] items-center gap-6 px-6 py-4 rounded-full lg:pr-14 flex justify-between">
+                <button className="w-full lg:w-[300px] 2xl:w-[360px] text-start text-sm mb-6 lg:mb-0 xl:text-xl bg-[#282F36] group-hover:bg-[#636262] transition-all duration-500 border text-white placeholder-[#FFFFFF] items-center gap-6 px-6 py-4 rounded-full lg:pr-14 flex justify-between">
                   Connect with an expert
                   <div className="lg:hidden w-8 h-8 flex justify-center items-center bg-white rounded-full">
                     <ArrowRight color="black" className="w-4 h-4" />
@@ -183,7 +183,7 @@ export default function Footer() {
                 className={`mb-4 ${index === 1 && "relative right-1"} w-[45px] h-[105px] 3xl:h-[90px] 3xl:w-[70px] md:h-[70px] md:w-[50px]`}
               />
               <div className="-space-y-1">
-                <h4 className={`font-semibold tracking-wide text-[18px] mb-3`}>
+                <h4 className={`font-semibold tracking-wide md:text-[14px] mb-3`}>
                   {office.country}
                 </h4>
                 <div
@@ -192,7 +192,7 @@ export default function Footer() {
                 >
                   <p>{office.address}</p>
                 </div>
-                <a href={`tel:${office.phone}`} className="text-sm lg:text-lg font-['Exo']">
+                <a href={`tel:${office.phone}`} className="text-sm lg:text-md font-['Exo']">
                   {office.phone}
                 </a>
               </div>
