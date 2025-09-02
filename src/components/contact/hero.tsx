@@ -236,7 +236,7 @@ function ContactHero() {
                   </div>
                 </form>
               ) : (
-                <form onSubmit={onSubmit} className="space-y-4">
+                <form onSubmit={onSubmit} className="space-y-4 ">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label
@@ -251,7 +251,7 @@ function ContactHero() {
                         type="text"
                         value={form.fullName}
                         onChange={onChange}
-                        className="w-full rounded-xl border border-black/15 px-3 py-2 outline-none focus:border-[#00FC09]"
+                        className="w-full  rounded-xl border border-black/15 px-3 py-2 outline-none focus:border-[#00FC09]"
                         required
                       />
                     </div>
@@ -269,7 +269,7 @@ function ContactHero() {
                         type="email"
                         value={form.email}
                         onChange={onChange}
-                        className="w-full rounded-xl border border-black/15 px-3 py-2 outline-none focus:border-[#00FC09]"
+                        className="w-full rounded-xl border font-['Exo'] border-black/15 px-3 py-2 outline-none focus:border-[#00FC09]"
                         required
                       />
                     </div>
@@ -287,7 +287,7 @@ function ContactHero() {
                         type="tel"
                         value={form.phone}
                         onChange={onChange}
-                        className="w-full rounded-xl border border-black/15 px-3 py-2 outline-none focus:border-[#00FC09]"
+                        className="w-full rounded-xl font-['Exo'] border border-black/15 px-3 py-2 outline-none focus:border-[#00FC09]"
                       />
                     </div>
 
@@ -304,7 +304,7 @@ function ContactHero() {
                         type="text"
                         value={form.company}
                         onChange={onChange}
-                        className="w-full rounded-xl border border-black/15 px-3 py-2 outline-none focus:border-[#00FC09]"
+                        className="w-full rounded-xl border font-['Exo'] border-black/15 px-3 py-2 outline-none focus:border-[#00FC09]"
                       />
                     </div>
                   </div>
@@ -322,7 +322,7 @@ function ContactHero() {
                       rows={4}
                       value={form.details}
                       onChange={onChange}
-                      className="w-full rounded-xl border border-black/15 px-3 py-2 outline-none focus:border-[#00FC09] resize-y"
+                      className="w-full rounded-xl border font-['Exo'] border-black/15 px-3 py-2 outline-none focus:border-[#00FC09] resize-y"
                     />
                   </div>
 
