@@ -37,10 +37,10 @@ export default function ContactFormSection() {
 
     try {
 
-      const resp = await fetch("https://blog.xntric.me/lps-service", {
+      const resp = await fetch("http://blog.xntric.me/lps-service", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",   
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           fullName: formData.fullName,
@@ -48,7 +48,6 @@ export default function ContactFormSection() {
           phone: formData.phone,
         }),
       });
-      console.log(await resp.json());
 
       const text = await resp.text();
       if (!resp.ok) throw new Error(text || "Request failed");
