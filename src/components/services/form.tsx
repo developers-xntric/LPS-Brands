@@ -42,7 +42,7 @@ export default function ContactFormSection() {
           </div>
 
           <form onSubmit={handleSubmit} className="mx-auto">
-            <div className="flex lg:flex-row flex-col gap-6 mb-8 font-['Exo']">
+            <div className="grid grid-cols-1 md:grid-cols-3 flex-col gap-6 mb-8 font-['Exo']">
               {/* Full Name */}
               <div className="space-y-2">
                 <label htmlFor="fullName" className="text-lg font-bold text-foreground">
