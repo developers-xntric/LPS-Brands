@@ -97,7 +97,7 @@ export default function BlogCarousel() {
       const widthForCards = Math.max(0, rect.width - totalGaps);
       const perCard = itemsPerView > 0 ? widthForCards / itemsPerView : 0;
 
-     
+
       setGapPx(gap);
       setItemWidth(perCard);
     };
@@ -138,11 +138,11 @@ export default function BlogCarousel() {
   const centerOffset =
     itemsPerView === 3.5
       ? (wrapperRef.current?.getBoundingClientRect().width || 0) / 2 -
-        (itemWidth + gapPx / 2)
+      (itemWidth + gapPx / 2)
       : itemsPerView === 2
-      ? (wrapperRef.current?.getBoundingClientRect().width || 0) / 2 -
+        ? (wrapperRef.current?.getBoundingClientRect().width || 0) / 2 -
         (itemWidth + gapPx / 2)
-      : 0;
+        : 0;
   // choose an extra offset depending on itemsPerView (breakpoints)
   let extraOffset = 0;
   if (itemsPerView === 3.5) {
@@ -226,45 +226,44 @@ export default function BlogCarousel() {
                   itemsPerView === 3.5
                     ? rel === 1 || rel === 2 // Two middle cards for 3.5 items
                     : itemsPerView === 2
-                    ? rel === 0 || rel === 1 // Both cards for 2 items
-                    : itemsPerView === 1
-                    ? rel === 0 // Single card for mobile
-                    : rel === 1; // Middle card for 3 items
+                      ? rel === 0 || rel === 1 // Both cards for 2 items
+                      : itemsPerView === 1
+                        ? rel === 0 // Single card for mobile
+                        : rel === 1; // Middle card for 3 items
 
                 return (
                   <div
                     key={post.id}
-                    className={`flex-shrink-0 px-5 md:px-2 transition-all duration-500 ${
-                      centerish ? "z-10 scale-105" : "z-0 scale-100"
-                    }`}
+                    className={`flex-shrink-0 px-5 md:px-2 transition-all duration-500 ${centerish ? "z-10 scale-105" : "z-0 scale-100"
+                      }`}
                     style={{ width: `${itemWidth}px` }}
                   >
-                    <div className="rounded-2xl overflow-hidden bg-transparent">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        className={`w-full md:w-full ${
-                          centerish
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="text-white underline text-sm 2xl:text-lg hover:text-[#2054FC] no-underline transition-colors px-2"
+                    >
+                      <div className="rounded-2xl overflow-hidden bg-transparent">
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          className={`w-full md:w-full ${centerish
                             ? "h-[200px] md:h-[250px] 2xl:h-[400px]"
                             : "h-56 2xl:h-[350px]"
-                        } rounded-2xl object-cover`}
-                        draggable={false}
-                        width={600}
-                        height={600}
-                      />
-                      <span className="text-sm text-green relative px-2 top-4">
-                        Blog
-                      </span>
-                      <h3 className="text-white font-['Asgard'] text-xl 2xl:text-[23px] font-bold mb-3 line-clamp-2 leading-tight px-2 my-6">
-                        {post.title}
-                      </h3>
-                      <Link
-                        href={`/blog/${post.slug}`}
-                        className="text-white underline text-sm 2xl:text-lg hover:text-[#2054FC] transition-colors px-2"
-                      >
-                        {post.readMore}
-                      </Link>
-                    </div>
+                            } rounded-2xl object-cover`}
+                          draggable={false}
+                          width={600}
+                          height={600}
+                        />
+                        <span className="text-sm text-green relative px-2 top-4">
+                          Blog
+                        </span>
+                        <h3 className="text-white font-['Asgard'] text-xl 2xl:text-[23px] font-bold mb-3 line-clamp-2 leading-tight px-2 my-6">
+                          {post.title}
+                        </h3>
+
+                        <span className="ps-2 hover:underline">{post.readMore}</span>
+                      </div>
+                    </Link>
                   </div>
                 );
               })}
