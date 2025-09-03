@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { Input } from "@/components/ui/input";
 import dynamic from "next/dynamic";
 import type React from "react";
 import { useState } from "react";
+// If your Button doesn’t forward "type", use a native <button> instead.
 import { Button } from "../common/button";
 import Wrapper from "../layout/wrapper";
 
@@ -20,15 +22,49 @@ export default function ContactFormSection() {
     email: "",
     phone: "",
   });
+  const [submitting, setSubmitting] = useState(false);
+  const [feedback, setFeedback] = useState<{ type: "success" | "error" | ""; msg: string }>({ type: "", msg: "" });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setFeedback({ type: "", msg: "" });
+    setSubmitting(true);
+
+    try {
+
+      const resp = await fetch("https://blog.xntric.me/lps-service", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",   
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+        }),
+      });
+      console.log(await resp.json());
+
+      const text = await resp.text();
+      if (!resp.ok) throw new Error(text || "Request failed");
+
+      setFeedback({ type: "success", msg: text || "Submitted successfully." });
+      setFormData({ fullName: "", email: "", phone: "" });
+    } catch (err: any) {
+      setFeedback({
+        type: "error",
+        msg:
+          err?.message ||
+          "Something went wrong sending your info. Please try again.",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -95,10 +131,29 @@ export default function ContactFormSection() {
                   dropdownClass="!text-base lg:!w-[245px] 2xl:!w-[380px] !w-[280px] !py-4"
                 />
               </div>
+
             </div>
 
+            {/* Feedback */}
+            {feedback.msg && (
+              <div
+                className={`mb-4 text-sm px-4 py-3 rounded-lg ${feedback.type === "success"
+                  ? "bg-green-100 text-green-800"
+                  : feedback.type === "error"
+                    ? "bg-red-100 text-red-800"
+                    : ""
+                  }`}
+              >
+                {feedback.msg}
+              </div>
+            )}
+
             <div className="flex justify-start">
-              <Button text="Connect with an expert" bg="bg-black" />
+              <Button
+                text={submitting ? "Sending..." : "Connect with an expert"}
+                bg="bg-black"
+                onClick={handleSubmit}
+              />
             </div>
           </form>
         </div>

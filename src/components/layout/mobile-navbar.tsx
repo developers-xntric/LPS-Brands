@@ -81,7 +81,7 @@ export default function MobileNavbar() {
                     </div>
 
                     {/* Main links */}
-                    <nav className="px-5 pb-6">
+                    <nav className="px-5 pb-6 max-h-[calc(100vh-15vh)] overflow-y-auto">
                         <div className="grid grid-cols-1">
                             {menuItems.map((item) => (
                                 <Link

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { Button as B } from "../ui/button";
 import { ArrowRight } from "lucide-react";
@@ -16,7 +17,7 @@ export const Button = ({
   center?: boolean;
   bg?: string;
   topT?: boolean;
-  onClick?: () => void;
+  onClick?: (e?: any) => void;
   link?: string;
   className?: string;
 }) => {
