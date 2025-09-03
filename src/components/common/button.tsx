@@ -16,7 +16,7 @@ export const Button = ({
   center?: boolean;
   bg?: string;
   topT?: boolean;
-  onClick?: () => void;
+  onClick?: (e?: any) => void;
   link?: string;
   className?: string;
 }) => {
