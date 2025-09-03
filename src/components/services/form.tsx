@@ -37,7 +37,7 @@ export default function ContactFormSection() {
 
     try {
 
-      const resp = await fetch("http://blog.xntric.me/lps-service", {
+      const resp = await fetch("https://blog.xntric.me/lps-service", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
