@@ -45,7 +45,7 @@ export default function ProductionEvolutionSection({ title, highlight, heading, 
                     {/* Left Column - Text with Green Circle */}
                     <div className="relative flex items-center">
                         <div className="relative z-10 2xl:p-8 rounded-lg">
-                            <p className="text-secondary leading-7 font-medium text-center lg:text-start 2xl:text-lg font-['Exo']">
+                            <p className="text-secondary leading-7 lg:w-[90%] 2xl:w-[98%] font-medium text-center lg:text-start 2xl:text-lg font-['Exo']">
                                 {(text && text[0]) ? text[0] : "Leadership branding is the cornerstone of how you’re seen, appreciated, and followed in the competitive environment of today, not simply a slogan. Whether your role is changemaker, entrepreneur, or executive, your own leadership brand determines your effect. Establishing a leadership brand requires establishing your beliefs, approach of communication, and special presence you provide to every room."}
                             </p>
                         </div>  

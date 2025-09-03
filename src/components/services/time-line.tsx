@@ -117,7 +117,7 @@ export default function Timeline({
             <h2 className="text-[30px] leading-[30px] md:leading-[48px] md:text-5xl text-secondary mb-6 max-w-3xl mx-auto font-['Asgard']">
               {heading ? heading : "How We Help You Build Your Leadership Brand"}
             </h2>
-            <p className="text-secondary font-medium leading-7 2xl:text-lg font-['Exo'] 2xl:max-w-4xl mx-auto" dangerouslySetInnerHTML={{ __html: text }}>
+            <p className="text-secondary font-medium leading-7 2xl:text-lg font-['Exo'] md:max-w-3xl 2xl:max-w-4xl mx-auto" dangerouslySetInnerHTML={{ __html: text }}>
             </p>
           </div>
 
