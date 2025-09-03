@@ -197,7 +197,7 @@ export default async function BlogPage({
             <div className="lg:max-w-[100%] 2xl:max-w-[100%] w-full py-10  pt-0 pb-10 md:pb-5 space-y-4">
               <h1
                 id="main-title"
-                className="text-secondary font-['Asgard'] font-semibold leading-[34px] lg:leading-[46px] text-[30px] lg:text-[34px] "
+                className="text-secondary font-['Asgard'] font-semibold leading-[34px] lg:leading-[46px] text-[30px] lg:text-[40px] "
               >
                 {data?.title}
               </h1>
