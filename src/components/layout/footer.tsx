@@ -62,14 +62,17 @@ export default function Footer() {
         "Social Media",
         "Public Relations",
       ],
+      links: ["/services/leadership-branding", "/services/corporate-branding", "/services/social-media", "/services/public-relations"]
     },
     {
       name: "Communications",
-      subServices: ["Public Relations", "Content Creation", "Social Media"],
+      subServices: ["Creative", "Production", "Influencers", "Gen AI", "Short Form Video"],
+      links: ["/services/our-creative-services", "/services/production-services", "/services/influencers-marketing", "/services/gen-ai", "/services/short-form-video"]
     },
     {
       name: "Experiences",
-      subServices: ["User Experience", "Customer Journey", "Service Design"],
+      subServices: ["Digital", "Website & Apps", "Events", "Gaming"],
+      links: ["/services/digital-marketing", "/services/website-app", "/services/event-management", "/services/gaming"]
     },
   ];
   const socialLinks = [
@@ -149,13 +152,13 @@ export default function Footer() {
                           }`}
                       >
                         <div className="pb-4 space-y-5">
-                          {service.subServices.map((subService) => (
+                          {service.subServices.map((subService, index) => (
                             <div
                               key={subService}
                               className="flex items-center gap-3 pl-0 group"
                             >
                               <span className="text-gray-300 hover:border-b hover:border-[#00FC09]  transition-colors duration-500 text-[18px]  cursor-pointer">
-                                {subService}
+                                <Link href={service.links![index]}>{subService}</Link>
                               </span>
                               <ArrowUpRight className="w-5 h-5 text-[#00FC09] group-hover:text-[#00FC09] transition-all duration-500 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                             </div>
