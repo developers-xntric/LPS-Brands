@@ -240,7 +240,7 @@ export default function BlogCarousel() {
                   >
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="text-white underline text-sm 2xl:text-lg hover:text-[#2054FC] no-underline transition-colors px-2"
+                      className="text-white text-sm 2xl:text-lg hover:text-[#2054FC] no-underline transition-colors px-2"
                     >
                       <div className="rounded-2xl overflow-hidden bg-transparent">
                         <Image
