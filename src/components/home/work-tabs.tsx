@@ -38,7 +38,7 @@ const tabData = {
 
 export default function WorkTabs() {
   const [activeTab, setActiveTab] =
-    useState<keyof typeof tabData>("communications");
+    useState<keyof typeof tabData>("identity");
 
   return (
     <div className="mx-auto xl:px-8">
