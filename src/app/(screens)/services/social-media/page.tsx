@@ -1,4 +1,5 @@
 import ServicesHero from '@/components/careers/careers-hero';
+import Wrapper from '@/components/layout/wrapper';
 import BrandingStart from '@/components/services/branding-start';
 import BuildingBrandsCards from '@/components/services/building-brands-cards';
 import DisplayFeatured from '@/components/services/display-featured';
@@ -98,6 +99,19 @@ const SocialMedia = () => {
                 para2='You get more than simply postings when working with a reputable social media firm in Dubai like LPS; you get a content strategy with purpose, relevance, and outcomes.'
                 image='/services/o2.webp'
             />
+            <Wrapper>
+                <div className="lg:py-16 pb-16">
+                    <h2 className="lg:text-6xl leading-[36px] text-[34px] md:text-4xl text-center font-bold">
+                        Ready to Be the Brand People Talk About?
+                    </h2>
+                    <p className="lg:text-xl max-w-5xl mx-auto font-medium text-center 2xl:mt-10 mt-5">
+                        Looking for the best social media marketing services? From raising awareness to handling crisis events, social media is where your narrative lives right now. We advocate establishing discussions that stay rather than following every fad.
+                    </p>
+                    <p className="lg:text-xl max-w-5xl mx-auto font-medium text-center 2xl:mt-10 mt-5">
+                        LPS is the social media marketing agency in uae helping you matter whether your business is a legacy brand negotiating reinventions, a government institution supporting a cause, or a startup seeking attention.
+                    </p>
+                </div>
+            </Wrapper>
             <DisplayFeatured text='LPS isn’t just about filming—it’s about creating immersive brand experiences that shape perceptions and drive engagement. We believe that in today’s landscape, content should be built for community resonance, native platform storytelling, and cross-format integration. Our forward-thinking methodology ensures that your content isn’t just seen but truly felt.' />
             <ContactFormSection />
         </div>
