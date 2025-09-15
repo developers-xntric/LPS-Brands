@@ -139,7 +139,7 @@ function FlipCard({ item }: FlipCardProps) {
 
   return (
     <div
-      className="relative w-[400px] max-w-full h-[280px] mx-auto cursor-pointer perspective-[1000px]"
+      className="relative w-[450px] 2xl:w-[500px] max-w-full h-[300px] 2xl:h-[350px] mx-auto cursor-pointer perspective-[1000px]"
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
     >
@@ -161,7 +161,7 @@ function FlipCard({ item }: FlipCardProps) {
 
         {/* Back */}
         <div
-          className="absolute top-[-23px] inset-0 w-full h-80 flex items-center rounded-3xl overflow-hidden bg-[#c5c5c5] [backface-visibility:hidden]"
+          className="absolute top-[-13px] 2xl:top-[-18px]  inset-0 w-full h-80 2xl:h-96 flex items-center rounded-3xl overflow-hidden bg-[#c5c5c5] [backface-visibility:hidden]"
           style={{ transform: "rotateY(180deg)" }}
         >
           <div className="p-6 flex flex-col items-center justify-center">

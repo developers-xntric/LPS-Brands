@@ -29,7 +29,7 @@ const ListingCards = () => {
                   <h3 className="text-[30px] leading-8 font-bold text-gray-900">
                     {item.head}
                   </h3>
-                  <p className="text-secondary text-sm 2xl:text-lg leading-relaxed font-['Exo']">
+                  <p className="text-secondary text-sm 2xl:text-[1px] leading-relaxed font-['Exo']">
                     {item.para}
                   </p>
                 </div>
