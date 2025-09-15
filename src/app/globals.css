@@ -374,6 +374,12 @@ body {
   }
 }
 
+@media (max-width: 1800px) {
+  #test-privacy:after {
+    height: 380px;
+  }
+}
+
 @media (max-width: 1440px) {
   #test-privacy:after {
     height: 50%;
