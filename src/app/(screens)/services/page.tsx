@@ -49,7 +49,7 @@ const Services = () => {
     {
       id: "social",
       title: "Influencers",
-      href: "/services/influencers-marketing",
+      href: "/services/influencer-marketing",
     },
     {
       id: "pr",

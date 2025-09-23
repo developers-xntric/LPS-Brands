@@ -8,7 +8,7 @@ export const servicesData = {
   Communication: [
     { title: "Creative", href: "our-creative-services" },
     { title: "Production", href: "production-services" },
-    { title: "Influencers", href: "influencers-marketing" },
+    { title: "Influencers", href: "influencer-marketing" },
     { title: "Gen AI", href: "gen-ai" },
     { title: "Short Form Video", href: "short-form-video" },
   ],
