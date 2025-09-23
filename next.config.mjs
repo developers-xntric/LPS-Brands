@@ -74,7 +74,7 @@ export const oldBlogUrls = [
 
 const nextConfig = {
   images:{
-    domains: ['lps-me.com',"cloudinary.com"],
+    domains: ['lps-me.com',"res.cloudinary.com"],
   },
   async redirects() {
     // Build rules from the liist above by stripping the domain
