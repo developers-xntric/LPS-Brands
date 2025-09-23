@@ -73,8 +73,11 @@ export const oldBlogUrls = [
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  images:{
+    domains: ['lps-me.com'],
+  },
   async redirects() {
-    // Build rules from the list above by stripping the domain
+    // Build rules from the liist above by stripping the domain
     const rules = oldBlogUrls.map((full) => {
       const slug = full.replace('https://lps-me.com/', '').replace(/\/$/, '');
       return {
