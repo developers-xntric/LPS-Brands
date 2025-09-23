@@ -63,6 +63,8 @@ export const oldBlogUrls = [
   "https://lps-me.com/unlock-business-growth-with-mobile-applications/",
   "https://lps-me.com/corporate-videos-and-their-uses/",
   "https://lps-me.com/influencer-collaboration-ideas-to-boost-sales/",
+  "https://lps-me.com/social-media-lead-generation-strategies/",
+  "https://lps-me.com/how-to-run-a-social-media-giveaway/"
 ];
 
 
