@@ -45,11 +45,11 @@ export default function WorkTabs() {
       {/* Header */}
       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-16 items-start gap-10 lg:gap-0">
         <div className="max-w-3xl">
-          <h1 className="text-3xl md:text-5xl xl:text-[56px] font-normal lg:leading-[60px] text-white">
+          <h2 className="text-3xl md:text-5xl xl:text-[56px] font-normal lg:leading-[60px] text-white">
             Delivering Solutions
             <br />
             with <span className="text-green">Unmatched Expertise</span>
-          </h1>
+          </h2>
         </div>
         <Button text="View All Services" link="/services" className="hover:text-black" />
       </div>

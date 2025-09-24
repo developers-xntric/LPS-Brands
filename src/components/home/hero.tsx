@@ -15,6 +15,7 @@ const HeroSection = () => {
           <LogoLPS />
           <MobileNavbar />
         </div>
+        <h1 className="hidden">best digital marketing agency in UAE</h1>
         {/* Center Animated Heading of Pears In a World Of Apples */}
         <div className="flex justify-center relative lg:bottom-10">
           <Image
@@ -31,10 +32,10 @@ const HeroSection = () => {
         <Wrapper>
           {/* WHY PEARS Section */}
           <div className="mb-8 mt-24 md:mt-24 flex lg:flex-row flex-col justify-between">
-            <h1 className="flex gap-3 lg:flex-col lg:-space-y-6 text-5xl md:text-8xl font-bold mb-2 md:mb-8 leading-none">
+            <h2 className="flex gap-3 lg:flex-col lg:-space-y-6 text-5xl md:text-8xl font-bold mb-2 md:mb-8 leading-none">
               <span className="gradient-text text-transparent">WHY</span>
               <span className="gradient-text text-transparent">PEARS?</span>
-            </h1>
+            </h2>
 
             <div className="flex flex-col lg:w-[65%] gap-8 text-gray-700">
               <p className="text-xl lg:text-lg font-['Exo'] leading-7 lg:leading-relaxed">

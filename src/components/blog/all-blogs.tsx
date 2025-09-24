@@ -34,7 +34,12 @@ const Cards = () => {
       const LPSBLogs = res.data.blogs.filter(
         (blog: any) => blog.blogCategory.toLowerCase() === "lps"
       );
-      setData(LPSBLogs);
+      setData(
+        LPSBLogs.sort(
+          (a: Blog, b: Blog) =>
+            Date.parse(b.publishedDate) - Date.parse(a.publishedDate)
+        )
+      );
     };
     getAllBlogs();
   }, []);
@@ -54,7 +59,7 @@ const Cards = () => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-  console.log(featuredPost)
+  console.log(featuredPost);
   return (
     <>
       <Head>
