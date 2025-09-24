@@ -69,23 +69,27 @@ export const oldBlogUrls = [
 
 
 /** @type {import('next').NextConfig} */
+import bundleAnalyzer from '@next/bundle-analyzer'
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+})
 
 const nextConfig = {
   images: {
     domains: ['lps-me.com', "res.cloudinary.com"],
   },
   async redirects() {
-    // Build rules from the liist above by stripping the domain
     const rules = oldBlogUrls.map((full) => {
-      const slug = full.replace('https://lps-me.com/', '').replace(/\/$/, '');
+      const slug = full.replace('https://lps-me.com/', '').replace(/\/$/, '')
       return {
         source: `/${slug}`,
         destination: `/blog/${slug}`,
         permanent: true,
-      };
-    });
-    return rules;
+      }
+    })
+    return rules
   },
-};
+}
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig)
