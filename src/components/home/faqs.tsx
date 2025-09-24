@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { ChevronDown } from "lucide-react"
 
-const faqs = [
+export const faqs = [
     {
         question: "Why is LPS considered the best digital marketing agency in UAE?",
         answer:
