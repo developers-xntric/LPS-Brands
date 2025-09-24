@@ -223,7 +223,7 @@ export default async function BlogPage({
                     rel={index === 1 ? undefined : "noopener noreferrer"} // best practice for external links
                     className="rounded-full w-8 h-8 flex items-center justify-center text-white"
                   >
-                    <Icon/>
+                    <Icon />
                   </Link>
                 ))}
               </div>
@@ -231,6 +231,58 @@ export default async function BlogPage({
           </div>
         </div>
       </div>
+      <Script
+        id="schema-image"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "ImageObject",
+                inLanguage: "en-US",
+                "@id": `${
+                  data?.slug
+                    ? `https://lps-me.com/${data.slug}/#primaryimage`
+                    : "#"
+                }`,
+                url:
+                  data?.bannerImageURL ||
+                  "https://lps-me.com/default-image.jpg",
+                contentUrl:
+                  data?.bannerImageURL ||
+                  "https://lps-me.com/default-image.jpg",
+                width: 800,
+                height: 396,
+                caption: data?.title || "LPS Blog Image",
+              },
+              {
+                "@type": "BreadcrumbList",
+                "@id": `${
+                  data?.slug
+                    ? `https://lps-me.com/${data.slug}/#breadcrumb`
+                    : "#"
+                }`,
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: "https://lps-me.com/",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: data?.title || "Blog Post",
+                  },
+                ],
+              },
+            ],
+          }),
+        }}
+      />
+
       <Script
         id="schema-service-cloud"
         type="application/ld+json"
@@ -345,7 +397,9 @@ export default async function BlogPage({
                 {tableOfContents.length > 0 && (
                   <div className="lg:w-[30%] lg:sticky lg:top-10 lg:self-start mt-">
                     <div className="table-of-contents">
-                      <h3 className="text-center font-['Asgard'] ">Table of Contents</h3>
+                      <h3 className="text-center font-['Asgard'] ">
+                        Table of Contents
+                      </h3>
                       <ul className="toc-list">
                         {tableOfContents.map((item, index) => (
                           <li key={index} className="toc-item">

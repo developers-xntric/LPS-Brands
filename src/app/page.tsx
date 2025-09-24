@@ -42,9 +42,108 @@ const schemaData = {
   },
 };
 
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      name: "LPS Brands",
+      url: "https://lps-me.com/",
+      "@id": "https://lps-me.com/",
+      aggregateRating: {
+        url: "https://lps-me.com/",
+        reviewCount: "124",
+        name: "LPS is a New-Age 360° Full-Impact Marketing Agency",
+        isPartOf: { "@id": "https://lps-me.com/" },
+      },
+      about: { "@id": "https://lps-me.com/" },
+      primaryImageOfPage: { "@id": "https://lps-me.com/" },
+      image: { "@id": "https://lps-me.com/" },
+      thumbnailUrl: "https://lps-me.com/hero-gif.gif",
+      datePublished: "2025-01-03T07:49:28+00:00",
+      dateModified: "2025-08-29T11:50:56+00:00",
+      description:
+        "LPS is a New-Age 360° full-impact marketing agency, building identities, communications & digital experiences for modern brands with measurable impact.",
+      breadcrumb: { "@id": "https://lps-me.com/" },
+      inLanguage: "en-US",
+      potentialAction: [
+        {
+          "@type": "ReadAction",
+          target: ["https://lps-me.com/"],
+        },
+      ],
+    },
+    {
+      "@type": "ImageObject",
+      inLanguage: "en-US",
+      "@id": "https://lps-me.com/",
+      url: "https://lps-me.com/hero-gif.gif",
+      contentUrl: "https://lps-me.com/hero-gif.gif",
+      width: 2128,
+      height: 1220,
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://lps-me.com/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://lps-me.com/#website",
+      url: "https://lps-me.com/",
+      name: "LPS Brands",
+      description: "",
+      publisher: { "@id": "https://lps-me.com/#organization" },
+      potentialAction: [
+        {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: "https://lps-me.com/?s={search_term_string}",
+          },
+          "query-input": {
+            "@type": "PropertyValueSpecification",
+            valueRequired: true,
+            valueName: "search_term_string",
+          },
+        },
+      ],
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://lps-me.com/",
+      name: "LPS Brands",
+      url: "https://lps-me.com/",
+      logo: {
+        "@type": "ImageObject",
+        inLanguage: "en-US",
+        "@id": "https://lps-me.com/",
+        url: "https://lps-me.com/",
+        contentUrl: "https://lps-me.com/",
+        width: 749,
+        height: 449,
+        caption: "LPS Brands",
+      },
+      image: { "@id": "https://lps-me.com" },
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        // Use JSON.stringify to safely inject the schema
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
       <Script
         id="schema-service-cloud"
         type="application/ld+json"
