@@ -68,13 +68,11 @@ export const oldBlogUrls = [
 ];
 
 
-
-
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  images:{
-    domains: ['lps-me.com',"res.cloudinary.com"],
+  images: {
+    domains: ['lps-me.com', "res.cloudinary.com"],
   },
   async redirects() {
     // Build rules from the liist above by stripping the domain
