@@ -67,7 +67,7 @@ export default function Footer() {
     {
       name: "Communications",
       subServices: ["Creative", "Production", "Influencers", "Gen AI", "Short Form Video"],
-      links: ["/services/our-creative-services", "/services/production-services", "/services/influencers-marketing", "/services/gen-ai", "/services/short-form-video"]
+      links: ["/services/our-creative-services", "/services/production-services", "/services/influencer-marketing", "/services/gen-ai", "/services/short-form-video"]
     },
     {
       name: "Experiences",
