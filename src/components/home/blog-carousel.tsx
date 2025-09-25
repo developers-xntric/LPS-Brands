@@ -5,16 +5,6 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import type React from "react";
 
-interface BlogPost {
-  id: string;
-  _id?: string;
-  title: string;
-  image: string;
-  readMore: string;
-  slug: string;
-  blogCategory: string;
-}
-
 export default function BlogCarousel() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
