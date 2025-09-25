@@ -1,51 +1,63 @@
 import { ArticlesCarousel } from "@/components/home/article-slider";
 import BlogsSection from "@/components/home/blog-section";
-import FAQSection  from "@/components/home/faqs";
+import FAQSection from "@/components/home/faqs";
 import FeaturedWorks from "@/components/home/featured-work";
 import GlobalPresence from "@/components/home/global-presense";
 import HeroSection from "@/components/home/hero";
 import Industries from "@/components/home/industries";
 import { MeetThePears } from "@/components/home/meet-the-pears";
 import Wrapper from "@/components/layout/wrapper";
+import { getPosts } from "@/utils/fetch-blogs";
 import Script from "next/script";
 
 
+async function fetchPosts() {
+  try {
+    const posts = await getPosts();
+    console.log(posts);
+
+    return posts;
+  } catch (error) {
+    console.error("Error fetching blog posts:", error);
+    return [];
+  }
+}
 export const faqs = [
-    {
-        question: "Why is LPS considered the best digital marketing agency in UAE?",
-        answer:
-            "LPS stands out for its data-driven strategies, creative execution, and 360° impact approach being the best digital marketing agency in UAE, helping brands grow through tailored digital solutions in the UAE and beyond.",
-    },
-    {
-        question: "What services does LPS offer?",
-        answer:
-            "We offer a full suite of services including digital marketing, branding, public relations, illustration, content creation, process optimization, and strategic consulting.",
-    },
-    {
-        question: "Does LPS handle both local and international brands?",
-        answer:
-            "Yes, LPS works with a wide range of clients, local startups to global enterprises, delivering strategies that align with regional markets and global ambitions.",
-    },
-    {
-        question: "How does LPS approach brand storytelling?",
-        answer:
-            "We use a proven brand story framework that crafts emotionally resonant narratives, ensuring your brand connects deeply with your audience in just 30 seconds.",
-    },
-    {
-        question: "Can I consult LPS for PR strategy only?",
-        answer:
-            "Absolutely. Our PR team specializes in creating proactive and crisis-ready strategies that enhance your brand’s visibility, credibility, and long-term reputation.",
-    },
-    {
-        question: "What industries does LPS specialize in?",
-        answer:
-            "LPS has worked across various industries including retail, tech, healthcare, real estate, fashion, and lifestyle, delivering personalized strategies for each sector.",
-    },
-    {
-        question: "How can I get started with LPS?",
-        answer:
-            "You can reach out via our Contact Us page or visit our office to book a discovery session where we understand your goals and tailor a plan accordingly.",
-    },
+  {
+    question: "Why is LPS considered the best digital marketing agency in UAE?",
+    answer:
+      "LPS stands out for its data-driven strategies, creative execution, and 360° impact approach being the best digital marketing agency in UAE, helping brands grow through tailored digital solutions in the UAE and beyond.",
+  },
+  {
+    question: "What services does LPS offer?",
+    answer:
+      "We offer a full suite of services including digital marketing, branding, public relations, illustration, content creation, process optimization, and strategic consulting.",
+  },
+  {
+    question: "Does LPS handle both local and international brands?",
+    answer:
+      "Yes, LPS works with a wide range of clients, local startups to global enterprises, delivering strategies that align with regional markets and global ambitions.",
+  },
+  {
+    question: "How does LPS approach brand storytelling?",
+    answer:
+      "We use a proven brand story framework that crafts emotionally resonant narratives, ensuring your brand connects deeply with your audience in just 30 seconds.",
+  },
+  {
+    question: "Can I consult LPS for PR strategy only?",
+    answer:
+      "Absolutely. Our PR team specializes in creating proactive and crisis-ready strategies that enhance your brand’s visibility, credibility, and long-term reputation.",
+  },
+  {
+    question: "What industries does LPS specialize in?",
+    answer:
+      "LPS has worked across various industries including retail, tech, healthcare, real estate, fashion, and lifestyle, delivering personalized strategies for each sector.",
+  },
+  {
+    question: "How can I get started with LPS?",
+    answer:
+      "You can reach out via our Contact Us page or visit our office to book a discovery session where we understand your goals and tailor a plan accordingly.",
+  },
 ]
 
 export const metadata = {
@@ -175,7 +187,8 @@ const schema = {
   ],
 };
 
-export default function Home() {
+export default async function Home() {
+  const posts = await fetchPosts();
   return (
     <div>
       <Script
@@ -215,7 +228,7 @@ export default function Home() {
       <MeetThePears />
       <ArticlesCarousel />
       <Wrapper>
-        <BlogsSection isVideos={true} />
+        <BlogsSection isVideos={true} posts={posts} />
       </Wrapper>
       <FAQSection />
     </div>
