@@ -175,7 +175,7 @@ const schema = {
   ],
 };
 
-interface BlogPost {
+export interface BlogPost {
   id: string;
   _id?: string;
   title: string;
@@ -200,6 +200,7 @@ export default async function Home() {
     _id: blog._id,
     blogCategory: blog.blogCategory,
   }));
+
 
   const filteredPosts = mappedPosts.filter(
     (post: BlogPost) => post.blogCategory?.toLowerCase() === "lps"
@@ -243,7 +244,7 @@ export default async function Home() {
       <MeetThePears />
       <ArticlesCarousel />
       <Wrapper>
-        <BlogsSection isVideos={true} />
+        <BlogsSection isVideos={true} posts={filteredPosts} />
       </Wrapper>
       <FAQSection />
     </div>
