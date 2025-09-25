@@ -11,8 +11,9 @@ export default function BlogsSection({
 }: {
   heading?: string;
   isVideos?: boolean;
-  posts: BlogPost[]
+  posts?: BlogPost[]
 }) {
+  if (!posts) return
   return (
     <div>
       <div className={`${heading !== "Blogs" ? "md:pb-16 pb-1 py-16" : "py-16"}  mx-auto bg-[url('/home/blog-bg.png')] rounded-3xl bg-center bg-cover bg-no-repeat`}>
