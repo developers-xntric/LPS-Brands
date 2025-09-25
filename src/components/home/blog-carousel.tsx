@@ -1,13 +1,22 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { BlogPost } from "@/utils/fetch-blogs";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import type React from "react";
 
+interface BlogPost {
+  id: string;
+  _id?: string;
+  title: string;
+  image: string;
+  readMore: string;
+  slug: string;
+  blogCategory: string;
+}
 
-export default function BlogCarousel({ posts }: { posts: BlogPost[] }) {
+export default function BlogCarousel() {
+  const [posts, setPosts] = useState<BlogPost[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isDragging, setIsDragging] = useState(false);
@@ -20,6 +29,36 @@ export default function BlogCarousel({ posts }: { posts: BlogPost[] }) {
   const [itemsPerView, setItemsPerView] = useState(3.5);
   const [itemWidth, setItemWidth] = useState(0);
   const [gapPx, setGapPx] = useState(20); // Tailwind gap-5 = 20px
+
+  // fetch blogs
+  useEffect(() => {
+    async function fetchPosts() {
+      try {
+        const res = await fetch("https://blog.xntric.me/api/v2/blogs", {
+          next: { revalidate: 60 },
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const { blogs } = await res.json();
+        const mappedPosts = blogs.map((blog: any) => ({
+          id: blog._id || blog.slug,
+          title: blog.title,
+          slug: blog.slug,
+          image: blog.bannerImageURL || "/default-blog-image.jpg",
+          readMore: "Read More",
+          _id: blog._id,
+          blogCategory: blog.blogCategory,
+        }));
+        const filtered = mappedPosts.filter(
+          (p: BlogPost) => p.blogCategory?.toLowerCase() === "lps"
+        );
+        setPosts(filtered);
+      } catch (e) {
+        console.error("Failed to fetch blog posts:", e);
+        setPosts([]);
+      }
+    }
+    fetchPosts();
+  }, []);
 
   // set itemsPerView from breakpoints
   useEffect(() => {
