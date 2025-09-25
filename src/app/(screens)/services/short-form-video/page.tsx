@@ -43,6 +43,117 @@ const schemaData = {
   },
 };
 
+const schemaData2 = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://lps-me.com/services/short-form-video/",
+      "url": "https://lps-me.com/services/short-form-video/",
+      "name": "Short Form Videos for Bold Brand Stories",
+      "isPartOf": {
+        "@id": "https://lps-me.com/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://lps-me.com/services/short-form-video/#primaryimage"
+      },
+      "image": {
+        "@id": "https://lps-me.com/services/short-form-video/#primaryimage"
+      },
+      "thumbnailUrl": "https://lps-me.com/services/pe16.webp",
+      "datePublished": "2025-04-11T06:23:59+00:00",
+      "dateModified": "2025-07-21T11:13:03+00:00",
+      "description": "Boost your brand with short form video production that grabs attention and drives results. Explore our creative and strategic video solutions at LPS.",
+      "breadcrumb": {
+        "@id": "https://lps-me.com/services/short-form-video/#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://lps-me.com/services/short-form-video/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "inLanguage": "en-US",
+      "@id": "https://lps-me.com/services/short-form-video/#primaryimage",
+      "url": "https://lps-me.com/services/pe16.webp",
+      "contentUrl": "https://lps-me.com/services/pe16.webp"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://lps-me.com/services/short-form-video/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://lps-me.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://lps-me.com/services/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Short Form Videos for Bold Brand Stories"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://lps-me.com/#website",
+      "url": "https://lps-me.com/",
+      "name": "LPS Brands",
+      "description": "",
+      "publisher": {
+        "@id": "https://lps-me.com/#organization"
+      },
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://lps-me.com/?s={search_term_string}"
+          },
+          "query-input": {
+            "@type": "PropertyValueSpecification",
+            "valueRequired": true,
+            "valueName": "search_term_string"
+          }
+        }
+      ],
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://lps-me.com/#organization",
+      "name": "LPS Brands",
+      "url": "https://lps-me.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "https://lps-me.com/lps-logo.webp",
+        "url": "https://lps-me.com/lps-logo.webp",
+        "contentUrl": "https://lps-me.com/lps-logo.webp",
+        "width": 749,
+        "height": 449,
+        "caption": "LPS Brands"
+      },
+      "image": {
+        "@id": "https://lps-me.com/lps-logo.webp"
+      }
+    }
+  ]
+}
+
 const ShortFormVideo = () => {
   return (
     <div>
@@ -51,6 +162,12 @@ const ShortFormVideo = () => {
         type="application/ld+json"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      <Script
+        id="schema-service-cloud-2"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData2) }}
       />
       <ServicesHero
       id='test-privacy'

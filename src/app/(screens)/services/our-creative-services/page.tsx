@@ -42,6 +42,119 @@ const schemaData = {
   },
 };
 
+const schemaData2 = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://lps-me.com/services/our-creative-services/",
+      "url": "https://lps-me.com/services/our-creative-services/",
+      "name": "Creative Branding Agency | LPS Creative Services",
+      "isPartOf": {
+        "@id": "https://lps-me.com/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://lps-me.com/services/our-creative-services/#primaryimage"
+      },
+      "image": {
+        "@id": "https://lps-me.com/services/our-creative-services/#primaryimage"
+      },
+      "thumbnailUrl": "https://lps-me.com/wp-content/uploads/2025/04/two-diverse-members-working-team-think-cretive-ideas-future-project-woman-shows-design-plan-smartphone-webpage-pose-desktop.png",
+      "datePublished": "2025-04-09T07:49:57+00:00",
+      "dateModified": "2025-07-21T11:16:25+00:00",
+      "description": "LPS is a creative branding agency in Dubai offering impactful brand design, storytelling, and campaigns built on cultural insight and performance-driven craft.",
+      "breadcrumb": {
+        "@id": "https://lps-me.com/services/our-creative-services/#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://lps-me.com/services/our-creative-services/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "inLanguage": "en-US",
+      "@id": "https://lps-me.com/services/our-creative-services/#primaryimage",
+      "url": "https://lps-me.com/wp-content/uploads/2025/04/two-diverse-members-working-team-think-cretive-ideas-future-project-woman-shows-design-plan-smartphone-webpage-pose-desktop.png",
+      "contentUrl": "https://lps-me.com/wp-content/uploads/2025/04/two-diverse-members-working-team-think-cretive-ideas-future-project-woman-shows-design-plan-smartphone-webpage-pose-desktop.png",
+      "width": 863,
+      "height": 550
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://lps-me.com/services/our-creative-services/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://lps-me.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://lps-me.com/services/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Creative Communication Services"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://lps-me.com/#website",
+      "url": "https://lps-me.com/",
+      "name": "LPS Brands",
+      "description": "",
+      "publisher": {
+        "@id": "https://lps-me.com/#organization"
+      },
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://lps-me.com/?s={search_term_string}"
+          },
+          "query-input": {
+            "@type": "PropertyValueSpecification",
+            "valueRequired": true,
+            "valueName": "search_term_string"
+          }
+        }
+      ],
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://lps-me.com/#organization",
+      "name": "LPS Brands",
+      "url": "https://lps-me.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "https://lps-me.com/#/schema/logo/image/",
+        "url": "https://lps-me.com/wp-content/uploads/2025/01/lps-logo.png",
+        "contentUrl": "https://lps-me.com/wp-content/uploads/2025/01/lps-logo.png",
+        "width": 749,
+        "height": 449,
+        "caption": "LPS Brands"
+      },
+      "image": {
+        "@id": "https://lps-me.com/#/schema/logo/image/"
+      }
+    }
+  ]
+}
+
 const Creative = () => {
   return (
     <div>
@@ -50,6 +163,12 @@ const Creative = () => {
         type="application/ld+json"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      <Script
+        id="schema-service-cloud-2"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData2) }}
       />
       <ServicesHero
       id='test-privacy'

@@ -41,6 +41,119 @@ const schemaData = {
   },
 };
 
+const schemaData2 = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://lps-me.com/services/event-management/",
+      "url": "https://lps-me.com/services/event-management/",
+      "name": "Event Management Dubai | Full-Service Event Solutions | LPS",
+      "isPartOf": {
+        "@id": "https://lps-me.com/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://lps-me.com/services/event-management/#primaryimage"
+      },
+      "image": {
+        "@id": "https://lps-me.com/services/event-management/#primaryimage"
+      },
+      "thumbnailUrl": "https://lps-me.com/services/pe22.webp",
+      "datePublished": "2025-04-14T07:56:30+00:00",
+      "dateModified": "2025-07-21T11:11:38+00:00",
+      "description": "LPS offers event management in Dubai. From concept to execution, we create unforgettable experiences for live, hybrid, and digital events.",
+      "breadcrumb": {
+        "@id": "https://lps-me.com/services/event-management/#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://lps-me.com/services/event-management/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "inLanguage": "en-US",
+      "@id": "https://lps-me.com/services/event-management/#primaryimage",
+      "url": "https://lps-me.com/services/pe22.webp",
+      "contentUrl": "https://lps-me.com/services/pe22.webp",
+      "width": 863,
+      "height": 550
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://lps-me.com/services/event-management/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://lps-me.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://lps-me.com/services/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Event Management"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://lps-me.com/#website",
+      "url": "https://lps-me.com/",
+      "name": "LPS Brands",
+      "description": "",
+      "publisher": {
+        "@id": "https://lps-me.com/#organization"
+      },
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://lps-me.com/?s={search_term_string}"
+          },
+          "query-input": {
+            "@type": "PropertyValueSpecification",
+            "valueRequired": true,
+            "valueName": "search_term_string"
+          }
+        }
+      ],
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://lps-me.com/#organization",
+      "name": "LPS Brands",
+      "url": "https://lps-me.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "https://lps-me.com/#/schema/logo/image/",
+        "url": "https://lps-me.com/lps-logo.webp",
+        "contentUrl": "https://lps-me.com/lps-logo.webp",
+        "width": 749,
+        "height": 449,
+        "caption": "LPS Brands"
+      },
+      "image": {
+        "@id": "https://lps-me.com/#/schema/logo/image/"
+      }
+    }
+  ]
+}
+
 const Events = () => {
   return (
     <div>
@@ -49,6 +162,12 @@ const Events = () => {
         type="application/ld+json"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      <Script
+        id="schema-service-cloud-2"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData2) }}
       />
       <ServicesHero
       id='test-privacy'

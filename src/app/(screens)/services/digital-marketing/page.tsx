@@ -42,6 +42,118 @@ const schemaData = {
   },
 };
 
+const schemaData2 = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://lps-me.com/services/digital-marketing/",
+      "url": "https://lps-me.com/services/digital-marketing/",
+      "name": "Top Digital Marketing Services in Dubai | LPS",
+      "isPartOf": {
+        "@id": "https://lps-me.com/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://lps-me.com/services/digital-marketing/#primaryimage"
+      },
+      "image": {
+        "@id": "https://lps-me.com/services/digital-marketing/#primaryimage"
+      },
+      "thumbnailUrl": "https://lps-me.com/services/pe18.webp",
+      "datePublished": "2025-04-14T06:54:26+00:00",
+      "dateModified": "2025-07-21T11:12:37+00:00",
+      "description": "Boost your brand visibility with cutting-edge digital marketing strategies tailored for real impact.",
+      "breadcrumb": {
+        "@id": "https://lps-me.com/services/digital-marketing/#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://lps-me.com/services/digital-marketing/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "inLanguage": "en-US",
+      "@id": "https://lps-me.com/services/digital-marketing/#primaryimage",
+      "url": "https://lps-me.com/services/pe18.webp",
+      "contentUrl": "https://lps-me.com/services/pe18.webp"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://lps-me.com/services/digital-marketing/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://lps-me.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://lps-me.com/services/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Digital Experiences"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://lps-me.com/#website",
+      "url": "https://lps-me.com/",
+      "name": "LPS Brands",
+      "description": "",
+      "publisher": {
+        "@id": "https://lps-me.com/#organization"
+      },
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://lps-me.com/?s={search_term_string}"
+          },
+          "query-input": {
+            "@type": "PropertyValueSpecification",
+            "valueRequired": true,
+            "valueName": "search_term_string"
+          }
+        }
+      ],
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://lps-me.com/#organization",
+      "name": "LPS Brands",
+      "url": "https://lps-me.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "https://lps-me.com/#/schema/logo/image/",
+        "url": "https://lps-me.com/lps-logo.webp",
+        "contentUrl": "https://lps-me.com/lps-logo.webp",
+        "width": 749,
+        "height": 449,
+        "caption": "LPS Brands"
+      },
+      "image": {
+        "@id": "https://lps-me.com/#/schema/logo/image/"
+      }
+    }
+  ]
+}
+
+
 const DigitalMarketing = () => {
   return (
     <div>
@@ -50,6 +162,12 @@ const DigitalMarketing = () => {
         type="application/ld+json"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      <Script
+        id="schema-service-cloud-2"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData2) }}
       />
       <ServicesHero
         id="test-privacy"

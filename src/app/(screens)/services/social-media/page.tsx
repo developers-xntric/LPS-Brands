@@ -42,6 +42,119 @@ const schemaData = {
     }
 }
 
+const schemaData2 = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://lps-me.com/services/social-media/",
+      "url": "https://lps-me.com/services/social-media/",
+      "name": "Dubai's Top Social Media Marketing Services For You | LPS",
+      "isPartOf": {
+        "@id": "https://lps-me.com/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://lps-me.com/services/social-media/#primaryimage"
+      },
+      "image": {
+        "@id": "https://lps-me.com/services/social-media/#primaryimage"
+      },
+      "thumbnailUrl": "https://lps-me.com/services/pe5.webp",
+      "datePublished": "2025-04-10T09:43:09+00:00",
+      "dateModified": "2025-07-21T11:13:57+00:00",
+      "description": "Discover cutting-edge social media marketing services with LPS. A leading social media agency in Dubai crafting platform-ready, audience-led digital impact.",
+      "breadcrumb": {
+        "@id": "https://lps-me.com/services/social-media/#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://lps-me.com/services/social-media/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "inLanguage": "en-US",
+      "@id": "https://lps-me.com/services/social-media/#primaryimage",
+      "url": "https://lps-me.com/services/pe5.webp",
+      "contentUrl": "https://lps-me.com/services/pe5.webp",
+      "width": 1295,
+      "height": 780
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://lps-me.com/services/social-media/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://lps-me.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://lps-me.com/services/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Social Media"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://lps-me.com/#website",
+      "url": "https://lps-me.com/",
+      "name": "LPS Brands",
+      "description": "",
+      "publisher": {
+        "@id": "https://lps-me.com/#organization"
+      },
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://lps-me.com/?s={search_term_string}"
+          },
+          "query-input": {
+            "@type": "PropertyValueSpecification",
+            "valueRequired": true,
+            "valueName": "search_term_string"
+          }
+        }
+      ],
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://lps-me.com/#organization",
+      "name": "LPS Brands",
+      "url": "https://lps-me.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "https://lps-me.com/#/schema/logo/image/",
+        "url": "https://lps-me.com/lps-logo.webp",
+        "contentUrl": "https://lps-me.com/lps-logo.webp",
+        "width": 749,
+        "height": 449,
+        "caption": "LPS Brands"
+      },
+      "image": {
+        "@id": "https://lps-me.com/#/schema/logo/image/"
+      }
+    }
+  ]
+}
+
 const SocialMedia = () => {
     return (
         <div>
@@ -50,6 +163,12 @@ const SocialMedia = () => {
                 type="application/ld+json"
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+            />
+            <Script
+                id="schema-service-cloud-2"
+                type="application/ld+json"
+                strategy="afterInteractive"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData2) }}
             />
             <ServicesHero id='test-privacy' heading='Social Media' highlight='Social Media' bottom={false} />
             <ProductionEvolutionSection

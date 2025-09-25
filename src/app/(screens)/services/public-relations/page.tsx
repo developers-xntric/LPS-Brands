@@ -42,6 +42,120 @@ const schemaData = {
   },
 };
 
+const schemaData2 = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://lps-me.com/services/public-relations/",
+      "url": "https://lps-me.com/services/public-relations/",
+      "name": "Award-Winning PR Agency in Dubai, UAE | LPS",
+      "isPartOf": {
+        "@id": "https://lps-me.com/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://lps-me.com/services/public-relations/#primaryimage"
+      },
+      "image": {
+        "@id": "https://lps-me.com/services/public-relations/#primaryimage"
+      },
+      "thumbnailUrl": "https://lps-me.com/services/pe7.webp",
+      "datePublished": "2025-04-09T10:46:41+00:00",
+      "dateModified": "2025-07-21T11:14:21+00:00",
+      "description": "LPS is an award-winning PR agency in Dubai, UAE offering strategic public relations and digital media solutions that drive visibility.",
+      "breadcrumb": {
+        "@id": "https://lps-me.com/services/public-relations/#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://lps-me.com/services/public-relations/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "inLanguage": "en-US",
+      "@id": "https://lps-me.com/services/public-relations/#primaryimage",
+      "url": "https://lps-me.com/services/pe7.webp",
+      "contentUrl": "https://lps-me.com/services/pe7.webp",
+      "width": 1295,
+      "height": 780
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://lps-me.com/services/public-relations/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://lps-me.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://lps-me.com/services/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Public Relations"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://lps-me.com/#website",
+      "url": "https://lps-me.com/",
+      "name": "LPS Brands",
+      "description": "",
+      "publisher": {
+        "@id": "https://lps-me.com/#organization"
+      },
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://lps-me.com/?s={search_term_string}"
+          },
+          "query-input": {
+            "@type": "PropertyValueSpecification",
+            "valueRequired": true,
+            "valueName": "search_term_string"
+          }
+        }
+      ],
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://lps-me.com/#organization",
+      "name": "LPS Brands",
+      "url": "https://lps-me.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "https://lps-me.com/#/schema/logo/image/",
+        "url": "https://lps-me.com/lps-logo.webp",
+        "contentUrl": "https://lps-me.com/lps-logo.webp",
+        "width": 749,
+        "height": 449,
+        "caption": "LPS Brands"
+      },
+      "image": {
+        "@id": "https://lps-me.com/#/schema/logo/image/"
+      }
+    }
+  ]
+}
+
+
 const PublicRelations = () => {
   return (
     <div>
@@ -50,6 +164,12 @@ const PublicRelations = () => {
         type="application/ld+json"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      <Script
+        id="schema-service-cloud-2"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData2) }}
       />
       <ServicesHero
         id="test-privacy"
