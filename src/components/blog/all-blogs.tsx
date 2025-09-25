@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "../common/button";
 import axios from "axios";
+import { BlogPost } from "@/app/page";
 
 interface Blog {
   id: number;
@@ -23,29 +24,15 @@ interface Blog {
   bannerImageURL?: string;
 }
 
-const Cards = () => {
-  const [data, setData] = useState<Blog[]>([]);
+const Cards = ({ posts }: { posts?: any }) => {
+  if (!posts) return;
+
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 6;
-  useEffect(() => {
-    const getAllBlogs = async () => {
-      const res = await axios.get("https://blog.xntric.me/api/v2/blogs");
-      console.log(res.data, "Data");
-      const LPSBLogs = res.data.blogs.filter(
-        (blog: any) => blog.blogCategory.toLowerCase() === "lps"
-      );
-      setData(
-        LPSBLogs.sort(
-          (a: Blog, b: Blog) =>
-            Date.parse(b.publishedDate) - Date.parse(a.publishedDate)
-        )
-      );
-    };
-    getAllBlogs();
-  }, []);
 
-  const featuredPost = data[0];
-  const remainingPosts = data.slice(1);
+
+  const featuredPost = posts[0];
+  const remainingPosts = posts.slice(1);
 
   // Calculate pagination details
   const totalPosts = remainingPosts.length;
@@ -59,7 +46,6 @@ const Cards = () => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-  console.log(featuredPost);
   return (
     <>
       <Head>
@@ -83,7 +69,7 @@ const Cards = () => {
       </Head>
 
       <section className="py-16 pt-28 2xl:max-w-[1700px] w-[90%] mx-auto space-y-14 flex flex-col">
-        {data.length === 0 ? (
+        {posts.length === 0 ? (
           <div className="text-center py-20 2xl:pt-32">
             <h2 className="text-2xl font-bold text-gray-800">
               Blogs Not Found
@@ -128,14 +114,13 @@ const Cards = () => {
                         }}
                       />
                       <div className="flex gap-2">
-                        {featuredPost.tags?.map((tag, index) => (
+                        {featuredPost.tags?.map((tag: string[], index: number) => (
                           <span
                             key={index}
-                            className={`px-3 py-1 rounded-full text-sm font-medium ${
-                              index === 0
-                                ? "bg-green-500 text-white"
-                                : "bg-gray-800 text-white"
-                            }`}
+                            className={`px-3 py-1 rounded-full text-sm font-medium ${index === 0
+                              ? "bg-green-500 text-white"
+                              : "bg-gray-800 text-white"
+                              }`}
                           >
                             {tag}
                           </span>
@@ -159,7 +144,7 @@ const Cards = () => {
             )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              {paginatedPosts.map((card, index) => {
+              {paginatedPosts.map((card: any, index: number) => {
                 const imageSchema = {
                   "@context": "https://schema.org",
                   "@type": "ImageObject",
@@ -208,14 +193,13 @@ const Cards = () => {
                           }}
                         />
                         <div className="flex gap-2">
-                          {card.tags?.map((tag, tagIndex) => (
+                          {card.tags?.map((tag: string[], tagIndex: number) => (
                             <span
                               key={tagIndex}
-                              className={`px-3 py-1 rounded-full text-sm font-medium ${
-                                tagIndex === 0
-                                  ? "bg-green text-white"
-                                  : "bg-gray-800 text-white"
-                              }`}
+                              className={`px-3 py-1 rounded-full text-sm font-medium ${tagIndex === 0
+                                ? "bg-green text-white"
+                                : "bg-gray-800 text-white"
+                                }`}
                             >
                               {tag}
                             </span>
@@ -250,11 +234,10 @@ const Cards = () => {
                   <button
                     key={index}
                     onClick={() => handlePageChange(index + 1)}
-                    className={`md:w-8 md:h-8 w-6 h-6 rounded-full font-['Exo'] text-xs md:text-sm font-medium ${
-                      currentPage === index + 1
-                        ? "bg-[#00FC09] text-secondary"
-                        : "bg-gray-200 text-secondary hover:bg-gray-300"
-                    }`}
+                    className={`md:w-8 md:h-8 w-6 h-6 rounded-full font-['Exo'] text-xs md:text-sm font-medium ${currentPage === index + 1
+                      ? "bg-[#00FC09] text-secondary"
+                      : "bg-gray-200 text-secondary hover:bg-gray-300"
+                      }`}
                   >
                     {index + 1}
                   </button>
