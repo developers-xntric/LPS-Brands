@@ -10,7 +10,7 @@ import Wrapper from "@/components/layout/wrapper";
 import Script from "next/script";
 
 
-export const faqs = [
+const faqs = [
   {
     question: "Why is LPS considered the best digital marketing agency in UAE?",
     answer:
