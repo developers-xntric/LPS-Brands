@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable */
 "use client";
 import { BlogPost } from "@/app/page";
 import Image from "next/image";

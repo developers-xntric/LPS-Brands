@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable */
 "use client";
 import { Calendar } from "lucide-react";
 import Head from "next/head";
