@@ -191,7 +191,13 @@ export default async function Home() {
   });
   const { blogs } = await res.json();
 
-  const mappedPosts = blogs.map((blog: any) => ({
+  const mappedPosts = blogs.map((blog: {
+    _id: string,
+    slug: string,
+    title: string,
+    bannerImageURL: string,
+    blogCategory: string,
+  }) => ({
     id: blog._id || blog.slug,
     title: blog.title,
     slug: blog.slug,
@@ -208,6 +214,7 @@ export default async function Home() {
   return (
     <div>
       <Script
+        id="Schema"
         type="application/ld+json"
         // Use JSON.stringify to safely inject the schema
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
