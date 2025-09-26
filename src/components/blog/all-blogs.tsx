@@ -7,21 +7,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { Button } from "../common/button";
 
-interface Blog {
-  id: number;
-  title: string;
-  slug: string;
-  imageURL: string;
-  thumbnailURL?: string;
-  description: string;
-  metaTitle?: string;
-  metaDescription?: string;
-  publishedDate: string;
-  uploadDate?: string;
-  tags?: string[];
-  bannerImageURL?: string;
-}
-
 const Cards = ({ posts }: { posts?: any }) => {
   if (!posts) return;
 
