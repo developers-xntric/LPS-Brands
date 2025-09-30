@@ -9,13 +9,17 @@ import { Button } from "../common/button";
 
 const Cards = ({ posts }: { posts?: any }) => {
   if (!posts) return;
-
-  const [currentPage, setCurrentPage] = useState(1);
+const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 6;
 
+  // Sort posts by publishedDate (descending: newest first)
+  const sortedPosts = [...posts].sort(
+    (a, b) =>
+      new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
+  );
 
-  const featuredPost = posts[0];
-  const remainingPosts = posts.slice(1);
+  const featuredPost = sortedPosts[0]; 
+  const remainingPosts = sortedPosts.slice(1); 
 
   // Calculate pagination details
   const totalPosts = remainingPosts.length;
@@ -88,7 +92,7 @@ const Cards = ({ posts }: { posts?: any }) => {
                       </h2>
                       <p
                         className="
-                          text-secondary  font-['Exo'] text-sm md:text-base leading-relaxed mb-6
+                          text-secondary xl:line-clamp-6 2xl:line-clamp-none  font-['Exo'] text-sm md:text-base leading-relaxed mb-6
                           [&_a]:text-[#00FC09] [&_a]:underline [&_a]:font-semibold
                           hover:[&_a]:text-[#4BFE2C]
                         "
