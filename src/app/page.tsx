@@ -186,26 +186,32 @@ export interface BlogPost {
 }
 
 export default async function Home() {
-  const res = await fetch("https://blog.xntric.me/api/v2/blogs", {
-    next: { revalidate: 60 },
-  });
-  const { blogs } = await res.json();
+  let mappedPosts = [];
+  try {
+    const res = await fetch("https://blog.xntric.me/api/v2/blogs", {
+      next: { revalidate: 60 },
+    });
+    const { blogs } = await res.json();
+    mappedPosts = blogs.map((blog: {
+      _id: string,
+      slug: string,
+      title: string,
+      bannerImageURL: string,
+      blogCategory: string,
+    }) => ({
+      id: blog._id || blog.slug,
+      title: blog.title,
+      slug: blog.slug,
+      image: blog.bannerImageURL || "/default-blog-image.jpg",
+      readMore: "Read More",
+      _id: blog._id,
+      blogCategory: blog.blogCategory,
+    }));
+    
+  } catch (error) {
+    console.log(error);
+  }
 
-  const mappedPosts = blogs.map((blog: {
-    _id: string,
-    slug: string,
-    title: string,
-    bannerImageURL: string,
-    blogCategory: string,
-  }) => ({
-    id: blog._id || blog.slug,
-    title: blog.title,
-    slug: blog.slug,
-    image: blog.bannerImageURL || "/default-blog-image.jpg",
-    readMore: "Read More",
-    _id: blog._id,
-    blogCategory: blog.blogCategory,
-  }));
 
 
   const filteredPosts = mappedPosts.filter(

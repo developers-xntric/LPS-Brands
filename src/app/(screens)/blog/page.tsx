@@ -14,14 +14,20 @@ export const metadata = {
 };
 
 async function Blog() {
-  const res = await fetch("https://blog.xntric.me/api/v2/blogs", {
-    next: { revalidate: 60 },
-  });
-  const { blogs } = await res.json();
+  let mappedPosts = [];
+  try {
+    const res = await fetch("https://blog.xntric.me/api/v2/blogs", {
+      next: { revalidate: 60 },
+    });
+    const { blogs } = await res.json();
+    mappedPosts = blogs.filter(
+      (post: BlogPost) => post.blogCategory?.toLowerCase() === "lps"
+    );
+    
+  } catch (error) {
+    console.log(error);
+  }
 
-  const mappedPosts = blogs.filter(
-    (post: BlogPost) => post.blogCategory?.toLowerCase() === "lps"
-  );
 
   return (
     <div>
