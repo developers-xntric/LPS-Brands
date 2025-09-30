@@ -39,7 +39,8 @@ function ContactHero() {
     details: "",
     brief: null as File | null,
   });
-
+  const [message, setMessage] = useState("")
+  const [errorMessage, setErrorMessage] = useState("")
   const toggleFrom = (
     list: string[],
     setter: (s: string[]) => void,
@@ -91,13 +92,13 @@ function ContactHero() {
       });
 
       if (response.ok) {
-        alert("Submitted! Check your email.");
+        setMessage("Submitted! Check your email.");
       } else {
-        alert("Failed to submit the form.");
+        setErrorMessage("Failed to submit the form.");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("An error occurred while submitting.");
+      setErrorMessage("An error occurred while submitting.");
     }
   };
 
@@ -115,8 +116,7 @@ function ContactHero() {
       type="button"
       onClick={onClick}
       className={`px-3 py-2 rounded-full border text-sm tracking-wide transition
-        ${
-          checked ? "bg-[#00FC09] border-[#00FC09]" : "border-black/20 bg-white"
+        ${checked ? "bg-[#00FC09] border-[#00FC09]" : "border-black/20 bg-white"
         }
       `}
     >
@@ -152,14 +152,12 @@ function ContactHero() {
               {/* Step indicator */}
               <div className="mt-4 mb-6 flex items-center gap-2">
                 <span
-                  className={`h-1 w-1/2 rounded-full ${
-                    step === 1 ? "bg-[#00FC09]" : "bg-black/15"
-                  }`}
+                  className={`h-1 w-1/2 rounded-full ${step === 1 ? "bg-[#00FC09]" : "bg-black/15"
+                    }`}
                 />
                 <span
-                  className={`h-1 w-1/2 rounded-full ${
-                    step === 2 ? "bg-[#00FC09]" : "bg-black/15"
-                  }`}
+                  className={`h-1 w-1/2 rounded-full ${step === 2 ? "bg-[#00FC09]" : "bg-black/15"
+                    }`}
                 />
               </div>
 
@@ -347,6 +345,7 @@ function ContactHero() {
                       </p>
                     )}
                   </div>
+                  {message ? <p className="text-center text-green-500">{message}</p> : errorMessage ? <p className="text-center text-red-500">{errorMessage}</p> : null}
 
                   <div className="pt-2 flex items-center justify-between gap-3">
                     <button
@@ -360,13 +359,12 @@ function ContactHero() {
                     >
                       Previous
                     </button>
-
-                   <Button
-  type="submit"
-  topT={true}
-  bg="bg-black"
-  text="Send Inquiry"
-/>
+                    <Button
+                      type="submit"
+                      topT={true}
+                      bg="bg-black"
+                      text="Send Inquiry"
+                    />
 
                   </div>
 
