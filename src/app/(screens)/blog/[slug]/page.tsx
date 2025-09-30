@@ -37,7 +37,7 @@ export async function generateMetadata({
       description:
         blog.metaDescription ||
         blog.description ||
-        "Explore insightful blogs from LPS Web on AI, Cloud, and ERP solutions.",
+        "Explore insightful blogs from LPS Web on AI, Cloud.",
       alternates: {
         canonical: `https://www.lps-web.com/blog/${blog.slug}`,
       },
@@ -67,7 +67,7 @@ const schemaData = {
     name: "LPS Web Solutions",
     url: "https://lps-web.com",
   },
-  serviceType: "ERP Consulting",
+  serviceType: "Website Design and Development Services",
   areaServed: {
     "@type": "Place",
     name: "Global",
