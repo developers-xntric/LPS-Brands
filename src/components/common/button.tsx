@@ -11,7 +11,8 @@ export const Button = ({
   topT = false,
   onClick,
   link,
-  className
+  className,
+  type = "button", // 👈 default is "button"
 }: {
   text: string;
   center?: boolean;
@@ -20,32 +21,53 @@ export const Button = ({
   onClick?: (e?: any) => void;
   link?: string;
   className?: string;
+  type?: "button" | "submit" | "reset"; // 👈 allowed types
 }) => {
   return (
     <div className={`flex items-center ${center ? "justify-center" : ""}`}>
-      <Link href={link || ""} className="w-fit">
-        <div
-          className={`flex items-center  group`}
-        >
+      {link ? (
+        <Link href={link} className="w-fit">
+          <div className="flex items-center group">
+            <B
+              type={type}
+              className={`bg-green text-black h-[50px] px-6 rounded-full text-lg flex items-center font-normal transition-all duration-300 hover:bg-[#2054FC] hover:text-white ${className}`}
+              onClick={onClick}
+            >
+              <span className={`relative ${!topT && "top-[2px]"}`}>{text}</span>
+            </B>
+            <div
+              className={`w-[50px] h-[50px] ${bg} rounded-full flex justify-center items-center cursor-pointer 
+                transition-all duration-500 delay-150 transform group-hover:-translate-x-3`}
+            >
+              <ArrowRight
+                className={`h-6 w-6 font-bold ${
+                  bg === "bg-black" ? "text-white" : "text-black"
+                }`}
+              />
+            </div>
+          </div>
+        </Link>
+      ) : (
+        <div className="flex items-center group">
           <B
+            type={type}
             className={`bg-green text-black h-[50px] px-6 rounded-full text-lg flex items-center font-normal transition-all duration-300 hover:bg-[#2054FC] hover:text-white ${className}`}
             onClick={onClick}
           >
             <span className={`relative ${!topT && "top-[2px]"}`}>{text}</span>
           </B>
-
-          {/* Arrow Circle */}
           <div
             className={`w-[50px] h-[50px] ${bg} rounded-full flex justify-center items-center cursor-pointer 
-              transition-all duration-500 delay-150 transform group-hover:-translate-x-3`}
+              transition-all duration-300 delay-150 transform group-hover:-translate-x-3`}
           >
             <ArrowRight
-              className={`h-6 w-6 font-bold ${bg === "bg-black" ? "text-white" : "text-black"
-                }`}
+              className={`h-6 w-6 font-bold ${
+                bg === "bg-black" ? "text-white" : "text-black"
+              }`}
             />
           </div>
         </div>
-      </Link>
+      )}
     </div>
   );
 };

@@ -361,7 +361,13 @@ function ContactHero() {
                       Previous
                     </button>
 
-                    <Button topT={true} bg="bg-black" text="Send Inquiry" />
+                   <Button
+  type="submit"
+  topT={true}
+  bg="bg-black"
+  text="Send Inquiry"
+/>
+
                   </div>
 
                   {/* (Optional) include hidden selections so they submit with the form if you post it */}
