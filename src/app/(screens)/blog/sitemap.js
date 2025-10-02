@@ -8,10 +8,9 @@ export default async function sitemap() {
     return [];
   }
 
-const { blogs } = await res.json();
+  const { blogs } = await res.json();
 
-console.log("Blogs fetched for sitemap:", blogs);
-
+  console.log("Blogs fetched for sitemap:", blogs);
 
   // ✅ Must return array of objects with url keys
   return blogs.map((blog) => ({
@@ -19,6 +18,21 @@ console.log("Blogs fetched for sitemap:", blogs);
     lastModified: blog.updatedAt || new Date().toISOString(),
     changefreq: "weekly",
     priority: 0.7,
+    images: [
+      {
+        url: blog.bannerImageURL || blog.imageURL || "/placeholder.svg",
+        title: blog.title,
+        caption: blog.title,
+      },
+    ],
+    news: {
+      publication: {
+        name: "LPS Brands",
+        language: "en",
+      },
+      title: blog.title,
+      publicationDate: blog.publishedDate || blog.updatedAt || new Date().toISOString(),
+    },
   }));
 }
 
