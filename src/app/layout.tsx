@@ -6,7 +6,8 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "UAE’s Leading Digital Marketing Agency | LPS",
-  description: "LPS is a digital marketing agency in Dubai, UAE and provides digital marketing services to brands across the world. Learn more about what we do here!",
+  description:
+    "LPS is a digital marketing agency in Dubai, UAE and provides digital marketing services to brands across the world. Learn more about what we do here!",
 };
 
 export default function RootLayout({
@@ -22,35 +23,43 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-VSK43LD025"
           strategy="afterInteractive"
         />
-        <Script id="gtag-base" strategy="afterInteractive">
+        <Script id="gtag-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            
+            // Initialize GA4 with your Measurement ID
             gtag('config', 'G-VSK43LD025', {
-              // Optional: Add debug mode for console logging during development
               debug_mode: process.env.NODE_ENV === 'development',
-              // Optional: Enable enhanced measurement for automatic events
-              'send_page_view': true
+              send_page_view: true
             });
           `}
         </Script>
+
+        {/* Optional: Add more SEO / structured data tags here */}
       </head>
-      <body className={`antialiased overflow-x-hidden`}>
+
+      <body className="antialiased overflow-x-hidden">
         <Navbar />
         {children}
         <Footer />
-        {/* Optional: Sample GA4 Event Trigger - Replace with your actual events */}
-        <Script id="ga4-events" strategy="afterInteractive">
+
+        {/* Custom LPS GA4 Event + Console Log */}
+        <Script id="lps-ga4-event" strategy="afterInteractive">
           {`
-            // Example: Log a custom event to console and GA4 on page load
-            // Uncomment and customize as needed
-            // gtag('event', 'page_load', {
-            //   'event_category': 'engagement',
-            //   'event_label': 'LPS Homepage',
-            //   'value': 1
-            // });
-            // console.log('GA4 Event Fired: Page Load');
+            window.addEventListener('load', () => {
+              if (typeof gtag === 'function') {
+                gtag('event', 'LPS_Page_Load', {
+                  event_category: 'engagement',
+                  event_label: 'LPS GA4 Custom Event',
+                  value: 1
+                });
+                console.log('✅ LPS GA4 Event Fired: LPS_Page_Load | GA4 ID: G-VSK43LD025');
+              } else {
+                console.warn('⚠️ GA4 not initialized yet.');
+              }
+            });
           `}
         </Script>
       </body>
