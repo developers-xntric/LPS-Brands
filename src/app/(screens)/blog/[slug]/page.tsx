@@ -33,18 +33,18 @@ export async function generateMetadata({
     const { blog } = await res.json();
 
     return {
-      title: blog.metaTitle || blog.title || "Blog | LPS Web",
+      title: blog.metaTitle || blog.title || "Blog | LPS BRANDS",
       description:
         blog.metaDescription ||
         blog.description ||
-        "Explore insightful blogs from LPS Web on AI, Cloud.",
+        "Explore insightful blogs from LPS BRANDS on AI, Cloud.",
       alternates: {
-        canonical: `https://www.lps-web.com/blog/${blog.slug}`,
+        canonical: `https://lps-me.com/blog/${blog.slug}`,
       },
       openGraph: {
         title: blog.metaTitle || blog.title,
         description: blog.metaDescription || blog.description,
-        url: `https://www.lps-web.com/blog/${blog.slug}`,
+        url: `https://lps-me.com/blog/${blog.slug}`,
         images: blog.bannerImageURL ? [{ url: blog.bannerImageURL }] : [],
       },
     };
@@ -65,7 +65,7 @@ const schemaData = {
   provider: {
     "@type": "Organization",
     name: "LPS Web Solutions",
-    url: "https://lps-web.com",
+    url: "https://lps-me.com",
   },
   serviceType: "Website Design and Development Services",
   areaServed: {

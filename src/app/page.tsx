@@ -9,7 +9,7 @@ import { MeetThePears } from "@/components/home/meet-the-pears";
 import Wrapper from "@/components/layout/wrapper";
 import Script from "next/script";
 
-
+// This is the best
 const faqs = [
   {
     question: "Why is LPS considered the best digital marketing agency in UAE?",
