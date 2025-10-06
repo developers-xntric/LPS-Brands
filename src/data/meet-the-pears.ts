@@ -15,37 +15,37 @@ export const teamMembers: TeamMember[] = [
         defaultImage: "/team/t28.webp",
         hoverImage: "/team/th28.webp",
     },
-    {
-        id: "2",
-        defaultImage: "/team/t2.webp",
-        hoverImage: "/team/th2.webp",
-    },
+    // {
+    //     id: "2",
+    //     defaultImage: "/team/t2.webp",
+    //     hoverImage: "/team/th2.webp",
+    // },
     // Servesh Removed
     {
         id: "3",
         defaultImage: "/team/t3.webp",
         hoverImage: "/team/th3.webp",
     },
-    {
-        id: "4",
-        defaultImage: "/team/t4.webp",
-        hoverImage: "/team/th4.webp",
-    },
-    {
-        id: "5",
-        defaultImage: "/team/t5.webp",
-        hoverImage: "/team/th5.webp",
-    },
+    // {
+    //     id: "4",
+    //     defaultImage: "/team/t4.webp",
+    //     hoverImage: "/team/th4.webp",
+    // },
+    // {
+    //     id: "5",
+    //     defaultImage: "/team/t5.webp",
+    //     hoverImage: "/team/th5.webp",
+    // },
     {
         id: "6",
         defaultImage: "/team/t6.webp",
         hoverImage: "/team/th6.webp",
     },
-    {
-        id: "7",
-        defaultImage: "/team/t7.webp",
-        hoverImage: "/team/th7.webp",
-    },
+    // {
+    //     id: "7",
+    //     defaultImage: "/team/t7.webp",
+    //     hoverImage: "/team/th7.webp",
+    // },
     {
         id: "8",
         defaultImage: "/team/t8.webp",
@@ -101,11 +101,11 @@ export const teamMembers: TeamMember[] = [
         defaultImage: "/team/t18.webp",
         hoverImage: "/team/th18.webp",
     },
-    {
-        id: "19",
-        defaultImage: "/team/t19.webp",
-        hoverImage: "/team/th19.webp",
-    },
+    // {
+    //     id: "19",
+    //     defaultImage: "/team/t19.webp",
+    //     hoverImage: "/team/th19.webp",
+    // },
     {
         id: "20",
         defaultImage: "/team/t20.webp",
@@ -121,11 +121,11 @@ export const teamMembers: TeamMember[] = [
         defaultImage: "/team/t22.webp",
         hoverImage: "/team/th22.webp",
     },
-    {
-        id: "23",
-        defaultImage: "/team/t23.webp",
-        hoverImage: "/team/th23.webp",
-    },
+    // {
+    //     id: "23",
+    //     defaultImage: "/team/t23.webp",
+    //     hoverImage: "/team/th23.webp",
+    // },
     {
         id: "24",
         defaultImage: "/team/t24.webp",
@@ -136,11 +136,11 @@ export const teamMembers: TeamMember[] = [
         defaultImage: "/team/t25.webp",
         hoverImage: "/team/th25.webp",
     },
-    {
-        id: "26",
-        defaultImage: "/team/t26.webp",
-        hoverImage: "/team/th26.webp",
-    },
+    // {
+    //     id: "26",
+    //     defaultImage: "/team/t26.webp",
+    //     hoverImage: "/team/th26.webp",
+    // },
     {
         id: "27",
         defaultImage: "/team/t27.webp",

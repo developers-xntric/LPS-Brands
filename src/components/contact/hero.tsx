@@ -39,8 +39,10 @@ function ContactHero() {
     details: "",
     brief: null as File | null,
   });
-  const [message, setMessage] = useState("")
-  const [errorMessage, setErrorMessage] = useState("")
+
+  const [message, setMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const toggleFrom = (
     list: string[],
     setter: (s: string[]) => void,
@@ -56,36 +58,82 @@ function ContactHero() {
     setForm((f) => ({ ...f, [name]: value }));
   };
 
+  // --- Helpers for file validation ---
+  const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2 MB
+
+  const isPdfFile = (file: File) => {
+    // Prefer MIME type check; fall back to extension if needed
+    const byType = file.type === "application/pdf";
+    const byExt = /\.pdf$/i.test(file.name);
+    return byType || byExt;
+  };
+
   const onFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] ?? null;
+
+    // reset any previous messages
+    setMessage("");
+    setErrorMessage("");
+
+    if (!file) {
+      setForm((f) => ({ ...f, brief: null }));
+      return;
+    }
+
+    // Validate PDF
+    if (!isPdfFile(file)) {
+      setErrorMessage("Please upload a PDF file (.pdf only).");
+      // clear selection visually and in state
+      e.target.value = "";
+      setForm((f) => ({ ...f, brief: null }));
+      return;
+    }
+
+    // Validate size < 2MB
+    if (file.size > MAX_FILE_SIZE) {
+      setErrorMessage("File must be smaller than 2 MB.");
+      e.target.value = "";
+      setForm((f) => ({ ...f, brief: null }));
+      return;
+    }
+
+    // All good
     setForm((f) => ({ ...f, brief: file }));
   };
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setMessage("");
+    setErrorMessage("");
 
-    // Create a new FormData object to send both the form data and the file
+    // Final safety check in case file was injected or input bypassed
+    if (form.brief) {
+      if (!isPdfFile(form.brief)) {
+        setErrorMessage("Please upload a PDF file (.pdf only).");
+        return;
+      }
+      if (form.brief.size > MAX_FILE_SIZE) {
+        setErrorMessage("File must be smaller than 2 MB.");
+        return;
+      }
+    }
+
     const formData = new FormData();
-
-    // Append the selections (identity, communication, experiences) and form fields to FormData
     formData.append("fullName", form.fullName);
     formData.append("email", form.email);
     formData.append("phone", form.phone);
     formData.append("company", form.company);
     formData.append("details", form.details);
 
-    // Append the file
     if (form.brief) {
       formData.append("file", form.brief);
     }
 
-    // Add selected options (identity, communication, experiences) to FormData
     formData.append("identity", identity.join(", "));
     formData.append("communication", communication.join(", "));
     formData.append("experiences", experiences.join(", "));
 
     try {
-      // Send POST request to the backend with FormData
       const response = await fetch("https://blog.xntric.me/lps-contact", {
         method: "POST",
         body: formData,
@@ -116,8 +164,7 @@ function ContactHero() {
       type="button"
       onClick={onClick}
       className={`px-3 py-2 rounded-full border text-sm tracking-wide transition
-        ${checked ? "bg-[#00FC09] border-[#00FC09]" : "border-black/20 bg-white"
-        }
+        ${checked ? "bg-[#00FC09] border-[#00FC09]" : "border-black/20 bg-white"}
       `}
     >
       {label}
@@ -152,12 +199,10 @@ function ContactHero() {
               {/* Step indicator */}
               <div className="mt-4 mb-6 flex items-center gap-2">
                 <span
-                  className={`h-1 w-1/2 rounded-full ${step === 1 ? "bg-[#00FC09]" : "bg-black/15"
-                    }`}
+                  className={`h-1 w-1/2 rounded-full ${step === 1 ? "bg-[#00FC09]" : "bg-black/15"}`}
                 />
                 <span
-                  className={`h-1 w-1/2 rounded-full ${step === 2 ? "bg-[#00FC09]" : "bg-black/15"
-                    }`}
+                  className={`h-1 w-1/2 rounded-full ${step === 2 ? "bg-[#00FC09]" : "bg-black/15"}`}
                 />
               </div>
 
@@ -329,7 +374,7 @@ function ContactHero() {
                       htmlFor="brief"
                       className="block text-md font-normal font-['Exo'] mb-1"
                     >
-                      Project Brief (upload)
+                      Project Brief (PDF, max 2&nbsp;MB)
                     </label>
                     <input
                       id="brief"
@@ -337,53 +382,40 @@ function ContactHero() {
                       type="file"
                       onChange={onFile}
                       className="block w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:bg-[#00FC09] file:text-black file:font-semibold file:cursor-pointer"
-                      accept=".pdf,.doc,.docx,.ppt,.pptx,.txt,.jpg,.jpeg,.png,.zip"
+                      accept=".pdf,application/pdf"
                     />
                     {form.brief && (
                       <p className="mt-1 text-xs text-black/70">
-                        Selected: {form.brief.name}
+                        Selected: {form.brief.name} ({Math.ceil(form.brief.size / 1024)} KB)
                       </p>
                     )}
                   </div>
-                  {message ? <p className="text-center text-green-500">{message}</p> : errorMessage ? <p className="text-center text-red-500">{errorMessage}</p> : null}
+
+                  {message ? (
+                    <p className="text-center text-green-500">{message}</p>
+                  ) : errorMessage ? (
+                    <p className="text-center text-red-500">{errorMessage}</p>
+                  ) : null}
 
                   <div className="pt-2 flex items-center justify-between gap-3">
                     <button
                       type="button"
                       onClick={(e) => {
-                        e.preventDefault(); // don’t let the form submit
-                        e.stopPropagation(); // don’t bubble to form handlers
-                        setStep(1); // go back to choices
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setStep(1);
                       }}
                       className="px-5 py-3 rounded-xl font-semibold border border-black/20 hover:bg-black/5 transition"
                     >
                       Previous
                     </button>
-                    <Button
-                      type="submit"
-                      topT={true}
-                      bg="bg-black"
-                      text="Send Inquiry"
-                    />
-
+                    <Button type="submit" topT={true} bg="bg-black" text="Send Inquiry" />
                   </div>
 
-                  {/* (Optional) include hidden selections so they submit with the form if you post it */}
-                  <input
-                    type="hidden"
-                    name="identity"
-                    value={identity.join(", ")}
-                  />
-                  <input
-                    type="hidden"
-                    name="communication"
-                    value={communication.join(", ")}
-                  />
-                  <input
-                    type="hidden"
-                    name="experiences"
-                    value={experiences.join(", ")}
-                  />
+                  {/* Hidden selections */}
+                  <input type="hidden" name="identity" value={identity.join(", ")} />
+                  <input type="hidden" name="communication" value={communication.join(", ")} />
+                  <input type="hidden" name="experiences" value={experiences.join(", ")} />
                 </form>
               )}
             </div>
