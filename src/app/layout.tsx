@@ -19,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* AHREFS */}
+        {/* AHREF */}
         <Script src="https://analytics.ahrefs.com/analytics.js" data-key="QX53jJa4XJiZTJDn43Nnfw" async></Script>
         {/* Google Analytics 4 (gtag.js) - Base Script */}
         <Script
