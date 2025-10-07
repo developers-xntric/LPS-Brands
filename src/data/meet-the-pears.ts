@@ -76,11 +76,11 @@ export const teamMembers: TeamMember[] = [
         defaultImage: "/team/t13.webp",
         hoverImage: "/team/th13.webp",
     },
-    {
-        id: "14",
-        defaultImage: "/team/t14.webp",
-        hoverImage: "/team/th14.webp",
-    },
+    // {
+    //     id: "14",
+    //     defaultImage: "/team/t14.webp",
+    //     hoverImage: "/team/th14.webp",
+    // },
     {
         id: "15",
         defaultImage: "/team/t15.webp",
