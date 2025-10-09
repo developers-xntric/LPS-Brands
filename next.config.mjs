@@ -68,8 +68,7 @@ export const oldBlogUrls = [
   "https://lps-me.com/why-digital-marketing-is-a-secret-weapon-for-your-business/",
   "https://lps-me.com/why-you-need-digital-marketing-for-your-business/",
   "https://lps-me.com/hire-a-digital-marketing-agency/",
-];
-
+]
 
 /** @type {import('next').NextConfig} */
 import bundleAnalyzer from '@next/bundle-analyzer'
@@ -80,10 +79,10 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 const nextConfig = {
   images: {
-    domains: ['lps-me.com', "res.cloudinary.com"],
+    domains: ['lps-me.com', 'res.cloudinary.com'],
   },
   async redirects() {
-    const rules = oldBlogUrls.map((full) => {
+    const blogRedirects = oldBlogUrls.map((full) => {
       const slug = full.replace('https://lps-me.com/', '').replace(/\/$/, '')
       return {
         source: `/${slug}`,
@@ -91,7 +90,16 @@ const nextConfig = {
         permanent: true,
       }
     })
-    return rules
+
+    const extraRedirects = [
+      {
+        source: '/services/gaming-experiences',
+        destination: '/services/gaming',
+        permanent: true,
+      },
+    ]
+
+    return [...blogRedirects, ...extraRedirects]
   },
 }
 
