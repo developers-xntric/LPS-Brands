@@ -72,13 +72,6 @@ const schemaData = {
     "@type": "Place",
     name: "Global",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    reviewCount: "53",
-    bestRating: "5",
-    worstRating: "1",
-  },
 };
 
 const socialLinks = [
