@@ -31,21 +31,26 @@ export async function generateMetadata({
     );
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const { blog } = await res.json();
-
+    let data;
+    if (blog.blogCategory === "LPS") {
+      data = blog;
+    } else {
+      return
+    }
     return {
-      title: blog.metaTitle || blog.title || "Blog | LPS BRANDS",
+      title: data.metaTitle || data.title || "Blog | LPS BRANDS",
       description:
-        blog.metaDescription ||
-        blog.description ||
+        data.metaDescription ||
+        data.description ||
         "Explore insightful blogs from LPS BRANDS on AI, Cloud.",
       alternates: {
-        canonical: `https://lps-me.com/blog/${blog.slug}`,
+        canonical: `https://lps-me.com/blog/${data.slug}`,
       },
       openGraph: {
-        title: blog.metaTitle || blog.title,
-        description: blog.metaDescription || blog.description,
-        url: `https://lps-me.com/blog/${blog.slug}`,
-        images: blog.bannerImageURL ? [{ url: blog.bannerImageURL }] : [],
+        title: data.metaTitle || data.title,
+        description: data.metaDescription || data.description,
+        url: `https://lps-me.com/blog/${data.slug}`,
+        images: data.bannerImageURL ? [{ url: data.bannerImageURL }] : [],
       },
     };
   } catch (error) {
@@ -137,8 +142,11 @@ export default async function BlogPage({
       error = "Blog not found.";
     } else {
       const { blog } = await res.json();
-
-      data = blog;
+      if (blog.blogCategory === "LPS") {
+        data = blog;
+      } else {
+        return
+      }
     }
   } catch (err) {
     console.error("Blog fetch error:", err);
@@ -235,11 +243,10 @@ export default async function BlogPage({
               {
                 "@type": "ImageObject",
                 inLanguage: "en-US",
-                "@id": `${
-                  data?.slug
-                    ? `https://lps-me.com/${data.slug}/#primaryimage`
-                    : "#"
-                }`,
+                "@id": `${data?.slug
+                  ? `https://lps-me.com/${data.slug}/#primaryimage`
+                  : "#"
+                  }`,
                 url:
                   data?.bannerImageURL ||
                   "https://lps-me.com/default-image.jpg",
@@ -252,11 +259,10 @@ export default async function BlogPage({
               },
               {
                 "@type": "BreadcrumbList",
-                "@id": `${
-                  data?.slug
-                    ? `https://lps-me.com/${data.slug}/#breadcrumb`
-                    : "#"
-                }`,
+                "@id": `${data?.slug
+                  ? `https://lps-me.com/${data.slug}/#breadcrumb`
+                  : "#"
+                  }`,
                 itemListElement: [
                   {
                     "@type": "ListItem",
@@ -422,19 +428,19 @@ export default async function BlogPage({
                       (
                         subsection: {
                           subtitle:
-                            | string
-                            | number
-                            | bigint
-                            | boolean
-                            | ReactElement<
-                                any,
-                                string | JSXElementConstructor<any>
-                              >
-                            | Iterable<ReactNode>
-                            | ReactPortal
-                            | Promise<AwaitedReactNode>
-                            | null
-                            | undefined;
+                          | string
+                          | number
+                          | bigint
+                          | boolean
+                          | ReactElement<
+                            any,
+                            string | JSXElementConstructor<any>
+                          >
+                          | Iterable<ReactNode>
+                          | ReactPortal
+                          | Promise<AwaitedReactNode>
+                          | null
+                          | undefined;
                           subdescription: any[];
                           lists: any[];
                         },
@@ -462,19 +468,19 @@ export default async function BlogPage({
                             (
                               list: {
                                 listTitle:
-                                  | string
-                                  | number
-                                  | bigint
-                                  | boolean
-                                  | ReactElement<
-                                      any,
-                                      string | JSXElementConstructor<any>
-                                    >
-                                  | Iterable<ReactNode>
-                                  | ReactPortal
-                                  | Promise<AwaitedReactNode>
-                                  | null
-                                  | undefined;
+                                | string
+                                | number
+                                | bigint
+                                | boolean
+                                | ReactElement<
+                                  any,
+                                  string | JSXElementConstructor<any>
+                                >
+                                | Iterable<ReactNode>
+                                | ReactPortal
+                                | Promise<AwaitedReactNode>
+                                | null
+                                | undefined;
                                 listDescription: any;
                                 items: any[];
                               },
@@ -503,20 +509,20 @@ export default async function BlogPage({
                                       (
                                         item: {
                                           title:
+                                          | string
+                                          | number
+                                          | bigint
+                                          | boolean
+                                          | ReactElement<
+                                            any,
                                             | string
-                                            | number
-                                            | bigint
-                                            | boolean
-                                            | ReactElement<
-                                                any,
-                                                | string
-                                                | JSXElementConstructor<any>
-                                              >
-                                            | Iterable<ReactNode>
-                                            | ReactPortal
-                                            | Promise<AwaitedReactNode>
-                                            | null
-                                            | undefined;
+                                            | JSXElementConstructor<any>
+                                          >
+                                          | Iterable<ReactNode>
+                                          | ReactPortal
+                                          | Promise<AwaitedReactNode>
+                                          | null
+                                          | undefined;
                                           description: any;
                                         },
                                         itemIndex: Key | null | undefined
