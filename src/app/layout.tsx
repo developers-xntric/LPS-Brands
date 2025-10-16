@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import Script from "next/script";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   title: "UAE’s Leading Digital Marketing Agency | LPS",
@@ -18,7 +19,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-
         {/* AHREF */}
         <Script src="https://analytics.ahrefs.com/analytics.js" data-key="QX53jJa4XJiZTJDn43Nnfw" async></Script>
         {/* Google Analytics 4 (gtag.js) - Base Script */}
@@ -39,8 +39,8 @@ export default function RootLayout({
             });
           `}
         </Script>
+        <GoogleAnalytics gaId="G-VSK43LD025" />
 
-        {/* Optional: Add more SEO / structured data tags here */}
       </head>
 
       <body className="antialiased overflow-x-hidden">
@@ -61,6 +61,28 @@ export default function RootLayout({
                 console.log('✅ LPS GA4 Event Fired: LPS_Page_Load | GA4 ID: G-VSK43LD025');
               } else {
                 console.warn('⚠️ GA4 not initialized yet.');
+              }
+            });
+          `}
+        </Script>
+
+        {/* Scroll Depth Tracking */}
+        <Script id="lps-scroll-depth" strategy="afterInteractive">
+          {`
+            window.addEventListener('scroll', () => {
+              const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+              if (scrollPercent >= 50 && !window.scrollEventFired) {
+                window.scrollEventFired = true;
+                if (typeof gtag === 'function') {
+                  gtag('event', 'Scroll_Depth_50', {
+                    event_category: 'engagement',
+                    event_label: '50% Scroll Depth',
+                    value: 1
+                  });
+                  console.log('✅ GA4 Event Fired: Scroll_Depth_50');
+                } else {
+                  console.warn('⚠️ GA4 not initialized for scroll depth.');
+                }
               }
             });
           `}
