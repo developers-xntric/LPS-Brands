@@ -1,3 +1,6 @@
+/** @type {import('next').NextConfig} */
+import bundleAnalyzer from '@next/bundle-analyzer'
+
 export const oldBlogUrls = [
   "https://lps-me.com/web-design-vs-web-development/",
   "https://lps-me.com/ai-for-social-media-marketing/",
@@ -68,14 +71,40 @@ export const oldBlogUrls = [
   "https://lps-me.com/why-digital-marketing-is-a-secret-weapon-for-your-business/",
   "https://lps-me.com/why-you-need-digital-marketing-for-your-business/",
   "https://lps-me.com/hire-a-digital-marketing-agency/",
-]
+];
 
-/** @type {import('next').NextConfig} */
-import bundleAnalyzer from '@next/bundle-analyzer'
+export const WrongUrls = [
+  'https://lps-me.com/blog/dynamics-365-sharepoint-integration/',
+  'https://lps-me.com/erp-implementation-challenges-solutions/',
+  'https://lps-me.com/using-finance-charges-in-business-central-to-boost-cash-flow/',
+  'https://lps-me.com/microsoft-dynamics-365-business-central-connectors/',
+  'https://lps-me.com/get-started-with-microsoft-dynamics-365/',
+  'https://lps-me.com/how-microsoft-dynamics-365-consultants-can-maximize-your-investment/',
+  'https://lps-me.com/migrating-to-microsoft-365-from-google-workspace/',
+  'https://lps-me.com/how-to-choose-an-erp-system/',
+  'https://lps-me.com/blog/why-microsoft-dynamics-365-is-game-changer/',
+  'https://lps-me.com/blog/100-performance-boosting-things-in-microsoft-dynamics-365/',
+  'https://lps-me.com/review-financial-journals-in-dynamics-365-business-central/',
+  'https://lps-me.com/microsoft-business-central-extensions/',
+  'https://lps-me.com/how-to-choose-an-erp-system-complete-guide-for-businesses/',
+  'https://lps-me.com/everything-you-need-to-know-when-selecting-an-erp-system/',
+  'https://lps-me.com/dynamics-with-other-apps-integration/',
+  'https://lps-me.com/how-to-set-up-multiple-addresses-in-business-central/',
+  'https://lps-me.com/guide-to-migrating-from-g-suite-to-microsoft-365/',
+  'https://lps-me.com/everything-you-need-to-know-about-microsoft-dynamics-nav/',
+  'https://lps-me.com/erp-vs-crm-whats-the-difference-and-which-do-you-need/',
+  'https://lps-me.com/microsoft-dynamics-365-finance-operations-modules/',
+  'https://lps-me.com/set-up-cash-management-in-dynamics-365-business-central/',
+  'https://lps-me.com/what-is-dynamics-365-customer-service/',
+  'https://lps-me.com/copilot-for-d365-business-central-integration-benefits/',
+  'https://lps-me.com/how-to-create-custom-dashboards-in-dynamics-365/',
+  'https://lps-me.com/erp-saudi-vision-2030s-ai-powered-transformation-enabler/',
+  'https://lps-me.com/common-types-of-erp-understanding-the-options-available/',
+];
 
 const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
-})
+});
 
 const nextConfig = {
   images: {
@@ -83,13 +112,13 @@ const nextConfig = {
   },
   async redirects() {
     const blogRedirects = oldBlogUrls.map((full) => {
-      const slug = full.replace('https://lps-me.com/', '').replace(/\/$/, '')
+      const slug = full.replace('https://lps-me.com/', '').replace(/\/$/, '');
       return {
         source: `/${slug}`,
         destination: `/blog/${slug}`,
         permanent: true,
-      }
-    })
+      };
+    });
 
     const extraRedirects = [
       {
@@ -97,10 +126,20 @@ const nextConfig = {
         destination: '/services/gaming',
         permanent: true,
       },
-    ]
+    ];
 
-    return [...blogRedirects, ...extraRedirects]
+    const homepageRedirects = WrongUrls.map((url) => {
+      const path = url.replace('https://lps-me.com', '').replace(/\/$/, '');
+      return {
+        source: path === '' ? '/' : path,
+        destination: '/',
+        permanent: true,
+      };
+    });
+
+    return [...blogRedirects, ...extraRedirects, ...homepageRedirects];
   },
-}
+};
 
-export default withBundleAnalyzer(nextConfig)
+export default withBundleAnalyzer(nextConfig);
+
