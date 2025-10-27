@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import Script from "next/script";
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "UAE’s Leading Digital Marketing Agency | LPS",
@@ -19,9 +19,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Search Console Verification */}
+        <meta
+          name="google-site-verification"
+          content="ed1af686165b1dda"
+        />
         {/* AHREF */}
-        <Script src="https://analytics.ahrefs.com/analytics.js"
-         data-key="nqG9qb/T5/n6heppL+R3QQ"async></Script>
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="nqG9qb/T5/n6heppL+R3QQ"
+          async
+        ></Script>
         {/* Google Analytics 4 (gtag.js) - Base Script */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VSK43LD025"
@@ -41,14 +49,11 @@ export default function RootLayout({
           `}
         </Script>
         <GoogleAnalytics gaId="G-VSK43LD025" />
-
       </head>
-
       <body className="antialiased overflow-x-hidden">
         <Navbar />
         {children}
         <Footer />
-
         {/* Custom LPS GA4 Event + Console Log */}
         <Script id="lps-ga4-event" strategy="afterInteractive">
           {`
@@ -66,7 +71,6 @@ export default function RootLayout({
             });
           `}
         </Script>
-
         {/* Scroll Depth Tracking */}
         <Script id="lps-scroll-depth" strategy="afterInteractive">
           {`
