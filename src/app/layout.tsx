@@ -20,10 +20,20 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Google Search Console Verification */}
-        <meta
-          name="google-site-verification"
-          content="ed1af686165b1dda"
-        />
+        <meta name="google-site-verification" content="ed1af686165b1dda" />
+        {/* Check Google Search Console Verification Meta Tag */}
+        <Script id="check-gsc-verification" strategy="afterInteractive">
+          {`
+            window.addEventListener('load', () => {
+              const gscMeta = document.querySelector('meta[name="google-site-verification"][content="ed1af686165b1dda"]');
+              if (gscMeta) {
+                console.log('✅ Google Search Console verification meta tag found: ed1af686165b1dda');
+              } else {
+                console.warn('⚠️ Google Search Console verification meta tag NOT found');
+              }
+            });
+          `}
+        </Script>
         {/* AHREF */}
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
