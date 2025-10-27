@@ -20,14 +20,14 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Google Search Console Verification */}
-        <meta name="google-site-verification" content="ed1af686165b1dda" />
+        <meta name="google-site-verification" content="zZPh8dyAr1AnPoOXtxuHQsltveNDcpnmV_0tAOZrbsY" />
         {/* Check Google Search Console Verification Meta Tag */}
         <Script id="check-gsc-verification" strategy="afterInteractive">
           {`
             window.addEventListener('load', () => {
-              const gscMeta = document.querySelector('meta[name="google-site-verification"][content="ed1af686165b1dda"]');
+              const gscMeta = document.querySelector('meta[name="google-site-verification"][content="zZPh8dyAr1AnPoOXtxuHQsltveNDcpnmV_0tAOZrbsY"]');
               if (gscMeta) {
-                console.log('✅ Google Search Console verification meta tag found: ed1af686165b1dda');
+                console.log('✅ Google Search Console verification meta tag found: zZPh8dyAr1AnPoOXtxuHQsltveNDcpnmV_0tAOZrbsY');
               } else {
                 console.warn('⚠️ Google Search Console verification meta tag NOT found');
               }
