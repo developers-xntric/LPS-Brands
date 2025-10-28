@@ -100,6 +100,14 @@ export const WrongUrls = [
   'https://lps-me.com/how-to-create-custom-dashboards-in-dynamics-365/',
   'https://lps-me.com/erp-saudi-vision-2030s-ai-powered-transformation-enabler/',
   'https://lps-me.com/common-types-of-erp-understanding-the-options-available/',
+  "https://lps-me.com/blog/microsoft-dynamics-365-finance-operations-modules",
+  "https://lps-me.com/blog/dynamics-365-business-central-vs-finance-and-operations",
+  "https://lps-me.com/blog/dynamics-365-vs-sap",
+  "https://lps-me.com/blog/migrating-to-microsoft-365-from-google-workspace",
+  "https://lps-me.com/blog/what-are-the-different-versions-of-microsoft-dynamics",
+  "https://lps-me.com/blog/the-future-for-dynamics-365-finance-and-operations",
+  "https://lps-me.com/blog/how-to-set-up-multiple-addresses-in-business-central",
+  "https://lps-me.com/blog/microsoft-dynamics-365-finance-operations-modules"
 ];
 
 const withBundleAnalyzer = bundleAnalyzer({
