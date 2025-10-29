@@ -146,9 +146,20 @@ const schemaData2 = {
         "height": 449,
         "caption": "LPS Brands"
       },
-      "image": {
-        "@id": "https://lps-me.com/#/schema/logo/image/"
-      }
+      "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+971 54 308 9222",
+    "contactType": "sales",
+    "areaServed": "AE",
+    "availableLanguage": "en"
+  },
+  "sameAs": [
+    "https://www.facebook.com/lpsbrands",
+    "https://www.instagram.com/lps.brands/",
+     "https://ae.linkedin.com/company/lps-brands",
+     "https://www.youtube.com/channel/UC3D2a1-SVRq5GTsSajcCtpA",
+  ]
+
     }
   ]
 }

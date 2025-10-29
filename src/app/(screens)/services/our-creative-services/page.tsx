@@ -80,8 +80,8 @@ const schemaData2 = {
       "@type": "ImageObject",
       "inLanguage": "en-US",
       "@id": "https://lps-me.com/services/our-creative-services/#primaryimage",
-      "url": "https://lps-me.com/wp-content/uploads/2025/04/two-diverse-members-working-team-think-cretive-ideas-future-project-woman-shows-design-plan-smartphone-webpage-pose-desktop.png",
-      "contentUrl": "https://lps-me.com/wp-content/uploads/2025/04/two-diverse-members-working-team-think-cretive-ideas-future-project-woman-shows-design-plan-smartphone-webpage-pose-desktop.png",
+      "url": "https://lps-me.com/services/pe9.webp",
+      "contentUrl": "https://lps-me.com/services/pe9.webp",
       "width": 863,
       "height": 550
     },
@@ -148,9 +148,20 @@ const schemaData2 = {
         "height": 449,
         "caption": "LPS Brands"
       },
-      "image": {
-        "@id": "https://lps-me.com/#/schema/logo/image/"
-      }
+      "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+971 54 308 9222",
+    "contactType": "sales",
+    "areaServed": "AE",
+    "availableLanguage": "en"
+  },
+  "sameAs": [
+    "https://www.facebook.com/lpsbrands",
+    "https://www.instagram.com/lps.brands/",
+     "https://ae.linkedin.com/company/lps-brands",
+     "https://www.youtube.com/channel/UC3D2a1-SVRq5GTsSajcCtpA",
+  ]
+
     }
   ]
 }

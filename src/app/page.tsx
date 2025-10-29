@@ -46,7 +46,7 @@ const faqs = [
     answer:
       "You can reach out via our Contact Us page or visit our office to book a discovery session where we understand your goals and tailor a plan accordingly.",
   },
-]
+];
 
 export const metadata = {
   title: "LPS is a New-Age 360° Full-Impact Marketing Agency",
@@ -157,20 +157,23 @@ const schema = {
     },
     {
       "@type": "Organization",
-      "@id": "https://lps-me.com/",
+      "@id": "https://lps-me.com/#organization",
       name: "LPS Brands",
       url: "https://lps-me.com/",
-      logo: {
-        "@type": "ImageObject",
-        inLanguage: "en-US",
-        "@id": "https://lps-me.com/",
-        url: "https://lps-me.com/",
-        contentUrl: "https://lps-me.com/",
-        width: 749,
-        height: 449,
-        caption: "LPS Brands",
-      },
       image: { "@id": "https://lps-me.com" },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+971 54 308 9222",
+        contactType: "sales",
+        areaServed: "AE",
+        availableLanguage: "en",
+      },
+      sameAs: [
+        "https://www.facebook.com/lpsbrands",
+        "https://www.instagram.com/lps.brands/",
+        "https://ae.linkedin.com/company/lps-brands",
+        "https://www.youtube.com/channel/UC3D2a1-SVRq5GTsSajcCtpA",
+      ],
     },
   ],
 };
@@ -192,27 +195,26 @@ export default async function Home() {
       next: { revalidate: 60 },
     });
     const { blogs } = await res.json();
-    mappedPosts = blogs.map((blog: {
-      _id: string,
-      slug: string,
-      title: string,
-      bannerImageURL: string,
-      blogCategory: string,
-    }) => ({
-      id: blog._id || blog.slug,
-      title: blog.title,
-      slug: blog.slug,
-      image: blog.bannerImageURL || "/default-blog-image.jpg",
-      readMore: "Read More",
-      _id: blog._id,
-      blogCategory: blog.blogCategory,
-    }));
-    
+    mappedPosts = blogs.map(
+      (blog: {
+        _id: string;
+        slug: string;
+        title: string;
+        bannerImageURL: string;
+        blogCategory: string;
+      }) => ({
+        id: blog._id || blog.slug,
+        title: blog.title,
+        slug: blog.slug,
+        image: blog.bannerImageURL || "/default-blog-image.jpg",
+        readMore: "Read More",
+        _id: blog._id,
+        blogCategory: blog.blogCategory,
+      })
+    );
   } catch (error) {
     console.log(error);
   }
-
-
 
   const filteredPosts = mappedPosts.filter(
     (post: BlogPost) => post.blogCategory?.toLowerCase() === "lps"
