@@ -8,7 +8,6 @@ import Industries from "@/components/home/industries";
 import { MeetThePears } from "@/components/home/meet-the-pears";
 import Wrapper from "@/components/layout/wrapper";
 import Script from "next/script";
-import { run } from '../../migrate-to-sanity'
 // This is the best
 const faqs = [
   {
@@ -189,7 +188,6 @@ export interface BlogPost {
 }
 
 export default async function Home() {
-  // await run()
   let mappedPosts = [];
   try {
     const res = await fetch("https://blog.xntric.me/api/v2/blogs", {
