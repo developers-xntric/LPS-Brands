@@ -38,3 +38,4 @@ next-env.d.ts
 .vercel
 blog.js
 migrate-to-sanity.js
+publish-all-drafted.js
