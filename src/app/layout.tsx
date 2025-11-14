@@ -36,11 +36,11 @@ export default function RootLayout({
         </Script>
         {/* dONE  */}
         {/* AHREF */}
-        <Script
+      <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="nqG9qb/T5/n6heppL+R3QQ"
           async
-        ></Script>
+        ></Script>  
         {/* Google Analytics 4 (gtag.js) - Base Script */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VSK43LD025"
