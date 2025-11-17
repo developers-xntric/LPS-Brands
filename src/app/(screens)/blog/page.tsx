@@ -6,6 +6,7 @@ import React from "react";
 
 // ⛔ Disable all caching globally for this page
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
 // OR use this instead:
 // export const revalidate = 0;
 

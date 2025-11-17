@@ -75,7 +75,7 @@ const BLOG_BY_SLUG_QUERY = groq`
 
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   try {
-    return await client.fetch(BLOG_BY_SLUG_QUERY, { slug });
+    return await client.fetch(BLOG_BY_SLUG_QUERY, { slug } , { cache: "no-store" });
   } catch (error) {
     console.error("Error fetching single post:", error);
     return null;
