@@ -1009,7 +1009,7 @@ export default async function BlogPage({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              mainEntity: data.faqs.map((faq, i) => ({
+              mainEntity: data.faqs.map((faq) => ({
                 "@type": "Question",
                 name: faq.question,
                 acceptedAnswer: {
