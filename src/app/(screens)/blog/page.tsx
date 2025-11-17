@@ -4,6 +4,11 @@ import BlogHero from "@/components/careers/careers-hero";
 import { getPosts } from "@/sanity/groq";
 import React from "react";
 
+// ⛔ Disable all caching globally for this page
+export const dynamic = "force-dynamic";
+// OR use this instead:
+// export const revalidate = 0;
+
 export const metadata = {
   title: "Marketing Insights & Trends | LPS Blog Middle East",
   description:
@@ -17,6 +22,7 @@ export default async function Blog() {
   let mappedPosts: BlogPost[] = [];
 
   try {
+    // This will now ALWAYS be fresh because caching is disabled
     const sanityBlogs = await getPosts();
 
     mappedPosts = sanityBlogs.filter(
