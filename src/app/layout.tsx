@@ -62,9 +62,9 @@ export default function RootLayout({
         <GoogleAnalytics gaId="G-VSK43LD025" />
       </head>
       <body className="antialiased overflow-x-hidden">
+        <Navbar />
         {children}
-        {/* <Navbar />
-        <Footer /> */}
+        <Footer /> 
         {/* Custom LPS GA4 Event + Console Log */}
         <Script id="lps-ga4-event" strategy="afterInteractive">
           {`

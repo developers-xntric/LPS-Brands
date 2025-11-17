@@ -115,9 +115,18 @@ const withBundleAnalyzer = bundleAnalyzer({
 });
 
 const nextConfig = {
-  images: {
-    domains: ['lps-me.com', 'res.cloudinary.com'],
-  },
+ images: {
+  domains: ['lps-me.com', 'res.cloudinary.com'],
+  remotePatterns: [
+    {
+      protocol: 'https',
+      hostname: 'cdn.sanity.io',
+      port: '',
+      pathname: '/images/**', // ensures all Sanity images load
+    },
+  ],
+},
+
   async redirects() {
     const blogRedirects = oldBlogUrls.map((full) => {
       const slug = full.replace('https://lps-me.com/', '').replace(/\/$/, '');

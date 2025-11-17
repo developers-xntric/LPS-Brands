@@ -1,4 +1,635 @@
-/* eslint-disable */
+
+'use-client';
+// /* eslint-disable */
+// import BlogsSection from "@/components/home/blog-section";
+// import LogoLPS from "@/components/icons/lps-logo";
+// import MobileNavbar from "@/components/layout/mobile-navbar";
+// import Wrapper from "@/components/layout/wrapper";
+// import { Calendar, LinkedinIcon } from "lucide-react";
+// import Image from "next/image";
+// import Link from "next/link";
+// import Script from "next/script";
+
+// import {
+//   AwaitedReactNode,
+//   JSXElementConstructor,
+//   Key,
+//   ReactElement,
+//   ReactNode,
+//   ReactPortal,
+// } from "react";
+
+// export async function generateMetadata({
+//   params,
+// }: {
+//   params: { slug: string };
+// }) {
+//   try {
+//     const res = await fetch(
+//       `https://blog.xntric.me/api/v2/blog/${params.slug}`,
+     
+//       { 
+//         next: { revalidate: 0 },
+//       }
+//     );
+//     if (!res.ok) throw new Error(`HTTP ${res.status}`);
+//     const { blog } = await res.json();
+//     let data;
+//     if (blog.blogCategory === "LPS") {
+//       data = blog;
+//     } else {
+//       return
+//     }
+//     return {
+//       title: data.metaTitle || data.title || "Blog | LPS BRANDS",
+//       description:
+//         data.metaDescription ||
+//         data.description ||
+//         "Explore insightful blogs from LPS BRANDS on AI, Cloud.",
+//       alternates: {
+//         canonical: `https://lps-me.com/blog/${data.slug}`,
+//       },
+//       openGraph: {
+//         title: data.metaTitle || data.title,
+//         description: data.metaDescription || data.description,
+//         url: `https://lps-me.com/blog/${data.slug}`,
+//         images: data.bannerImageURL ? [{ url: data.bannerImageURL }] : [],
+//       },
+//     };
+//   } catch (error) {
+//     console.error("Metadata fetch error:", error);
+//     return {
+//       title: "Blog Not Found | LPS Web",
+//       description: "The requested blog could not be loaded.",
+//     };
+//   }
+// }
+
+// const schemaData = {
+//   "@context": "https://schema.org",
+//   "@type": "Blog",
+//   name: "Blogs",
+//   description: "Blogs from LPS Brands",
+//   provider: {
+//     "@type": "Organization",
+//     name: "LPS Web Solutions",
+//     url: "https://lps-me.com",
+//   },
+//   serviceType: "Website Design and Development Services",
+//   areaServed: {
+//     "@type": "Place",
+//     name: "Global",
+//   },
+// };
+
+
+// export default async function BlogPage({
+//   params,
+// }: {
+//   params: { slug: string };
+// }) {
+//   let data = null;
+//   let error = null;
+
+//   try {
+//     const res = await fetch(
+//       `https://blog.xntric.me/api/v2/blog/${params.slug}`
+//     );
+
+//     if (!res.ok) {
+//       console.error(`Failed to load blog: ${res.status}`);
+//       error = "Blog not found.";
+//     } else {
+//       const { blog } = await res.json();
+//       if (blog.blogCategory === "LPS") {
+//         data = blog;
+//       } else {
+//         return
+//       }
+//     }
+//   } catch (err) {
+//     console.error("Blog fetch error:", err);
+//     error = "Failed to load blog content.";
+//   }
+
+//   // Generate table of contents dynamically
+//   const tableOfContents = [];
+//   if (data?.title) {
+//     tableOfContents.push({ id: "main-title", title: data?.title });
+//   }
+//   if (data?.subsections?.length > 0) {
+//     data?.subsections.forEach(
+//       (subsection: { subtitle: string }, index: number) => {
+//         if (subsection.subtitle) {
+//           tableOfContents.push({
+//             id: `subsection-${index}`,
+//             title: subsection.subtitle,
+//           });
+//         }
+//       }
+//     );
+//   }
+//   if (data?.conclusion) {
+//     tableOfContents.push({ id: "conclusion", title: "Conclusion" });
+//   }
+//   if (data?.faqs?.length > 0) {
+//     tableOfContents.push({ id: "faqs", title: "Frequently Asked Questions" });
+//   }
+
+//   return (
+//     <Wrapper>
+//       <div className="felx flex-col space-y-10">
+//         {/* Top Left LPS Logo */}
+//         <div className="flex justify-between items-center p-4 ">
+//           <LogoLPS />
+//           <MobileNavbar />
+//         </div>
+//         {/* FEATURED IMAGE  */}
+//         <Image
+//           src={`${data?.bannerImageURL}`}
+//           alt="LPS Logo"
+//           width={2000}
+//           height={2000}
+//           className="w-full h-full rounded-3xl "
+//         />
+//         <div>
+//           <div className="">
+//             <div className="lg:max-w-[100%] 2xl:max-w-[100%] w-full py-10  pt-0 pb-10 md:pb-5 space-y-4">
+//               <h1
+//                 id="main-title"
+//                 className="text-secondary font-['Asgard'] font-semibold leading-[34px] lg:leading-[46px] text-[30px] lg:text-[40px] "
+//               >
+//                 {data?.title}
+//               </h1>
+//               {data?.publishedDate && (
+//                 <p className="text-secondary text-base md:text-[15px] font-medium font-['Exo'] flex items-center gap-2">
+//                   <Calendar size={16} className="mb-[2px]" />
+//                   {data?.publishedDate.slice(0, 10)}
+//                 </p>
+//               )}
+//               <div className="bg-[#D9D9D9] w-fit px-4 py-1 rounded-full">
+//                 {data?.category && (
+//                   <p className="text-secondary text-[15px] font-medium font-['Exo'] flex items-center gap-2">
+//                     {data?.category}
+//                   </p>
+//                 )}
+//               </div>
+//               <div className="flex items-center gap-6 pt-6">
+//                 {socialLinks.map(({ Icon, link }, index) => (
+//                   <Link
+//                     key={index}
+//                     href={link}
+//                     target={index === 1 ? "_self" : "_blank"}
+//                     rel={index === 1 ? undefined : "noopener noreferrer"} // best practice for external links
+//                     className="rounded-full w-8 h-8 flex items-center justify-center text-white"
+//                   >
+//                     <Icon />
+//                   </Link>
+//                 ))}
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//       <Script
+//         id="schema-image"
+//         type="application/ld+json"
+//         strategy="afterInteractive"
+//         dangerouslySetInnerHTML={{
+//           __html: JSON.stringify({
+//             "@context": "https://schema.org",
+//             "@graph": [
+//               {
+//                 "@type": "ImageObject",
+//                 inLanguage: "en-US",
+//                 "@id": `${data?.slug
+//                   ? `https://lps-me.com/${data.slug}/#primaryimage`
+//                   : "#"
+//                   }`,
+//                 url:
+//                   data?.bannerImageURL ||
+//                   "https://lps-me.com/default-image.jpg",
+//                 contentUrl:
+//                   data?.bannerImageURL ||
+//                   "https://lps-me.com/default-image.jpg",
+//                 width: 800,
+//                 height: 396,
+//                 caption: data?.title || "LPS Blog Image",
+//               },
+//               {
+//                 "@type": "BreadcrumbList",
+//                 "@id": `${data?.slug
+//                   ? `https://lps-me.com/${data.slug}/#breadcrumb`
+//                   : "#"
+//                   }`,
+//                 itemListElement: [
+//                   {
+//                     "@type": "ListItem",
+//                     position: 1,
+//                     name: "Home",
+//                     item: "https://lps-me.com/",
+//                   },
+//                   {
+//                     "@type": "ListItem",
+//                     position: 2,
+//                     name: data?.title || "Blog Post",
+//                   },
+//                 ],
+//               },
+//             ],
+//           }),
+//         }}
+//       />
+
+//       <Script
+//         id="schema-service-cloud"
+//         type="application/ld+json"
+//         strategy="afterInteractive"
+//         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+//       />
+
+//       <Script
+//         id="schema-author"
+//         type="application/ld+json"
+//         strategy="afterInteractive"
+//         dangerouslySetInnerHTML={{
+//           __html: JSON.stringify({
+//             "@context": "http://schema.org",
+//             "@type": "Person",
+//             name: "Shaikh Zubaer Aasim",
+//           }),
+//         }}
+//       />
+
+//       <style>{`
+//         .blog-content a {
+//           color: #00FC09;
+//         }
+        
+//         .table-of-contents {
+//           padding: 20px;
+//         }
+        
+//         .table-of-contents h3 {
+//           font-size: 24px;
+//           font-weight: 700;
+//           color: #333;
+//           margin-bottom: 16px;
+//           border-bottom: 2px solid #e9ecef;
+//           padding-bottom: 8px;
+//         }
+        
+//         .toc-list {
+//           list-style: none;
+//           border-left: 2px solid #00FC09; 
+//           padding: 0;
+//           margin: 0;
+//         }
+        
+//         .toc-item {
+//           margin-bottom: 8px;
+//         }
+        
+//         .toc-link {
+//           display: block;
+//           color: #101820;
+//           text-decoration: none;
+//           padding: 8px 12px;
+//           border-radius: 4px;
+//           transition: all 0.2s ease;
+//           font-weight: 500;
+//           line-height: 1.4;
+//         }
+        
+//         .toc-link:hover {
+//           background-color: #00FC09;
+//           color: #000;
+//           transform: translateX(4px);
+//         }
+        
+//         .toc-link.active {
+//           background-color: #00FC09;
+//           color: white;
+//         }
+        
+//         /* Smooth scroll behavior */
+//         html {
+//           scroll-behavior: smooth;
+//         }
+        
+//         /* Add scroll offset for fixed headers */
+//         [id] {
+//           scroll-margin-top: 100px;
+//         }
+//       `}</style>
+
+//       {data?.faqs?.length > 0 && (
+//         <script
+//           type="application/ld+json"
+//           dangerouslySetInnerHTML={{
+//             __html: JSON.stringify({
+//               "@context": "https://schema.org",
+//               "@type": "FAQPage",
+//               mainEntity: data?.faqs.map(
+//                 (faq: { question: string; answer: string }) => ({
+//                   "@type": "Question",
+//                   name: faq.question,
+//                   acceptedAnswer: {
+//                     "@type": "Answer",
+//                     text: faq.answer,
+//                   },
+//                 })
+//               ),
+//             }),
+//           }}
+//         />
+//       )}
+
+//       <div className="font-['Asgard'] pt-34 ">
+//         {error ? (
+//           <div className="p-10 text-center text-secondary">{error}</div>
+//         ) : (
+//           <>
+//             <div className="">
+//               <div className="flex flex-col lg:flex-row gap-8">
+//                 {tableOfContents.length > 0 && (
+//                   <div className="lg:w-[30%] lg:sticky lg:top-10 lg:self-start mt-">
+//                     <div className="table-of-contents">
+//                       <h3 className="text-center font-['Asgard'] ">
+//                         Table of Contents
+//                       </h3>
+//                       <ul className="toc-list">
+//                         {tableOfContents.map((item, index) => (
+//                           <li key={index} className="toc-item">
+//                             <Link
+//                               href={`#${item.id}`}
+//                               className="toc-link font-['Asgard'] font-medium text-[15px] 2xl:text-lg"
+//                             >
+//                               {item.title}
+//                             </Link>
+//                           </li>
+//                         ))}
+//                       </ul>
+//                     </div>
+//                   </div>
+//                 )}
+
+//                 <div className="lg:w-[70%]">
+//                   <div className="md:px-6 pb-2 md:pb-12 py-12 md:pt-5 pt-2 space-y-8">
+//                     {data?.description && (
+//                       <div
+//                         className="text-[15px] lg:text-[18px] text-secondary font-['Exo'] font-medium blog-content"
+//                         dangerouslySetInnerHTML={{ __html: data?.description }}
+//                       />
+//                     )}
+
+//                     {data?.subsections?.map(
+//                       (
+//                         subsection: {
+//                           subtitle:
+//                           | string
+//                           | number
+//                           | bigint
+//                           | boolean
+//                           | ReactElement<
+//                             any,
+//                             string | JSXElementConstructor<any>
+//                           >
+//                           | Iterable<ReactNode>
+//                           | ReactPortal
+//                           | Promise<AwaitedReactNode>
+//                           | null
+//                           | undefined;
+//                           subdescription: any[];
+//                           lists: any[];
+//                         },
+//                         index: Key | null | undefined
+//                       ) => (
+//                         <div key={index} className="space-y-3">
+//                           {subsection.subtitle && (
+//                             <h2
+//                               id={`subsection-${index}`}
+//                               className="text-[20px] lg:text-[26px] text-secondary font-['Asgard'] font-semibold leading-[30px] md:leading-[35px] lg:leading-[35px]"
+//                             >
+//                               {subsection.subtitle}
+//                             </h2>
+//                           )}
+//                           {subsection.subdescription?.map(
+//                             (desc: any, descIndex: Key | null | undefined) => (
+//                               <div
+//                                 key={descIndex}
+//                                 className="text-base  text-secondary font-['Exo'] font-medium blog-content"
+//                                 dangerouslySetInnerHTML={{ __html: desc }}
+//                               />
+//                             )
+//                           )}
+//                           {subsection.lists?.map(
+//                             (
+//                               list: {
+//                                 listTitle:
+//                                 | string
+//                                 | number
+//                                 | bigint
+//                                 | boolean
+//                                 | ReactElement<
+//                                   any,
+//                                   string | JSXElementConstructor<any>
+//                                 >
+//                                 | Iterable<ReactNode>
+//                                 | ReactPortal
+//                                 | Promise<AwaitedReactNode>
+//                                 | null
+//                                 | undefined;
+//                                 listDescription: any;
+//                                 items: any[];
+//                               },
+//                               listIndex: Key | null | undefined
+//                             ) => (
+//                               <div key={listIndex}>
+//                                 <h3 className="text-xl lg:text-[20px] font-bold mb-2">
+//                                   <div
+//                                     className="blog-content"
+//                                     dangerouslySetInnerHTML={{
+//                                       __html: list.listTitle as string,
+//                                     }}
+//                                   />
+//                                 </h3>
+//                                 {list.listDescription && (
+//                                   <div
+//                                     className="blog-content font-['Exo'] font-medium mt-2"
+//                                     dangerouslySetInnerHTML={{
+//                                       __html: list.listDescription,
+//                                     }}
+//                                   ></div>
+//                                 )}
+//                                 {list.items?.length > 0 && (
+//                                   <ul className="list-disc pl-5 space-y-1">
+//                                     {list.items.map(
+//                                       (
+//                                         item: {
+//                                           title:
+//                                           | string
+//                                           | number
+//                                           | bigint
+//                                           | boolean
+//                                           | ReactElement<
+//                                             any,
+//                                             | string
+//                                             | JSXElementConstructor<any>
+//                                           >
+//                                           | Iterable<ReactNode>
+//                                           | ReactPortal
+//                                           | Promise<AwaitedReactNode>
+//                                           | null
+//                                           | undefined;
+//                                           description: any;
+//                                         },
+//                                         itemIndex: Key | null | undefined
+//                                       ) => (
+//                                         <li
+//                                           key={itemIndex}
+//                                           className="text-[15px]  text-secondary font-['Exo'] font-medium leading-[26px] lg:leading-[29px]"
+//                                         >
+//                                           <div
+//                                             className="blog-content"
+//                                             dangerouslySetInnerHTML={{
+//                                               __html: item.title as string,
+//                                             }}
+//                                           />
+//                                           {list.listDescription && (
+//                                             <div
+//                                               className="blog-content font-['Exo'] mt-2"
+//                                               dangerouslySetInnerHTML={{
+//                                                 __html: item.description,
+//                                               }}
+//                                             ></div>
+//                                           )}
+//                                         </li>
+//                                       )
+//                                     )}
+//                                   </ul>
+//                                 )}
+//                               </div>
+//                             )
+//                           )}
+//                         </div>
+//                       )
+//                     )}
+
+//                     {data?.faqs && data?.faqs.length > 0 && (
+//                       <div className="space-y-3">
+//                         <h2
+//                           id="faqs"
+//                           className="text-[18px] lg:text-[26px] font-['Asgard'] font-semibold mb-2 leading-[35px] lg:leading-[42px]"
+//                         >
+//                           Frequently Asked Questions
+//                         </h2>
+//                         {data?.faqs.map(
+//                           (
+//                             faq: { question: string; answer: string },
+//                             index: number
+//                           ) => (
+//                             <div key={index} className="space-y-2">
+//                               <h3 className="text-[18px] lg:text-[19px] font-['Asgard'] font-semibold  md:leading-[35px] lg:leading-[42px]">
+//                                 {index + 1}. {faq.question}
+//                               </h3>
+//                               <div
+//                                 className="text-base text-secondary font-['Exo'] font-medium blog-content"
+//                                 dangerouslySetInnerHTML={{ __html: faq.answer }}
+//                               />
+//                             </div>
+//                           )
+//                         )}
+//                       </div>
+//                     )}
+
+//                     {data?.conclusion && (
+//                       <div className="space-y-3">
+//                         <h2
+//                           id="conclusion"
+//                           className="text-[25px] lg:text-[26px] font-semibold leading-[35px] lg:leading-[42px]"
+//                         >
+//                           Conclusion
+//                         </h2>
+//                         <div
+//                           className="text-base text-secondary font-['Exo'] font-medium blog-content"
+//                           dangerouslySetInnerHTML={{ __html: data?.conclusion }}
+//                         />
+//                       </div>
+//                     )}
+//                   </div>
+//                 </div>
+//               </div>
+//               <div className="w-full border px-2 md:px-10 py-6 rounded-3xl my-10">
+//                 <div className="flex justify-between items-center mb-4">
+//                   <div className="flex items-start  gap-4">
+//                     <Image
+//                       src="/asim.webp"
+//                       alt="Shaikh zubaer Aasim"
+//                       width={100}
+//                       height={55}
+//                       className="rounded-full w-[55px] md:w-[100px] bg-center"
+//                     />
+//                     <div>
+//                       <div className="flex items-center justify-between">
+//                         <h4 className="md:text-2xl font-bold ">
+//                           Shaikh Zubaer Aasim
+//                         </h4>
+//                         <div className="block">
+//                           <div className="w-fit h-fit bg-black rounded-[8px] p-1 ps-1">
+//                             <Link
+//                               target="_blank"
+//                               href="https://www.linkedin.com/in/aasimzshaikh"
+//                             >
+//                               <LinkedinIcon color="white" size={24} />
+//                             </Link>
+//                           </div>
+//                         </div>
+//                       </div>
+//                       <div className="space-y-3 mt-6">
+//                         <p className="text-justify text-secondary font-['Exo'] text-[13px] md:text-base">
+//                           With over two decades of driving marketing
+//                           transformation across the GCC, Aasim brings a rare
+//                           blend of brand leadership, digital innovation, and
+//                           business foresight. He has demonstrated a unique
+//                           ability to align with evolving customer and market
+//                           demands whilst predicting and leading best practice in
+//                           digital and customer experiences.
+//                         </p>
+//                         <p className="text-justify text-secondary font-['Exo'] text-[13px] md:text-base">
+//                           His journey spans across building multi-million-dirham
+//                           portfolios, launching modern marketing campaigns,
+//                           building AI enablled Tech platforms and leading
+//                           award-winning teams across both client and agency
+//                           environments. His appointment to the MMA Board of
+//                           Director reinforces a larger belief: Modern marketing
+//                           demands more than strategy it demands ideas that are
+//                           unafraid to build what’s next.
+//                         </p>
+//                         <p className="text-justify text-secondary font-['Exo'] text-[13px] md:text-base">
+//                           His appointment to the MMA Board of Director
+//                           reinforces a larger belief:
+//                         </p>
+//                         <p className="text-justify text-secondary font-['Exo'] text-[13px] md:text-base">
+//                           Modern marketing demands more than strategy it demands
+//                           ideas that are unafraid to build what’s next.
+//                         </p>
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+//           </>
+//         )}
+//         <BlogsSection heading="Dicover Our Blogs" />
+//       </div>
+//     </Wrapper>
+//   );
+// }
+// ========================================
+// IMPORTS
+// ========================================
 import BlogsSection from "@/components/home/blog-section";
 import LogoLPS from "@/components/icons/lps-logo";
 import MobileNavbar from "@/components/layout/mobile-navbar";
@@ -6,78 +637,53 @@ import Wrapper from "@/components/layout/wrapper";
 import { Calendar, LinkedinIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { getPostBySlug } from "@/sanity/groq";
 import Script from "next/script";
 
-import {
-  AwaitedReactNode,
-  JSXElementConstructor,
-  Key,
-  ReactElement,
-  ReactNode,
-  ReactPortal,
-} from "react";
+// ========================================
+// SANITY BLOG TYPE (STRICT)
+// ========================================
+type BlogListItem = {
+  title: string;
+  description?: string;
+};
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  try {
-    const res = await fetch(
-      `https://blog.xntric.me/api/v2/blog/${params.slug}`,
-      {
-        next: { revalidate: 60 },
-      }
-    );
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const { blog } = await res.json();
-    let data;
-    if (blog.blogCategory === "LPS") {
-      data = blog;
-    } else {
-      return
-    }
-    return {
-      title: data.metaTitle || data.title || "Blog | LPS BRANDS",
-      description:
-        data.metaDescription ||
-        data.description ||
-        "Explore insightful blogs from LPS BRANDS on AI, Cloud.",
-      alternates: {
-        canonical: `https://lps-me.com/blog/${data.slug}`,
-      },
-      openGraph: {
-        title: data.metaTitle || data.title,
-        description: data.metaDescription || data.description,
-        url: `https://lps-me.com/blog/${data.slug}`,
-        images: data.bannerImageURL ? [{ url: data.bannerImageURL }] : [],
-      },
-    };
-  } catch (error) {
-    console.error("Metadata fetch error:", error);
-    return {
-      title: "Blog Not Found | LPS Web",
-      description: "The requested blog could not be loaded.",
-    };
-  }
+type BlogList = {
+  listTitle?: string;
+  listDescription?: string;
+  items?: BlogListItem[];
+};
+
+type BlogSubsection = {
+  subtitle?: string;
+  subdescription?: string[];
+  lists?: BlogList[];
+};
+
+type FAQ = {
+  question: string;
+  answer: string;
+};
+
+export interface BlogPost {
+  _id: string;
+  title: string;
+  description?: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  publishedDate?: string;
+  category?: string;
+  blogCategory?: string;
+  tags?: string[];
+  slug: string;
+  bannerImageURL?: string;
+  conclusion?: string;
+  quotes?: string[];
+  subsections?: BlogSubsection[];
+  faqs?: FAQ[];
 }
 
-const schemaData = {
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  name: "Blogs",
-  description: "Blogs from LPS Brands",
-  provider: {
-    "@type": "Organization",
-    name: "LPS Web Solutions",
-    url: "https://lps-me.com",
-  },
-  serviceType: "Website Design and Development Services",
-  areaServed: {
-    "@type": "Place",
-    name: "Global",
-  },
-};
+
 
 const socialLinks = [
   {
@@ -123,115 +729,132 @@ const socialLinks = [
     ),
   },
 ];
+// ========================================
+// METADATA
+// ========================================
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  try {
+    const data = await getPostBySlug(params.slug);
 
+    if (!data || data.blogCategory?.toLowerCase() !== "lps") {
+      return {
+        title: "Blog Not Found | LPS Web",
+        description: "The requested blog could not be loaded.",
+      };
+    }
+
+    return {
+      title: data.metaTitle || data.title || "Blog | LPS BRANDS",
+      description: data.metaDescription || data.description || "Explore insightful blogs from LPS BRANDS on AI, Cloud.",
+      alternates: { canonical: `https://lps-me.com/blog/${data.slug}` },
+      openGraph: {
+        title: data.metaTitle || data.title,
+        description: data.metaDescription || data.description,
+        images: data.bannerImageURL ? [{ url: data.bannerImageURL }] : [],
+        url: `https://lps-me.com/blog/${data.slug}`,
+      },
+    };
+  } catch (error) {
+    console.error("Metadata fetch error:", error);
+    return {
+      title: "Blog Not Found | LPS Web",
+      description: "The requested blog could not be loaded.",
+    };
+  }
+}
+
+// ========================================
+// SOCIAL LINKS
+// ========================================
+
+// ========================================
+// PAGE COMPONENT
+// ========================================
 export default async function BlogPage({
   params,
 }: {
   params: { slug: string };
 }) {
-  let data = null;
-  let error = null;
+  const data = await getPostBySlug(params.slug);
+  const error =
+    !data || data.blogCategory?.toLowerCase() !== "lps"
+      ? "Blog not found."
+      : null;
 
-  try {
-    const res = await fetch(
-      `https://blog.xntric.me/api/v2/blog/${params.slug}`
-    );
+  // TABLE OF CONTENTS
+  const toc: { id: string; title: string }[] = [];
 
-    if (!res.ok) {
-      console.error(`Failed to load blog: ${res.status}`);
-      error = "Blog not found.";
-    } else {
-      const { blog } = await res.json();
-      if (blog.blogCategory === "LPS") {
-        data = blog;
-      } else {
-        return
-      }
-    }
-  } catch (err) {
-    console.error("Blog fetch error:", err);
-    error = "Failed to load blog content.";
-  }
+  if (data?.title) toc.push({ id: "main-title", title: data.title });
 
-  // Generate table of contents dynamically
-  const tableOfContents = [];
-  if (data?.title) {
-    tableOfContents.push({ id: "main-title", title: data?.title });
-  }
-  if (data?.subsections?.length > 0) {
-    data?.subsections.forEach(
-      (subsection: { subtitle: string }, index: number) => {
-        if (subsection.subtitle) {
-          tableOfContents.push({
-            id: `subsection-${index}`,
-            title: subsection.subtitle,
-          });
-        }
-      }
-    );
-  }
-  if (data?.conclusion) {
-    tableOfContents.push({ id: "conclusion", title: "Conclusion" });
-  }
-  if (data?.faqs?.length > 0) {
-    tableOfContents.push({ id: "faqs", title: "Frequently Asked Questions" });
-  }
+  data?.subsections?.forEach((s, i) => {
+    if (s.subtitle) toc.push({ id: `subsection-${i}`, title: s.subtitle });
+  });
+
+  if (data?.conclusion) toc.push({ id: "conclusion", title: "Conclusion" });
+  if (data?.faqs?.length) toc.push({ id: "faqs", title: "Frequently Asked Questions" });
 
   return (
     <Wrapper>
-      <div className="felx flex-col space-y-10">
-        {/* Top Left LPS Logo */}
-        <div className="flex justify-between items-center p-4 ">
+      <div className="flex flex-col space-y-10">
+        {/* NAV + LOGO */}
+        <div className="flex justify-between items-center p-4">
           <LogoLPS />
           <MobileNavbar />
         </div>
-        {/* FEATURED IMAGE  */}
-        <Image
-          src={`${data?.bannerImageURL}`}
-          alt="LPS Logo"
-          width={2000}
-          height={2000}
-          className="w-full h-full rounded-3xl "
-        />
-        <div>
-          <div className="">
-            <div className="lg:max-w-[100%] 2xl:max-w-[100%] w-full py-10  pt-0 pb-10 md:pb-5 space-y-4">
-              <h1
-                id="main-title"
-                className="text-secondary font-['Asgard'] font-semibold leading-[34px] lg:leading-[46px] text-[30px] lg:text-[40px] "
-              >
-                {data?.title}
-              </h1>
-              {data?.publishedDate && (
-                <p className="text-secondary text-base md:text-[15px] font-medium font-['Exo'] flex items-center gap-2">
-                  <Calendar size={16} className="mb-[2px]" />
-                  {data?.publishedDate.slice(0, 10)}
+
+        {/* BANNER */}
+        {data?.bannerImageURL && (
+          <Image
+            src={data.bannerImageURL}
+            alt={data.title}
+            width={2000}
+            height={1200}
+            className="rounded-3xl w-full"
+          />
+        )}
+
+        {/* TITLE */}
+        {!error && (
+          <section className="space-y-4 py-10">
+            <h1
+              id="main-title"
+              className="text-secondary font-['Asgard'] font-semibold leading-[34px] lg:leading-[46px] text-[30px] lg:text-[40px]"
+            >
+              {data?.title}
+            </h1>
+
+            {data?.publishedDate && (
+              <p className="text-secondary text-base md:text-[15px] font-medium font-['Exo'] flex items-center gap-2">
+                <Calendar size={16} /> {data.publishedDate.slice(0, 10)}
+              </p>
+            )}
+
+            {data?.category && (
+              <div className="bg-[#D9D9D9] px-4 py-1 w-fit rounded-full">
+                <p className="text-secondary font-['Exo'] text-[15px] font-medium">
+                  {data.category}
                 </p>
-              )}
-              <div className="bg-[#D9D9D9] w-fit px-4 py-1 rounded-full">
-                {data?.category && (
-                  <p className="text-secondary text-[15px] font-medium font-['Exo'] flex items-center gap-2">
-                    {data?.category}
-                  </p>
-                )}
               </div>
-              <div className="flex items-center gap-6 pt-6">
-                {socialLinks.map(({ Icon, link }, index) => (
-                  <Link
-                    key={index}
-                    href={link}
-                    target={index === 1 ? "_self" : "_blank"}
-                    rel={index === 1 ? undefined : "noopener noreferrer"} // best practice for external links
-                    className="rounded-full w-8 h-8 flex items-center justify-center text-white"
-                  >
-                    <Icon />
-                  </Link>
-                ))}
-              </div>
+            )}
+
+            {/* SOCIAL */}
+            <div className="flex items-center gap-6 pt-6 ">
+              {socialLinks.map((item, i) => (
+                <Link
+                  href={item.link}
+                  key={i}
+                  target={i === 1 ? "_self" : "_blank"}
+                  rel={i === 1 ? undefined : "noopener noreferrer"}
+                  className="rounded-full w-8 h-8 flex items-center justify-center text-white"
+                >
+                  {item.Icon()}
+                </Link>
+              ))}
             </div>
-          </div>
-        </div>
+          </section>
+        )}
       </div>
+
       <Script
         id="schema-image"
         type="application/ld+json"
@@ -286,7 +909,22 @@ export default async function BlogPage({
         id="schema-service-cloud"
         type="application/ld+json"
         strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          name: "Blogs",
+          description: "Blogs from LPS Brands",
+          provider: {
+            "@type": "Organization",
+            name: "LPS Web Solutions",
+            url: "https://lps-me.com",
+          },
+          serviceType: "Website Design and Development Services",
+          areaServed: {
+            "@type": "Place",
+            name: "Global",
+          },
+        }) }}
       />
 
       <Script
@@ -364,307 +1002,247 @@ export default async function BlogPage({
         }
       `}</style>
 
-      {data?.faqs?.length > 0 && (
+      {data?.faqs?.length ? (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              mainEntity: data?.faqs.map(
-                (faq: { question: string; answer: string }) => ({
-                  "@type": "Question",
-                  name: faq.question,
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: faq.answer,
-                  },
-                })
-              ),
+              mainEntity: data.faqs.map((faq, i) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: faq.answer,
+                },
+              })),
             }),
           }}
         />
-      )}
+      ) : null}
 
-      <div className="font-['Asgard'] pt-34 ">
+      {/* ============================ */}
+      {/* BLOG CONTENT AREA            */}
+      {/* ============================ */}
+      <div className="pt-5">
         {error ? (
-          <div className="p-10 text-center text-secondary">{error}</div>
+          <p className="text-center text-secondary">{error}</p>
         ) : (
-          <>
-            <div className="">
-              <div className="flex flex-col lg:flex-row gap-8">
-                {tableOfContents.length > 0 && (
-                  <div className="lg:w-[30%] lg:sticky lg:top-10 lg:self-start mt-">
-                    <div className="table-of-contents">
-                      <h3 className="text-center font-['Asgard'] ">
-                        Table of Contents
-                      </h3>
-                      <ul className="toc-list">
-                        {tableOfContents.map((item, index) => (
-                          <li key={index} className="toc-item">
-                            <Link
-                              href={`#${item.id}`}
-                              className="toc-link font-['Asgard'] font-medium text-[15px] 2xl:text-lg"
-                            >
-                              {item.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
+          <div className="flex flex-col lg:flex-row gap-8">
+
+            {/* ========== TOC ========== */}
+            {toc.length > 0 && (
+              <div className="lg:w-[30%] lg:sticky lg:top-10 lg:self-start mt-">
+                <div className="table-of-contents">
+                  <h3 className="text-center font-['Asgard'] ">
+                    Table of Contents
+                  </h3>
+
+                  <ul className="toc-list">
+                    {toc.map((item, i) => (
+                      <li key={i} className="toc-item">
+                        <Link
+                          href={`#${item.id}`}
+                          className="toc-link font-['Asgard'] font-medium text-[15px] 2xl:text-lg"
+                        >
+                          {item.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+
+            {/* ========== CONTENT ========== */}
+            <main className="lg:w-[70%]">
+              <div className="md:px-6 pb-2 md:pb-12 py-12 md:pt-5 pt-2 space-y-8">
+                {/* Description */}
+                {data?.description && (
+                  <div
+                    className="text-[15px] lg:text-[18px] text-secondary font-['Exo'] font-medium blog-content"
+                    dangerouslySetInnerHTML={{ __html: data.description }}
+                  />
                 )}
 
-                <div className="lg:w-[70%]">
-                  <div className="md:px-6 pb-2 md:pb-12 py-12 md:pt-5 pt-2 space-y-8">
-                    {data?.description && (
-                      <div
-                        className="text-[15px] lg:text-[18px] text-secondary font-['Exo'] font-medium blog-content"
-                        dangerouslySetInnerHTML={{ __html: data?.description }}
-                      />
+                {/* Subsections */}
+                {data?.subsections?.map((sub, i) => (
+                  <section key={i} className="space-y-3">
+                    {sub.subtitle && (
+                      <h2
+                        id={`subsection-${i}`}
+                        className="text-[20px] lg:text-[26px] text-secondary font-['Asgard'] font-semibold leading-[30px] md:leading-[35px] lg:leading-[35px]"
+                      >
+                        {sub.subtitle}
+                      </h2>
                     )}
 
-                    {data?.subsections?.map(
-                      (
-                        subsection: {
-                          subtitle:
-                          | string
-                          | number
-                          | bigint
-                          | boolean
-                          | ReactElement<
-                            any,
-                            string | JSXElementConstructor<any>
-                          >
-                          | Iterable<ReactNode>
-                          | ReactPortal
-                          | Promise<AwaitedReactNode>
-                          | null
-                          | undefined;
-                          subdescription: any[];
-                          lists: any[];
-                        },
-                        index: Key | null | undefined
-                      ) => (
-                        <div key={index} className="space-y-3">
-                          {subsection.subtitle && (
-                            <h2
-                              id={`subsection-${index}`}
-                              className="text-[20px] lg:text-[26px] text-secondary font-['Asgard'] font-semibold leading-[30px] md:leading-[35px] lg:leading-[35px]"
-                            >
-                              {subsection.subtitle}
-                            </h2>
-                          )}
-                          {subsection.subdescription?.map(
-                            (desc: any, descIndex: Key | null | undefined) => (
-                              <div
-                                key={descIndex}
-                                className="text-base  text-secondary font-['Exo'] font-medium blog-content"
-                                dangerouslySetInnerHTML={{ __html: desc }}
-                              />
-                            )
-                          )}
-                          {subsection.lists?.map(
-                            (
-                              list: {
-                                listTitle:
-                                | string
-                                | number
-                                | bigint
-                                | boolean
-                                | ReactElement<
-                                  any,
-                                  string | JSXElementConstructor<any>
-                                >
-                                | Iterable<ReactNode>
-                                | ReactPortal
-                                | Promise<AwaitedReactNode>
-                                | null
-                                | undefined;
-                                listDescription: any;
-                                items: any[];
-                              },
-                              listIndex: Key | null | undefined
-                            ) => (
-                              <div key={listIndex}>
-                                <h3 className="text-xl lg:text-[20px] font-bold mb-2">
+                    {/* Subdescription paragraphs */}
+                    {sub.subdescription?.map((p, j) => (
+                      <div
+                        key={j}
+                        className="text-base text-secondary font-['Exo'] font-medium blog-content"
+                        dangerouslySetInnerHTML={{ __html: p }}
+                      />
+                    ))}
+
+                    {/* Lists */}
+                    {sub.lists?.map((list, j) => (
+                      <div key={j} className="space-y-3">
+                        {list.listTitle && (
+                          <h3
+                            className="text-xl lg:text-[20px] font-bold mb-2"
+                            dangerouslySetInnerHTML={{ __html: list.listTitle }}
+                          />
+                        )}
+
+                        {list.listDescription && (
+                          <div
+                            className="blog-content font-['Exo'] font-medium mt-2"
+                            dangerouslySetInnerHTML={{
+                              __html: list.listDescription,
+                            }}
+                          />
+                        )}
+
+                        {list.items && (
+                          <ul className="list-disc pl-5 space-y-1">
+                            {list.items.map((item, k) => (
+                              <li key={k} className="text-[15px]  text-secondary font-['Exo'] font-medium leading-[26px] lg:leading-[29px]">
+                                <div
+                                  className="blog-content"
+                                  dangerouslySetInnerHTML={{ __html: item.title }}
+                                />
+
+                                {item.description && (
                                   <div
-                                    className="blog-content"
+                                    className="blog-content font-['Exo'] mt-2"
                                     dangerouslySetInnerHTML={{
-                                      __html: list.listTitle as string,
+                                      __html: item.description,
                                     }}
                                   />
-                                </h3>
-                                {list.listDescription && (
-                                  <div
-                                    className="blog-content font-['Exo'] font-medium mt-2"
-                                    dangerouslySetInnerHTML={{
-                                      __html: list.listDescription,
-                                    }}
-                                  ></div>
                                 )}
-                                {list.items?.length > 0 && (
-                                  <ul className="list-disc pl-5 space-y-1">
-                                    {list.items.map(
-                                      (
-                                        item: {
-                                          title:
-                                          | string
-                                          | number
-                                          | bigint
-                                          | boolean
-                                          | ReactElement<
-                                            any,
-                                            | string
-                                            | JSXElementConstructor<any>
-                                          >
-                                          | Iterable<ReactNode>
-                                          | ReactPortal
-                                          | Promise<AwaitedReactNode>
-                                          | null
-                                          | undefined;
-                                          description: any;
-                                        },
-                                        itemIndex: Key | null | undefined
-                                      ) => (
-                                        <li
-                                          key={itemIndex}
-                                          className="text-[15px]  text-secondary font-['Exo'] font-medium leading-[26px] lg:leading-[29px]"
-                                        >
-                                          <div
-                                            className="blog-content"
-                                            dangerouslySetInnerHTML={{
-                                              __html: item.title as string,
-                                            }}
-                                          />
-                                          {list.listDescription && (
-                                            <div
-                                              className="blog-content font-['Exo'] mt-2"
-                                              dangerouslySetInnerHTML={{
-                                                __html: item.description,
-                                              }}
-                                            ></div>
-                                          )}
-                                        </li>
-                                      )
-                                    )}
-                                  </ul>
-                                )}
-                              </div>
-                            )
-                          )}
-                        </div>
-                      )
-                    )}
-
-                    {data?.faqs && data?.faqs.length > 0 && (
-                      <div className="space-y-3">
-                        <h2
-                          id="faqs"
-                          className="text-[18px] lg:text-[26px] font-['Asgard'] font-semibold mb-2 leading-[35px] lg:leading-[42px]"
-                        >
-                          Frequently Asked Questions
-                        </h2>
-                        {data?.faqs.map(
-                          (
-                            faq: { question: string; answer: string },
-                            index: number
-                          ) => (
-                            <div key={index} className="space-y-2">
-                              <h3 className="text-[18px] lg:text-[19px] font-['Asgard'] font-semibold  md:leading-[35px] lg:leading-[42px]">
-                                {index + 1}. {faq.question}
-                              </h3>
-                              <div
-                                className="text-base text-secondary font-['Exo'] font-medium blog-content"
-                                dangerouslySetInnerHTML={{ __html: faq.answer }}
-                              />
-                            </div>
-                          )
+                              </li>
+                            ))}
+                          </ul>
                         )}
                       </div>
-                    )}
+                    ))}
+                  </section>
+                ))}
 
-                    {data?.conclusion && (
-                      <div className="space-y-3">
-                        <h2
-                          id="conclusion"
-                          className="text-[25px] lg:text-[26px] font-semibold leading-[35px] lg:leading-[42px]"
-                        >
-                          Conclusion
-                        </h2>
+                {/* FAQs */}
+                {data?.faqs?.length ? (
+                  <section className="space-y-3">
+                    <h2
+                      id="faqs"
+                      className="text-[18px] lg:text-[26px] font-['Asgard'] font-semibold mb-2 leading-[35px] lg:leading-[42px]"
+                    >
+                      Frequently Asked Questions
+                    </h2>
+
+                    {data.faqs.map((faq, i) => (
+                      <div key={i} className="space-y-2">
+                        <h3 className="text-[18px] lg:text-[19px] font-['Asgard'] font-semibold  md:leading-[35px] lg:leading-[42px]">
+                          {i + 1}. {faq.question}
+                        </h3>
+
                         <div
                           className="text-base text-secondary font-['Exo'] font-medium blog-content"
-                          dangerouslySetInnerHTML={{ __html: data?.conclusion }}
+                          dangerouslySetInnerHTML={{ __html: faq.answer }}
                         />
                       </div>
-                    )}
+                    ))}
+                  </section>
+                ) : null}
+
+                {/* Conclusion */}
+                {data?.conclusion && (
+                  <section className="space-y-3">
+                    <h2
+                      id="conclusion"
+                      className="text-[25px] lg:text-[26px] font-semibold leading-[35px] lg:leading-[42px] font-['Asgard']"
+                    >
+                      Conclusion
+                    </h2>
+
+                    <div
+                      className="text-base text-secondary font-['Exo'] font-medium blog-content"
+                      dangerouslySetInnerHTML={{ __html: data.conclusion }}
+                    />
+                  </section>
+                )}
+              </div>
+            </main>
+          </div>
+        )}
+      </div>
+
+      {/* AUTHOR SECTION */}
+      <div className="w-full border px-2 md:px-10 py-6 rounded-3xl my-10">
+        <div className="flex justify-between items-center mb-4">
+          <div className="flex items-start  gap-4">
+            <Image
+              src="/asim.webp"
+              alt="Shaikh Zubaer Aasim"
+              width={100}
+              height={55}
+              className="rounded-full w-[55px] md:w-[100px] bg-center"
+            />
+
+            <div>
+              <div className="flex items-center justify-between">
+                <h4 className="md:text-2xl font-bold ">
+                  Shaikh Zubaer Aasim
+                </h4>
+                <div className="block">
+                  <div className="w-fit h-fit bg-black rounded-[8px] p-1 ps-1">
+                    <Link
+                      target="_blank"
+                      href="https://www.linkedin.com/in/aasimzshaikh"
+                    >
+                      <LinkedinIcon color="white" size={24} />
+                    </Link>
                   </div>
                 </div>
               </div>
-              <div className="w-full border px-2 md:px-10 py-6 rounded-3xl my-10">
-                <div className="flex justify-between items-center mb-4">
-                  <div className="flex items-start  gap-4">
-                    <Image
-                      src="/asim.webp"
-                      alt="Shaikh zubaer Aasim"
-                      width={100}
-                      height={55}
-                      className="rounded-full w-[55px] md:w-[100px] bg-center"
-                    />
-                    <div>
-                      <div className="flex items-center justify-between">
-                        <h4 className="md:text-2xl font-bold ">
-                          Shaikh Zubaer Aasim
-                        </h4>
-                        <div className="block">
-                          <div className="w-fit h-fit bg-black rounded-[8px] p-1 ps-1">
-                            <Link
-                              target="_blank"
-                              href="https://www.linkedin.com/in/aasimzshaikh"
-                            >
-                              <LinkedinIcon color="white" size={24} />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="space-y-3 mt-6">
-                        <p className="text-justify text-secondary font-['Exo'] text-[13px] md:text-base">
-                          With over two decades of driving marketing
-                          transformation across the GCC, Aasim brings a rare
-                          blend of brand leadership, digital innovation, and
-                          business foresight. He has demonstrated a unique
-                          ability to align with evolving customer and market
-                          demands whilst predicting and leading best practice in
-                          digital and customer experiences.
-                        </p>
-                        <p className="text-justify text-secondary font-['Exo'] text-[13px] md:text-base">
-                          His journey spans across building multi-million-dirham
-                          portfolios, launching modern marketing campaigns,
-                          building AI enablled Tech platforms and leading
-                          award-winning teams across both client and agency
-                          environments. His appointment to the MMA Board of
-                          Director reinforces a larger belief: Modern marketing
-                          demands more than strategy it demands ideas that are
-                          unafraid to build what’s next.
-                        </p>
-                        <p className="text-justify text-secondary font-['Exo'] text-[13px] md:text-base">
-                          His appointment to the MMA Board of Director
-                          reinforces a larger belief:
-                        </p>
-                        <p className="text-justify text-secondary font-['Exo'] text-[13px] md:text-base">
-                          Modern marketing demands more than strategy it demands
-                          ideas that are unafraid to build what’s next.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="space-y-3 mt-6">
+                <p className="text-justify text-secondary font-['Exo'] text-[13px] md:text-base">
+                  With over two decades of driving marketing
+                  transformation across the GCC, Aasim brings a rare
+                  blend of brand leadership, digital innovation, and
+                  business foresight. He has demonstrated a unique
+                  ability to align with evolving customer and market
+                  demands whilst predicting and leading best practice in
+                  digital and customer experiences.
+                </p>
+                <p className="text-justify text-secondary font-['Exo'] text-[13px] md:text-base">
+                  His journey spans across building multi-million-dirham
+                  portfolios, launching modern marketing campaigns,
+                  building AI enablled Tech platforms and leading
+                  award-winning teams across both client and agency
+                  environments. His appointment to the MMA Board of
+                  Director reinforces a larger belief: Modern marketing
+                  demands more than strategy it demands ideas that are
+                  unafraid to build what’s next.
+                </p>
+                <p className="text-justify text-secondary font-['Exo'] text-[13px] md:text-base">
+                  His appointment to the MMA Board of Director
+                  reinforces a larger belief:
+                </p>
+                <p className="text-justify text-secondary font-['Exo'] text-[13px] md:text-base">
+                  Modern marketing demands more than strategy it demands
+                  ideas that are unafraid to build what’s next.
+                </p>
               </div>
             </div>
-          </>
-        )}
-        <BlogsSection heading="Dicover Our Blogs" />
+          </div>
+        </div>
       </div>
+
+      <BlogsSection heading="Discover Our Blogs" />
+
     </Wrapper>
   );
 }

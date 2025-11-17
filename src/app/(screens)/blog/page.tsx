@@ -1,8 +1,8 @@
-import { BlogPost } from "@/app/page";
+import type { BlogPost } from "@/types/blog";
 import AllBlogs from "@/components/blog/all-blogs";
 import BlogHero from "@/components/careers/careers-hero";
+import { getPosts } from "@/sanity/groq";
 import React from "react";
-
 
 export const metadata = {
   title: "Marketing Insights & Trends | LPS Blog Middle East",
@@ -13,21 +13,18 @@ export const metadata = {
   },
 };
 
-async function Blog() {
-  let mappedPosts = [];
+export default async function Blog() {
+  let mappedPosts: BlogPost[] = [];
+
   try {
-    const res = await fetch("https://blog.xntric.me/api/v2/blogs", {
-      next: { revalidate: 60 },
-    });
-    const { blogs } = await res.json();
-    mappedPosts = blogs.filter(
+    const sanityBlogs = await getPosts();
+
+    mappedPosts = sanityBlogs.filter(
       (post: BlogPost) => post.blogCategory?.toLowerCase() === "lps"
     );
-    
   } catch (error) {
-    console.log(error);
+    console.error("Sanity Fetch Error:", error);
   }
-  
 
   return (
     <div>
@@ -36,5 +33,3 @@ async function Blog() {
     </div>
   );
 }
-
-export default Blog;
