@@ -172,7 +172,7 @@ function ContactHero() {
                         name="fullName"
                         value={form.fullName}
                         onChange={onChange}
-                        className="w-full rounded-xl border px-3 py-2"
+                        className="w-full rounded-xl border px-3 py-2 font-['Exo']"
                         required
                       />
                     </div>
@@ -184,7 +184,7 @@ function ContactHero() {
                         type="email"
                         value={form.email}
                         onChange={onChange}
-                        className="w-full rounded-xl border px-3 py-2"
+                        className="w-full rounded-xl border px-3 py-2 font-['Exo']"
                         required
                       />
                     </div>
@@ -210,7 +210,7 @@ function ContactHero() {
                         name="company"
                         value={form.company}
                         onChange={onChange}
-                        className="w-full rounded-xl border px-3 py-2"
+                        className="w-full rounded-xl border px-3 py-2 font-['Exo']"
                       />
                     </div>
                   </div>
@@ -222,7 +222,7 @@ function ContactHero() {
                       rows={4}
                       value={form.details}
                       onChange={onChange}
-                      className="w-full rounded-xl border px-3 py-2"
+                      className="w-full rounded-xl border px-3 py-2 font-['Exo']"
                     />
                   </div>
 
