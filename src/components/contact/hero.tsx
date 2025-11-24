@@ -112,9 +112,7 @@ function ContactHero() {
       onClick={onClick}
       className={`px-3 py-2 rounded-full border text-sm tracking-wide transition
         ${
-          checked
-            ? "bg-[#00FC09] border-[#00FC09]"
-            : "border-black/20 bg-white"
+          checked ? "bg-[#00FC09] border-[#00FC09]" : "border-black/20 bg-white"
         }
       `}
     >
@@ -123,7 +121,10 @@ function ContactHero() {
   );
 
   return (
-    <div id="test-contact" className={`bg-[url('/home/Hero.png') bg-center bg-cover pb-16 `}>
+    <div
+      id="test-contact"
+      className={`bg-[url('/home/Hero.png') bg-center bg-cover pb-16 `}
+    >
       <div className={`2xl:max-w-[1700px] mx-auto w-[90%]`}>
         <div className="flex justify-between items-center p-4 ">
           <LogoLPS />
@@ -193,8 +194,13 @@ function ContactHero() {
                       <input
                         name="phone"
                         value={form.phone}
-                        onChange={onChange}
+                        onChange={(e) => {
+                          const onlyNumbers = e.target.value.replace(/\D/g, "");
+                          setForm((f) => ({ ...f, phone: onlyNumbers }));
+                        }}
                         className="w-full rounded-xl border px-3 py-2 font-['Exo']"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
                       />
                     </div>
 
@@ -242,9 +248,7 @@ function ContactHero() {
                           key={opt}
                           label={opt}
                           checked={identity.includes(opt)}
-                          onClick={() =>
-                            toggleFrom(identity, setIdentity, opt)
-                          }
+                          onClick={() => toggleFrom(identity, setIdentity, opt)}
                         />
                       ))}
                     </div>
@@ -288,9 +292,7 @@ function ContactHero() {
 
                   {/* FILE UPLOAD MOVED HERE */}
                   <div>
-                    <label className="block mb-1">
-                      Project Brief (.pdf)
-                    </label>
+                    <label className="block mb-1">Project Brief (.pdf)</label>
                     <input
                       id="brief"
                       name="brief"
@@ -320,13 +322,30 @@ function ContactHero() {
                       Previous
                     </button>
 
-                    <Button type="submit" topT={true} bg="bg-black" text="Send Inquiry" />
+                    <Button
+                      type="submit"
+                      topT={true}
+                      bg="bg-black"
+                      text="Send Inquiry"
+                    />
                   </div>
 
                   {/* Hidden selections */}
-                  <input type="hidden" name="identity" value={identity.join(", ")} />
-                  <input type="hidden" name="communication" value={communication.join(", ")} />
-                  <input type="hidden" name="experiences" value={experiences.join(", ")} />
+                  <input
+                    type="hidden"
+                    name="identity"
+                    value={identity.join(", ")}
+                  />
+                  <input
+                    type="hidden"
+                    name="communication"
+                    value={communication.join(", ")}
+                  />
+                  <input
+                    type="hidden"
+                    name="experiences"
+                    value={experiences.join(", ")}
+                  />
                 </form>
               )}
             </div>
