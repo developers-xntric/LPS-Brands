@@ -93,9 +93,10 @@ function ContactHero() {
       } else {
         setErrorMessage("Failed to submit the form.");
       }
-    } catch (error) {
-      setErrorMessage("An error occurred while submitting.");
-    }
+    }  catch (error) {
+  console.error(error);
+  setErrorMessage("An error occurred while submitting.");
+}
   };
 
   const Pill = ({
