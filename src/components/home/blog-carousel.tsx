@@ -1,12 +1,17 @@
-/* eslint-disable */
 "use client";
-import { BlogPost } from "@/app/page";
+
+/* eslint-disable */
+import type { BlogCardSummary } from "@/types/blog";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import type React from "react";
 
-export default function BlogCarousel({ posts }: { posts: BlogPost[] }) {
+interface BlogCarouselProps {
+  posts: BlogCardSummary[];
+}
+
+export default function BlogCarousel({ posts }: BlogCarouselProps) {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -21,7 +26,6 @@ export default function BlogCarousel({ posts }: { posts: BlogPost[] }) {
   const [itemWidth, setItemWidth] = useState(0);
   const [gapPx, setGapPx] = useState(20);
 
-  if (!posts) return
   // set itemsPerView from breakpoints
   useEffect(() => {
     const setByWidth = () => {

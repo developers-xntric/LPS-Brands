@@ -8,6 +8,11 @@ import Industries from "@/components/home/industries";
 import { MeetThePears } from "@/components/home/meet-the-pears";
 import Wrapper from "@/components/layout/wrapper";
 import Script from "next/script";
+
+// ⭐ Import Sanity function
+import { getPosts } from "@/sanity/groq";
+import type { BlogCardSummary } from "@/types/blog";
+
 const faqs = [
   {
     question: "Why is LPS considered the best digital marketing agency in UAE?",
@@ -176,46 +181,24 @@ const schema = {
   ],
 };
 
-export interface BlogPost {
-  id: string;
-  _id?: string;
-  title: string;
-  image: string;
-  readMore: string;
-  slug: string;
-  blogCategory: string;
-}
-
 export default async function Home() {
-  let mappedPosts = [];
-  try {
-    const res = await fetch("https://blog.xntric.me/api/v2/blogs", {
-      next: { revalidate: 60 },
-    });
-    const { blogs } = await res.json();
-    mappedPosts = blogs.map(
-      (blog: {
-        _id: string;
-        slug: string;
-        title: string;
-        bannerImageURL: string;
-        blogCategory: string;
-      }) => ({
-        id: blog._id || blog.slug,
-        title: blog.title,
-        slug: blog.slug,
-        image: blog.bannerImageURL || "/default-blog-image.jpg",
-        readMore: "Read More",
-        _id: blog._id,
-        blogCategory: blog.blogCategory,
-      })
-    );
-  } catch (error) {
-    console.log(error);
-  }
+  // ⭐ Fetch from SANITY (not API)
+  const sanityBlogs = await getPosts();
 
+  // ⭐ Convert to component structure
+  const mappedPosts: BlogCardSummary[] = sanityBlogs.map((blog) => ({
+    id: blog._id,
+    title: blog.title,
+    slug: blog.slug,
+    image: blog.bannerImageURL || "/default-blog-image.jpg",
+    readMore: "Read More",
+    _id: blog._id,
+    blogCategory: blog.blogCategory || "",
+  }));
+
+  // ⭐ Only show LPS category
   const filteredPosts = mappedPosts.filter(
-    (post: BlogPost) => post.blogCategory?.toLowerCase() === "lps"
+    (post) => post.blogCategory?.toLowerCase() === "lps"
   );
   return (
     <div>

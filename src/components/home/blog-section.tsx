@@ -2,18 +2,20 @@ import { instagramVideos } from "@/data/blog-section";
 import { Button } from "../common/button";
 import BlogCarousel from "./blog-carousel";
 import InstagramVideos from "./instagram-videos";
-import { BlogPost } from "@/app/page";
+import type { BlogCardSummary } from "@/types/blog";
+
+interface BlogsSectionProps {
+  heading?: string;
+  isVideos?: boolean;
+  posts?: BlogCardSummary[];
+}
 
 export default function BlogsSection({
   heading,
   isVideos,
   posts,
-}: {
-  heading?: string;
-  isVideos?: boolean;
-  posts?: BlogPost[]
-}) {
-  if (!posts) return
+}: BlogsSectionProps) {
+  if (!posts?.length) return null;
   return (
     <div>
       <div className={`${heading !== "Blogs" ? "md:pb-16 pb-1 py-16" : "py-16"}  mx-auto bg-[url('/home/blog-bg.png')] rounded-3xl bg-center bg-cover bg-no-repeat`}>

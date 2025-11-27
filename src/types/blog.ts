@@ -36,3 +36,13 @@ export interface BlogPost {
     answer: string;
   }[];
 }
+
+export interface BlogCardSummary {
+  id: string;
+  _id?: string;
+  title: string;
+  image: string;
+  readMore: string;
+  slug: string;
+  blogCategory?: string;
+}

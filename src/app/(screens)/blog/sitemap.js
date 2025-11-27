@@ -1,62 +1,61 @@
-import { client } from "@/sanity/lib/client";
-import { groq } from "next-sanity";
+import { getPosts } from "@/sanity/groq";
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
-const ALL_BLOG_SLUGS_QUERY = groq`
-  *[_type == "lps_blogs" && defined(slug.current)]{
-    slug,
-    updatedAt,
-    publishedDate,
-    createdAt,
-    blogCategory
-  }
-`;
-
+/**
+ * Generates the sitemap for the blog section.
+ * This uses Next.js's metadata route convention to automatically create /blog/sitemap.xml.
+ * An array of sitemap entries.
+ */
 export default async function sitemap() {
+  // Static URLs – replace with your actual logic if needed
   const staticUrls = [
     {
-      url: "https://lps-me.com/blog",
+      url: "https://lps-me.com/blog", // Homepage of blog
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 1.0,
     },
+    {
+      url: "https://lps-me.com/blog/",
+      lastModified: new Date("2023-01-01"), // Or fetch from your data source
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 
+  // Dynamic URLs – fetch from Sanity
   const dynamicUrls = await fetchBlogPosts();
+
   return [...staticUrls, ...dynamicUrls];
 }
 
+/**
+ * Helper function to fetch dynamic blog post URLs from the API.
+ *
+ * @returns {Promise<MetadataRoute.Sitemap>} Promise resolving to an array of sitemap entries.
+ */
 async function fetchBlogPosts() {
   try {
-    const blogs = await client.fetch(ALL_BLOG_SLUGS_QUERY);
+    const blogs = await getPosts();
 
-    return blogs.map((blog) => ({
-      url: `https://lps-me.com/blog/${blog.slug.current}`,
-      lastModified: new Date(
-        blog.updatedAt ||
-        blog.publishedDate ||
-        blog.createdAt ||
-        new Date()
-      ),
-      changeFrequency: "weekly",
-      priority: 0.7,
-    }));
-
+    return blogs
+      .filter(
+        (blog) =>
+          blog.blogCategory?.toLowerCase() === "lps" &&
+          typeof blog.slug === "string" &&
+          blog.slug.length > 0
+      )
+      .map((blog) => ({
+        url: `https://lps-me.com/blog/${blog.slug}`,
+        lastModified: new Date(
+          blog.publishedDate || blog.updatedAt || blog.createdAt || Date.now()
+        ),
+        changeFrequency: "weekly",
+        priority: 0.7,
+      }));
   } catch (error) {
-    console.error("Sitemap error:", error);
+    console.error("Error fetching blog posts for sitemap:", error);
     return [];
   }
 }
-
-// For large sitemaps (>50,000 URLs), optionally implement this to split into multiple files
-// export async function generateSitemaps() {
-//   const totalUrls = await getTotalUrlCount(); // Your logic
-//   const chunks = Math.ceil(totalUrls / 50000);
-//   return Array.from({ length: chunks }, (_, i) => ({ id: i }));
-// }
-
-// Then modify the default export to accept { id }
-// export default async function sitemap({ id }) {
-//   const start = id * 50000;
-//   const urls = await fetchUrls(start, start + 50000); // Your paginated fetch
-//   return urls;
-// }
