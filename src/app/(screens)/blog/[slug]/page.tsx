@@ -72,10 +72,10 @@
 //   description: "Blogs from LPS Brands",
 //   provider: {
 //     "@type": "Organization",
-//     name: "LPS Web Solutions",
+//     name: "LPS Brands",
 //     url: "https://lps-me.com",
 //   },
-//   serviceType: "Website Design and Development Services",
+//   serviceType: "360° Digital Marketing Agency",
 //   areaServed: {
 //     "@type": "Place",
 //     name: "Global",
@@ -916,10 +916,10 @@ export default async function BlogPage({
           description: "Blogs from LPS Brands",
           provider: {
             "@type": "Organization",
-            name: "LPS Web Solutions",
+            name: "LPS Web",
             url: "https://lps-me.com",
           },
-          serviceType: "Website Design and Development Services",
+          serviceType: "360° Digital Marketing Agency",
           areaServed: {
             "@type": "Place",
             name: "Global",
