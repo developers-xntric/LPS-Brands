@@ -72,7 +72,7 @@ const BLOG_BY_SLUG_QUERY = groq`
   }
 }
 `;
-
+// this is 
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   try {
     return await client.fetch(BLOG_BY_SLUG_QUERY, { slug } , { cache: "no-store" });
