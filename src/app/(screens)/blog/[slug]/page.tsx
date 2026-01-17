@@ -732,9 +732,10 @@ const socialLinks = [
 // ========================================
 // METADATA
 // ========================================
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   try {
-    const data = await getPostBySlug(params.slug);
+    const data = await getPostBySlug(slug);
 
     if (!data || data.blogCategory?.toLowerCase() !== "lps") {
       return {
@@ -773,9 +774,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default async function BlogPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const data = await getPostBySlug(params.slug);
+  const { slug } = await params;
+  const data = await getPostBySlug(slug);
   const error =
     !data || data.blogCategory?.toLowerCase() !== "lps"
       ? "Blog not found."
