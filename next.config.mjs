@@ -115,7 +115,8 @@ const withBundleAnalyzer = bundleAnalyzer({
 });
 
 const nextConfig = {
- images: {
+  output: 'standalone',
+  images: {
   domains: ['lps-me.com', 'res.cloudinary.com'],
   remotePatterns: [
     {
