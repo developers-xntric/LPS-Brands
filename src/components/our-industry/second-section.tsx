@@ -104,7 +104,9 @@ const SecondSection = () => {
   };
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 5000);
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    }, 5000);
     return () => clearInterval(timer);
   }, [maxIndex]);
 

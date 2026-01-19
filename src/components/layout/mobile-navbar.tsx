@@ -15,10 +15,6 @@ export default function MobileNavbar() {
     const [open, setOpen] = useState(false);
     const [openCats, setOpenCats] = useState<Record<string, boolean>>({});
 
-    const hideMenuOnScroll = () => {
-        if (open) setOpen(false); // Hide the menu when the user scrolls
-    };
-
     useEffect(() => {
         const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
         if (open) document.addEventListener("keydown", onKey);
@@ -26,6 +22,10 @@ export default function MobileNavbar() {
     }, [open]);
 
     useEffect(() => {
+        const hideMenuOnScroll = () => {
+            if (open) setOpen(false);
+        };
+
         // lock body scroll when sheet is open
         document.body.style.overflow = open ? "hidden" : "";
         // Add scroll event listener to hide menu on scroll
