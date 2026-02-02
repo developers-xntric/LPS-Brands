@@ -58,7 +58,7 @@ function ContactHero() {
     setForm((f) => ({ ...f, [name]: value }));
   };
 
-  // Updated: free file upload (no pdf restriction, no size limit)
+  // File upload for project brief (any file type accepted)
   const onFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] ?? null;
     setForm((f) => ({ ...f, brief: file }));
@@ -83,7 +83,7 @@ function ContactHero() {
     formData.append("experiences", experiences.join(", "));
 
     try {
-      const response = await fetch("https://blog.xntric.me/lps-contact", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         body: formData,
       });
@@ -293,7 +293,7 @@ function ContactHero() {
 
                   {/* FILE UPLOAD MOVED HERE */}
                   <div>
-                    <label className="block mb-1">Project Brief (.pdf)</label>
+                    <label className="block mb-1">Project Brief (optional)</label>
                     <input
                       id="brief"
                       name="brief"
