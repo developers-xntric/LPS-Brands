@@ -33,22 +33,18 @@ export default function ContactFormSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFeedback({ type: "", msg: "" });
-    setSubmitting(true);
-
+    const resp = await fetch("/api/services", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+      }),
+    });
     try {
-
-      const resp = await fetch("https://blog.xntric.me/lps-service", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          fullName: formData.fullName,
-          email: formData.email,
-          phone: formData.phone,
-        }),
-      });
-
       const text = await resp.text();
       if (!resp.ok) throw new Error(text || "Request failed");
 
