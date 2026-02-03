@@ -27,7 +27,6 @@ export async function POST(request: NextRequest) {
     const transporter = nodemailer.createTransport({
       host: "smtp.office365.com",
       port: 587,
-      secure: true,
       auth: {
         user: process.env.SMTPEMAIL,
         pass: process.env.SMTPPASSWORD,
@@ -36,7 +35,7 @@ export async function POST(request: NextRequest) {
       greetingTimeout: 10000,
       socketTimeout: 10000,
     });
-
+    
     // Send email to admin notifying about new contact inquiry
     const adminMailOptions = {
       from: process.env.SMTPEMAIL,
