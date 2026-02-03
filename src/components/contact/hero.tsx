@@ -58,11 +58,6 @@ function ContactHero() {
     setForm((f) => ({ ...f, [name]: value }));
   };
 
-  // File upload for project brief (any file type accepted)
-  const onFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] ?? null;
-    setForm((f) => ({ ...f, brief: file }));
-  };
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -93,10 +88,10 @@ function ContactHero() {
       } else {
         setErrorMessage("Failed to submit the form.");
       }
-    }  catch (error) {
-  console.error(error);
-  setErrorMessage("An error occurred while submitting.");
-}
+    } catch (error) {
+      console.error(error);
+      setErrorMessage("An error occurred while submitting.");
+    }
   };
 
   const Pill = ({
@@ -112,8 +107,7 @@ function ContactHero() {
       type="button"
       onClick={onClick}
       className={`px-3 py-2 rounded-full border text-sm tracking-wide transition
-        ${
-          checked ? "bg-[#00FC09] border-[#00FC09]" : "border-black/20 bg-white"
+        ${checked ? "bg-[#00FC09] border-[#00FC09]" : "border-black/20 bg-white"
         }
       `}
     >
@@ -146,14 +140,12 @@ function ContactHero() {
 
               <div className="mt-4 mb-6 flex items-center gap-2">
                 <span
-                  className={`h-1 w-1/2 rounded-full ${
-                    step === 1 ? "bg-[#00FC09]" : "bg-black/15"
-                  }`}
+                  className={`h-1 w-1/2 rounded-full ${step === 1 ? "bg-[#00FC09]" : "bg-black/15"
+                    }`}
                 />
                 <span
-                  className={`h-1 w-1/2 rounded-full ${
-                    step === 2 ? "bg-[#00FC09]" : "bg-black/15"
-                  }`}
+                  className={`h-1 w-1/2 rounded-full ${step === 2 ? "bg-[#00FC09]" : "bg-black/15"
+                    }`}
                 />
               </div>
 
@@ -289,23 +281,6 @@ function ContactHero() {
                         />
                       ))}
                     </div>
-                  </div>
-
-                  {/* FILE UPLOAD MOVED HERE */}
-                  <div>
-                    <label className="block mb-1">Project Brief (optional)</label>
-                    <input
-                      id="brief"
-                      name="brief"
-                      type="file"
-                      onChange={onFile}
-                      className="block w-full font-['Exo']  text-sm file:mr-4 file:py-2 file:px-4 file:rounded-xl file:bg-[#00FC09] file:text-black border-none"
-                    />
-                    {form.brief && (
-                      <p className="mt-1 text-xs font-['Exo'] ">
-                        Selected: {form.brief.name}
-                      </p>
-                    )}
                   </div>
 
                   {message ? (
