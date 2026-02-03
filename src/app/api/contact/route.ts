@@ -14,7 +14,6 @@ export async function POST(request: NextRequest) {
     const identity = formData.get("identity") as string;
     const communication = formData.get("communication") as string;
     const experiences = formData.get("experiences") as string;
-    const file = formData.get("file") as File | null;
 
     // Validate required fields
     if (!fullName || !email || !details) {
@@ -26,8 +25,8 @@ export async function POST(request: NextRequest) {
 
     // Create transporter using SMTP credentials from environment variables
     const transporter = nodemailer.createTransport({
-      host: "smtp.hostinger.com",
-      port: 465,
+      host: "smtp.office365.com",
+      port: 587,
       secure: true,
       auth: {
         user: process.env.SMTPEMAIL,
@@ -38,16 +37,23 @@ export async function POST(request: NextRequest) {
       socketTimeout: 10000,
     });
 
-    // Prepare email attachments if file exists
-    const attachments = [];
-    if (file) {
-      const buffer = Buffer.from(await file.arrayBuffer());
-      attachments.push({
-        filename: file.name,
-        content: buffer,
-        contentType: file.type,
-      });
-    }
+    // Send email to admin notifying about new contact inquiry
+    const adminMailOptions = {
+      from: process.env.SMTPEMAIL,
+      to: process.env.ADMIN_EMAIL || process.env.SMTPEMAIL, // Fallback to sender email if admin email not set
+      subject: "New Contact Inquiry - LPS Brands",
+      html: `
+        <h2>New Contact Inquiry Received</h2>
+        <p>A new contact inquiry has been submitted through the website.</p>
+        <p><strong>Name:</strong> ${fullName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
+        <p><strong>Company:</strong> ${company || "Not provided"}</p>
+        <p><strong>Project Details:</strong> ${details}</p>
+        <p><strong>Services Interested In:</strong> ${[identity, communication, experiences].filter(Boolean).join(", ") || "Not specified"}</p>
+      `
+    };
+
     // Send email to user confirming submission
     const userMailOptions = {
       from: process.env.SMTPEMAIL,
@@ -63,10 +69,14 @@ export async function POST(request: NextRequest) {
         <p><strong>Company:</strong> ${company || "Not provided"}</p>
         <p><strong>Project Details:</strong> ${details}</p>
         <p><strong>Services Interested In:</strong> ${[identity, communication, experiences].filter(Boolean).join(", ") || "Not specified"}</p>
-      `,
+      `
     };
 
-    await transporter.sendMail(userMailOptions)
+    // Send both emails
+    await Promise.all([
+      transporter.sendMail(adminMailOptions),
+      transporter.sendMail(userMailOptions)
+    ]);
 
     return NextResponse.json({ message: "Email sent successfully" }, { status: 200 });
   } catch (error) {

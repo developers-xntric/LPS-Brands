@@ -16,8 +16,8 @@ export async function POST(request: NextRequest) {
 
     // Create transporter using SMTP credentials from environment variables
     const transporter = nodemailer.createTransport({
-      host: "smtp.hostinger.com",
-      port: 465,
+      host: "smtp.office365.com",
+      port: 587,
       secure: true,
       auth: {
         user: process.env.SMTPEMAIL,
